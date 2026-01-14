@@ -135,7 +135,7 @@ function Header({ setDarkMode, nav, setNav, from }) {
       <div>
         {!user ? (
           <div id="bootlogo">
-            <Link to={"/"}>Boots</Link>
+            <Link to={"/"}>Atlas</Link>
           </div>
         ) : nav ? (
           // if nav is open, show closeIcon

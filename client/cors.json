@@ -1,6 +1,6 @@
 [
     {
-      "origin": ["http://localhost:5173", "https://bootsng.netlify.app/", "https://boots5editor.netlify.app/", "https://atlashq.net/"],
+      "origin": ["http://localhost:5173", "https://bootsng.netlify.app/", "https://boots5editor.netlify.app/", "https://atlashq.net/", "https://www.atlashq.net"],
       "method": ["GET", "HEAD", "OPTIONS"],
       "responseHeader": ["Content-Type"],
       "maxAgeSeconds": 3600

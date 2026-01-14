@@ -15,11 +15,11 @@ function Footer () {
         }}
         className="config-footer"
       >
-        <p>Boots 6</p>
+        <p>Atlas</p>
         <p>|</p>
-        <p>Paverr</p>
-        <p>|</p>
-        <p>&copy; 2024 - 2025</p>
+        {/* <p>Boots 7</p> */}
+        {/* <p>|</p> */}
+        <p>&copy; 2024 - 2026</p>
         {/* <p>|</p> */}
         {/* <p><a href="https://github.com/tsolawoyin">tsolawoyin</a></p> */}
         {/* <p>

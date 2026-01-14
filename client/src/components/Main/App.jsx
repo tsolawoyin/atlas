@@ -46,9 +46,11 @@ export function App() {
           <div id="boost">
             <div id="boost-div">
               <h1 className={`title is-size-3 is-size-1-desktop`} id="boost-header">
-              Prepare Smart. Pass Confidently.
+              Your Path to Sucess One Step at a Time.
               </h1>
-              <p className="subtitle is-size-5-desktop has-text-white">Boots breaks things down so you can level up for any exam—JAMB, uni tests, and more.</p>
+              <p className="subtitle is-size-5-desktop has-text-white" style={{
+                lineHeight: "28px"
+              }}>Since 2024, Atlas (Boots 7) has been helping students gain admission into top universities and top courses in Nigeria. </p>
               <Link to={"/signup"}>
                 <button
                   className={`button`}
