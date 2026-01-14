@@ -50,7 +50,7 @@ export function App() {
               </h1>
               <p className="subtitle is-size-5-desktop has-text-white" style={{
                 lineHeight: "28px"
-              }}>Since 2024, Atlas (Boots 7) has been helping students gain admission into top universities and top courses in Nigeria. </p>
+              }}>Since 2024, Atlas (Boots 7) has been helping students gain admission into top courses in top universities in Nigeria. </p>
               <Link to={"/signup"}>
                 <button
                   className={`button`}
