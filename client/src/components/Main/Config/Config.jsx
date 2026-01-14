@@ -5,9 +5,7 @@ import CryptoJS from "crypto-js";
 import { differenceInHours, isToday } from "date-fns";
 import { motion } from "motion/react";
 
-import fetchQuestions, {
-  calculateMargin,
-} from "../../../utils/helpers";
+import fetchQuestions, { calculateMargin } from "../../../utils/helpers";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -39,7 +37,9 @@ function Config({ type }) {
   // if user doesn't exist in local storage sef the thing should log out
   let navigate = useNavigate();
   let user = JSON.parse(localStorage.getItem("user")); // I will come back to this error later
-  let [openTab, setOpenTab] = useState(isToday(localStorage.getItem("lastPracticeRecommend")));
+  let [openTab, setOpenTab] = useState(
+    isToday(localStorage.getItem("lastPracticeRecommend"))
+  );
   // yes we should have a recovery mode for the stuff...
 
   // so this is how the app will become seriously unresponsive if the user stuff disappears. wow...
@@ -82,7 +82,7 @@ function Config({ type }) {
       ).toString(CryptoJS.enc.Utf8);
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 
   async function handleStart(e) {
@@ -103,8 +103,8 @@ function Config({ type }) {
     let userTime = activate
       ? Number(others.time) || 10 // if user is activated... ok
       : others.time > 5
-        ? others.time
-        : others.time;
+      ? others.time
+      : others.time;
 
     if (choosen.length) {
       let questions = await getData("QuestionBank", type);
@@ -162,7 +162,7 @@ function Config({ type }) {
           throw new Error("Q");
         }
       } catch (error) {
-        console.log("This is a fatal error...")
+        console.log("This is a fatal error...");
         if (error.message == "K") {
           setInfo({
             status: "has-text-danger mt-3",
@@ -193,16 +193,18 @@ function Config({ type }) {
     // Nice and easy bruv.
     fetchStatAndExams(username, type, setStats)
       .then(() => {
-        reduce(type, setStats, setStatusMsg, "normal")
-      }).catch((err) => {
+        reduce(type, setStats, setStatusMsg, "normal");
+      })
+      .catch((err) => {
         // console.log(err);
         if (err.message == "Offline") {
-          reduce(type, setStats, setStatusMsg, "offline")
+          reduce(type, setStats, setStatusMsg, "offline");
         } else if (err.message == "File not found") {
           reduce(type, setStats, setStatusMsg, "file not found");
         }
-      }).finally(() => {
-        setSetup(false)
+      })
+      .finally(() => {
+        setSetup(false);
       });
     // so the result is predicable over time and it makes sense...
     // console.log(computeNewProgress(1, 86.36))
@@ -214,9 +216,8 @@ function Config({ type }) {
     // // console.log(computeNewProgress(, 86.36), "j");
     // // console.log(computeNewProgress(6, 82.26), "j");
 
-
     calculateMargin(setMarginTop);
-  }, [])
+  }, []);
 
   // olofar mehn...
 
@@ -365,19 +366,28 @@ function Config({ type }) {
                   type="button"
                   className={loading ? "button is-loading" : "button"}
                   onClick={handleStart}
-                // it's not even possible sef...
-                // disabled={!openTab && !choosen.length}
+                  // it's not even possible sef...
+                  // disabled={!openTab && !choosen.length}
                 >
                   {choosen.length ? "Start" : "Open tab"}
                 </button>
               </div>
             </fieldset>
             <div className="utme-info">
-              {info && (
-                <p className={info.status}>{info.message}</p>
+              {info && <p className={info.status}>{info.message}</p>}
+              <p>
+                New here?{" "}
+                <a href="https://www.youtube.com/watch?v=xyQt3Xaz7co">
+                  Watch this video
+                </a>
+              </p>
+              {!activate && (
+                <p>
+                  <Link className="has-text-warning" to={"unlock"}>
+                    Activate
+                  </Link>
+                </p>
               )}
-              <p>New here? <a href="https://www.youtube.com/watch?v=xyQt3Xaz7co">Watch this video</a></p>
-              {!activate && <p><Link className="has-text-warning" to={"unlock"}>Activate</Link></p>}
             </div>
           </form>
         </div>
