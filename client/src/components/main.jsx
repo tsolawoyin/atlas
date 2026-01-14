@@ -14,21 +14,21 @@ import "../assets/fonts/Bungee_Tint/BungeeTint-Regular.ttf";
 import "../assets/fonts/Protest_Guerrilla/ProtestGuerrilla-Regular.ttf";
 import "../assets/fonts/Anton/Anton-Regular.ttf";
 
-// Unregister any old service workers
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    registrations.forEach((registration) => {
-      registration.unregister();
-    });
-  });
+// // Unregister any old service workers
+// if ("serviceWorker" in navigator) {
+//   navigator.serviceWorker.getRegistrations().then((registrations) => {
+//     registrations.forEach((registration) => {
+//       registration.unregister();
+//     });
+//   });
 
-  // Clear all caches
-  caches.keys().then((cacheNames) => {
-    cacheNames.forEach((cacheName) => {
-      caches.delete(cacheName);
-    });
-  });
-}
+//   // Clear all caches
+//   caches.keys().then((cacheNames) => {
+//     cacheNames.forEach((cacheName) => {
+//       caches.delete(cacheName);
+//     });
+//   });
+// }
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
