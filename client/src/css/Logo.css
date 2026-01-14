@@ -1,0 +1,31 @@
+
+/* we'll fix that don't worry. */
+#brand-logo {
+    background-color: var(--logocolor);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-size: 4em;
+    font-family: logo;
+    color: white;
+    height: 100%;
+}
+
+#logo-container p {
+    font-family: logo;
+    font-size: 4em;
+    margin: 0;
+    padding:0;
+}
+#logo-div {
+    background-color: var(--logocolor);
+    width: 100%;
+    display: grid;   
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#logo-container p {
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+.form-div {
+    padding: 1em;
+    font-size: 14px;
+    border-radius: 16px;
+    display: grid;
+    gap: 1em;
+}
+.edit-form {
+    width: 100%;
+}
+.edit-form form {
+    padding: 14px;
+    display: grid;
+    gap: 1em;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.form-div ul {
+    display: grid;
+    gap: 10px;
+}
+
+.app-light .form-div {
+    background-color: #eee;
+}
+
+.app-dark .form-div {
+    background-color: rgb(34, 36, 37);
+}
+
+/* at times the css can put one off... */

@@ -1,0 +1,332 @@
+* {
+  line-height: 1.6;
+  text-decoration: none;
+  list-style: none;
+
+  --color: linear-gradient(
+    to right,
+    rgb(0, 53, 102),
+    rgb(0, 29, 61),
+    rgb(0, 53, 102)
+  );
+  ---colour: #000814;
+  --colour2: rgb(248, 249, 250);
+  ---colour3: rgb(123, 181, 189);
+  --logocolor: #009688;
+  /* --bulma-primary-dark: white; */
+  --padding: 50px;
+  --fontSize: 1.9em;
+}
+
+/* We our CSS. We gat no choice. */
+/* Bulma+Dayo = "Supercool CSS. */
+/* I don't write many css but do I any choice now? */
+.app-light {
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+  color: var(---colour);
+}
+.app-dark {
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--colour2);
+  /* padding: 1em; */
+  background: var(---colour);
+}
+/* I will need colors. makes sense??? */
+/* ----------cool----------- */
+/* then I will have to be really clever with it... */
+/* this app.css is going to contain a lot of code. */
+/* omo... */
+.main-structure {
+  display: flex;
+  /* background-color: aqua; */
+  /* this is what gives me heads up... */
+  /* height: 100%; 100% of the height of the app-container. makes sense right. Imagine how this thing makes my job simple. */
+}
+.app-container {
+  display: grid;
+  min-height: 100vh;
+}
+/* this is  */
+
+.landing-page {
+  background: rgb(0, 150, 136);
+  background: radial-gradient(
+    circle,
+    rgba(0, 150, 136, 1) 0%,
+    rgba(0, 8, 20, 1) 100%
+  );
+}
+/* we sha go design am. omo. advanced feature Jesus */
+/* let me see if I can replicate codewars design */
+
+#boost {
+  margin-bottom: 2em;
+}
+
+#boost h1 {
+  font-weight: bold;
+  text-align: left;
+  font-family: Poppins;
+  margin-bottom: 17px;
+}
+
+#boost p {
+  font-size: 1.1em;
+}
+
+#boost button {
+  font-size: 20px;
+  margin-top: 25px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+#boost button a {
+  color: white;
+}
+
+.app-dark #boost button {
+  background-color: var(--colour2);
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Hover effect for btn requires styling.*/
+
+#boost figure img {
+  width: 100%;
+  display: block;
+  border-radius: 1em;
+  margin: 3em 0 0;
+}
+/* let's work on light mode for now. css is pretty much very important. Of course. */
+/* boost ends here for now */
+
+/* description */
+#description {
+  margin-top: 200px;
+}
+
+#description h2 {
+  /* font-size: 18px; */
+  margin-bottom: 5em;
+}
+
+.description-bold {
+  font-weight: bold;
+}
+
+#description ul {
+  display: grid;
+  gap: 3em;
+}
+
+#description li {
+  display: grid;
+  gap: 1em;
+}
+
+#description li figure {
+  margin: auto;
+}
+
+#flexibility-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+}
+
+#flexibility-img figure img {
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.app-dark #flexibility-img figure img {
+  border: none;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.app-dark #flexibility-img figcaption {
+  color: white;
+}
+
+#remarks {
+  margin-top: 14em;
+}
+
+#remarks li {
+  display: grid;
+  gap: 3em;
+}
+
+#profile {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+#involved {
+  padding: 10em 0;
+  display: grid;
+  gap: 5em;
+}
+
+#involved ul {
+  display: grid;
+  gap: 1.5em;
+}
+
+#involved li a {
+  color: teal;
+}
+
+.app-dark #involved li {
+  border: 3px solid rgba(128, 128, 128, 0.4);
+  border-radius: 1em;
+  display: grid;
+  gap: 2em;
+  padding: 0.5em;
+}
+
+.app-light #involved li {
+  border: 3px solid;
+  border-radius: 1em;
+  padding: 0.5em;
+  display: grid;
+  gap: 2em;
+}
+
+#choose-experience figure img {
+  display: block;
+  border-radius: 1em;
+  margin: auto;
+}
+
+.pricing {
+  margin: 8em auto;
+}
+
+/* styles for 1k screen size */
+@media (min-width: 1000px) {
+  #app-main #boost-div {
+    height: 30vh;
+    display: grid;
+  }
+
+  #app-main #boost-div button {
+    width: 20%;
+  }
+
+  #boost figure {
+    background-color: rgb(208, 208, 228);
+    border-radius: 1em;
+    padding: 0.2em;
+    margin-top: 3em;
+  }
+
+  #boost figure img {
+    margin: 0;
+  }
+
+  #sub-descriptions li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .description-info {
+    display: grid;
+    gap: 1.5em;
+  }
+  #sub-descriptions #flexibility {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3em;
+  }
+
+  #involved {
+    margin: auto;
+  }
+
+  #involved ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+  }
+  .description-h2 {
+    height: 60vh;
+    display: grid;
+    align-items: center;
+  }
+
+  #remarks {
+    width: 70%;
+    margin: auto;
+  }
+
+  .app-dark #description li figure {
+    background-color: rgb(208, 208, 228);
+    border-radius: 1em;
+    padding: 0.2em;
+  }
+
+  .app-light #description li figure {
+    background-color: var(---colour);
+    border-radius: 1em;
+    padding: 0.2em;
+  }
+
+  .app-dark #description li figcaption {
+    color: var(---colour);
+  }
+
+  .app-light #description li figcaption {
+    color: white;
+  }
+}
+
+@media (min-width: 830px) {
+  .main {
+    width: 800px;
+    margin: auto;
+  }
+}
+
+/* Admin app styling */
+#app-editor {
+  height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 10% 85% 5%;
+}
+
+#admin-todo {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  gap: 1em;
+}
+
+#admin-todo h1 {
+  font-size: 2em;
+  font-family: Montserrat, Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#admin-todo li {
+  font-family: Montserrat;
+  margin-bottom: 0.5em;
+}
+
+#admin-todo li a {
+  color: orange;
+}
+
+/* for team */
+.team-ul {
+  position: absolute;
+  right: 2em;
+  bottom: 1em;
+}

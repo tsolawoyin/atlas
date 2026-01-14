@@ -1,0 +1,77 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  padding: 0em 1em 1em;
+  font-family: Poppins, Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+  height: 100%;
+  z-index: 20;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  display: grid;
+  gap: 0.5em;
+}
+
+.sidebar ul li {
+  cursor: pointer;
+}
+
+.sidebar ul .icon-text {
+  display: flex;
+  gap: 0.5em;
+}
+
+.nav-child {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.nav-child p {
+  font-size: 12px;
+}
+
+#account-info {
+  position: fixed;
+  right: 0;
+  padding: 1em;
+  font-size: 13px;
+  display: grid;
+  gap: 12px;
+}
+
+#account-info li {
+  padding: 6px;
+  cursor: pointer;
+}
+.app-dark #account-info li {
+  border-bottom: 1px solid rgb(41, 39, 39);
+}
+.app-light #account-info li {
+  border-bottom: 1px solid rgb(236, 221, 221);
+}
+.app-light #account-info {
+  background-color: white;
+}
+.app-dark #account-info {
+  background-color: var(---colour);
+}
+/* now how do I handle the case of background... */
+.nav-child .nav-child-main {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nav-child:hover {
+  color: var(--logocolor);
+}
+
+#sidebar-header {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+#sidebar-header img {
+  width: 60px;
+}

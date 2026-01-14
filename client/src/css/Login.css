@@ -1,0 +1,35 @@
+#login-div {
+  display: grid;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 2em;
+}
+
+.app-dark #login-form {
+    color: var(--colour2);
+}
+
+.app-light #login-form {
+    color: var(---colour);
+}
+
+.app-dark #login-form input {
+    color: var(---colour2);
+}
+
+.app-light #login-form input {
+    color: var(---colour);
+}
+
+#login-form button {
+  width: 100%;
+  background-color: var(--logocolor);
+  color: white;
+}
+/* let's work on it like this shey u get. */
+/* Expect bullshit next week. Shey u get. No capping. */
+
+/* makes sense like this. let's use it like this. */
+/* no more footer for now. */
+/* the footer is causing unncessary trouble jare... */

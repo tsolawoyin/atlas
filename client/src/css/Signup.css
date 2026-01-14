@@ -1,0 +1,29 @@
+#signup {
+    display: grid;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+}
+#signup-form ul {
+    display: grid;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+#signup-form button {
+    width: 100%;
+    background-color: var(--logocolor);
+    color: white;
+}
+
+.app-light #signup-form input {
+    color: var(---colour);
+}
+/* makes sense this way */
+/* makes sense right? hmmm. maybe */
+.app-light #signup-form  input::placeholder {
+    color: grey; 
+}

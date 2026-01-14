@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+#manage-pins {
+    padding: 1em;
+}
+
+#manage-pins main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1250px;
+    gap: 3em;
+    margin: auto;
+    padding: 3em;
+    height: 90vh;
+}
+
+.pin-section {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.pin-section::-webkit-scrollbar {
+    width: 0px;
+  }
+
+.pin-section ul {
+    display: grid;
+    gap: 1em;
+    overflow-y: auto;
+}
+
+.pin {
+    border: 1px solid;
+    padding: 1em;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+#generate-pin {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100%;
+    gap: 4em;
+    padding-top: 100px;
+    /* yeah this is how I will do it. shey you get. thank you */
+}
+
+#pdf {
+    border: 1px solid;
+    font-family: "Fredoka";
+    font-size: 1.5em; 
+    /* makes sense */
+}
+
+#pdf li {
+    width: 100%;
+}
+
+#pdf li div {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+    margin: auto;
+    border-bottom: 1px solid;
+}
+
+
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+/* make sense. e go be like this for now. makes sense right. yupyup */

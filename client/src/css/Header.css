@@ -1,0 +1,135 @@
+/* Header for main app */
+
+#bootlogo {
+  font-family: Logo, Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em;
+  cursor: pointer;
+}
+#bootlogo a {
+  color: var(--logocolor);
+}
+/* it's even the same stuff */
+/* It goes... */
+.app-light #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1.5em 1.3em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  /* just for testing */
+  /* background-color: yellow; */
+}
+
+.app-dark #header {
+  padding: 1.5em 1.3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(---colour);
+  z-index: 5;
+}
+
+.app-dark #landing #header {
+  background-color: blue;
+}
+
+#header,
+#exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons,
+.icons-nav {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: end;
+  /* let's manage this hack for now... */
+}
+
+.icons a {
+  color: black;
+}
+
+.app-dark .icons a {
+  color: white;
+}
+
+#header-signup {
+  background-color: var(--logocolor);
+  font-family: Montserrat;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.app-dark #login-span a {
+  color: white;
+}
+
+.app-light #login-span a {
+  color: black;
+}
+
+/* Styles for Editor */
+#logo {
+  font-family: Bungee-font;
+  font-size: 2em;
+  cursor: pointer;
+  padding-left: 1em;
+}
+
+#header-helper {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  /* justify-content: space-between; */
+}
+
+#header-helper-2 {
+  display: flex;
+  align-items: center;
+  padding-right: 1em;
+  gap: 2em;
+  justify-self: end;
+}
+
+#network-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#header.admin-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: red; */
+}
+
+#search-box {
+  width: 60%; 
+  align-self: center;
+  /* maybe it's ok this way... */
+}
+/* media query stuffs */
+@media (max-width: 750px) {
+  .icons {
+    display: none;
+  }
+}
+
+@media (min-width: 751px) {
+  .dehaze {
+    display: none;
+  }
+}
+
+/* let css control it... thank you... */
+/* but css or no css, I will still need to pass in props, u'll see */

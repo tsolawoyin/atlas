@@ -1,0 +1,34 @@
+.blog main {
+    min-height: 100vh;
+    /* we start this way... */
+    padding-top: 200px;
+}
+/* I not only need the money, I also need to get out there. */
+/* Dayo trust your intuition, as much as I love to be alone, it's not the best thing for us now.  */
+/* shey you get... */
+.blog-card .card_header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.blog-card {
+    display: grid;
+    gap: 2em;
+    padding: 12px;
+}
+
+.card_activities {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-post {
+    padding-top: 150px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.donation {
+    padding: 2em 0;
+}

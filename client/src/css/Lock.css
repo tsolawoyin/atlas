@@ -1,0 +1,25 @@
+
+.advert {
+    display: grid;
+    gap: 1.5em;
+}
+
+.advert p {
+    font-size: 1.5em;
+}
+
+.more-info {
+    font-size: 16px;
+}
+
+.more-info-link {
+    cursor: pointer;
+}
+
+.locked-field {
+    margin-top: 1.5em;
+}
+
+.contact-us {
+    font-size: 13px;
+}

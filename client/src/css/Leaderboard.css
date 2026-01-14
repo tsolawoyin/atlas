@@ -1,0 +1,46 @@
+.small {
+  font-size: 14px;
+}
+.leaderboard {
+  padding: 1em;
+  width: 100vw;
+}
+
+table,
+.leaderboard-info,
+.leaderboard-btns,
+.ads,
+.hero {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.leaderboard-btns {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 14px;
+}
+
+.app-dark .user-link {
+  color: white;
+}
+
+.app-light .user-link {
+  color: black;
+}
+
+
+.leaderboard-table {
+  margin-bottom: 1em;
+  overflow-x: scroll;
+}
+
+.table-div {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-div::-webkit-scrollbar {
+  width: 0px;
+}

@@ -1,0 +1,54 @@
+/* Container around the entire editor */
+
+.ql-container {
+    font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif; /* Change the font family */
+    border-radius: 8px;               /* Add border radius */
+    /* border: 1px solid;           Add border */
+    padding: 10px;                    /* Add padding */
+    /* background-color: #f9f9f9;        Change background color */
+    height: 320px;
+  }
+.ql-editor::-webkit-scrollbar {
+  width: 0px;
+}
+  /* Editor area where the content is written */
+  .ql-editor {
+    font-size: 16px;                  /* Set font size */
+    line-height: 1.6;                 /* Set line height */
+    /* color: #333;                      Text color */
+    padding: 10px;                    /* Add padding inside the editor */
+  }
+  
+  /* Toolbar customization */
+  .ql-toolbar {
+    border-radius: 8px 8px 0 0;       /* Rounded corners for the toolbar */
+  }
+  
+  /* Buttons inside the toolbar */
+  .ql-toolbar .ql-formats button {
+    border-radius: 4px;               /* Rounded buttons */
+    border: none;                     /* Remove default border */
+    background: none;                 /* Remove default background */
+  }
+  
+  .ql-toolbar .ql-formats button:hover {
+    background-color: #ddd;           /* Background on hover */
+  }
+  
+  /* Customize the caret color in the editor */
+  .ql-editor.ql-blank::before {
+    color: #ccc;                      /* Placeholder text color */
+  }
+
+  .log {
+    overflow: auto;
+  }
+
+  .log::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  #editor-tab {
+    display: grid;
+    grid-template-rows: 70% 30%;
+  }

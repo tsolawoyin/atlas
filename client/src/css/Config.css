@@ -1,0 +1,152 @@
+.subject-control {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#config {
+  display: grid;
+  /* justify-content: center; */
+  margin: auto;
+  align-content: center;
+  width: 100%;
+  min-height: 80vh;
+  height: 100%;
+}
+
+.custom-loader {
+  display: grid;
+  gap: 1em;
+  /* justify-content: center; */
+  align-content: center;
+}
+
+.custom-loader-child {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  gap: 2em;
+}
+
+.helper-loader {
+  display: grid;
+}
+
+.helper-loader progress, .helper-loader p {
+  margin: 0;
+  padding: 0;
+}
+
+/* ok no problem sha... */
+
+.config-footer p {
+  font-size: 12px;
+}
+
+.input {
+  font-family: Montserrat, Poppins, Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+}
+
+.app-dark input {
+  background-color: var(---colour);
+}
+
+[type="topics"] {
+  width: 80%;
+}
+
+[type="topics"] select {
+  width: 100%;
+}
+
+.select select {
+  font-family: Poppins;
+}
+
+.app-dark .select select {
+  background-color: var(---colour);
+}
+
+.control {
+  display: flex;
+  gap: 1em;
+  margin: 1em 0;
+}
+
+#table-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+#table-btns .add-btns, #select-handler .add-btns {
+  background-color: var(--logocolor);
+  color: white;
+  border: none;
+}
+
+.control-2 button {
+  width: 100%;
+  background-color: var(--logocolor);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.utme-info {
+  /* padding: 0 1em; */
+  margin-top: 10px;
+  font-size: 13px;
+}
+.utme-info a {
+  color: var(--logocolor);
+}
+
+/* I will need to work on this stuff */
+/* it's high time I redo this stuff... */
+
+table {
+  width: 100%;
+}
+
+.app-dark table {
+  background-color: var(---colour);
+}
+
+.app-dark .activate-msg {
+  color: #FFBF00;
+}
+.app-light .activate-msg {
+  color: #B22222;
+}
+/* looks like this is better... makes sense. */
+/* This is balance. Seriously balanced... */
+/* In fact this dark mode styling sef no too hard like that. */
+@media (min-width: 650px) {
+  #config {
+    width: 95%;
+  }
+}
+
+@media (min-width: 800px) {
+  #config {
+    width: 800px;
+  }
+}
+
+/* I will use media query to set it then */
+/* that's the only way to make it look the way I want */
+.assistant-helper {
+  display: flex;
+  gap: 1em;
+}
+
+.assistant-helper div {
+  width: 100%;
+}
+
+.assistant-helper select {
+  width: 100%;
+}

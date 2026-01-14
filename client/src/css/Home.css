@@ -1,0 +1,27 @@
+.pqs {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.support-link {
+    cursor: pointer;
+}
+
+.homee {
+    margin: 2em;
+    /* padding: 2em; */
+    position: relative;
+}
+
+.homee h1 {
+    font-weight: bold;
+}
+
+#practice {
+    align-self: center;
+    justify-self: center;
+}
+
+#practice h1 {
+    font-size: 1em;
+}

@@ -1,0 +1,60 @@
+#config-helper, .custom-loader {
+    position: absolute;
+    height: 80vh;
+    width: 100%;
+    max-width: 800px;
+    z-index: 10;
+    padding: .5em;
+    /* display: none */
+    /* so this interface will be where everything will be. This will be the new interface */
+}
+/* let's see if we can add some transition effect to make boots more nice and cool... */
+/* you know... */
+
+#select-handler {
+    height: 100%;
+    width: 100%;
+    border-radius: .5em;
+}
+
+.app-dark #select-handler, .app-dark .custom-loader {
+    background-color: rgba(0, 8, 20,.9);
+}
+
+.app-light #select-handler, .app-light .custom-loader {
+    background-color: rgba(248, 249, 250, .9);
+}
+
+#subject-container {
+    display: grid;
+    align-items: center;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#subject-container::-webkit-scrollbar {
+    width: 0px;
+}
+
+#select-handler ul {
+    display: grid;
+    gap: 3em;
+}
+
+.subject{
+    display: grid;
+    gap: .6em;
+    cursor: pointer;
+}
+
+.subject div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress .low::-webkit-progress-bar {
+    background: red;
+    /* border-radius: 10px; */
+}
+
+/* the regular one is not so informative shey you get... So I need to do sth about it normally. */

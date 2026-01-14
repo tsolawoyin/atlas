@@ -1,0 +1,14889 @@
+import { formula } from "./helpers.js";
+
+const { A, B, C, D, E, c } = { A: "A", B: "B", C: "C", D: "D", E: "E", c: "C" };
+
+let biologyQuestions = [
+  {
+    topic: "The Cell Organization of Life",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Which of the following is characteristic of the animal cell?",
+        options: [
+          "presence of chloroplasts",
+          "Possession of a cellulose cell wall",
+          "Absence of large vacuoles",
+          "Presence of large vacuoles",
+          "Presence of chromosomes",
+        ],
+        ans: C,
+        remark:
+          "Animal and plant cells have vacoules but the vacoule of animal cells are small, unlike the vacoules of plant cells which is large.",
+      },
+      {
+        id: 2,
+        question: "The vacuole of a plant cell is:",
+        options: [
+          "A large empty space",
+          "Smaller than that of an animal cell",
+          "Filled with air",
+          "An ordinary vacuum",
+          "Surrounded by a membrane",
+        ],
+        ans: E,
+        remark:
+          "The vacoule of a plant cell is surrounded by a membrane called <strong>Tonoplast</strong>",
+      },
+      {
+        id: 3,
+        question:
+          "The part of the cell solely responsible for respiration is the:",
+        options: [
+          "Nucleus",
+          "Nucleolus",
+          "Mitochondria",
+          "Golgi apparatus",
+          "Endoplasmic reticulum",
+        ],
+        ans: C,
+        remark:
+          "Mitochodria is the power house of the cell which is responsible for respiration => the breakdown of glucose to give energy in form of ATP",
+      },
+      {
+        id: 4,
+        question:
+          "Which of these combinations is common to plant and animal cells?",
+        options: [
+          "Centriole, middle lamella, Golgi bodies, mitochondrion",
+          "Cytoplasm, sap vacuole, starch grains, leucoplasts",
+          "Plasma membranes, chromosome, mitochondria, lysosomes",
+          "Nucleus, nucleolus, cellulose cell wall, endoplasmic reticulum",
+          "Cytoplasm, centriole, cell wall, nucleolus",
+        ],
+        ans: C,
+        remark:
+          "Only animal cells possess centriole, and only plant cells possess chloroplast, sap vacoule, and cell wall.",
+      },
+      {
+        id: 5,
+        question: "Where is energy produced in a cell?",
+        options: [
+          "Nucleus",
+          "Nucleolus",
+          "Lysosomes",
+          "Chloroplast",
+          "Mitochondria",
+        ],
+        ans: E,
+        remark: "mitochondria is always associated with energy production",
+      },
+      {
+        id: 6,
+        question:
+          "Which of the following cell constituents is NOT common to both plants and animals?",
+        options: [
+          "Mitochondria",
+          "Chloroplasts",
+          "Ribosomes",
+          "Golgi apparatus",
+          "Vacuoles",
+        ],
+        ans: B,
+        remark:
+          "Only plant cells contains chloroplasts. Animal cells cannot photosynthesize.",
+      },
+      {
+        id: 7,
+        question: "The function of endoplasmic reticulum is:",
+        options: [
+          "Protein synthesis",
+          "Intracellular transport of materials",
+          "Digestion and destruction of foreign bodies",
+          "Production of energy from glucose",
+        ],
+        ans: B,
+        // remark: ""
+      },
+      {
+        id: 8,
+        question:
+          "The oxidative part of the respiration process takes place in the:",
+        options: [
+          "Mitochondria",
+          "Ribosomes",
+          "endoplasmic reticulum",
+          "Golgi bodies",
+        ],
+        ans: A,
+        remark:
+          "the oxidaive part of respiration takes place in the mitochondrion",
+      },
+      {
+        id: 9,
+        question: "The function of ribosomes in cells is:",
+        options: [
+          "Protein synthesis",
+          "Starch synthesis",
+          "Transport of materials",
+          "Lipid storage",
+        ],
+        ans: A,
+        remark:
+          "ribosomes, dispersed in the cytoplasm of the cell, helps synthesize proteins. In another word, they are protein-manufacturing engines.",
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following structures is common to Euglena, white blood cell, and Amoeba?",
+        options: ["Vacuole", "Cell wall", "Cilla", "Cell membrane"],
+        ans: D,
+        remark: "All have cell membrane.",
+      },
+      {
+        id: 12,
+        question: "The organelle involved in tissue respiration is the:",
+        options: [
+          "Endoplasmic reticulum",
+          "Ribosome",
+          "Golgi body",
+          "Mitochondrion",
+        ],
+        ans: D,
+        remark: "respiration always involve mitochondria",
+      },
+      {
+        id: 13,
+        question:
+          "Which of the following organelles are likely to be present in cells that are actively respiring and photosynthesizing?",
+        options: [
+          "Mitochondria and chloroplast",
+          "Lysosomes and ribosomes",
+          "Nucleolus and centrioles",
+          "Golgi apparatus and endoplasmic reticulum",
+        ],
+        ans: A,
+        remark: "respiring => mitochondria, photosynthesizing => chloroplast",
+      },
+      {
+        id: 14,
+        question:
+          "The membrane surrounding the vacuole in a plant cell is called the:",
+        options: [
+          "Plasmalemma",
+          "Tonoplast",
+          "Nuclear membrane",
+          "Endoplasmic reticulum",
+        ],
+        ans: B,
+        remark: "tonoplast",
+      },
+      {
+        id: 15,
+        question:
+          "The nucleus is considered the control organelle of a cell because it:",
+        options: [
+          "Contains the genetic material",
+          "Contains the nuclear sap",
+          "Is bounded by the nuclear membrane",
+          "Is located at the centre of the cell ",
+        ],
+        ans: A,
+        remark:
+          "the DNA is the blueprint of the future of an organism. DNA is transcribed into mRNA, which goes to ribosome to make proteins, and proteins (enzymes) directs and speed up biological activities. And note, the DNA is found in the nucleus.",
+      },
+      {
+        id: 16,
+        question:
+          "The structure that is most commonly identified in all living cells under the light microscope is the:",
+        options: ["Mitochondrion", "Chloropplast", "Nucleus", "Ribosome"],
+        ans: C,
+        remark: "the nucleus is quite conspicuous",
+      },
+      // TO ASK CHATGPT
+      {
+        id: 17,
+        question: "In plant cells, the chloroplasts are located:",
+        options: [
+          "Inside the cell wall",
+          "Outside the protoplasm",
+          "Within the vacuole",
+          "Within the cytoplasm",
+        ],
+        ans: D,
+        remark: "chloroplasts reside in the cytoplasm of a cell.",
+      },
+      {
+        id: 18,
+        question: "The structures found only in plant cells are:",
+        options: [
+          "Cell membrane and crytoplasms",
+          "Chromatin and nucleolus",
+          "Cell wall and chloroplast",
+          "Cell membrabne and lysosome",
+        ],
+        ans: C,
+      },
+      {
+        id: 19,
+        question: "The organelle common to both plant and animal cell is the:",
+        options: ["Centriole", "Plasmalemma", "Cell wall", "Chloroplast"],
+        ans: B,
+      },
+      {
+        id: 20,
+        question:
+          "Which of the following is likely to have a higher concentration of mitochondria?",
+        options: [
+          "Sperm cell",
+          "Egg cell",
+          "Red blood cell",
+          "White blood cell",
+        ],
+        ans: A,
+      },
+      {
+        id: 21,
+        question: "The role of the Golgi complex in an eukaryotic cell is to:",
+        options: [
+          "Conduction in and out of the cell",
+          "Transport genetic material out of the cell",
+          "provide attachment for ribosonmal granules",
+          "Transport organic materiaL in and out of the cell",
+        ],
+        ans: D,
+      },
+      // the reason I go for cell wall is that I don't think onions have chloroplasts
+      {
+        id: 22,
+        question:
+          "The cell of an onion bulb can be differentiated from a check cell by the presence of:",
+        options: ["Plasmalemma", "Chloroplast", "Cell wall", "Nucleus"],
+        ans: C,
+      },
+      // this one is kind of straight forward...
+      // sleeping at home is not possible anymore...
+      // we stay at raph till God knows when
+      {
+        id: 23,
+        question: "In a cell, the genes are carried:",
+        options: [
+          "Nuclear membranes",
+          "Chromatin threads",
+          "Lysosomes",
+          "Mitochondria",
+        ],
+        ans: B,
+      },
+      {
+        // needs some research here
+        id: 24,
+        question: "Which of the following characterizes a mature plant cell?",
+        options: [
+          "The nucleus is pushed to the centre of the cell",
+          "The cell wall is made up of the cellulose",
+          "The nucleus is small and irregular in shape",
+          "The cytoplasm fill up the entire cell space",
+        ],
+        ans: D,
+      },
+      {
+        id: 25,
+        question:
+          "Which of the following is NOT a function of the nucleus of a cell?",
+        options: [
+          "It translates genetic information for the manufacture of proteins",
+          "It stores and carries hereditary information",
+          "It is a reservoir of energy for the cell",
+          "It controls the life process of the cell",
+        ],
+        ans: C,
+      },
+      {
+        id: 26,
+        question:
+          "The organelles present in the cells that are actively respiring and photosythesizing are:",
+        options: [
+          "Golgi appararatus and endolplasmic reticulum",
+          "Nucleus and centrioles",
+          "Mitochondria and chloroplast",
+          "Lysosomes and ribosomes",
+        ],
+        ans: C,
+      },
+      {
+        id: 27,
+        question:
+          "The part of the cell solely responsible for respiraton is the:",
+        options: ["Nucleus", "Nucleolus", "Mitochondria", "Golgi apparatus"],
+        ans: C,
+      },
+      {
+        // cytoplasm is the answer here...
+        id: 28,
+        question: "The enzymes of the glycolytic pathways are located in the:",
+        options: ["Mitochondria", "Gastric juice", "Plasma", "Cytoplasm"],
+        ans: D,
+      },
+      {
+        id: 29,
+        question:
+          "Which of the following does a virus have in common with animal cells?",
+        options: ["Nucleus", "DNA", "Glycogen", "Cytoplasm"],
+        ans: B,
+      },
+      {
+        id: 30,
+        question:
+          "The hereditary characters in plants and animals are located on the:",
+        options: ["Gene", "Nucleus", "Chromosomes", "Cell"],
+        ans: C,
+      },
+      {
+        id: 31,
+        question:
+          "The component of the cell that determines paternity resides in the:",
+        options: ["Centrosome", "Ribosome", "Nucleus", "Mitochondria"],
+        ans: C,
+      },
+      {
+        id: 32,
+        question: "The part of the cell where respiration occurs is the:",
+        options: ["Mitochondria", "Ribsome", "Gogi body", "Lysosome"],
+        ans: A,
+        remark: "mito...",
+      },
+      {
+        id: 33,
+        question:
+          "One of the following contains digestive enzymes in the cell:",
+        options: ["Endoplasmic reticulum", "Nucleus", "Lysosome", "Centrosome"],
+        ans: C,
+        remark:
+          "The lysosome is the organelle that helps destroy enemies in the cell. It kill by digesting them with its digestive enzyme.",
+      },
+      {
+        id: 34,
+        question:
+          "One of the basic differences between a plant and animal cell is?",
+        options: [
+          "Possession of chloroplast in plant, none in animal cell",
+          "Presence of nuclear membrane in animal cell only",
+          "Presence of cell wall in animal, none in plant",
+          "Possession of nuclear membrane in plant cell only",
+        ],
+        ans: A,
+        remark:
+          "Chloroplast only exists in plant cell. Can you photosynthesize?",
+      },
+      {
+        id: 35,
+        question:
+          "The organelle decribed as the powerhouse of the cell is the:",
+        options: ["Mitochondria", "Golgi body", "Vacuole", "Nucleolus"],
+        ans: A,
+        remark:
+          "the mitochondria is the power house of the cell. It is the location where energy is produced.",
+      },
+      {
+        id: 36,
+        question: "The importance of cellular respiration is to:",
+        options: [
+          "Produce NADH",
+          "Eliminate carbon (IV) Oxide",
+          "Produce ATP",
+          "Eliminate glucose",
+        ],
+        ans: C,
+        remark: "produce atp(energy)",
+      },
+      // red blood cells don't have nucleus
+      {
+        id: 37,
+        question: "Which of the following doesn't have a nucleus?",
+        options: ["Leukocyte", "Erythrocytes", "Plasma", "Platelet"],
+        ans: B,
+        remark: "a mature red blood cell(a.k.a. erythrocyte) lacks a nucleus",
+      },
+      {
+        id: "tjfdj4",
+        question: "All living organisms",
+        options: ["Photosynthesize", "Respire", "Move", "Feed", "Transpire"],
+        ans: D,
+        remark: `<p>The correct option is: Feed</p>
+        <p>All living organisms require energy to carry out life processes, and they obtain this energy by feeding in various ways, such as consuming other organisms or organic matter, or by synthesizing organic molecules through processes like photosynthesis (for autotrophs). While most organisms respire to release energy from nutrients, not all organisms respire in the same way (some organisms like anaerobes don't respire aerobically). Movement (option C) and transpiration (option E) are not universal to all living organisms, as some organisms are immobile and others do not undergo transpiration.</p>`,
+      },
+      {
+        id: "fdoijri",
+        question: "A group of similar cells performing the same function is",
+        options: [
+          "An organ",
+          "A system",
+          "Tissue",
+          "An organelle",
+          "An enzyme",
+        ],
+        remark: `A group of similar cells performing the same function is called a tissue. Tissues are the next level of organization above cells in multicellular organisms. They work together to perform specific functions within an organism. Examples of tissues include muscle tissue, nervous tissue, epithelial tissue, and connective tissue. Each type of tissue has specialized cells adapted to carry out particular functions that contribute to the overall functioning of the organism.`,
+        ans: C,
+      },
+      {
+        id: "dfortofgopd",
+        question: "A tissue can best be defined as",
+        options: [
+          "An aggregate of similar cells",
+          "Aggregate of cells performing a similar function",
+          "An aggregate of similar cells performing the same function",
+          "A mixture of different cell types performing the same function",
+        ],
+        remark: `A tissue can best be defined as a group of cells that are <strong>similar in structure and function</strong>, which work together to perform a specific task or function within an organism. Tissues are the next level of organization above cells in multicellular organisms. They allow for specialization and division of labor within an organism, as different types of tissues carry out different functions. Examples of tissues include muscle tissue, nervous tissue, epithelial tissue, and connective tissue.`,
+        ans: C,
+      },
+      {
+        id: "fgotriodf",
+        question: "Which of the following is an organ?",
+        options: ["Guard cell", "Liver", "Xylem bundle", "Blood"],
+        remark: `<p>The correct option is: <strong>Liver</strong></p>
+        <p>An organ is a structure composed of two or more tissues that work together to perform specific functions within an organism. The liver is an example of an organ, as it contains various types of tissues (such as epithelial tissue, connective tissue, and blood vessels) that work together to carry out functions such as detoxification, metabolism, and the production of bile.</p>
+        <p>Guard cells, xylem bundles, and blood are not organs. Guard cells are specialized cells found in plant leaves responsible for regulating gas exchange and transpiration. Xylem bundles are plant tissues responsible for transporting water and nutrients throughout the plant. Blood is a bodily fluid composed of cells (such as red and white blood cells) suspended in a liquid matrix (plasma), and it plays a crucial role in transporting substances and maintaining homeostasis within the body.</p>`,
+        ans: B,
+      },
+      {
+        id: "jfjrtoi",
+        question:
+          "Which of the following organism does not exist as a single free living cell?",
+        options: ["Paramecium", "Volvox", "Amoeba", "Chlamydomonas"],
+        ans: B,
+        remark: `Volvox is a colonial green algae. It forms colonies composed of many individual cells that are interconnected and work together, but they do not exist as single, free-living cells. Each colony resembles a hollow sphere with cells arranged along the periphery. Paramecium, Amoeba, and Chlamydomonas, on the other hand, are all single-celled organisms that can exist independently as free-living cells.`,
+      },
+      {
+        id: "fdronbnoinwnefonwenf",
+        question: "An Amoeba and an unlaid chicken eggs are:",
+        options: ["Animal tissues", "Organelles", "Single cell", "Organisms"],
+        ans: C,
+      },
+      {
+        id: "saione4inndsvio34",
+        question: "The rods in the retina of the eyes are examples of",
+        options: ["Cells", "Tissues", "Organs", "Systems"],
+        ans: A,
+      },
+      {
+        id: "dskmekl12",
+        question:
+          "A characteristic that can possibly be shared by both living and non-living organisms is",
+        options: [
+          "Locomotion",
+          "Irritability",
+          "Increase in biomass",
+          "Increase in size",
+        ],
+        ans: D,
+      },
+      {
+        id: "dfnerv ",
+        question: "A characteristic exhibited by all living organisms is",
+        options: [
+          "Sexual reproduction",
+          "Aerobic respiration",
+          "The ability to move from one place to another",
+          "The ability to remove unwanted substances",
+        ],
+        ans: D,
+      },
+      {
+        id: "kdfklmre",
+        question: "What is the level of organization of an onion bulb?",
+        options: ["Tissue", "Organ", "Systemic", "Organismal"],
+        ans: B,
+      },
+      {
+        id: "gjkdfkfjkdkjfd",
+        question: "The lowest level of organization in living organisms is",
+        options: ["Tissue", "Organ", "Cell", "System"],
+        ans: C,
+      },
+      {
+        id: "fmdonr",
+        question:
+          "Which of the following is the most complex according to their cellular level of organization? ",
+        options: ["Heart", "Hair", "Euglena", "Hydra"],
+        ans: A,
+      },
+      {
+        id: "12345",
+        question: "Which of the following organisms is multicelllular? ",
+        options: ["Chlamydomonas", "Spirogyra", "Amoeba", "Euglena"],
+        ans: B,
+      },
+      {
+        id: "dsvnergnofd ",
+        question: "Which of the following organ level of organisation?",
+        options: [
+          "Volvox sp",
+          "Paramecium candatum",
+          "Hydra viridis",
+          "Onion bulb",
+        ],
+        ans: D,
+      },
+      {
+        id: "kdlnvnr ",
+        question: "Which of the following is an organ?",
+        options: ["Guard cell", "Liver", "Xylem bundle", "Blood"],
+        ans: B,
+      },
+      {
+        id: "dsoverkfmbf",
+        question: "The cell of a bacterium is described as",
+        options: ["Unicellular", "Eukaryotic", "Prokaryotic", "Multicellular"],
+        ans: C,
+      },
+      {
+        id: "dnsns",
+        question: "At which level of organization is mammalia heart?",
+        options: ["Tissue", "Organ", "Cell", "System"],
+        ans: B,
+      },
+    ],
+  },
+
+  {
+    topic: "The Cell And Its Environment",
+    questions: [
+      {
+        id: 1,
+        question:
+          "A spirogyra cell was placed in a solution X and after 1 minute the cell had been plasmolysed, solution X was",
+        options: [
+          "Tap water",
+          "A very strong sugar solution",
+          "A weak sugar solution",
+          "A very weak salt solution",
+          "Distilled water",
+        ],
+        ans: B,
+        remark: `<p>If a Spirogyra cell becomes plasmolyzed after being placed in a solution X within just 1 minute, we can infer that solution X is hypertonic to the cell's cytoplasm. Plasmolysis occurs when a cell loses water due to being placed in a hypertonic solution, causing the cytoplasm to shrink away from the cell wall. Therefore, solution X must have a higher solute concentration than the cell's cytoplasm.</p>
+        <p>The hypertonic solution X would have a higher concentration of solutes compared to the cytoplasm of the Spirogyra cell. This could be due to the presence of salts or other dissolved substances in solution X, which create an osmotic gradient that causes water to move out of the cell, leading to plasmolysis.</p>`,
+      },
+      {
+        id: 2,
+        question:
+          "The movement of molecules from a region of higher concentration to a region of lower concentration is",
+        options: [
+          "Diffusion",
+          "Transpiration",
+          "Osmosis",
+          "Translocation",
+          "Plasmolysis",
+        ],
+        ans: A,
+        remark: `<p><strong>The movement of molecules from a region of higher concentration to a region of lower concentration is called "diffusion."</strong> This process occurs spontaneously and is driven by the random motion of molecules. In diffusion, molecules move down their concentration gradient, meaning they move from areas of higher concentration to areas of lower concentration until equilibrium is reached and there is no net movement of molecules. Diffusion is a fundamental process in various biological, chemical, and physical systems and plays a crucial role in processes such as gas exchange in the lungs, nutrient absorption in cells, and the mixing of substances in solutions.</p>`,
+      },
+      {
+        id: 3,
+        question:
+          "A fresh kolanut weighing 1g was put into salt solution. After 3 hours, the kolanut weighed 1.2g. This simple experiment demonstrate that",
+        options: [
+          "The salt solution is more concentrated than the cell sap of the kolanut",
+          "The cell sap of the kolanut is more concentrated than the salt soluion",
+          "The salt solution has the same concentration as the cell sap of the Kolanut",
+          "Kolanut cells can multiply in water",
+          "The kolanut lost some water molecules to the salt solution",
+        ],
+        ans: B,
+        remark: `<p>
+        If the kolanut gained weight from 1 gram to 1.2 grams after being immersed in the salt solution for 3 hours, then the solution surrounding the kolanut must be hypotonic</p>
+        <p>In a hypotonic solution, the concentration of solutes is lower outside the kolanut compared to inside. Therefore, water moves from the solution into the kolanut by osmosis, resulting in the kolanut gaining weight as it absorbs water from the surrounding solution.</p>
+        <p>This experiment demonstrates osmosis, with water moving from a region of lower solute concentration (the solution) to a region of higher solute concentration (the kolanut).</p>`,
+      },
+      {
+        id: 4,
+        question:
+          "The filaments of Spirogyra were put into equal volume of sugar solution X and Y. After 5 minutes, filaments from X solution had their cell contents rounded up while those from Y were unaffected. The experiment shows that",
+        options: [
+          "Solution X was stronger than Y",
+          "Solution Y was stronger than X",
+          "Spirogyra used up the sugar in solution X",
+          "Solution X is good for stimulating sexual reproduction in Spirogyra",
+          "Solution Y was less contaminated than X",
+        ],
+        ans: A,
+      },
+      {
+        id: 5,
+        question:
+          "If an isolated living cell is left in distilled water for two hours, it is likely to",
+        options: [
+          "Lose some of its water to surrounding water",
+          "Lose all of its water to the surrounding water",
+          "Reproduce by binary fission",
+          "cytolysis may occur",
+        ],
+        remark: `<p>If an isolated living cell is left in distilled water for two hours, it is likely to swell and potentially burst. This is because distilled water is hypotonic compared to the cell's cytoplasm, meaning it has a lower concentration of solutes.</p>
+        <p>In a hypotonic solution, water moves into the cell through osmosis, from the area of lower solute concentration (the surrounding distilled water) to the area of higher solute concentration (the cell's cytoplasm). As a result, the cell gains water, causing it to swell. If the swelling continues beyond the cell's capacity to expand, it may eventually burst, a process known as <strong>cytolysis</strong>.</p>
+        <p>Therefore, leaving an isolated living cell in distilled water for an extended period of time can lead to swelling and potential bursting of the cell.</p>`,
+        ans: D,
+      },
+      {
+        id: 6,
+        question:
+          "Which of the following will NOT allow osmosis to take place?",
+        options: [
+          "Pig's bladder",
+          "Cellophane",
+          "Transparent polythene",
+          "Cow's bladder",
+        ],
+        ans: C,
+        remark: `<p>Osmosis occurs through semi-permeable membranes, which allow the passage of solvent molecules (usually water) while restricting the passage of solute molecules. Let's analyze each option:</p>
+        <ol>
+        <li>Pig's bladder: This can allow osmosis to take place if it is a semi-permeable membrane</li>
+        <li>Cellophane: Cellophane is a semi-permeable membrane and would allow osmosis.</li>
+        <li>Transparent polythene: Polythene is typically impermeable to water and solutes, so it would not allow osmosis.</li>
+        <li>Cow's bladder: If the cow's bladder is intact and acts as a semi-permeable membrane, it could allow osmosis.</li>
+        </ol>`,
+      },
+      {
+        id: 7,
+        question: "Osmosis can be defined as the movement of",
+        options: [
+          "molecules from solution of high concentration to low concentration",
+          "Molecules from solution of low concentration",
+          "Water across a semi-permeablle membrane from solution of low concentration to high concentration",
+          "Water across a semi-permeable membrane from solution of high concentration to low concentration",
+        ],
+        ans: C,
+        remark:
+          "Osmosis is the spontaneous movement of solvent molecules through a semi-permeable membrane from a region of lower solute concentration to a region of higher solute concentration, in order to equalize the solute concentrations on both sides of the membrane. This process continues until equilibrium is reached, where there is an equal concentration of solute on both sides of the membrane, and there is no net movement of solvent molecules. Osmosis is a fundamental process in biology and plays a crucial role in various physiological processes, such as the movement of water in plant cells, kidney function, and maintaining fluid balance in organisms.",
+      },
+      {
+        id: 8,
+        question:
+          "When a Spirogyra cell is immersed in a salt solution more concentrated than its cell sap, it",
+        options: [
+          "Remains unchanged",
+          "Takes up water and bust",
+          "Absorbs a litle water",
+          "Loses water and shrivel", // normal thing... because
+          "Becomes turgid",
+        ],
+        remark: `<p>When a Spirogyra cell is immersed in a salt solution more concentrated than its cell sap (hypertonic solution), the following changes may occur:</p>
+        <ol>
+        <li><strong>Water Loss:</strong> Water will tend to move out of the Spirogyra cell due to osmosis, moving from an area of <em>lower solute concentration</em> (inside the cell) to an area of <em>higher solute concentration</em> (outside the cell). This can cause the cell to lose water and shrink in size.</li>
+        <li><strong>Plasmolysis:</strong> As water leaves the cell, the protoplasm and cytoplasmic membrane may shrink away from the cell wall, a process known as plasmolysis. This results in the cytoplasm pulling away from the cell wall, which can affect the cell's shape and structural integrity.</li>
+        <li><strong>Reduced Turgor Pressure:</strong> Turgor pressure, the pressure exerted by the cell contents against the cell wall, decreases as water leaves the cell. This can lead to wilting or flaccidity of the Spirogyra cell.</li>
+        <li><strong>Potential Damage:</strong> Prolonged exposure to hypertonic solutions can potentially damage the cell membrane and other cellular structures due to dehydration and loss of turgor pressure.</li>
+        </ol>`,
+        ans: D,
+      },
+      {
+        id: 9,
+        question: "Minerals salt can be absorbed into the roots by",
+        options: [
+          "Osmosis only",
+          "Osmosis and diffusion",
+          "Diffusion and active transport", // makes sense
+          "Diffusion only",
+        ],
+        remark: `<p>
+        Mineral salts can be absorbed into the roots of plants through a process called "root uptake" or "root absorption." This process involves several mechanisms:</p>
+        <ol>
+        <li><strong>Passive Diffusion:</strong> Some mineral ions can move across the root cell membranes passively, driven by concentration gradients. This is especially true for ions like potassium and nitrate.</li>
+        <li><strong>Active Transport:</strong> Many mineral ions are absorbed against their concentration gradient through active transport mechanisms, requiring the expenditure of energy (usually in the form of ATP). This allows the plant to accumulate essential ions even when their concentration in the soil solution is low. Examples of ions absorbed through active transport include calcium, magnesium, and iron.</li>
+        <li><strong>Facilitated Diffusion:</strong> Some ions may require carrier proteins to assist in their movement across the root cell membranes. This process, known as facilitated diffusion, still relies on concentration gradients but is aided by specific proteins.</li>
+        </ol>
+        <p>Overall, the root uptake of mineral salts is crucial for the growth, development, and overall health of plants, providing them with essential nutrients necessary for various physiological processes.</p>`,
+        ans: C,
+      },
+      {
+        id: 10,
+        question:
+          "The process by which a red blood cell placed in distilled water absorbs until it bursts and released its contents into the surroundings is know as",
+        options: ["Osmosis", "Plasmolysis", "Turgidity", "Haemolysis"],
+        remark: `<p>Hemolysis, also spelled haemolysis, refers to the rupture or destruction of red blood cells (erythrocytes), leading to the release of hemoglobin into the surrounding fluid. This can occur due to various factors such as osmotic stress, exposure to toxins or chemicals, immune-mediated destruction, or physical trauma. Hemolysis can result in the release of cellular contents, including hemoglobin, potassium, and other intracellular components, into the bloodstream or surrounding tissue. It is an important phenomenon to consider in medical diagnostics, as abnormal levels of hemolysis can indicate underlying health conditions or affect the accuracy of laboratory tests.</p>
+        <p>Compare and contrast <strong>cytolysis</strong> and <strong>hemolysis</strong></p>`,
+        ans: D,
+      },
+      {
+        id: 11,
+        question:
+          "Salts and water are absorbed in the roots and transported to the leaves by",
+        options: [
+          "Diffusion through the xylem tissues",
+          "Osmosis through the phloem tissues",
+          "Diffusion through the phloem issues",
+          "Osmosis through the xylem tissues",
+        ],
+        remark: `Salts and water are absorbed in the roots and transported to the leaves primarily through the xylem tissues through osmosis`,
+        ans: D,
+      },
+      {
+        id: 12,
+        question:
+          "When a marine fish was taken from the ocean and put in a tank of fresh water, it died after a short period because",
+        options: [
+          "The tank was too small compared to the large ocean", // funny
+          "The body cells of fish swelled and bust as a result of hypotonic fresh water",
+          "The body cells of fish shrank as their sap was hypertonic to the fresh water",
+        ],
+        remark: `<p>When a marine fish is placed in a tank of fresh water, it can die due to a condition known as "osmotic shock" or "osmotic stress". The reason for this is as follows:</p>
+        <ol>
+        <li><strong>Difference in Osmotic Pressure:</strong> Marine fish live in a hypertonic environment, meaning the concentration of salts (solute) in the ocean water is higher than the concentration of salts inside their bodies (cytoplasm). On the other hand, fresh water is hypotonic, with a lower concentration of salts compared to the fish's body fluids.</li>
+        <li><strong>Water Movement:</strong> Due to the difference in osmotic pressure, water moves into the fish's body through osmosis. In other words, water rushes into the fish's cells to try to equalize the concentration of salts between the fish's body and the surrounding fresh water.</li>
+        <li><strong>Cell Swelling and Damage:</strong> The influx of water into the fish's cells causes them to swell. While some swelling is tolerable, excessive swelling can lead to cellular damage, particularly in sensitive tissues such as the gills and internal organs.</li>
+        <li><strong>Disruption of Physiological Processes:</strong> The osmotic imbalance can disrupt important physiological processes such as ion regulation, kidney function, and gas exchange. This disruption can ultimately lead to organ failure and death.</li>
+        </ol>
+        <p>In summary, when a marine fish is placed in fresh water, the osmotic stress caused by the influx of water into its cells can lead to cellular damage, organ failure, and ultimately death</p>`,
+        ans: B,
+      },
+      {
+        id: 13,
+        question:
+          "What will happen when two equal sized pieces of unripe pawpaw labelled X and Y are dropped into equal volumes of concentrated salt solution and distilled water respectively?",
+        options: [
+          "Pawpaw X will become turgid",
+          "Both will increase in size",
+          "Pawpaw Y will become turgid",
+          "Both will decrease in size",
+        ],
+        remark: `<p>When two equal-sized pieces of unripe pawpaw, labeled X and Y, are dropped into equal volumes of concentrated salt solution and distilled water respectively, the following is likely to happen:</p>
+        <ol>
+        <li>
+        <p>Piece X in concentrated salt solution(Hypertonic):</p>
+        <ul>
+        <li>The concentrated salt solution is hypertonic compared to the cells of the unripe pawpaw.</li>
+        <li>Water will move out of the cells of piece X through osmosis, from an area of lower solute concentration (inside the cells) to an area of higher solute concentration (the salt solution).</li>
+        <li>As a result, piece X will lose water and may shrink or become dehydrated.</li>
+        </ul>
+        </li>
+        <li>
+        <p>Piece Y in distilled water(Hypotonic):</p>
+        <ul>
+        <li>Distilled water is hypotonic compared to the cells of the unripe pawpaw.</li>
+        <li>Water will move into the cells of piece Y through osmosis, from an area of higher solute concentration (the distilled water) to an area of lower solute concentration (inside the cells).</li>
+        <li>As a result, piece Y will gain water and may swell or become turgid.</li>
+        </ul>
+        </li>
+        </ol>
+        <p>In summary, piece X in the concentrated salt solution will likely lose water and shrink, while piece Y in distilled water will likely gain water and swell. This demonstrates the principles of osmosis, where water moves across a semi-permeable membrane from a region of lower solute concentration to a region of higher solute concentration.</p>`,
+        ans: C,
+      },
+      {
+        id: 14,
+        question:
+          "A marine protozoan is likely to have no contractile vacuole mainly because the cytoplasm is",
+        options: [
+          "Isotonic to sea water",
+          "Hypotonic to sea water",
+          "Impervious to sea water",
+        ],
+        ans: A,
+        remark: `<p>A marine protozoan is likely to have no contractile vacoule mainly because the cytoplasm is isotonic or hypertonic to the surrounding seawater.</p>
+        <p>Contractile vacuoles are specialized structures found in many freshwater protozoa and some lower plants, responsible for regulating the water content and osmotic balance within the cell by expelling excess water. In freshwater environments, where the surrounding water is hypotonic compared to the cell's cytoplasm, water tends to move into the cell through osmosis, causing it to swell. Contractile vacuoles help maintain the cell's internal osmotic balance by collecting and expelling excess water.</p>
+        <p>However, in marine environments, such as seawater, the concentration of solutes (such as salts) is typically higher than that of the cytoplasm of marine protozoa. Therefore, water tends to move out of the cell into the surrounding seawater, reducing the risk of cytoplasmic swelling or bursting due to osmotic influx. Consequently, marine protozoa living in isotonic or hypertonic environments may not require contractile vacuoles for osmoregulation, as the surrounding seawater helps maintain their internal osmotic balance.</p>`,
+      },
+      {
+        id: 15,
+        question: "Which of the following can cause shrinkage of living cells?",
+        options: [
+          "Deionized water",
+          "Hypertonic solution",
+          "Hypotonic solution",
+          "Isotonic solution",
+        ],
+        remark:
+          "Hypertonic solution will cause shrinkage to a living cell because it has higher solute concentration than the cell, hence, water flows from the cell to the solution leading to shrinkage.",
+        ans: B,
+      },
+      {
+        id: 16,
+        question:
+          "When a cell is placed in solution and the size of the cell increases, the concentration of solution is said to be",
+        options: ["Isotonic", "Dilute", "Hypotonic", "Hypertonic"],
+        remark: `<p>When a cell is placed in a solution and its size increases, it indicates that the solution is hypotonic.</p>
+        <p>In a hypotonic solution, the concentration of solutes outside the cell is lower than the concentration of solutes inside the cell. As a result, water moves into the cell through osmosis, causing the cell to swell and potentially leading to bursting if the cell cannot accommodate the influx of water.
+        </p>
+        <p>Therefore, an increase in the size of the cell when placed in a solution suggests that the solution has a lower concentration of solutes compared to the cytoplasm of the cell, making it hypotonic.</p>`,
+        ans: C,
+      },
+      {
+        id: 17,
+        question:
+          "A red blood cell placed in distilled water undergoes haemolysis because of",
+        options: ["Exosmosis", "Endo-osmosis", "Diffusion", "Capillarity"],
+        ans: B,
+        remark: `<p>Haemolysis occurs because of endo-osmosis which refers to the movement of solvent molecules (usually water) from an external solution or environment into the interior of a cell or a structure through osmosis .</p>`,
+      },
+    ],
+  },
+
+  {
+    topic: "Evolution Among Viruses, Monera, Protista And Fungi",
+    questions: [
+      {
+        id: 1,
+        question: "Euglena may be classified as a plant because it",
+        options: [
+          "Has chloroplast",
+          "Has a gullet",
+          "Lives in a pond",
+          "Possesses a flagellum",
+          "Has a pellicle",
+        ],
+        ans: A,
+      },
+      {
+        id: 2,
+        question:
+          "Rhizopus (or mucor) obtains its food from dead organic matter extracellularly. It is said to be",
+        options: [
+          "A faculatative parasite",
+          "A saprophyte",
+          "An obligate parasite",
+          "A commensal",
+          "An autotroph",
+        ],
+        ans: B,
+      },
+      {
+        id: 3,
+        question:
+          "Which one of the following options is not true for Mucor or Rhizopus?",
+        options: [
+          "Grows on moist dead organic matter",
+          "Is a plant",
+          "Has cellulose cell wall", // does not have cell wall.
+          "Reproduces asexually by producing spore",
+        ],
+        ans: C,
+      },
+      {
+        id: 4,
+        question:
+          "Which of the following statements is not true of paramecium?",
+        options: [
+          "It is slipper-shaped",
+          "The anterior end is blunt",
+          "The gullet is lined with cilia",
+          "It has an anal pore",
+          "Its food vacuole is not stationary",
+        ],
+        ans: C,
+      },
+      {
+        id: 5,
+        question: "One of the following statements is NOT true of viruses",
+        options: [
+          "They are microrganisms",
+          "They are smaller than bacteria",
+          "They can be seen with an ordinary light microscope",
+          "They cause tobacco disease",
+        ],
+        ans: C,
+      },
+      {
+        id: 6,
+        question:
+          "In Mucor or Rhizopus carbohydrate is absorbed in the form of",
+        options: ["Starch", "Sucrose", "Glucose", "Glycogen", "Arabinose"],
+        ans: C,
+      },
+      {
+        id: 7,
+        question: "In rhizopus, carbohydrate is stored in the form of",
+        options: ["Glucose", "Paramylum", "Glycogen", "Starch", "Oil"],
+        ans: C,
+      },
+      {
+        id: 8,
+        question:
+          "In which of the following groups of animals are flagella and cilia found?",
+        options: [
+          "Flatworms",
+          "Annelids",
+          "Coelenterates",
+          "Protozoa",
+          "Nematodes",
+        ],
+        ans: D,
+      },
+      {
+        id: 9,
+        question: "Which of the following is NOT true of Mucor? It",
+        options: [
+          "Contains chlorophyll",
+          "Grows saprophytically",
+          "Bears spores in sporangium",
+          "Consists of hyphae",
+          "Reproduces by conjugation",
+        ],
+        ans: A,
+      },
+      {
+        id: 10,
+        question: "Viruses are regarded as non-living because they",
+        options: [
+          "Can neither reproduce asexually not sexually",
+          "Cannot survive in their respective environments",
+          "Do not possess characteristics that can be transmited from one generation to the next",
+          "Can neither respire",
+        ],
+        ans: D,
+      },
+      {
+        id: 11,
+        question:
+          "Which of the following features of Euglena is found only in animals?",
+        options: ["Paramylon granules", "Flagellum", "Pellicle", "Pyrenoid"],
+        ans: C,
+      },
+      {
+        id: 12,
+        question: "The hypha of Rhizopus is said to be coenocytic because it",
+        options: [
+          "Does not contain chlorophyll",
+          "Has no cross wall",
+          "Is vacuolated",
+          "Stores oil globules",
+        ],
+        ans: B,
+      },
+      {
+        id: 13,
+        question:
+          "Spirogyra, Euglena and chlamydomonas share many characteristic EXCEPT",
+        options: ["Nutrition", "Reproduction", "Mobility", "Irritability"],
+        ans: C,
+      },
+      {
+        id: 14,
+        question: "What is the function of trichocyst in paramecium?",
+        options: ["Movement", "Defence", "Excretion", "Reproduction"],
+        ans: B,
+      },
+      {
+        id: 15,
+        question: "When a virus is placed in a non-living medium it",
+        options: [
+          "Becomes dehydrated",
+          "Forms spores",
+          "Form flagella",
+          "Becomes crystallized",
+        ],
+        ans: D,
+      },
+      {
+        id: 16,
+        question:
+          "A multinucleate body without internal cell boundaries is characteristic of",
+        options: ["Bryophytes", "Fungi", "Algae", "Gymnosperms"],
+        ans: B,
+      },
+      {
+        id: 17,
+        question: "Viruses are considered to be living organisms because they",
+        options: [
+          "Possess tranmittable characters",
+          "Move from one place to another",
+          "Respond to one stimulation",
+          "Ingest food materials",
+        ],
+        ans: A,
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following characteristics is common to Amoeba and paramecium?",
+        options: ["Oral groove", "Trichocyst", "Contractile vacuole", "Cilia"],
+        ans: C,
+      },
+      {
+        id: 19,
+        question: "Which of the following are non-green plants?",
+        options: ["Euglena", "Fungi", "Spirogyra", "Angiosperms"],
+        ans: B, // fungi is not a green-plant
+      },
+      {
+        id: 20,
+        question:
+          "One of the features which adapts paramecium to its environment is the possession of",
+        options: ["A regular shape", "Two nuclei", "Cilia", "A pellicle"],
+        ans: C,
+      },
+      {
+        id: 21,
+        question:
+          "In which of the following organisms does a single cell performs all the functions of movement, nutrition, growth, excretion and photosynthesis?",
+        options: ["Paramecium", "Euglena", "Amoeba", "Spirogyra"],
+        ans: B,
+      },
+      {
+        id: 22,
+        question: "The spores of mucor are dispersed by",
+        options: ["Water", "Wind", "Insects", "Explosive mechanism"],
+        ans: B,
+      },
+      {
+        id: 23,
+        question: "Members of the phylum protozoa use the contractile vacuole",
+        options: [
+          "To remove excess food",
+          "For movement",
+          "To remove excess water",
+        ],
+        ans: C,
+      },
+      {
+        id: 24,
+        question:
+          "Which of the following is TRUE of the process of conjugation in paramecium?",
+        options: [
+          "Micro-nucleus disintegrates",
+          "Each ex-conjugant divides only once",
+          "Each micronucleus divides twice",
+        ],
+        ans: C,
+      },
+      {
+        id: 25,
+        question: "Virus differ from all forms of life because they",
+        options: [
+          "Have a thick cell wall",
+          "Feed on waste products of other organisms cause infectious diseases",
+          "Require other living cells to multiply",
+        ],
+        ans: C,
+      },
+      {
+        id: 26,
+        question: "The prokaryotic cell type is characterized by a",
+        options: [
+          "Complex cytoplasm in which different regions are poorly defined",
+          "Localization of different regions of the cell into tissue",
+          "Collection of organelles and macromolecular complexes",
+          "Simple cytoplasm with well defined region",
+        ],
+        ans: A,
+      },
+      {
+        id: 30,
+        question: "The animals that move by means of flagella include",
+        options: [
+          "Chlamydomonas and Euglena",
+          "Planaria and Amoeba",
+          "Amoeba and hydra",
+          "Paramecium and planaria",
+        ],
+        ans: A,
+      },
+      {
+        id: 31,
+        question:
+          "The umbrella-shaped fruiting body of a fully developed mushroom is the",
+        options: ["Pileus", "Mycelium", "Basidium", "Stipe"],
+        ans: A,
+      },
+      {
+        id: 32,
+        question:
+          "The similarity among organisms belonging to the same group will be least within each",
+        options: ["Family", "Order", "Kingdom", "Species"],
+        ans: C, // kingdom is too wide... extremely wide...
+      },
+      {
+        id: 33,
+        question:
+          "The cell component that is present in prokaryotic cell is the",
+        options: [
+          "Chloroplast",
+          "Ribosome",
+          "Mitochondrion",
+          "Nuclear envelop",
+        ],
+        ans: B, // bottom line is that prokaryotes lacks cell organelles...
+      },
+      {
+        id: 34,
+        question: "A plant-like feature in Euglena is the",
+        options: ["Pellicle", "Pigment spot", "Eye spot", "Gullet"],
+        ans: B,
+      },
+      {
+        id: 35,
+        question:
+          "The most common charateristics of the fungal hyphae is the possession of",
+        options: [
+          "Cell-like compartments with one nucleus each",
+          "Cell walls that are both rigid and chitinous",
+          "A multicellular mycelium in the subtrate",
+          "Cell-like partitions formed by cross-walls",
+        ],
+        ans: B,
+      },
+      {
+        id: 36,
+        question: "The hyphal wall of fungi is rigid owing to the presence of",
+        options: ["Cell wall", "lignin", "Cellulose", "Chitin"],
+        ans: D, // yeah, chitin is correct. 100%
+      },
+      {
+        id: 37,
+        question:
+          "The chromosomes of members of the kingdom Monera are found within the",
+        options: ["Nucleoplasm", "Cytoplasm", "Nucleus", "Nucleolus"],
+        ans: B,
+      },
+      {
+        id: 38,
+        question:
+          "In terms of the number of individuals, which of the following taxa is most inclusive?",
+        options: ["Order", "Family", "Class", "Species"],
+        ans: C, // class have the highest number in this case
+      },
+      {
+        id: 39,
+        question: "A blue green alga is not a protophyte because",
+        options: [
+          "It is aquatic",
+          "Its cells are prokaryotic", // hmmm // protophytes are eukaryotes.
+          "It cannot move",
+          "It is not a green plant",
+        ],
+        ans: B,
+      },
+      {
+        id: 40,
+        question:
+          "Which of the following is the groups of cells devoid of true nuclei?",
+        options: ["Algae", "Monera", "Fungi", "Genus"],
+        ans: B,
+      },
+      {
+        id: 41,
+        question:
+          "The fungi are a distinct group of eukaryotes mainly because they have",
+        options: [
+          "Spores",
+          "No chlorophyll",
+          "Many fruiting bodies", /// perhaps but it is true...
+          "Sexual and sexual reproduction",
+        ],
+        ans: C,
+      },
+      {
+        id: 42,
+        question: "The organ which is sensitive to light in Euglena is",
+        options: ["Flagellum", "Chloroplast", "Eyespot", "Gullet"],
+        ans: C,
+      },
+      {
+        id: 43,
+        question: "Which of the following is the simplest living organism?",
+        options: ["Virus", "Amoeba", "Chlamydromonas", "Pramecium"],
+        ans: A,
+      },
+      {
+        id: 44,
+        question: "Fungi are referred to as heterotrophs because they",
+        options: [
+          "Lack chlorophyll",
+          "Have mycelium",
+          "Lack roots",
+          "Are filamentous",
+        ],
+        ans: A,
+      },
+      {
+        id: 45,
+        question: "In Mucor or Rhizopus, carbohydrate is absorbed in form of",
+        options: ["Starch", "Sucrose", "Glucose", "Glycogen"],
+        ans: C,
+      },
+      {
+        id: 46,
+        question:
+          "The type asexual reprodution that is common to both paramecium and protist is",
+        options: ["Fragmentation", "Budding", "Sporulaion", "fission"],
+        ans: D,
+      },
+      {
+        id: 47,
+        question: "The simplest form of reproduction is",
+        options: [
+          "Conjugation",
+          "Budding",
+          "Spore formation",
+          "Binary fission", // simplest obviously... binary fission is the simplest...
+        ],
+        ans: D,
+      },
+      {
+        id: 48,
+        question: "What is the function of trichocyst in paramecium?",
+        options: ["Movement", "Defence", "Excretion", "Resproduction"],
+        ans: B,
+      },
+      {
+        id: 49,
+        question: "An organism which exhibits extra-cellular digestion is",
+        options: ["Spirogyra", "Paramecium", "Amoeba", "Rhizopus"],
+        ans: D,
+      },
+      {
+        // bacillus is rod like....
+        id: 50,
+        question: "The shape of a Bacillus is",
+        options: ["Cocci", "Vibrio", "Rod", "Spirochetes"],
+        ans: C,
+      },
+      {
+        // both yeast and hydra bud off...
+        id: 51,
+        question:
+          "The type of reproduction that is common to both hydra and yeast is",
+        options: ["Grafting", "Budding", "Conjugation", "Binary fission"],
+        ans: B,
+      },
+      {
+        id: 52,
+        question: "Blue-green algea belongs to what kingdom?",
+        options: ["Plantae", "Fungi", "Monera", "Protista"],
+        ans: C,
+      },
+    ],
+  },
+
+  {
+    topic: "Evolution among plants",
+    questions: [
+      {
+        id: 1,
+        question: `The following events take place during conjugation in spirogyra 
+          <br />1. The protoplasm in each of the conjugating cells separated from the call wall to form a gamete; the gamate of one filament passes through the conjugation tube to meet the gamete of the other filament. 
+          <br />2The zygote soon become surrounded by a thick brown wall to become zygospore which bursts after a short rest and germinates to produce a new filament 
+          <br />3. The nuclei of the gametes fuse to form a zygote 
+          <br />4. The protuberances meet and where they touch the cell-wall disappears so that a conjugation tube joining the two cells is formed 
+          <br />5. Protuberances appear on the walls of cells of two filaments. 
+          <br />What is the correct sequence in which the above events occur?`,
+        options: [
+          "1,2,3,4,5",
+          "1,2,4,5,3",
+          "3,4,5,2,1",
+          "5,4,1,3,2,",
+          "5,4,3,1,2",
+        ],
+        ans: D,
+      },
+      {
+        id: 2,
+        question: "One of the following statements is NOT true of spirogyra",
+        options: [
+          "It is a simple multicellular plant",
+          "During conjugation, its gametes, which are structurally and physiologically similar, fuse to form a zygote",
+          "It possesses spiral chloroplast which enables the plant to photosynthesize",
+          "Its cells are protected externally by a layer of mucilage",
+          "There are pyrenoids along the chloroplast",
+        ],
+        ans: B,
+      },
+      {
+        id: 3,
+        question:
+          "One of the common feature of the fungi, algae, mosses and ferns is that they",
+        options: [
+          "Are photosynthetic",
+          "Show alternation of generation",
+          "Reproduce by means of conjugation",
+          "Can survive dry conditionns",
+          "Have no seeds", // yeah, they all have no seed... I have to be at my peak again... lol...
+        ],
+        ans: E,
+      },
+      {
+        // I have already have chairs and a board... And I have a big house too. That's enough trust me....
+        id: 4,
+        question: `Which of the following represents the evolutionary sequence in these plants? 
+          <br />1. Flowering plants 
+          <br />2. Ferns, 
+          <br />3. Mosses, 
+          <br />4. Algae, 
+          <br />5. Conifers`,
+        options: [
+          "2->1->4->3->5",
+          "5->4->3->2->1",
+          "2->4->5->1->3",
+          "3->2->4->5->1",
+          "4->3->2->5->1",
+        ],
+        ans: E,
+      },
+      {
+        id: 5,
+        question:
+          "Mosses, liverworts and ferns can be grouped together because they",
+        options: [
+          "Are all aquatic plants",
+          "All growing deserts",
+          "Are seedless plants",
+          "Have undifferentiated plants bodies",
+          "All produce colourless flowers",
+        ],
+        ans: C,
+      },
+      {
+        id: 6,
+        question:
+          "Spirogyra and Mucor can be grouped together as Thallophyta because",
+        options: [
+          "They are unicellular organism",
+          "Their spores could be dispersed by wind",
+          "They are capable of living independent lives",
+          "They reproduce sexually only",
+          "Their bodies are made up of thallus and filaments alternatively",
+        ],
+        ans: E,
+      },
+      {
+        id: 7,
+        question:
+          "Which of the following is INCORRECT of the prothallus of a fern",
+        options: [
+          "Is a flattened heart-shape structure",
+          "Is green because its cells contain chloroplasts",
+          "It is the dominant plant",
+          "Bears the sexual organs",
+          "Is attached to the ground by numerous rhizoids",
+        ],
+        ans: C,
+      },
+      {
+        id: 8,
+        question: "In spirogyra, the pyrenoid",
+        options: [
+          "Excrete waste products",
+          "Is suspended by cytoplasmic strands",
+          "The dominant plant",
+          "usually contains starch",
+          "Is attached to the ground by numerous rhizoids",
+        ],
+        ans: D, // hmmm. Are you sure about this?
+      },
+      {
+        id: 9,
+        question: "Bryophytes are different from flowering plants because they",
+        options: [
+          "live in moist habitats",
+          "Are small plants",
+          "Have small leaves",
+          "Have no vascular tissues", // this is the answer normally, bryophytes are non tracheophytes
+        ],
+        ans: D,
+      },
+      {
+        id: 10,
+        question:
+          "In lower plants like mosses, the structure which performs the functions of roots of higher plants is called",
+        options: ["Root hairs", "Rootles", "Hyphae", "Rhizoids", "Thalli"],
+        ans: D,
+      },
+      {
+        id: 11,
+        question: "Which of the following is NOT true of spirogyra?",
+        options: [
+          "Reproduces by conjugation",
+          "Reproduces by fragmentation",
+          "Consists of branched filaments",
+          "Consists of unbranched filaments",
+        ],
+        ans: C,
+      },
+      {
+        id: 12,
+        question:
+          "In a plant exhibiting alternation d generations, the diploid multicellular stage is known as",
+        options: ["Gametophyte", "Spermatophyte", "Holophyte", "Sporophyte"],
+        ans: D,
+        // haploid is known as gametophyte
+      },
+      {
+        id: 13,
+        question:
+          "A characteristic that distinguishes bryophytes from flowering plants is the",
+        options: [
+          "Possession of true stems and leaves",
+          "Ability to reproduce asexually",
+          "Absence of vascular tissues",
+          "Ability to grows in moist habitats",
+        ],
+        ans: C,
+      },
+      {
+        id: 14,
+        question: "In most true ferns, sporangia are grouped into",
+        options: ["Indusium", "Fronds", "Prothalli", "Sori"],
+        ans: D,
+      },
+      {
+        id: 15,
+        question: "In the reproduction of mosses, water is essential because",
+        options: [
+          "They live in moist habitats",
+          "They cannot reproduce without water",
+          "The male gametes must swim to fertilize the ovum",
+          "They produce spores",
+        ],
+        ans: C,
+      },
+      {
+        id: 16,
+        question: "The term Thallophyta refers to",
+        options: [
+          "Ferns and mosses", // hmm
+          "Algae and simple green plants", // algae and fungi ke
+          "Mosses and liverworts", // bryophytes
+          "Fungi and ferns",
+        ],
+        ans: B,
+      },
+      {
+        id: 17,
+        question:
+          "The prothallus of a fern is equivalent to the gametophyte generation of moss because it",
+        options: [
+          "Is inconspicuous",
+          "Has rhizoids",
+          "Bears sexual organs",
+          "Is multicellular",
+        ],
+        ans: C,
+      },
+      {
+        id: 18,
+        question:
+          "The algae, bryophytes and pteridophytes are similar in that they",
+        options: [
+          "Are sea weeds",
+          "Have no vascular tissues",
+          "Require moisture for fertilization", // yeah,,,
+          "Are microscopic plants",
+        ],
+        ans: C,
+      },
+      {
+        id: 19,
+        question: "The spores of ferns are dispersed by",
+        options: ["Wind", "Water", "Insect", "Explosive mechanism"],
+        ans: A,
+      },
+      {
+        // this is becoming repetitive...
+        id: 20,
+        question: "In bryophytes, sex organs are produced in the",
+        options: ["Gametophyte", "Rhizoid", "Protonema", "Sporophyte"],
+        ans: A,
+      },
+      {
+        id: 21,
+        question:
+          "Which of the following are differntiated into true roots, stems and leaves?",
+        options: ["Algae", "Schizophyta", "Pteridophyta", "Bryophyta"],
+        ans: C, // these are cones etc...
+      },
+      {
+        id: 22,
+        question: "The annulus of fern sporangium helps in",
+        options: [
+          "Spore dispersal", // annulus helps in dispersal of spores .... hmm
+          "Conduction of minerals salt",
+          "Trapping or light energy",
+          "Water retention",
+        ],
+        ans: A,
+      },
+      {
+        id: 23,
+        question:
+          "Which of the following correctly summarizes the life cycle of a fern plant?",
+        options: [
+          "Spore -> prothallus -> thallus -> sporangium",
+          "Male and female- ->gametangia -> zygospore -> sporangium -> spores",
+          "Spore -> thallus -> spermatozoa -> ovum -> sporangium",
+          "prothallus -> spermatozoid ->egg -> cell -> leafy plant -> sporangium -> spore",
+        ],
+        ans: D,
+      },
+      {
+        id: 24,
+        question:
+          "in which of these features do bryophytes differ from pteridophytes?",
+        options: [
+          "Absence of flower",
+          "Aiternation of generation",
+          "Dependence on water for reproduction",
+          "presence of a vascular system",
+        ],
+        ans: D,
+      },
+      {
+        id: 25,
+        question:
+          "Which of the following organs or cell components are common to both the sporophyte and the gametophyte of a fern?",
+        options: ["Rhizoids", "Roots", "Chloroplasts", "Leaves"],
+        ans: C,
+      },
+      {
+        id: 26,
+        question:
+          "Which is the correct order in an evolutionary sequence for the following plant groups?",
+        options: [
+          "Bacteria -> fern -> algae ->mosses -> seed plant",
+          "Bateria -> ferns -> mosses -> algae -> seed plant",
+          "Bacteria -> algae -> mosses -> fern -> seed plant",
+          "Bacteria -> mosses -> algae -> ferns-> seed plant",
+        ],
+        ans: C,
+      },
+      {
+        id: 27,
+        question:
+          "One commoon characteristic of fungi, algae, mosses and ferns is that they",
+        options: [
+          "show alternation of generations",
+          "reproduce sexually by conjugation",
+          "produce spores that are dispersed",
+          "possess chlorophyll in their tissue",
+        ],
+        ans: C,
+      },
+      {
+        id: 28,
+        question: "Which of the following perform similar functions?",
+        options: [
+          "Ascospores and ascocarp",
+          "antherozoids and rhizoid",
+          "Sorus and indusium",
+          "Strobili and inflorescene",
+        ],
+        ans: C,
+        // what is sorus and what is indusium
+      },
+      {
+        id: 29,
+        question: "In ferns, the sporophyte",
+        options: [
+          "Develop from a haploid zygote",
+          "Reproduce sexually to produce spores",
+          "Is haploid and dependent on the gametophyte",
+          "is diploid and independent of the gametophyte",
+        ],
+        ans: D,
+      },
+      {
+        id: 30,
+        question:
+          "In which of the following organism does each cell combine the function of nutrition, reproduction and growth",
+        options: ["Rhizopus", "Dryopteris", "Brachymenium", "Spirogyra"],
+        ans: D,
+      },
+      {
+        id: 31,
+        question:
+          "One distinctive feature in the life history of liverworts is that they exhibit",
+        options: [
+          "Alternation of generation",
+          "Vegetative reproduction",
+          "Asexual reproduction",
+          "Sexual reproduction",
+        ],
+        ans: A,
+      },
+      {
+        id: 32,
+        question:
+          "The absence of special food and water-conducting system restricts the body size in",
+        options: [
+          "Algae, liveworts and mosses",
+          "liverworts, mosses and fern",
+          "The bryophytes and the pteridophytes",
+        ],
+        ans: A,
+      },
+      {
+        id: 33,
+        question: "The dominant phase in life cycle of a bryophyte is the",
+        options: ["Gametangium", "Sporophyte", "Gametophyte", "Prothallus"],
+        ans: c,
+      },
+      {
+        id: 34,
+        question: "A water medium is necessary for fertilization in",
+        options: ["Fungi", "Conifers", "Ferns", "Angiosperms"],
+        ans: C,
+      },
+      {
+        id: 35,
+        question:
+          "Alternation of asexual and sexual modes of reproduction is found in",
+        options: ["Blue-green algae", "Euglena", "Fern", "Maize"],
+        ans: C,
+      },
+      {
+        id: 36,
+        question: "The dominant phase in the life cycle of a fern is the",
+        options: ["Prothallus", "Sporophyte", "Antheridium", "Gametophyte"],
+        ans: B,
+        // the dominant in ferm is sporophyte. wow. makes sense and cool....
+      },
+      {
+        id: 37,
+        question: "In bryophytes, sex organs are produced in the",
+        options: ["Phizoidrotonema", "Sporophyte", "Gametophyte", "Rhizoid"],
+        ans: C,
+      },
+      {
+        id: 38,
+        question: "seed plants are divided into",
+        options: [
+          "monocotyledons and cotyledons",
+          "thallophytes and bryophytes",
+          "tracheophytes and ferns",
+          "angiosperms and gymnosperms",
+        ],
+        ans: D,
+      },
+      {
+        id: 39,
+        question: "Alternation of generation is a feature shown in",
+        options: ["mosses", "fungi", "grasses", "conifers"],
+        ans: A,
+      },
+      {
+        id: 40,
+        question: "The spores of ferns are dispersed by",
+        options: ["wind", "water", "insecs", "explosive mechanism"],
+        ans: A,
+      },
+      {
+        id: 41,
+        question: "Which of the following is the most advanced plant?",
+        options: ["merchantia", "dryopteris", "chlamydomonas", "spirogyra"],
+        ans: B,
+        // dryopteris is a fern, I am sure of c and d but a hmmm...
+      },
+      {
+        id: 42,
+        question: "Double fertilization is a unique feature of",
+        options: ["angiosperm", "bryophytes", "pteridophytes", "algae"],
+        ans: A,
+        // double fertilization is a major characteristic of flowering plants (angiosperms)
+      },
+      {
+        // fragmentation or spore
+        id: 43,
+        question: "Asexual reproduction in spirogya is by",
+        options: ["fragmentation", "binary fission", "conjugation", "budding"],
+        ans: A,
+      },
+      {
+        // just met this, annulus of a fern helps in spore dispersal
+        id: 44,
+        question: "The annulus of fern sporangium helps in",
+        options: [
+          "spore disperseal",
+          "conduction of mineral salt",
+          "trapping of light energy",
+          "water retention",
+        ],
+        ans: A,
+      },
+      {
+        id: 45,
+        question: "Alternation of generation is present in which of these?",
+        options: ["ferns", "fungi", "coelenterate", "moneran"],
+        ans: A,
+      },
+      {
+        id: 46,
+        question: "Which of the following are thallophytes?", // hmm... perhaps thallophytes have a broad meaning
+        options: [
+          "mosses and ferns",
+          "mosses and liverworts",
+          "fungi and algae",
+          "fungi and ferns",
+        ],
+        ans: A,
+        // Thallophytes are a polyphyletic group of non-mobile organisms that are grouped together on the basis of similarity of characteristics but do not share a common ancestor. They were formerly categorized as a sub-kingdom of kingdom Plantae. These include lichens, algae, fungus, bacteria and slime moulds and bryophytes.  makes sense... Tolani, thank you...
+      },
+    ],
+  },
+
+  {
+    topic: "Higher Plants",
+    questions: [
+      {
+        id: 1,
+        question:
+          "One of the signficant difference between roots and stem is that",
+        options: [
+          "branch root originate in the pericycle while branch stems do not", // this is right from what I remembered the last time..
+          // the thing seeems easy to study while reviewing than studying per se...
+          "stems are always above the ground while roots are always below the ground",
+          "stem are positive geotropic while roots are negative geotropic",
+          "stem are sometimes used in storage and roots are never so used",
+          "stem grow in both length and circumference while root grow only in length",
+        ],
+        ans: A,
+      },
+      {
+        id: 2,
+        question: "Roots hair are developed from the",
+        options: ["root apex", "epidermis", "vascuar bundles", "endodermis"],
+        ans: B,
+      },
+      {
+        id: 3,
+        question:
+          "In a dicot leaf, guard cells differ from other epidermal cells because they",
+        options: [
+          "have no definite shape",
+          "lack nuclei",
+          "are smaller",
+          "contain chloroplast", // guard cell has chlorophyll...
+          "lack vacuole",
+        ],
+        ans: D,
+      },
+      {
+        id: 5,
+        question: "Herbs differ from shrubs because they",
+        options: [
+          "do not produce fruits",
+          "are useful to herbalists",
+          "do not become woody", // yeah, herbs do not become woody
+          "are only annuals",
+          "are only perennials",
+        ],
+        ans: C,
+      },
+      {
+        id: 6,
+        question:
+          "Which of the following is not a characteristic of monocot plants?",
+        options: [
+          "occurrence of secondary thickening", // eudicot exhibit secondary thickening
+          "parallel venation",
+          "scattered vascular bundles",
+          "flora parts arranged in threes",
+          "perianth is usually insignificant",
+        ],
+        ans: A,
+      },
+      {
+        id: 39,
+        question:
+          "Which of the following statements is NOT true of he piliferous layer of a root?",
+        options: [
+          "it has a very thin cuticle",
+          "is the outermost layer of the cortex",
+          "may bear root hairs",
+          "breaks down as the roots ages",
+          "is replaced by cork in old roots",
+        ],
+        ans: A,
+      },
+      {
+        id: 7,
+        question: "Which of the following is seed bearing?",
+        options: [
+          "mosses",
+          "whisting pine",
+          "algal filaments",
+          "liverwort",
+          "fern fronds",
+        ],
+        ans: B,
+      },
+      {
+        id: 8,
+        question: "In an angiosperm leaf, the xylem is",
+        options: [
+          "beside the phloem",
+          "surrounded by the phloem",
+          "above the phloem",
+          "around the phloem",
+          "in separate bundles from phloem",
+        ],
+        ans: C,
+      },
+      {
+        id: 9,
+        question:
+          "Which of the following pairs are fully adapted to terrestrial life?",
+        options: [
+          "ferns and algae",
+          "fern and mosses",
+          "bryophyte and flowering plants",
+          "flowering plants and conifers",
+        ],
+        ans: D,
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following is common to a dicotyledonous stem and a monocotyledonous root?",
+        options: [
+          "medulary rays",
+          "central pith",
+          "wide cortex",
+          "narrow cortex",
+          "pericyclic fibres",
+        ],
+        ans: B,
+      },
+      {
+        id: 11,
+        question:
+          "The stem differs from the root in having the xylem and phloem strands",
+        options: [
+          "on the same radii",
+          "scattered",
+          "on alternated radii",
+          "towards the pith",
+        ],
+        ans: A,
+      },
+      {
+        id: 12,
+        question:
+          "The correct sequence of tissue in the anatomy of a young dicotyledonous stem from inside to outside is",
+        options: [
+          "pith, phloem, cambium, xylem, parenchyma, collenchyma and epidermis",
+          "xylem, phloem, cambium, cortex, endodermis, collenchyma and epidermis",
+          "pith, xylem, cambium, phloem, collenchyma, parenchyma and epidermis",
+          "phloem, xylem, cambium, cortex, encodermis, collenchyma and epidermis",
+        ],
+        ans: C,
+      },
+      {
+        id: 13,
+        question:
+          "Secondary thickening is initiated in a dicotyledonous stem by the",
+        options: [
+          "xylem parenchyma",
+          "secondary phloem",
+          "endodermis",
+          "cambium", // CORRECT
+        ],
+        ans: D,
+      },
+      {
+        id: 14,
+        question:
+          "Which of the following statement gives the BEST description of bark?",
+        options: [
+          "tissues outside the vascular cambium",
+          "cork like tissues found in stems",
+          "brown tissues never found in primary growth",
+          "cork-like tissues of old trees",
+        ],
+        ans: B,
+      },
+      {
+        id: 15,
+        question:
+          "In the transverve section of the leaf of maize, vascular bundles are arranged in",
+        options: ["arrow", "one circle", "alternate positions", "two circles"],
+        ans: B,
+      },
+      {
+        id: 16,
+        question: "Double fertilization is unique feature of",
+        options: ["angiosperms", "bryophytes", "pteridophytes", "algae"],
+        ans: A,
+      },
+      {
+        id: 17,
+        question:
+          "Anglosperms and gymnosperms belong to the plant group known as",
+        options: ["schizophyta", "bryophyta", "pteridophyta", "spermatophyta"],
+        ans: D,
+      },
+      {
+        id: 18,
+        question: "To faciliate gaseous exchange, breathing roots have",
+        options: ["stomata", "mitochondria", "cuticle", "lenticles"],
+        ans: D, // lenticels facilitate breathing roots...
+      },
+      {
+        id: 19,
+        question:
+          "A wide pith with a ring of conduction tissue is characeristic of roots of",
+        options: ["maize", "sunflower", "bean", "okra"],
+        ans: B,
+      },
+      {
+        id: 20,
+        question: "Stomata pores open when there is",
+        options: [
+          "an increase in the sugar content of guard cells",
+          "a decrease in the osmotic concenration of guard cells",
+          "a decrease in the sugar conten of mesopyhll cells",
+          "an increase in he sugar content of mesophyll cells",
+        ],
+        ans: A,
+      },
+      {
+        id: 21,
+        question:
+          "Which of the following structures is capable of producing more tissues in the stem of a herbaceous flowering plant?",
+        options: ["epidermis", "pericycle", "xylem", "cambium"],
+        ans: D,
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following features are all associated with monocots?",
+        options: [
+          "fibrous roots aystem, branched network of veins and one seed leaf",
+          "fibrous roots system, two seed leaves and flora parts in threes",
+          "one seed leaf, petals in threes or groups or threes and parallel venation of leaves",
+          "one seed leaf, one-veied leaves and petals in three or multiple of three",
+        ],
+        ans: C,
+      },
+      {
+        id: 23,
+        question:
+          "Peripherial arrangement of vascular tissues in dicots is a characteristic of the internal structure of the",
+        options: ["leaf", "petiole", "stem", "roots"],
+        ans: C,
+      },
+      {
+        id: 24,
+        question: "Most monocots are easily recognized by their",
+        options: [
+          "short leaves with petioles",
+          "long and sword-like leaves",
+          "long and palm-like leaves",
+          "short leaves with many veinlets",
+        ],
+        ans: B,
+      },
+      {
+        id: 25,
+        question:
+          "In the internal structure of plants, a wide pith in the centre is common to",
+        options: [
+          "dicot stems and monocot stem",
+          "dicot stems and monocot roots",
+          "dicot roots and monocot roots",
+          "dicot roots and monocot stems",
+        ],
+        ans: B,
+      },
+      {
+        id: 27,
+        question: "Angiosperms and gymnosperms belong to the class",
+        options: ["schizophyta", "spermatophyta", "pteridophyta", "bryophyta"],
+        ans: B,
+      },
+      {
+        id: 28,
+        question:
+          "In the traverse section of a dicot stem the region lying between the endodermis and vascular bundle is the",
+        options: ["parenchyma", "pericycle", "phloem", "hypodermis"],
+        ans: B,
+      },
+      {
+        id: 29,
+        question: "Monocot stems differ from dicot stems in that monocots have",
+        options: [
+          "no cambium", //cambium is not present in monocot...
+          // but everything seem to me like revision, despite all these years... probably that's why everything is boring to read sef...
+          "no pith",
+          "fewer vascular bundles",
+          "phloems with parenchyma",
+        ],
+        ans: A,
+      },
+      {
+        id: 30,
+        question: "The opening and closing of the stomata are regulated by",
+        options: ["transpiration", "respiration", "diffusion", "osmosis"],
+        ans: D,
+      },
+      {
+        id: 31,
+        question:
+          "In  dicotylendons stem, the zone between the epidermis and the pericycle is the",
+        options: ["cortex", "stele", "phloem", "xylem"],
+        ans: A,
+      },
+      {
+        id: 40,
+        question:
+          "Which of the following is true of the transverse section of a dicot stem?",
+        options: [
+          "the xylem is more interiorlyy located than the phloem",
+          "the cambium lies beween the cortex and vascular bundles",
+          "vascular bundles are randomly scattered within the cortex",
+          "the epidermis completely encircled by the cortex",
+        ],
+        ans: A,
+      },
+      {
+        id: 32,
+        question: "Seed plants are divided into",
+        options: [
+          "monocotyledons and dicotyledons",
+          "tracheophytes and ferns",
+          "tracheophytes and bryophytes",
+          "angiosperms and gymonosperms",
+        ],
+        ans: D,
+      },
+      {
+        id: 33,
+        question:
+          "Plants that show secondary growth are usually found among the",
+        options: ["halophye", "pteridophye", "monocotyledons", "dicotyledons"],
+        ans: D,
+      },
+      {
+        id: 34,
+        question:
+          "Which of the following plants structures lacks a waterproof cuticle?",
+        options: ["leaf", "stem", "root", "shoot"],
+        ans: C,
+      },
+      {
+        id: 35,
+        question:
+          "Which of the following enables secondary thickening in plants?",
+        options: [
+          "colenchyma and xylem cells",
+          "vascular cambium and colenchyma cells",
+          "vascular cambium and cork cambium",
+          "cork cambium and cork sclerenchyma",
+        ],
+        ans: C,
+      },
+      {
+        id: 36,
+        question:
+          "Seed plants are the most dominant vegatation on land because of",
+        options: [
+          "their motile gametes",
+          "their ability to photosythesize",
+          "efficient seed dispersal",
+          "availability of water",
+        ],
+        ans: C,
+      },
+      {
+        id: 37,
+        question:
+          "In the transverse section of the leaf of maize vascular bundles are arranged in",
+        options: ["row", "one circle", "alternate positions", "two circle"],
+        ans: B,
+      },
+      {
+        id: 38,
+        question:
+          "The layer of dicot stem impermeable to liquids and gases is the?",
+        options: ["cambium", "cortex", "cuticle", "endodermis"],
+        ans: D,
+      },
+    ],
+  },
+
+  {
+    topic: "Evolution Among Invertebrates",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Which of the following animal is NEVER a secondary host of tapeworms?",
+        options: ["cow", "fish", "pig", "man", "dog"],
+        ans: D,
+        // alright, man is a primary host of tapeworms
+      },
+      {
+        id: 2,
+        question:
+          "The two types of human tapeworms can be distinguished by the presence or absence of",
+        options: ["scolex", "hook", "head", "sucker", "proglottis"],
+        ans: B,
+        // on have hook and the other doesn't have hook. looks cool
+      },
+      {
+        id: 3,
+        question: "A tapeworm has no alimentary canal because",
+        options: [
+          "it is autotrophic",
+          "it does not feed",
+          "it has no enzymes",
+          "its body absorbs digested food",
+          "the suckers on the scolex suck blood",
+        ],
+        ans: D,
+      },
+      {
+        id: 4,
+        question:
+          "Flatworms and roundworms are said to be invertebraes because",
+        options: [
+          "they are small animals",
+          "they can live inside the vertebrates of some of them are unicellular",
+          "they have no backbones",
+          "they are parasitic",
+        ],
+        ans: C, // invertebrates are animals with no backbones my nigga
+      },
+      {
+        id: 5,
+        question: "Which of these worms is beneficial to man?",
+        options: [
+          "hookworm",
+          "tapeworm",
+          "pundworm",
+          "earthworm",
+          "guinea worm",
+        ],
+        ans: D,
+        // actually earthworm is useful but people still kill it. Imagine...
+      },
+      {
+        id: 6,
+        question: "Exoskeleton is NOT found in the",
+        options: [
+          "maggot",
+          "mosquito larva",
+          "earthworm", // normally, earthworm doesn't have exoskeleton, but how come the others have. hmm
+          "caterpillar",
+          "termite",
+        ],
+        ans: C,
+      },
+      {
+        id: 7,
+        question:
+          "The part used by tapeworm to fasten itself to host's intensine are the",
+        options: [
+          "neck and sucker",
+          "hooks and suckers", // yupyup
+          "rostellum and suckers",
+          "young proglottis and neck",
+          "rostellum, hooks and suckers",
+        ],
+        ans: B,
+      },
+      {
+        id: 8,
+        question: "Which of the animals is radically symmetrical?",
+        options: ["squid", "hydra", "snail", "cockroach"],
+        ans: B,
+        // I still remember quite well about the radial symmetry of hydra
+      },
+      {
+        id: 9,
+        question: "Which of the following lack chaetae, tentacles and antennae",
+        options: ["snail", "crab", "millipede", "earthworm"],
+        ans: C,
+      },
+      {
+        id: 10,
+        question: "A good example of diploblatic organism is",
+        options: ["amoeba", "hydra", "earthworm", "roundworm"],
+        ans: B,
+        // radial symmetry goes with diploblastic
+      },
+      {
+        id: 11,
+        question: "The function of the clitellum in the earthworm is to",
+        options: [
+          "aid digestion",
+          "prevent desication",
+          "assit locomotion",
+          "secret cocoon",
+          // yupyup
+        ],
+        ans: D,
+      },
+      {
+        id: 12,
+        question:
+          "In tapeworm, the two structure that run through the length or the body are the",
+        options: [
+          "nerves cord and excretory duct",
+          "sperm duct and nerve cord",
+          "genital pore and excretory duct",
+          "sperm duct and genital pore",
+        ],
+        ans: A,
+        // sure
+      },
+      {
+        id: 13,
+        question: "Which of the following NOT charateristics of snail?",
+        options: [
+          "bilateral symmetry",
+          "chitinous exoskeleton",
+          "muscular foot",
+          "soft unsegmented body in mantle",
+        ],
+        ans: B,
+      },
+      {
+        id: 14,
+        question: "The following organisms are hermaphrodites EXCEPT",
+        options: ["snail", "taenia", "schistosoma", "earthworm"],
+        ans: C,
+      },
+      {
+        id: 15,
+        question: "Parasitic forms are NOT found among",
+        options: ["platyhelminithes", "nematodes", "mollusccs", "annelids"],
+        ans: c,
+      },
+      {
+        id: 16,
+        question: `Which of the following set of organism represent the current trend from simple to complex structural oraganization? 
+          <br />
+          1. mollusca 2. platyhelminthes 3. nematoda 4. protozoa`,
+        options: ["4-1-2-3", "4-3-2-1", "4-2-1-3", "4-2-3-1"], // shuffling up answers is difficult... but I can do it... another feature loading
+        ans: D,
+      },
+      {
+        id: 17,
+        question: "A characteristic of the phylum coelenterate is that",
+        options: [
+          "most of then marine",
+          "they possess a gut with a single opening",
+          "they posses numerous pores on the body",
+          "they are bilateral symmetrical",
+        ],
+        ans: B,
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following phyla have members with both internal and external segmentation?",
+        options: ["platyhelminthes", "nematoda", "annelida", "mollusca"],
+        ans: C,
+      },
+      {
+        id: 19,
+        question: "The body of snail is divided into head",
+        options: [
+          "thorax and abodmen",
+          "visceral mass and abdomen",
+          "thorax and foot",
+          "visceral mass and foot",
+        ],
+        ans: D,
+      },
+      {
+        id: 20,
+        question: "Hydra removes undigested food by",
+        options: [
+          "paasing it through annus",
+          "means of a contractile vacuole",
+          "passing it through the mouth",
+          "degesting it through the body surface",
+        ],
+        ans: C,
+      },
+      {
+        id: 21,
+        question:
+          "Which of the following group of invertebrates reproduce by budding?",
+        options: ["Arthropoda", "annelida", "mollusca", "coelenterata"],
+        ans: D,
+      },
+      {
+        id: 22,
+        question: "In the tapeworm, the suckers on the scolex are used for",
+        options: [
+          "sucking the blood of the host",
+          "holding fast to the host",
+          "reproduction",
+          "locomotion",
+        ],
+        ans: B,
+      },
+      {
+        id: 23,
+        question: "Sting cells noramlly found in",
+        options: ["flatworm", "hydra", "snails", "paramecium"],
+        ans: B,
+      },
+      {
+        id: 24,
+        question: "In earthworm, the cocoon is secreted by the",
+        options: ["chaeta", "protomium", "peristomium", "clitellum"],
+        ans: D,
+      },
+      {
+        id: 25,
+        question: "The respiration organ in the land snail is the",
+        options: ["tentancle", "foot", "mantle", "radula"],
+        ans: C,
+      },
+      {
+        id: 26,
+        question:
+          "A major difference between platyhelminthes and coelenteraes is that platyhelminthes",
+        options: [
+          "are multicelluar",
+          "have develop a mesoderm",
+          "reproduce sexually",
+          "reproduce asexually",
+        ],
+        ans: B,
+      },
+      {
+        id: 27,
+        question:
+          "The essential structural difference between hydra and tapeworm is that while hydra,",
+        options: [
+          "has tentacles, tapeworm is parasitic",
+          "is diploblasic, tapeworm is triploblastic",
+          "has a mouth, tapeworm feeds by suckers",
+          "has mesoderm, tapeworm has mesogloea",
+        ],
+        ans: B,
+      },
+      {
+        id: 28,
+        question:
+          "The soil swallowed by the earthworm to form the worm cast is ground up in the",
+        options: ["clitellum", "prostomium", "mouth", "gizzard"],
+        ans: D,
+      },
+      {
+        id: 29,
+        question: "The cnidoblast cells found in hydra are use for",
+        options: [
+          "reproduction",
+          "offence and defence",
+          "locomtion and nurtition",
+          "food collection",
+        ],
+        ans: B,
+      },
+      {
+        id: 30,
+        question: "Annelids differ from nematodes in that they",
+        options: [
+          "exhibit bilateral symmetry",
+          "are triplibastic",
+          "are metamerically segmented",
+          "posses complete digestive system",
+        ],
+        ans: C,
+      },
+      {
+        id: 31,
+        question: "In snails, the hard calcereous shell are secreted by the",
+        options: ["radula", "ctenidium", "pneumostome", "mantle"],
+        ans: D,
+      },
+      {
+        id: 32,
+        question: "The habitat of cysticercus of taenia solium is",
+        options: [
+          "alimentary canal of cattle",
+          "muscles of pig",
+          "alimentary canal or pig",
+          "muscles of casttle",
+        ],
+        ans: B,
+      },
+      {
+        id: 33,
+        question:
+          "The division of a body into two equal halves along a longitudinal plane is called",
+        options: [
+          "a bilateral symmentary",
+          "traverse section",
+          "radial symmetary",
+          "longitudinal section",
+        ],
+        ans: A,
+      },
+      {
+        id: 34,
+        question: "Coelom is absent in the class of animals termed",
+        options: ["mollusca", "reptila", "arthropoda", "coelenterata"],
+        ans: D,
+      },
+      {
+        id: 35,
+        question: "An example of a radially symmetrical organism is",
+        options: ["planaria", "hydra", "tapeworm", "roundworm"],
+        ans: B,
+      },
+      {
+        id: 36,
+        question: "The leech and earthworm belong to the",
+        options: ["molluscs", "crustaceans", "arachnids", "annelids"],
+        ans: D,
+      },
+      {
+        id: 37,
+        question:
+          "One primitive feature of the coelenterates is the possession of",
+        options: [
+          "a dorsal mouth",
+          "radial symmetry",
+          "bilateral symmetry",
+          "a false foot",
+        ],
+        ans: B,
+      },
+      {
+        id: 38,
+        question: "Radial symmetry is a feature common to the",
+        options: [
+          "platyhelminthes",
+          "nematodes",
+          "coelenterates",
+          "arthropods",
+        ],
+        ans: C,
+      },
+      {
+        id: 39,
+        question:
+          "Which of the following is the most advanced in the evolutionary trend of animals?",
+        options: ["liver fluke", "earthworm", "snail", "cockroach"],
+        ans: D,
+      },
+      {
+        id: 40,
+        question:
+          "An animal body that can be cut along its axis in any plane to give two identical part is said to be",
+        options: [
+          "radically symmetrical",
+          "bilateral symmetrical",
+          "asymmetrical",
+          "symmetry",
+        ],
+        ans: A,
+      },
+      {
+        id: 41,
+        question: "Tanenia solium can be found in",
+        options: ["goat", "dog", "pig", "cow"],
+        ans: C,
+      },
+      {
+        id: 43,
+        question:
+          "The nephiridium is used in which of the following organisms ",
+        options: ["roundworms", "flatworms", "earthworms", "insects"],
+        ans: C,
+      },
+      {
+        id: 44,
+        question: "The flame cell excretory organ of",
+        options: ["arthropoda", "crutaceans", "flatworms", "molluscs"],
+        ans: C,
+      },
+    ],
+  },
+
+  {
+    topic: "The Arthropods",
+    questions: [
+      {
+        id: 1,
+        question: "Which of these is not true of the insect? The possession of",
+        options: [
+          "Two pairs of antennae",
+          "Jointed appendages",
+          "Exoskeleton",
+          "three pairs of legs",
+          "segmented body",
+        ],
+        // insects have 1 pair of antennae not two pairs....
+        ans: "A",
+      },
+      {
+        id: 2,
+        question:
+          "Insects show considerable power of water conservation. This is due to the fact that",
+        options: [
+          "The chitinous cuticle is impregnaed with tanned proteins",
+          "Nitrogenous waste is eliminated as urea",
+          "Chitin is impermeable to water",
+          "The malphigian tubules are impermeable to water",
+          "The cuticle is covered with wax",
+        ],
+
+        ans: "C",
+      },
+      {
+        id: 3,
+        question:
+          "A mosquito which produces eggs which float, and whose larve lie horizontal to the water surface, also rests at an angle on a vertical surface. This type of mosquito is",
+        options: [
+          "Anopheles",
+          "Aedes Anopheles",
+          "Culex",
+          "Tiger mosquito",
+          "none of the above",
+        ],
+
+        ans: "A",
+      },
+      {
+        id: 4,
+        question:
+          "Which of the following insects has an <strong>incomplete metamorphosis</strong> during its life cycle?",
+        options: ["Butterfly", "Bee", "Mosquito", "Housefly", "Grasshopper"],
+
+        ans: "E",
+      },
+      {
+        id: 5,
+        question: "Which of these statements is NOT true of insects?",
+        options: [
+          "They are anthropods",
+          "Their body is divided into three distint regions of head, thorax and abdomen",
+          "Their thorax comprises three segments, only two of which bear a pair of appendages each",
+          "Respiration is by means of trachea",
+          "They undergo metamorphosis",
+        ],
+        ans: "C",
+        remark:
+          "The thorax has three segments, each bearing a pair of jointed walking legs(appendages)",
+      },
+      {
+        id: 6,
+        question: "A centipede differs from a millipede by its",
+        options: [
+          "colour",
+          "numerous abdominal segment",
+          "paired legs on each abdominal segment",
+          "poison claws",
+          "cylindrical body",
+        ],
+        ans: "D",
+        remark: "Centipede has poison claws while millipede is an herbivore",
+      },
+      {
+        id: 7,
+        question: "Jointed skeleton is absent in the",
+        options: ["Cockroach", "Spider", "Milipede", "Snail", "Dragon fly"],
+        ans: "D",
+      },
+      {
+        id: 8,
+        question:
+          "Which of the following invertebrates does NOT possess antennae?",
+        options: ["Centipde", "Crustacean", "Milipede", "Insect", "Spider"],
+        // the spider doesn't have an antennae actually...
+        ans: "E",
+      },
+      {
+        id: 9,
+        question: "Each of the following is an anthropod EXCEPT the",
+        options: ["crab", "spider", "snail", "milipede", "cockroach"],
+        ans: "C",
+        remark: "Snail is a mollusc",
+      },
+      {
+        id: 10,
+        question: "Incomplete metamorphosis occurs in the",
+        options: ["Butterfly", "Grasshopper", "Mosquito", "Housefly"],
+
+        ans: "B",
+      },
+      {
+        id: 11,
+        question:
+          "When the original king and queen of termites die, they are replaced by",
+        options: [
+          "the king and queen of another colony",
+          "some adult reproductive from another colony",
+          "some adult workers which are specially fed to breed",
+          "developing nymphs nurtured as secondary reproductive",
+        ],
+        ans: "D",
+      },
+      {
+        id: 12,
+        question: "The male cockroach differ from female by having",
+        options: [
+          "mandibles",
+          "a pair of styles",
+          "spiracles",
+          "a pair of cerci",
+        ],
+        ans: "B",
+      },
+      {
+        id: 13,
+        question: "The crayfish is an arthropod because",
+        options: [
+          "Its body consist of a cephalothorax and an abdomen",
+          "It has pair of antennae and antennules",
+          "Every segment of is body carries a pair of appendages",
+          "Its body is covered with an exoskeleton made of chitin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 14,
+        question:
+          "In the life history of a butterfly, destruction of crops is caused by the",
+        options: ["Maggot", "Nymph", "Caterpillar", "Pupa"],
+
+        ans: "C",
+      },
+      {
+        id: 15,
+        question: "Insects and millipede have many features in common EXCEPT",
+        options: [
+          "Exoskeleton",
+          "Jointed, appendages",
+          "Compound eyes",
+          "Segmented body",
+        ],
+
+        ans: "C",
+      },
+      {
+        id: 16,
+        question:
+          "Which of the following is a common characteristic in crustaceans?",
+        options: [
+          "possession of a pair of antennae",
+          "possession of two pairs of antennae",
+          "each segment has a pair of walking legs",
+          "four pairs of walking legs on the cephalothorax",
+        ],
+
+        ans: "B",
+      },
+      {
+        id: 17,
+        question: "The pedipalp in spiders are used for",
+        options: ["Grasping", "Walking", "Feeling", "Web spinning"],
+        ans: "A",
+        remark: `Grasping is the primary function of pedipalp,feeling is a secondary function so grasping is a better choice here.`,
+      },
+      {
+        id: 18,
+        question: "The function of maxillipeds in crayfish is to aid",
+        options: ["Walking", "Swimming", "Feeding", "Respiration"],
+        ans: "C",
+      },
+      {
+        id: 19,
+        question:
+          "Which of the following insects undergoes incomplete metamorphosis?",
+        options: ["Mosquito", "Termite", "Housefly", "Moth"],
+
+        ans: "B",
+      },
+      {
+        id: 20,
+        question: "The butterfly is of great economic importance because",
+        options: [
+          "Of its use in scientific studies",
+          "It sucks nectar from lower",
+          "It adds to the beauty of the environment",
+          "It pollinates flower of crops and other plants",
+        ],
+
+        ans: "D",
+      },
+      {
+        id: 21,
+        question:
+          "Which of the following insects lay its eggs in horny, purse-like cases?",
+        options: ["Mosquito", "Butterfly", "Termite", "Cockroach"],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question:
+          "The group of insects that undergoes incomplete metamorphosis is",
+        options: [
+          "houseflies",
+          "beetles and cockroaches",
+          "cockroaches, grasshoppers, and dragonflies",
+          "aphids, grasshoppers and butterflies",
+        ],
+
+        ans: "C",
+      },
+      {
+        id: 23,
+        question: "The three classes in termitarium are",
+        options: [
+          "Soldiers, queen and workers",
+          "Workers, soldiers and reproductive",
+          "Soldiers, workers and kings",
+          "Kings, queen and soldiers",
+        ],
+
+        ans: "B",
+      },
+      {
+        id: 24,
+        question:
+          "The ability of the cockroach to live in cracks and crevices is enhanced by the possession of",
+        options: [
+          "Wings and segments body",
+          "Compound eyes",
+          "Claws on the legs",
+          "Dorso-ventrally flattened body",
+        ],
+
+        ans: "D",
+      },
+      {
+        id: 25,
+        question: "The caste of termites that lacks pigmentation is the",
+        options: ["King", "Worker", "Soldier", "Queen"],
+        ans: "B",
+      },
+      {
+        id: 26,
+        question: "In the honey bee colony, the drones are",
+        options: [
+          "Sterile males with reduced mouths parts",
+          "Sterile males with well developed mouth parts",
+          "Fertile males wih reduced mouth part",
+          "Fertile males with well developed mouth parts",
+        ],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question: "The group of Arthropods that has no antennae is the",
+        options: ["Crustaceans", "Chilopoda", "Arachinda", "Diplopod"],
+
+        ans: "C",
+      },
+      {
+        id: 28,
+        question:
+          "The jointed structure in insects that bears organs which are sensitive to touch, smell and vibration is the",
+        options: ["Maxilla", "Labium", "Antenna", "Abdomen"],
+        ans: "C",
+      },
+      {
+        id: 29,
+        question: "Water fleas, wood lice and barnacles belong to the group",
+        options: ["Arachnida", "Crustacea", "Insecta", "Chilopoda"],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question: "The role of male adult honey bee is to",
+        options: [
+          "Clean the hive",
+          "Ventilate the hives",
+          "Mate with the queen",
+          "Care for the young",
+        ],
+        ans: "C",
+      },
+      {
+        id: 31,
+        question: "When oil is poured into breeding site of a mosquito, it",
+        options: [
+          "Deprives the larvee of water",
+          "Kills the adults",
+          "Suffocates the pupae",
+          "Slow down egg development",
+        ],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question:
+          "A common features of the caste systems of bees and termites is that",
+        options: [
+          "The workers are sterile",
+          "The kings are bigger than the queen",
+          "Only the workers perform duties",
+          "Nuptial fight is performed by all members",
+        ],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question: "Jointed skeleton is absent in the",
+        options: ["Cockroach", "Spider", "MIllipede", "Snail", "Dragon fly"],
+        ans: "D",
+      },
+      {
+        id: 34,
+        question:
+          "Insects are considered the most successful among the invertebrates because they",
+        options: [
+          "Possess exoskeletons",
+          "Survive in various environmental conditions",
+          "Have wings for flight",
+          "Possess the ability to change their forms",
+        ],
+        ans: "B",
+      },
+      {
+        id: 35,
+        question: "The larva stage of a mosquito is called",
+        options: ["Wriggler", "Grub", "Maggot", "Caterpillar"],
+        ans: "A",
+      },
+      {
+        id: 36,
+        question:
+          "The function of the long-winged reproductive in a termite colony is to",
+        options: [
+          "Disperse the population",
+          "Feed the young",
+          "Participate in swarming",
+          "Protect the young",
+        ],
+        ans: "A",
+      },
+      {
+        id: 37,
+        question:
+          "The stage in the life history of a moth responsible for destruction of agricultural crops is the",
+        options: ["Nymph", "Imago", "Pupa", "Caterpillar"],
+        ans: "D",
+      },
+      {
+        id: 38,
+        question:
+          "The only caste in the termite colony whose members can feed themselves are the",
+        options: ["Reproductive", "The workers", "Nymph", "Soldiers"],
+        ans: "B",
+      },
+      {
+        id: 39,
+        question:
+          "The process of shedding the exoskeleton of an arthropod is known",
+        options: ["Metamorphosis", "Instar formation", "Ecdysis", "Tagmosis"],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question:
+          "Which of the following is common to the mosquito, housefly and blackfly?",
+        options: [
+          "They undergo complete metamorphosis",
+          "They are parasite of man",
+          "Their immature stage are aquatic",
+          "Their adults have two pairs of wings",
+        ],
+        ans: "A",
+      },
+      {
+        id: 41,
+        question:
+          "The most abundant group of organisms in the animal kingdom is",
+        options: ["mammalia", "aves", "annelida", "insecta"],
+        ans: "D",
+      },
+      {
+        id: 42,
+        question:
+          "Which of the following animals is most adapted for water conservation?",
+        options: ["earthworms", "mammals", "flatworms", "insects"],
+        ans: "D",
+      },
+      {
+        id: 43,
+        question:
+          "The main distinguishing features between the soldier termite and other members of the caste are the",
+        options: [
+          "Presence or wings, possession of a large thorax and a small head",
+          "Presence of wings, possession of strong mandibles and a large head",
+          "Absence of wings, possession of big head and absence of mandible",
+          "Presence of wings, possession of a small head and large thorax",
+        ],
+        ans: "B",
+      },
+      {
+        id: 44,
+        question:
+          "The adaptive importance of nuptial flight from termite colonies is to",
+        options: [
+          "ensure cross-breeding between members of one colony to another",
+          "expel the reproductives in order to establish new colonies",
+          "provide abundant food for birds and other animals during the early rains",
+          "disperse the reproductives in order to establish new colonies",
+        ],
+        ans: "D",
+      },
+      {
+        id: 45,
+        question:
+          "The significance of a very large number of termites involved in nuptial swarming is to",
+        options: [
+          "provide birds with plenty of food",
+          "ensure their perpetuation despite predatory pressure",
+          "search for a favourable place to breed",
+          "ensure that every individual gets a mate",
+        ],
+        // this one is more reasonable
+        ans: "B",
+      },
+      {
+        id: 46,
+        question:
+          "Which of the following distinguishes a butterfly from a moth?",
+        options: [
+          "Both are active during the day",
+          "They have similar antennae",
+          "The abdomen of a moth is fatter than that of butterfly",
+          "The wings of butterfly rest horizontally but those of moth rest vertically",
+        ],
+        ans: "C",
+      },
+      {
+        id: 47,
+        question:
+          "Which of the following describes a characteristic of arthropods?",
+        options: [
+          "The organism has a pair of jointed appendages",
+          "the body is not divided into a number of  segments. The body is covered by chitin",
+          "The organism find it easy to grow freely",
+          "the body is covered by chitin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 48,
+        question: "Proboscis is a structure that is mostly found",
+        options: ["Tapeworms", "Amphibians", "Moluluscs", "Insects"],
+        ans: "D",
+      },
+      // {
+      //   id: 49,
+      //   question:
+      //     "Which of these organisms partly digest its food extracellularly?",
+      //   options: ["Housefly", "Cockroach", "Termite", "Mosquito"],
+
+      //   ans: "C",
+      // },
+      {
+        id: 50,
+        question: "The pupa stage of the butterfly is known as",
+        options: ["Larva", "Maggot", "Grub", "Chrysalis"],
+
+        ans: "D",
+      },
+      {
+        id: 51,
+        question: "Green glands are found among",
+        options: ["Annelids", "Molluscs", "Arachnids", "Crustaceans"],
+
+        ans: "C",
+      },
+      {
+        id: 52,
+        question: "Which of the following insects possess boring mouthpart",
+        options: ["Butterfly", "Aphid", "Weevil", "Cockroach"],
+
+        ans: "C",
+      },
+      {
+        id: 53,
+        question: "Competition is reduced in housefly by",
+        options: [
+          "The adult laying fewer eggs",
+          "The majority of the layed eggs not hatched",
+          "Little diffrence between larva and adult",
+          "Males not fertilizing majority of the eggs",
+        ],
+
+        ans: "D",
+      },
+    ],
+  },
+
+  {
+    topic: "The Vertebrates Pisces. Amphibians. Reptiles",
+    questions: [
+      {
+        id: 2,
+        question:
+          "The features that distinguishes the toad or frog from a fish is the absence of",
+        options: [
+          "scales",
+          "lungs",
+          "paired appendages",
+          "a tail",
+          "skin glands",
+        ],
+
+        ans: "A",
+      },
+      {
+        id: 3,
+        question:
+          "Which of these is not associated with a tadpole stages of the toad of frog?",
+        options: [
+          "V-shaped gland",
+          "operculum",
+          "external gills",
+          "jelly",
+          "shell",
+        ],
+
+        ans: "E",
+      },
+      {
+        id: 4,
+        question:
+          "Some of the features of an animals are scales, teeth, nares and backbone. The animal is likely to be a toad",
+        options: ["toad", "bird", "lizard", "rat", "bat"],
+        ans: "C",
+      },
+      {
+        id: 5,
+        question: "Which of the following animals is cold-blooded?", // reptiles are cold-blooded
+        options: ["Cat", "lizard", "whale", "bird", "horse"],
+        ans: "B",
+      },
+      {
+        id: 6,
+        question: "The main function of the swim-bladder is for",
+        options: [
+          "swimming",
+          "dectecting sound",
+          "buoyancy",
+          "breathing",
+          "reproduction",
+        ],
+        ans: "C", // swim bladder and buoyancy. loll...
+      },
+      {
+        id: 7,
+        question:
+          "When an operculate fish breathes it takes in water through the",
+        options: [
+          "mouth and passes it out through the mouth",
+          "mouth and passes it out through the operculum",
+          "operculum and passes it out through the mouth",
+          "operculum and passes it out through the nostrill",
+          "nostrils and passes it out through the operculum",
+        ],
+        ans: "B",
+      },
+      {
+        id: 8,
+        question:
+          "Which of the following structures is NOT found in the female Agama lizard?",
+        options: [
+          "pre-natal pads",
+          "eardrum",
+          "gular fold",
+          "nasal scale",
+          "nuchal crest",
+        ],
+        ans: "E", // nuchal crest is not found in female agama lizard
+      },
+      {
+        id: 9,
+        question: "The male toad differs from the female by having",
+        options: [
+          "vocal sacs",
+          "shoter hind limbs",
+          "longerfore limbs",
+          "bulging eyes",
+          "nicating membrane",
+        ],
+        ans: "A",
+      },
+      {
+        id: 10,
+        question: "The dorsal and anal fins of fish are used for",
+        options: [
+          "upward movements",
+          "controlling rolling movements",
+          "downward movement",
+          "steering",
+          "buoyancy",
+        ],
+        ans: "B",
+      },
+      {
+        id: 11,
+        question:
+          "In fish the sense organs which detect movements in the water are located within the",
+        options: ["gills", "operculum", "nostrils", "medians", "lateral line"],
+        ans: "E",
+      },
+      {
+        id: 12,
+        question:
+          "At what stage in the life history of a toad is its mode of breathing similar to that of a fish?",
+        options: [
+          "Tadpole stage",
+          "External gill",
+          "Adult stage",
+          "inernal gill stage",
+          "larval stage",
+        ],
+        ans: "A",
+      },
+      {
+        id: 13,
+        question: "Fishes are cold blooded because their body temperature is",
+        options: [
+          "constantly high",
+          "dependent on that of their surroundings",
+          "regulated at will",
+        ],
+        ans: "B", //hmmmm. maybe totani have made mistakes in this thing... well
+      },
+      {
+        id: 14,
+        question: "The fins making up the limbs of the bony fish are",
+        options: [
+          "caudal and ventral",
+          "ventral and pelvic",
+          "pelvic and pectoral",
+          "pectoral and dorsal",
+        ],
+        ans: "C",
+      },
+      {
+        id: 15,
+        question:
+          "The long and coiled intestine of a young tadpole is an adaptation to its",
+        options: [
+          "herbivorous diet",
+          "carnivorous diet",
+          "aquatic habiat",
+          "insectivorous habit",
+        ],
+        ans: "A",
+      },
+      {
+        id: 16,
+        question: "The major function of swim-bladder in fishes is",
+        options: ["breathing", "buoyance", "swimming", "diving"],
+        ans: "B",
+      },
+      {
+        id: 17,
+        question: "Which of the following animals has homodont dentition?",
+        options: ["Rats", "Man", "Lizard", "Pigeon"],
+        ans: "C",
+      },
+      {
+        id: 18,
+        question:
+          "In which of the following does external fertilization take place?",
+        options: ["toad", "lizard", "bird", "cockroach"],
+        ans: "A", //amplexus
+      },
+      {
+        id: 19,
+        question: "The gill rakers of fishes take part in",
+        options: ["feeding", "respiration", "swimming", "diffusion"],
+        ans: "A",
+      },
+      {
+        id: 20,
+        question: "Cold blooded animals are referred to as",
+        options: [
+          "poikilotihermic",
+          "homeothermic",
+          "polythermic",
+          "homeostasis",
+        ],
+        ans: "A",
+      },
+      {
+        id: 21,
+        question:
+          "Which of the organism has lost the pentadactyl limb structure?",
+        options: ["Bat", "fish", "frog", "pigeon"],
+        ans: "B",
+      },
+      {
+        id: 22,
+        question: `Which of the following combinations differentiates a bony fish from a cartilaginous fish?<br />
+           I. Presence of gills <br />
+           II. Absence of gill slits <br />
+           III. Possession of bony skeleton. <br />
+           IV Possession of lateral compressed body. <br />
+           V Possession of dorso-ventrally compressed body`,
+        options: [
+          "I, II, and III",
+          "I, III and IV",
+          "II, III, and IV",
+          "II, III and V",
+        ],
+        ans: "C",
+      },
+      {
+        id: 23,
+        question:
+          "Which is the most important adaptation of a bony fish to life in water?",
+        options: [
+          "The possesion of a streamlined shape",
+          "the presence of overlapping scales",
+          "tthe covering of the body by thin film of shine",
+          "the possession or a caudal fin",
+        ],
+        ans: "A",
+      },
+      {
+        id: 24,
+        question:
+          "In which of the following groups of vertebrates would the largest amount of yolk be found in the egg?",
+        options: ["Mammals", "Fishes", "Amphibians", "Reptiles"],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question:
+          "In which of the following groups of vertebrates does the skin function as a respiratory surface?",
+        options: ["Rats", "Lizard", "Fish", "Frog"],
+        ans: "D",
+      },
+      {
+        id: 26,
+        question:
+          "The structures that prevent food particles from escaping through the fish gills are called gill",
+        options: ["arches", "filaments", "rakers", "lameliae"],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question:
+          "The possession of scales, laying of eggs with shells and bony structure of the head are charactristics shared by",
+        options: [
+          "birds and reptiles",
+          "fishes and birds",
+          "reptiles and fishes",
+          "birds and molluscs",
+        ],
+        ans: "A",
+      },
+      {
+        id: 28,
+        question:
+          "The key event in the transition of the amphibians from water to land is the",
+        options: [
+          "replacement of the gills with lungs",
+          "possession of the webbed limbs",
+          "developmen of long hind",
+          "limbs",
+          "possession of tympanic membrane",
+        ],
+        ans: "A",
+      },
+      {
+        id: 29,
+        question:
+          "The type of fins that controls steering, balancing and change of direction and pitch in fish is",
+        options: [
+          "dorsal and anal",
+          "pectorial and pelvic",
+          "caudal and dorsal",
+          "anal and pelvic",
+        ],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question: "Amphibians are normally found",
+        options: [
+          "on dry land and in water",
+          "in water and on moist land",
+          "on moist land",
+          "in water",
+        ],
+        ans: "B",
+      },
+      {
+        id: 31,
+        question: "The presence of endoskeleton is characteristic of",
+        options: ["invertebrate", "vertebrate", "insecta", "coelenterata"],
+        ans: "B",
+      },
+      {
+        id: 32,
+        question: `I Rattus rattus <br />
+          II. Agama agama <br />
+          III. Bufo regularis <br />
+          IV. Tilapia zilli <br />
+          The order of evolutionary advancement of the above vertebrates is`,
+        options: [
+          "I, I, II, V",
+          "I, IV,, III, II",
+          "II, II, V, I",
+          "IV, III, II, I",
+        ],
+        ans: "D",
+      },
+      {
+        id: 33,
+        question: "In lizards, the lowering of the gular fold is used to",
+        options: [
+          "catch insects",
+          "attract mates",
+          "defend their territory",
+          "frighten enemies",
+        ],
+        ans: "B",
+      },
+      {
+        id: 34,
+        question: "The main function of the caudal fin in Tilapia is to",
+        options: [
+          "propel it forward in water",
+          "steer it while changing direction",
+          "balance it in water",
+          "enable it to float in water",
+        ],
+        ans: "A",
+      },
+      {
+        id: 35,
+        question: "An example of a fish that aestivates is",
+        options: ["shark", "croaker", "lung fish", "cat fish"],
+        ans: "C",
+      },
+      {
+        id: 36,
+        question:
+          "Which of the following is used mainly for balancing in fish?",
+        options: [
+          "The caudal fin",
+          "The pectoral fin",
+          "The anal fin",
+          "The dorsal fin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 37,
+        question:
+          "The most important characteristic that makes reptiles to conquer terrestrial habitats is the possession of",
+        options: ["long tail", "scaly skin", "sharp caw", "amniotic egg"],
+        ans: "D",
+      },
+      {
+        id: 38,
+        question: "The first terrestrial vertebrates evolved form",
+        options: ["pisces", "reptilia", "amphibian", "mammalia"],
+        ans: "A",
+      },
+      {
+        id: 39,
+        question:
+          "The feature that makes locomotion in water easy for fish is the",
+        options: [
+          "scaly body",
+          "slimy body",
+          "streamlined body",
+          "lateral line",
+        ],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question: "The function of the red head in male Agama lizards is to",
+        options: [
+          "attract female lizards for mating purposes",
+          "warn predators of the distastefulness of the animal",
+          "conceal and camouflag the animal from predators",
+          "scale other males from the territory",
+        ],
+        ans: "A",
+      },
+      {
+        id: 41,
+        question: "The basking of Agama lizards in the sun is to",
+        options: [
+          "change the colour of their body",
+          "raise their body temperature to become active",
+          "fight to defend their territories",
+          "attract the female for courtship",
+        ],
+        ans: "B",
+      },
+      {
+        id: 42,
+        question: "An example of poikilothermic organisms is a",
+        options: ["lizard", "cockroach", "rabbit", "bird"],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question:
+          "The sequence of the one-way gaseous exchange mechanism in a fish is",
+        options: [
+          "gills -> operculum -> mouth",
+          "mouth -> gills-> operculum",
+          "operculum -> mouth -> gills",
+          "mouth -> operculum -> gills",
+        ],
+        ans: "B",
+      },
+      {
+        id: 44,
+        question: "Cold blooded animals are referred to as",
+        options: [
+          "poikilothermic",
+          "homeothermic",
+          "polythermic",
+          "homeostatic",
+        ],
+        ans: "A",
+      },
+      {
+        id: 45,
+        question: "Which of the following animals is cold-blooded?",
+        options: ["Cat", "Lizard", "Whale", "Bird"],
+        ans: "B",
+      },
+      {
+        id: 46,
+        question: "A reptile always lays its eggs",
+        options: ["on trees", "on land", "in water", "in swamps"],
+        ans: "B",
+      },
+      {
+        id: 47,
+        question: "The red head of Agama lizard is adapted for ",
+        options: [
+          "warning enemies",
+          "conserving water",
+          "securing mates",
+          "escape",
+        ],
+        ans: "C",
+      },
+    ],
+  },
+
+  {
+    topic: "The Vertebrate II, Birds And Mammals",
+    questions: [
+      {
+        id: 1,
+        question:
+          "A trawler on a fishing trip landed a type of animal wih hairs on its body. This animal could have been",
+        options: ["an amphibian", "reptile", "a shark", "a mammal", "seagull"],
+        ans: "D",
+      },
+      {
+        id: 2,
+        question: "Which of these is not a part of the feather of a bird?",
+        options: [
+          "wing",
+          "aftershaft",
+          "inferior umbilicus",
+          "vane",
+          "barbule",
+        ],
+        ans: "A",
+      },
+      {
+        id: 3,
+        question: "Which of the following is NOT metamerically segmented?",
+        options: ["Tapeworm", "Earthworm", "Centipede", "Crayfish", "Shark"],
+        ans: "A",
+      },
+      {
+        id: 4,
+        question:
+          "An homiothermc animal kept a room where the temperature is lower than the body temperature may lose heat by four physical processes. Which of the following processes is not connected with body temperature regulation?",
+        options: [
+          "Radiation",
+          "Sweat",
+          "Evaporation",
+          "Conduction",
+          "Convention",
+        ],
+        ans: "B",
+      },
+      {
+        id: 5,
+        question:
+          "Which of the following adaptations is NOT concerned with the flight of birds",
+        options: [
+          "stremlined shape",
+          "presence of powerful muscles",
+          "reduced body weight",
+          "broad sternum",
+          "webbed feet", // webbed feet is not correct. Makes sense...
+        ],
+        ans: "E",
+      },
+      {
+        id: 6,
+        question: "In mammals, the function of the sebaceous gland is to",
+        options: [
+          "produce sweat",
+          "secrete sodium",
+          "secrete water",
+          "produce an oily substance",
+          "manufacture vitamin for skin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 7,
+        question:
+          "For effective functioning of a bird's quill feather, hooks fits on the ridges of the",
+        options: ["vane", "rachis", "barbules", "barbs"],
+        ans: "C",
+      },
+      {
+        id: 8,
+        question: "A feature which adapts birds to flight is the possession of",
+        options: [
+          "scaly legs",
+          "light bones",
+          "two walking legs",
+          "a pointed beak",
+        ],
+        ans: "B",
+      },
+      {
+        id: 9,
+        question:
+          "In which of the following organisms would glycogen be stored?",
+        options: ["spirogyra", "chlamydomonas", "rattus", "magnifera"],
+        ans: "C",
+      },
+      {
+        id: 10,
+        question:
+          "Birds maintain their body temperature with the help of their",
+        options: [
+          "blood which maintains constant temperature",
+          "feathers which cover the body",
+          "skin which conserves moisture",
+          "veins which transport fluid of constant temperature to all body tissues",
+        ],
+        ans: "B",
+      },
+      {
+        id: 11,
+        question:
+          "The mammalian organ which acts as a digestive and endocrine organ is",
+        options: ["esophagus", "liver", "pancreas", "spleen"],
+        ans: "C",
+      },
+      {
+        id: 12,
+        question: "A distinguishing feature of mammals is the possession of",
+        options: ["skin", "scale", "nail", "hair"],
+        ans: "D",
+      },
+      {
+        id: 13,
+        question:
+          "In dissection, the rib cage of a mammal has to be opened in order to expose the",
+        options: ["diaphragm", "liver", "heart", "sternum"],
+        ans: "C",
+      },
+      {
+        id: 14,
+        question:
+          "In mammals, the organ which performs digestive and endocrine function is the",
+        options: ["liver", "pancreas", "gastric gland", "salivary gland"],
+        ans: "B",
+      },
+      {
+        id: 15,
+        question:
+          "A characteristics of vertebrates that is unique to mammals is",
+        options: [
+          "the presence or pentadacyl limbs",
+          "parental care",
+          "the possession of scrotum",
+          "pulmonary circulation",
+        ],
+        ans: "C",
+      },
+      {
+        id: 16,
+        question:
+          "Complex social behaviour and organization are found mostly in",
+        options: ["insecs", "birds", "reptiles", "mammals"],
+        ans: "D",
+      },
+      {
+        id: 17,
+        question: "Viviparity occurs mainly in the ",
+        options: ["mammals", "reptiles", "Aves", "amphibians"],
+        ans: "A",
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following pairs of organs is located in the anterior half of the mammalian body cavity?",
+        options: [
+          "Kidneys and lungs",
+          "heart and ovary",
+          "lungs and hearts",
+          "kidneys and heart",
+        ],
+        ans: "C",
+      },
+      {
+        id: 19,
+        question: "A peculiar characteristic of mammals is that they",
+        options: [
+          "have teeth",
+          "are warm-blooded",
+          "have lungs",
+          "have sebaceous glands",
+        ],
+        ans: "D",
+      },
+      {
+        id: 20,
+        question:
+          "The eggs of birds contain relatively larger quantities of yolk than those of amphibians and reptiles because birds are",
+        options: [
+          "generally bigger in size",
+          "embryonic development is longer in birds",
+          "those of birds are fertilized internally",
+          "birds lay shelled eggs",
+        ],
+        ans: "B",
+      },
+      {
+        id: 21,
+        question:
+          "A characteristic that exemplifies the evolutionary advancement of mammals over other vertebrates is the",
+        options: [
+          "Viviparous mode of reproduction",
+          "Possession of paired limbs",
+          "terrestrial mode of life",
+          "Possession of a heart",
+        ],
+        ans: "A",
+      },
+      {
+        id: 22,
+        question:
+          "The part of a domestic fowl responsible for preventing heat loss is the",
+        options: ["filoplume", "contour feather", "down feather", "quill"],
+        ans: "C",
+      },
+      {
+        id: 23,
+        question: "Parental care is exhibited by",
+        options: ["snails", "earthworms", "birds", "toads"],
+        ans: "C",
+      },
+      {
+        id: 24,
+        question: "Which of the following possesses mammary gland?",
+        options: ["Dogfish", "Whale", "Shark", "Catfish"],
+        ans: "B",
+      },
+      {
+        id: 25,
+        question:
+          "In which of the following groups of vertebrates is parental care mostly exhibited?",
+        options: ["Aves", "Mammalia", "Reptilia", "Amphibia"],
+        ans: "B",
+      },
+      {
+        id: 26,
+        question:
+          "The feature that links birds to reptiles in evolution is the possession of",
+        options: ["feathers", "beak", "skeleton", "scales"],
+        ans: "D",
+      },
+      {
+        id: 27,
+        question:
+          "Which of the following types of feathers is used for flight in birds?",
+        options: ["filoplume", "covert", "down", "Quill"],
+        ans: "D",
+      },
+      {
+        id: 28,
+        question: "The largest amount of yolk is found in the egg of",
+        options: ["amphibians", "pisces", "reptiles", "aves"],
+        ans: "D",
+      },
+      {
+        id: 29,
+        question: "In which of the following organisms would glycogen stored?",
+        options: ["Spirogyra", "Chlamydomonas", "Ratus", "magnifera"],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question: "A distinguishing feature of mammals is the possession of",
+        options: ["skin", "scale", "nail", "hair"],
+        ans: "D",
+      },
+      {
+        id: 31,
+        question: "Terrestrial vertebrates respire with the aid of",
+        options: ["Gills", "Lungs", "Skin", "Nostril"],
+        ans: "B",
+      },
+    ],
+  },
+
+  {
+    topic: "Plant Nutrition",
+    questions: [
+      {
+        id: 1,
+        question: "The oxygen given off during photosynthesis is dervived from",
+        options: [
+          "sunlight",
+          "chlorophyll",
+          "carbon dioxide",
+          "atmosphere",
+          "water",
+        ],
+        ans: "E",
+      },
+      {
+        id: 2,
+        question:
+          "Which of these elements is required by plants in small quantities only?",
+        options: ["boron", "nitrogen", "phosphorus", "magnesium", "potassium"],
+        ans: "A",
+      },
+      {
+        id: 3,
+        question: "Which of these is a direct photosynthetic product?", // a direct product of photosynthesis
+        options: ["glucose", "starch", "protein", "fats", "latex"],
+        ans: "A",
+      },
+      {
+        id: 4,
+        question: "An organism which lives on the remains of a dead plant is",
+        options: ["an endoparasite", "a saprophyte", "commensal", "a symbiont"],
+        ans: "B",
+      },
+      {
+        id: 5,
+        question:
+          "Which of the substance listed below is a trace element for plants?",
+        options: ["Potassium", "Sodium", "Copper", "Phosphate", "Nitrate"],
+        ans: "C",
+      },
+      {
+        id: 6,
+        question:
+          "Alkaline pyrogallol used in an experiment must have been connected with",
+        options: [
+          "execretion",
+          "germination",
+          "respiration",
+          "digestion",
+          "photosythesis",
+        ],
+        ans: "C",
+      },
+      {
+        id: 8,
+        question: "The mushroom is an organism which feeds",
+        options: [
+          "parasitically",
+          "saprophytically",
+          "holozoically",
+          "symbiotically",
+          "autotrophically",
+        ],
+        ans: "B",
+      },
+      {
+        id: 9,
+        question: "Some of the major elements required by plants are",
+        options: [
+          "potassium, nitrogen, phosphorus, sodium, calcium",
+          "nirogen, phosphorus, molybdenum, sodium, calcium",
+          "potassium, phosphorus, molybdenum, sodium, calcium",
+          "poassium, nitrogen, iron, sodium, calcium",
+          "potassium, nitrogen, phosphorus, silicon, cadmium",
+        ],
+        ans: "A",
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following elements are necessary for the formation of chlorophyll in plant?",
+        options: [
+          "Magnesium and iron", // magnesium and iron are required by plants for the formation of chlorophylll
+          "Calcium and potassium",
+          "Calcium and sulphur",
+          "Potassium and phosphorus",
+        ],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question:
+          "Which of the following statements is NOT true of insectivorous plants?",
+        options: [
+          "They obtain part of their food by trapping and feeding on insects",
+          "They attract insects simply because of pollution",
+          "They can grow in soil poor in ntrogenous salts",
+          "They can supplement the nitrogen supply by feeding on insects",
+          "Examples include butterworts, Sundews and pitcher plants",
+        ],
+        ans: "B",
+      },
+      {
+        id: 12,
+        question:
+          "A young plant showing yellow leaves is likely to be deficient in",
+        options: ["calcium", "magnesium", "potassium", "boron", "molybdenum"],
+        ans: "B",
+      },
+      {
+        id: 13,
+        question:
+          "Oxygen liberated during photosynthesis has been demonstrated to come from",
+        options: ["carbon dioxide", "air", "water", "chlorophyll"],
+        ans: "C",
+      },
+      {
+        id: 14,
+        question:
+          "In demonstrating the importance of mineral elements in the plants, the culture bottle must be darkened to",
+        options: [
+          "prevent algal growth in culture solution",
+          "allow root growth",
+          "prevent breakdown of mineral elements",
+          "prevent photosythesis in the root",
+        ],
+        ans: "A",
+      },
+      {
+        id: 15,
+        question:
+          "In the standard experiment to show that oxygen is given off during photosythesis, sodium bicarbonate is used to",
+        options: [
+          "neutralize the acid in water",
+          "supply mineral salts to water plant",
+          "supply carbondioxide for photosythesis",
+          "kill microorganisms in water",
+        ],
+        ans: "C",
+      },
+      {
+        id: 16,
+        question: "If a healthy potted plant is continuously kept in dim light",
+        options: [
+          "the rate of respiration may equal that of photosythesis",
+          "more carbon dioxide and water are taken in",
+          "respiration may be halted",
+          "the volume of oxygen release increaseS",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 17,
+        question:
+          "The seedling in a rice field were found to have thin lanky growth with reddish leaves and poor root development. This is because te soil lacks",
+        options: ["Sulphur", "Phosphorus", "Potassium", "iron"],
+        ans: "B",
+      },
+
+      {
+        id: 18,
+        question: "The first step in the process of photosynthesis is the",
+        options: [
+          "activation of the chlorophyll",
+          "Photolysis of water",
+          "reduction of carbon dioxide",
+          "formation of sugar",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 19,
+        question: "Etiolation is caused by the influence of",
+        options: ["mineral salts", "starch", "oxygen", "light"],
+        ans: "D",
+      },
+
+      {
+        id: 20,
+        question:
+          "Which of the following is formed immediately afer the first product of photosynthesis?",
+        options: ["lipid", "starch", "carbondioxide", "light"],
+        ans: "B",
+      },
+
+      {
+        id: 21,
+        question:
+          "Interveinal chlorosis is normally associated with the deficiency of",
+        options: ["magnesium", "potassium", "iron", "calcium"],
+        ans: "A",
+      },
+
+      {
+        id: 22,
+        question: "Carnivorous plants are usually found in area",
+        options: [
+          "which are deficient in nitrate",
+          "which are deficient in oxygen",
+          "with low PH",
+          "where insects are abundant",
+        ],
+        ans: "A",
+      },
+      {
+        id: 23,
+        question:
+          "Green plants are distinguished from other living organisms by their ability to",
+        options: [
+          "make use of water",
+          "make use of oxygen",
+          "respond to sunlight",
+          "manufacture their own food",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 24,
+        question:
+          "The failure of transport and respiratory systems in plants as well as the presence of reddish colour in stems and leaves result from the deficiency of ",
+        options: ["magnesium", "nitrogen", "potassium", "phosphorus"],
+        ans: "D",
+      },
+
+      {
+        id: 25,
+        question:
+          "In a drought situation, plants suffer from water stress which could result in",
+        options: [
+          "reduced biochemical activities",
+          "enhanced chemical activities",
+          "enhance microbial activities",
+          "reduced phototropic activities",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 26,
+        question:
+          "In an experiment to investigate the effect of nitrogen on the growth of plants, the substrate should be a medium of",
+        options: ["water and sand", "sawdust", "cow dung", "clay soil"],
+        ans: "C",
+      },
+
+      {
+        id: 27,
+        question: "Trace elements are required by plants mainly for the",
+        options: [
+          "formation of pigments and enzymes",
+          "producion of energy and hormones",
+          "manufacture of proteins",
+          "manufacture of carbohydrates",
+        ],
+        ans: "A",
+      },
+      {
+        id: 28,
+        question:
+          "The manufacture of carbohydrates by plants takes place only in",
+        options: [
+          "the leaves",
+          "the green stems",
+          "chlorophyllous parts",
+          "flowering plants",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 29,
+        question:
+          "In a water culture experiment, a plant showed poor growth and yellowing of the leaves. These may be due to deficiency of",
+        options: ["copper", "iron", "magnesium", "calcium"],
+        ans: "C",
+      },
+
+      {
+        id: 30,
+        question: "The dark reaction of photosynthesis involves",
+        options: [
+          "fixattion of carbon (IV) oxide to give a six carbon sugar",
+          "fixation of carbon (IV) oxide to produce glucose using ATP",
+          "the fixation of carbon (IV) oxide on chlorophyll using hydrogen",
+          "splitting of water into nitrogen",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 31,
+        question:
+          "The modes of nutrition in Nitrobacter, Ascaris and Homo sapines respectively are",
+        options: [
+          "photosynthetic, parasitic, and holozoic",
+          "chemosynthetic, parasitic and holozoic",
+          "photosynthetic, parasiic and heterophytic",
+          "chemosynthetic, heterophytic and holozoic",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 32,
+        question:
+          "Yellowing of leaves is a symptom associated with deficiency of",
+        options: [
+          "Iron",
+          "Calcium and magnesium",
+          "Nitrogen, sulphur and potassium",
+          "Sulphur, phosphorus and iron",
+          "Magnesium, nitrogen and iron",
+        ],
+        ans: "E",
+      },
+
+      {
+        id: 33,
+        question: "A seedling grown in the dark is likely to be",
+        options: ["Etiolated", "Dormant", "Sturdy", "Stunted"],
+        ans: "A",
+        remark: `Etiolation is the process in which plants grow long, pale and unhealthy due to lack of light.`,
+      },
+
+      {
+        id: 36,
+        question: "The dark reaction of photosynthesis involves the",
+        options: [
+          "Reduction of carbon(IV) oxide to organic compounds",
+          "Release of oxygen and the splitting of water",
+          "Photolysis of water and the production of starch",
+          "Splitting of water into hydrogen ions",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 37,
+        question: "The photosythetic pigments include",
+        options: [
+          "chlorophyll and carotenoids",
+          "chlorophyll and cytochromes",
+          "melanin and heamoglobin",
+          "carotenoids and heamoglobin",
+        ],
+        ans: "A",
+        remark:
+          "The major groups of photosynthetic pigments are: Chlorophyll, Carotenoids, Phycobilins, and Flavonoids.",
+      },
+      {
+        id: 38,
+        question:
+          "Stunted growth and poor root development are a result of a deficiency in",
+        options: ["Sulphur", "Phosphorus", "Calcium", "Iron"],
+        ans: "C",
+      },
+      {
+        id: 39,
+        question: "Insectivorous plants trap and kill their prey to derive",
+        options: ["Phosphorus", "Calcium", "Nitrogen", "Zinc"],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question:
+          "Which of the following is an example of a carnivorous plant?",
+        options: ["Hydra", "Bladderwort", "Yeast", "Spirogyra"],
+        ans: "B",
+      },
+      {
+        id: 41,
+        question:
+          // Sundew is not parasitic, it is holozoic. Makes sense... Just read anything readable my brother...
+          "The mode of nutrition of sundew and bladderwort can be dsecribed as",
+        options: ["Saprophytic", "Holozoic", "Chemosyntheic", "Autotrophic"],
+        ans: "B",
+      },
+      {
+        id: 42,
+        question:
+          "Chemosynthetic organisms are capable of manufacturing their food from simple inorganic substances through the process of",
+        options: [
+          "dentrification",
+          "reduction",
+          "phosphororylation",
+          "oxidation",
+        ],
+        ans: "D",
+      },
+      {
+        id: 43,
+        question:
+          "In plants, which of the following is required in minute quantities for growth?",
+        options: ["Copper", "Potassium", "Phosphorus", "sodium"],
+        ans: "A",
+      },
+      {
+        id: 44,
+        question:
+          "Which of the following organisms is both parasitic and autotrophic?",
+        options: ["Sundew", "Loranthus", "Rhizopus", "Tapeworm"],
+        ans: "B", // Loranthus is the right answer then... makes sense
+      },
+      {
+        id: 45,
+        question:
+          "During the manufacture of food by plant, which of the following organisms use energy from the sun?",
+        options: [
+          "Sulphur bacteria",
+          "Nitrosomonas",
+          "Nitrobacter sp",
+          "Anabaena",
+        ],
+        ans: "D",
+      },
+      {
+        id: 46,
+        question:
+          "Plants that have special devices for trapping and digesting insects are",
+        options: ["Symbiotic", "Parasitic", "Saprophyrytic", "Carnivorous"],
+        ans: "D",
+      },
+      {
+        id: 47,
+        question:
+          "Which of the substances listed below is a trace element for plants?",
+        options: ["potassium", "sodium", "copper", "phosphate"],
+        ans: "C",
+      },
+      {
+        id: 48,
+        question:
+          "When testing for the presence of starch in a leaf, the reason for dipping the decolorized leaf in hot water is to",
+        options: [
+          "detect the starch",
+          "kill the leaf",
+          "soften the leaf",
+          "remove the chlorophyll",
+        ],
+        ans: "B",
+      },
+      {
+        id: 49,
+        question: "Etiolation is caused by the influence of",
+        options: ["minerals salts", "waer", "carbondioxide", "light"],
+        ans: "D",
+      },
+      {
+        id: 50,
+        question: "The oxygen release during photosynthesis comes from",
+        options: ["Carbon dioxide", "Sunlight", "Chlorophyll", "Water"],
+        ans: "D",
+      },
+      {
+        id: 51,
+        question: "Leaf to be tested for starch is placed in alcochol to",
+        options: ["soften it", "decolourize it", "harden it", "cool it"],
+        ans: "B",
+      },
+      {
+        id: 52,
+        question:
+          "A plant that becomes pale because it does not receive enough light is said to be",
+        options: ["variegated", "evergreen", "etiolaed", "malnourished"],
+        ans: "C",
+      },
+      {
+        id: 53,
+        question: "The type of nutrition found in Rhizopus and mushroom is",
+        options: ["holozoic", "parasitic", "carnivorous", "saprophytic"],
+        ans: "D",
+      },
+    ],
+  },
+
+  {
+    topic: "Animal nutrition and food substances",
+    questions: [
+      {
+        id: 4,
+        question:
+          "In testing for glucose, the necessary reagent and the condition under which the reagent react best are",
+        options: [
+          "fehling's reagent, in the cold",
+          "million's reagent, boiled",
+          "fehling's reagent in acid medium, heated",
+          "iodine solution, boiled",
+          "fehling's reagent in neutral or alkaline medium, boiled",
+        ],
+        ans: "E",
+      },
+      {
+        id: 5,
+        question:
+          "If benedict's solution gives a positive result in a food test, the food contains",
+        options: ["sugar", "protein", "oil", "fat", "cellulose"],
+        ans: "A",
+      },
+      {
+        id: 6,
+        question: "The deficiency of vitamin D leads to",
+        options: ["scurvy", "pellagra", "rickets", "beriberi", "polio"],
+        ans: "C",
+      },
+      {
+        id: 7,
+        question:
+          "Which of the substances is likely to be deficient in the diet of a person having goitre?",
+        options: ["Potassium", "Calcium", "Iodine", "Sodium", "Phosphorus"],
+        ans: "C",
+      },
+      {
+        id: 8,
+        question: "Kwashiorkor is caused by severe deficiency of",
+        options: ["water", "oil", "drugs", "proteins", "sugars"],
+        ans: "D",
+      },
+      {
+        id: 9,
+        question:
+          "Which of the following pairs are the products of sucrose hydrolysis?",
+        options: [
+          "Glucose + glucose",
+          "Fructose +fructose",
+          "Glucose + frucose",
+          "Galactose + fructose",
+          "Fructose + galactose",
+        ],
+        ans: "C", // sucrose is glucose plus fructose and maltose is 2 glucose
+      },
+      {
+        id: 10,
+        question:
+          "if an organic compound has its Hydrogen : Oxygen ratio as 2:1, it is likely o be",
+        options: [
+          "A protein",
+          "A carbohydrate",
+          "A fat",
+          "A fatty acid and glycerol",
+          "An amino acid",
+        ],
+        ans: "B",
+      },
+      {
+        id: 11,
+        question:
+          "A mixture of mercurous and mercuric nitrates is added to a food substance. A. white precipitate is formed which on gentle heating turns red. The food substance is",
+        options: ["Protein", "Oil", "Carbohydrate", "Fat", "Fatty acid"],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question:
+          "In a Biuret test, some protein was mixed with sodium hydroxide solution which of the following chemicals should be added to the mixture for a positive result?",
+        options: [
+          "Mercurous",
+          "Mercuric nitrate",
+          "sodium carbonate",
+          "Ammonium hydroxide",
+        ],
+        ans: "B",
+      },
+      {
+        id: 13,
+        question:
+          "Fehling's solution will readily change colour from blue to a reddish colour when it is",
+        options: [
+          "Mixed with sugar solution in the cold",
+          "Warmed or heated by itself",
+          "Mixed with reducing sugar in the cold",
+          "Warmed or heated with a complex solution",
+          "Warmed with a solution or reducing sugar",
+        ],
+        ans: "E",
+      },
+      {
+        id: 14,
+        question:
+          "A food substance which produce red colouration with sudan III contains",
+        options: ["Protein", "Sugar", "Starch", "Cellulose", "Fat"],
+        ans: "E",
+      },
+      {
+        id: 15,
+        question: "If calcium is deficient in food this may cause",
+        options: [
+          "Anaemia",
+          "Retarded growth",
+          "Sterility",
+          "Goitre",
+          "Beriberi",
+        ],
+        ans: "B",
+      },
+      {
+        id: 16,
+        question: "Which of these is a trace elements?",
+        options: ["Iron", "Copper", "Calcium", "Sulphur"],
+        ans: "B",
+      },
+      {
+        id: 17,
+        question: "The main organic substances found in the human body are",
+        options: [
+          "Carbohydrates, proteins and salts",
+          "Salts, fats and protein",
+          "Fats, carbohydrate and protein",
+          "Salts, fats and carbohydrate",
+        ],
+        ans: "C",
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following elements is essential for the formation of haemoglobn?",
+        options: ["Sodium", "Potassium", "Calcium", "Iron"],
+        ans: "D",
+      },
+      {
+        id: 19,
+        question: "The severe deficiency of vitamin C leads to",
+        options: ["Kwashiorkor", "Beriberi", "Pellagra", "Scurvy"],
+        ans: "D",
+      },
+      {
+        id: 20,
+        question:
+          "In addition to the high calories derived from fat and oils, they are",
+        options: [
+          "Used in producing new cells",
+          "Necessary for enzyme formation",
+          "Used as insulators from cold",
+          "Required for growth",
+        ],
+        ans: "C",
+      },
+      {
+        id: 21,
+        question:
+          "The extract from a food substance reacting with sodium hydroxide and copper sulphate solutions will produce violet to purple colouration if",
+        options: [
+          "Fats are present",
+          "Carbohydrate is present",
+          "Protein is prsent",
+          "Reducing sugar is present",
+        ],
+        ans: "C",
+      },
+      {
+        id: 22,
+        question:
+          "The vitamin which is important in the formation of the retina pigments is",
+        options: ["vitamin A", "vitamin B", "vitamin C", "vitamin D"],
+        ans: "A",
+      },
+      {
+        id: 23,
+        question:
+          "The most important substances necessary for the maintenance of life are carbon, oxygen",
+        options: [
+          "hydrogen, soil and enzymes",
+          "hydrogen, salt and water",
+          "nitrogen, salt and soil",
+          "nitrogen, salt and water",
+        ],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question:
+          "The mode of nutrition in which digestion is extracellular is",
+        options: ["holophytic", "parasitic", "holozoic", "saprophytic"],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question:
+          "Which of the following food substances will produce a brick red colour when warmed with benedict's solution",
+        options: ["Glucose", "Starch", "Egg white", "Maltose"],
+        ans: "A",
+      },
+      {
+        id: 26,
+        question: "The element common to protein, carbohydrate and lipid is",
+        options: ["hydrogen", "sulphur", "nitrogen", "phosphorus"],
+        ans: "A",
+      },
+      {
+        id: 27,
+        question:
+          "Osmic acid boiled with a solution of food substance gave a black precipiate. This indicated the presence of",
+        options: ["fats and oils", "proteins", "amino acids", "starch"],
+        ans: "A",
+      },
+      {
+        id: 28,
+        question: "Which vitamin plays an important role in blood clotting?",
+        options: ["Vitamin A", "Vitamin K", "Vitamin B12", "Vitamin C"],
+        ans: "B",
+      },
+      {
+        id: 29,
+        question:
+          "A food substance was treated with a few drops of sudan III solution and a red coloration was obtained. The food contained",
+        options: ["protein", "starch", "fat", "mineral salt"],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question:
+          "The element that is essential for the coagulation of blood is",
+        options: ["potassium", "calcium", "phosphorus", "iron"],
+        ans: "B",
+      },
+      {
+        id: 31,
+        question:
+          "In million's test, when the reagent is added to a protein food item, a white precipiate is produce which turns",
+        options: [
+          "blue on heating",
+          "yellow on heating",
+          "gren on heating",
+          "red on heating",
+        ],
+        ans: "D",
+      },
+      {
+        id: 32,
+        question: "The richest sources of Vitamin A are",
+        options: [
+          "palm oil and groundnut oil",
+          "palm oil and carrots",
+          "rice and groundnut oil",
+          "oranges and carrots",
+        ],
+        ans: "B",
+      },
+      {
+        id: 33,
+        question:
+          "The production of  violet coloration, when dilue NaOH solution is added to a solution of food substance, followed by drops of 1% Copper sulfate solution while making INDICATES THE PRESENCE OF",
+        options: ["protein", "carbohydrate", "fats", "reducing sugar"],
+        ans: "A",
+      },
+      {
+        id: 34,
+        question:
+          "The greatest amount of energy will be obtained by the oxidation of 100Kg of",
+        options: ["meat", "butter", "Sugar", "biscuits"],
+        ans: "B",
+      },
+      {
+        id: 35,
+        question: "The mode of feeding in Amoeba and Hydra is",
+        options: ["heterotrophic", "holophytic", "autotrophic", "symbiotic"],
+        ans: "A",
+      },
+      {
+        id: 36,
+        question:
+          "When specimen X is mixed with few drops of iodine solution, appearance or a blue-black colour confirms that X is",
+        options: ["Galactose", "Starch", "Sucrose", "Glucose"],
+        ans: "B",
+      },
+      {
+        id: 37,
+        question:
+          "The capture and digestion of insects by a pitcher plant is a special form of nutrition termed",
+        options: [
+          "Autotrophic",
+          "heterotrophic",
+          "chemosynthetic",
+          "saprophytic",
+        ],
+        ans: "B",
+      },
+      {
+        id: 38,
+        question: "A person that is obese must avoid meals containing",
+        options: [
+          "carrots and oranges",
+          "margarine and butter",
+          "beef and beans",
+          "rice and yam",
+        ],
+        ans: "B",
+      },
+      {
+        id: 39,
+        question: "All living cells require water because it ",
+        options: [
+          "it is a medium for all metabolic reactions",
+          "is a medium that neutralizes acids in cells",
+          "is the main source of energy for the diseases in cells",
+        ],
+        ans: "A",
+      },
+      {
+        id: 40,
+        question: "Night-blindnes result from a deficiency of",
+        options: ["Vitamain E", "Viamin A", "Vitamin K", "Vitamin C"],
+        ans: "B",
+      },
+      {
+        id: 41,
+        question:
+          "When a mixture of a food substance and benedict's solution was warmed, the solution changed from blue to brick-red. This indicate the presence of",
+        options: ["fatty acid", "sucrose", "amino acid", "reducing sugar"],
+        ans: "D",
+      },
+      {
+        id: 42,
+        question: `I Parasitism - Sundew <br />
+          II Autotrophism - Amoeba <br />
+          III Saprophytism - Algae <br />
+          IV Heterorophism - Agama <br />
+          Which of the following modes of nutrition is correctly matched with the organism that exhibits it?`,
+        options: ["IV", "I", "II", "III"],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question: "Which of the following is a polysaccharide?",
+        options: ["Glucose", "Sucrose", "Maltose", "Cellulose"],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question:
+          "The greatest amount of energy will be obtain by the oxidation of 100Kg of",
+        options: ["meat", "butter", "sugar", "biscuits"],
+        ans: "B",
+      },
+      {
+        id: 45,
+        question:
+          "Which of the following is lacking in the diet of a person with Kwashiorkor?",
+        options: ["Proteins", "Carbohydrate", "Minerals", "Vitamin"],
+        ans: "A",
+      },
+      {
+        id: 46,
+        question:
+          "The vitamin which is important in the formation of the retina pigment is",
+        options: ["Vitamin A", "Vitamin B", "Vitamin C", "vitamin D"],
+        ans: "A",
+      },
+      {
+        id: 47,
+        question: "The element common to protein, carbohydrate and lipid is",
+        options: ["hydrogen", "sulphur", "nitrogen", "phosphorus"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Digestive system, Digestive enzymes and Dentition",
+    questions: [
+      {
+        id: 1,
+        question: "When proteins are broken down they provide",
+        options: ["oxygen", "carbohydrate", "energy", "amino acids", "enzyme"],
+        ans: "D",
+      },
+      {
+        id: 2,
+        question:
+          "The mammalian stomach can carry out a number of process except",
+        options: [
+          "Secretion of hydrochloric acid",
+          "Secrecion of gastric juice",
+          "Churning of food",
+          "Productiion of trypsin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 3,
+        question:
+          "Which of these is terminal portion of the alimentry canal of a mammal",
+        options: ["Oesophangus", "Stomach", "Rectum", "Colon", "Appendix"],
+        ans: "C",
+        // rectum of course
+      },
+      {
+        id: 4,
+        question: "Which of these is not an enzyme?",
+        options: ["Pepsin", "Gastrin", "Amylase", "Chymotrypsin", "Trypsin"],
+        ans: "B",
+      },
+      {
+        id: 5,
+        question: "The digestive enzyme that coagulates protein in milk is",
+        options: ["Ptyalin", "Pepsin", "Rennin", "Trypsin", "Amylase"],
+        ans: "C",
+      },
+      {
+        id: 6,
+        question: `The arrangements below are steps of protein digestion. Which is the correct sequence? <br />
+          a -> Polypeptides <br />
+          b -> Protein <br />
+          c -> Amino acids <br />
+          d -> Peptones`,
+        options: [
+          "a -> b -> c -> d",
+          "c -> d -> a -> d",
+          "b -> c -> a -> d",
+          "b -> d -> a -> c",
+          "b -> a -> c -> d",
+        ],
+        ans: "D",
+      },
+      {
+        id: 7,
+        question: "Which of the following organs produces bile?",
+        options: ["Gall bladder", "Pancreas", "Spleen", "Liver", "Stomach"],
+        ans: "D", // liver produces bile and stores in inside gall bladder
+      },
+      {
+        id: 8,
+        question: "Which of the food substances is digested in the stomach?",
+        options: [
+          "Carbohydrate",
+          "Fats and oil",
+          "Fats and protein",
+          "Protein",
+          "Carbohydrate and fats",
+        ],
+        ans: "D",
+        // protein is digested in the stomach....
+      },
+      {
+        id: 9,
+        question: "The kind of teeth used for tearing food materials is the",
+        options: ["fang", "canines", "premolar", "carnassial", "incisor"],
+        ans: "B",
+        // well, if its a matter of tearing, caninnes do the job
+      },
+      {
+        id: 10,
+        question: "Milk protein is hydrolysed by",
+        options: ["rennin", "amylase", "lipase", "lactase", "pepsin"],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question: "All the following are digestive enzymes except",
+        options: ["bile", "lipase", "maltase", "pepsin", "ptyalin"],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question:
+          "The correct route for a piece of bread eaten by a mammals is",
+        options: [
+          "Oral cavity -> Oesophagus -> Stomach -> Duodenum -> Ileum -> Rectum",
+          "Oral cavity -> Stomach -> Oesophagus -> Duodenum -> Ileum -> Rectum",
+          "Oral cavity -> Esophagus -> Duodenum -> Stomach -> Ileum -> Rectum",
+          "Oral caviy -> Oesophagus -> Ileum -> Stomach -> Duodenum -> Rectum",
+        ],
+        ans: "A",
+      },
+      {
+        id: 13,
+        question:
+          "In the enzyme reactions: starch -> sugar in the presence of amylase, starch is referred to the",
+        options: [
+          "substrate",
+          "product",
+          "enzyme-substract complex",
+          "reaction mixture",
+        ],
+        ans: "A",
+      },
+      {
+        id: 14,
+        question:
+          "if a gall bladder of a man is removed by surgery, which of the following process will be seriously affected?",
+        options: [
+          "Digestion of fats and oil",
+          "formation of urea",
+          "Digestion of fats",
+          "Conversion of protein",
+          "Storage and release of urine",
+        ],
+        ans: "A",
+      },
+      {
+        id: 15,
+        question: "The maintenance pancrease is involve with is the?",
+        options: [
+          "digestion of food only",
+          "digestion and absorbtion of food",
+          "digestion of food, and regulation of blood sugar",
+          "digetion of food, production hormones, and the regulation of blood sugar",
+          "digestion of food and regulation of insulin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question:
+          "Which of the following about dentition of a man is INCORRECT? Man has",
+        options: [
+          "more molars than incisor",
+          "no diastema",
+          "the same number of teeth on upper and lower jaws",
+          "a total thirty two teeth",
+          "a total of six molars",
+        ],
+        ans: "E",
+      },
+      {
+        id: 17,
+        question: "The mouth part of housefly are adapted for",
+        options: [
+          "lapping and sponging",
+          "sucking and chewing",
+          "piercing amd sucking",
+          "chewing and lapping",
+          "biting and chewing",
+        ],
+        ans: "A",
+      },
+      {
+        id: 18,
+        question: "Which of the following statement is not true of enzyme?",
+        options: [
+          "They are protein",
+          "They need cofactor to activate them",
+          "They are sensitive to hydrogen ion",
+          "They can withstand high temperature",
+        ],
+        ans: "D", // most protein will denature at high temp
+      },
+      {
+        id: 19,
+        question: "Pepsin is a digestive enzyme which break",
+        options: [
+          "cellulose into glucose molecule",
+          "carbohydrate ino simple sugars",
+          "protein into polypeptides",
+          "fats into glycerol and fatty acids",
+          "sucrose into glucose and fructose",
+        ],
+        ans: "C",
+      },
+      {
+        id: 20,
+        question:
+          "The removal of a man's pancreas by surgical operation can affect only the digestion of",
+        options: [
+          "starch",
+          "starch, protein and fats",
+          "oils and fats",
+          "proteins",
+          "carbohydrate and fats",
+        ],
+        ans: "B",
+      },
+      {
+        id: 21,
+        question:
+          "The presence of diastema in the jawbone indicate that the mammal lacks the teeth suitable for",
+        options: ["cutting", "chewing and tearing", "cutting and grinding"],
+        ans: "A",
+      },
+      {
+        id: 22,
+        question: `Which of the following represent the sequences of protein hydrolysis? <br />
+          1. Polypeptides <br />
+          2. Amino acids <br />
+          3. Proteins <br />
+          4. Peptones`,
+        options: [
+          "3 -> 1 -> 2 -> 4",
+          "3 -> 2 -> 4 -> 1",
+          "3 -> 4 -> 2 -> 1",
+          "3 -> 4 -> 1 -> 2",
+          "3 -> 1 -> 4 -> 2",
+        ],
+        ans: "D",
+      },
+      {
+        id: 23,
+        question:
+          "Partially digested food ready to leave the stomach is referred to as",
+        options: ["chyme", "curd", "glycogen", "paste", "roughage"],
+        ans: "A", //chyme, honestly
+      },
+      {
+        id: 24,
+        question: "The three organs that are situated close to the stomach are",
+        options: [
+          "kidney, liver and gall bladder",
+          "pancreas, liver and kindey",
+          "liver, kidney and spleen",
+          "gall bladder, pancreas and spleen",
+        ],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question:
+          "Evidence that a tooth is a living part of the mammalian body can be found within the",
+        options: ["gum", "pulp cavity", "cement", "enameal"],
+        ans: "b",
+      },
+      {
+        id: 26,
+        question:
+          "Which of the following list of organs is directly involved in nutrition?",
+        options: [
+          "Oesophagus, bronchus, stomach, pancreas and anus",
+          "Spleen, pharynx, duodenum, jejunum and rectum",
+          "Teeth, oesophagus, ileum, lungs, and large intestine",
+          "Salivary gland, liver, stomach, villi and colon",
+        ],
+        ans: "D",
+      },
+      {
+        id: 27,
+        question: "If an animal has diastema, it would NOT possess",
+        options: ["incisors", "canines", "premolars", "molars"],
+        ans: "B",
+      },
+      {
+        id: 28,
+        question:
+          "If the gall bladder of a mammal is damaged, which of the following will be most seriously affected?",
+        options: [
+          "Glycolysis",
+          "Digestion of starch",
+          "Digestion of fats and oils",
+          "Digestion of proteins",
+        ],
+        ans: "C",
+      },
+      {
+        id: 29,
+        question:
+          "Which of the following will be first digested if ingested at the same time?",
+        options: [
+          "Cooked beans",
+          "Cooked rice",
+          "Cod liver oil",
+          "Roasted beef",
+        ],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question: "The pancreatic juice contains the enzmyes amylopsin",
+        options: [
+          "pepsin and trypsinogen",
+          "rennin and steapsin",
+          "steapsin and trypsinogen",
+          "steapsin and ptyalin",
+        ],
+        ans: "C",
+      },
+      {
+        id: 31,
+        question:
+          "The organ which secretes digestive enzymes as well as hormone is the",
+        options: ["liver", "salivary gland", "pancreas", "spleen"],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question: "The villus in the small intestine is significant because it",
+        options: [
+          "increase the surface area for absorption",
+          "increase the surface area for digestion",
+          "assist in mixing digestion food",
+          "assist in filtering undigested food",
+        ],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question: "One of the accessory organs of the digestive system is the",
+        options: ["kidney", "spleen", "liver", "lung"],
+        ans: "C",
+      },
+      {
+        id: 34,
+        question: "The crown of the mammalian tooth is covered with",
+        options: ["cement", "dentine", "caries", "enamel"],
+        ans: "D",
+      },
+      {
+        id: 35,
+        question: "Which enzymes are contained in the pancreatic juice?",
+        options: [
+          "Ptyalin, lipase and pepsin",
+          "Maltase, erepsin and trypsin",
+          "Rennin, sucrase and lipase",
+          "Amylase, lipase and trypsin",
+        ],
+        ans: "D",
+      },
+      {
+        id: 36,
+        question:
+          "The end product of the digestion of fats and oils in mammals are",
+        options: [
+          "maltose and fatty acids",
+          "amino acids and glucose",
+          "fatty acids and fructose",
+          "fatty acids and glycerin", // 100. Fatty acid and glycerine
+        ],
+        ans: "D",
+      },
+      {
+        id: 37,
+        question:
+          "The activity of ptyalin is likely to decrease with an increase in the concentration of",
+        options: ["oxygen", "starch", "protein", "acid"],
+        ans: "D",
+      },
+      {
+        id: 38,
+        question: "The part of the stomach nearer the gullet is called the",
+        options: [
+          "epiglottis",
+          "cardiac sphincter",
+          "duodenum",
+          "pyloric sphincter",
+        ],
+        ans: "B",
+      },
+      {
+        id: 39,
+        question:
+          "The group of insects that have mouth parts adapted for both piercing and sucking is",
+        options: [
+          "cockroaches, aphids and mosquitoes",
+          "aphids, houseflies and moths",
+          "mosquitoes, tsetse flies and aphids", // this is the most reasonable
+          "aphids, beetle and grasshopper",
+        ],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question: "The enzyme invertase will hydrolyze surcose to give",
+        options: [
+          "maltase and glucose",
+          "glycerol and fatty acids",
+          "glucose and fructose",
+          "mannose and galactose",
+        ],
+        ans: "C",
+        // glucose and fructose are gotten from the enzymatic hydrolysis of sucrose...
+      },
+      {
+        id: 41,
+        question:
+          "The carnassial teeth of a carnivorous animal consists of the",
+        options: [
+          "last upper premolar and the first lower molar",
+          "upper molar and the last lower molar",
+          "first upper premolar and the first lower molar",
+          "first upper molar and the first lower molar",
+        ],
+        ans: "A",
+      },
+      {
+        id: 42,
+        question:
+          "Examples of organisms in which extracellular digestion occurs are",
+        options: [
+          "Fungus, loranthus and housefly",
+          "Rhizopus, sponges and earthworm",
+          "Roundworm, tapeworm and Hydra",
+          "Rhizopus, housefly and Hydra",
+        ],
+        ans: "D",
+      },
+      {
+        id: 43,
+        question:
+          "The organ located within the duodenal loop in the mammal is the",
+        options: ["spleen", "pancreas", "liver", "gall bladder"],
+        ans: "B",
+      },
+      {
+        id: 44,
+        question:
+          "The part of mammalian digestive system where absorption of nutrients take place is the",
+        options: ["ileum", "colon", "oesophagus", "duodenum"],
+        ans: "A",
+      },
+      {
+        id: 45,
+        question:
+          "An insect with a mandibulate mouth part will obtain its food by",
+        options: [
+          "biting and chewing",
+          "chewing and sucking",
+          "chewing",
+          "sucking",
+        ],
+        ans: "A",
+      },
+      {
+        id: 46,
+        question: "The gall bladder of a mammal has a duct connected to the",
+        options: ["liver", "duodenum", "small intestine", "pancreas"],
+        ans: "A",
+      },
+      {
+        id: 47,
+        question:
+          "The breakdown of fats and oils into simpler absorbable compounds is catalyzed by enzymes called",
+        options: ["lipases", "hydrolases", "amylases", "peptidases"],
+        ans: "A",
+      },
+      {
+        id: 48,
+        question: "Rodents gnaw on food with their",
+        options: [
+          "molar teeth",
+          "strong jaws",
+          "flat-ridged teeth",
+          "chisel-like front teeh",
+        ],
+        ans: "D",
+      },
+      {
+        id: 49,
+        question: "The pancreas secretes enzymes for the digestion of",
+        options: [
+          "fats, protein and carbohydrate",
+          "fats, vitamin and celluose",
+          "fats, carbohydrate and vitamins",
+          "proteins, celluose and minerals",
+        ],
+        ans: "A",
+      },
+      {
+        id: 50,
+        question: "The order of passasge of food in the digestive system is",
+        options: [
+          "illeum -> caecum -> large intenstine -> rectum",
+          "ileum -> colon -> caecum -> rectum",
+          "large intestine -> illeum -> rectum",
+          "colon -> caecum -> ileum -> rectum",
+        ],
+        ans: "A",
+      },
+      {
+        id: 51,
+        question:
+          "In the alimentary system of a bird, the function of teeth is carried out by",
+        options: ["crop", "beak", "gizzard", "tongue"],
+        ans: "C",
+      },
+      {
+        id: 52,
+        question: "Chewing the cud is an adaptation peculiar to",
+        options: ["herbivores", "omnivores", "rodents", "ruminants"],
+        ans: "D",
+      },
+      {
+        id: 53,
+        question:
+          "The part of alimentary system of a bird where food is ground into small particles is the",
+        options: ["cloaca", "stomach", "crop", "gizzard"],
+        ans: "D",
+      },
+      {
+        id: 54,
+        question: "The part of the human gut that has an acidic content is the",
+        options: ["duodenum", "ileum", "colon", "stomach"],
+        ans: "D",
+      },
+      {
+        id: 55,
+        question:
+          "The conversion of a nutrient into a molecule in the body of a consumer is referred to as",
+        options: ["absorption", "inhibition", "digestion", "assimilation"],
+        ans: "D",
+      },
+      {
+        id: 56,
+        question: `I. Test tube containing cane sugar and water. <br />
+          II. Test tube containing cane sugar and dilute acid. <br />
+          III. Test tube containing cane sugar and its degrading enzyme. <br />
+          In which of the test tubes will glucose be detected after complete hydrolysis?`,
+        options: [
+          "I only",
+          "I, II, and, III",
+          "I and II only",
+          "II and III only",
+        ],
+        ans: "D",
+      },
+      {
+        id: 58,
+        question: "An example of a filter-feeding animal is",
+        options: ["Whale", "Mosquito", "Shark", "Butterfly"],
+        ans: "A",
+      },
+      {
+        id: 59,
+        question:
+          "A function of the hydrochloric acid produced in the human stomach during digestion is to",
+        options: [
+          "neutralise the effect of bile",
+          "coagulate milk protein and emulsify fats",
+          "stop the action of ptyalin",
+          "break up food into smaller particles",
+        ],
+        ans: "C",
+      },
+      {
+        id: 60,
+        question:
+          "The process in which complex substances are broken down into simpler ones is referred to as",
+        options: ["Catabolism", "Metabolism", "Propism", "Anabolism"],
+        ans: "A",
+      },
+      {
+        id: 61,
+        question: "The enzyme that is present in the saliva is",
+        options: ["Lipase", "Pepsin", "Ptyalin", "Rennin"],
+        ans: "C",
+      },
+      {
+        id: 62,
+        question:
+          "Which of the following organs regulates the amount of amino acids and glucose in the body?",
+        options: ["Kidney", "Liver", "Pancreas", "Spleen"],
+        ans: "B",
+      },
+      {
+        id: 63,
+        question: "Which of the following animal has homodont dentition?",
+        options: ["Rat", "Man", "Lizard", "Pigeon"],
+        ans: "C",
+      },
+      {
+        id: 64,
+        question:
+          "The activity of ptyalin is likely to decrease with an increase in the concentration of",
+        options: ["Oxygen", "Starch", "Protein", "Acid"],
+        ans: "D",
+      },
+      {
+        id: 65,
+        question: "The hepatic portal vein is unique because it",
+        options: [
+          "carries deoxygenated blood",
+          "begins and ends with capillaries",
+          "is the largest vein in mammals",
+          "carries degested food",
+        ],
+        ans: "B",
+      },
+      {
+        id: 66,
+        question: "The degistive enzyme found in the ileum is",
+        options: ["trypsin", "pepsin", "erepsin", "renin"],
+        ans: "C",
+      },
+      {
+        id: 67,
+        question: "Which organs produces bile in the human body?",
+        options: ["Liver", "Gall bladder", "Kidney", "Pancreas"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Supporting Tissues In Plants And Movement",
+    questions: [
+      {
+        id: 1,
+        question: "One of the functions of the xylem is",
+        options: [
+          "Strengthening the stem",
+          "Manufacturing food",
+          "Reducing loss of water",
+          "Conducting manufactured food",
+          "Storing unused sugar",
+        ],
+        ans: "A",
+      },
+      {
+        id: 3,
+        question:
+          "In a phototrophic experiment, young seedlings in a box were subjected to light from one direction. The seedlings continued to grow erect. Which of the following statements is correct?",
+        options: [
+          "Only the tips of the seedling received light",
+          "The light was not strong enough",
+          "The seedlings were rather too young",
+          "The tips of the seedling may have been covered",
+          "The box containing the seedling should have been placed on a laboratory bench",
+        ],
+        ans: "D",
+      },
+      {
+        id: 4,
+        question:
+          "Which of these tissues serves the function of support and water conduction?",
+        options: [
+          "Parenchyma",
+          "Collenchyma",
+          "Sclerenchyma",
+          "Xylem",
+          "Phloem",
+        ],
+        ans: "D",
+      },
+      {
+        id: 5,
+        question:
+          "The tips of some rice seedlings were cut off while some were left intact. Both were covered with a container which had only one small hole to allow light through. After twenty-four hours it was observed that",
+        options: [
+          "the cut tips bent away from the light",
+          "the cut tips bent towards source of light",
+          "the intact tips bent away from the light",
+          "the intact tips bent towards light",
+          "both tips bent away from light",
+        ],
+        ans: "D",
+      },
+      {
+        id: 6,
+        question:
+          "Which of these instruments is used to demonstrate the response of roots and shoots to gravity?",
+        options: ["klinostat", "Manometer", "Potometer", "Photometer"],
+        ans: "A",
+      },
+      {
+        id: 7,
+        question:
+          "Growing yam tendrils climb for support. This growth response is",
+        options: [
+          "haptotropism", // correctamundo
+          "geotropism",
+          "phototropism",
+          "hydrotropism",
+          "chemotropism",
+        ],
+        ans: "A",
+      },
+      {
+        id: 8,
+        question: "Roots of plants are normally",
+        options: [
+          "positively phototrophic",
+          "negatively geotropic",
+          "negatively hydrotrophic",
+          "positively geotropic",
+        ],
+        ans: "D",
+      },
+      {
+        id: 9,
+        question:
+          "The movement of hair of a plant in response to external stimulus of no particular direction",
+        options: [
+          "taxism",
+          "tropism",
+          "Haptotropic movement",
+          "nastic movement",
+          "phototropism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 10,
+        question:
+          "In a positive phototropic response of a coleoptile, the region of greatest curvature is brought about by",
+        options: [
+          "movement of auxin away from the region of curvature",
+          "even distribution of auxins in all parts of the coleoptile",
+          "inhibition of growth by auxins in the region of smaller curvature",
+          "concentration of auxins in the region of curvature",
+          "absence of auxins in the coleoptitle",
+        ],
+        ans: "D",
+      },
+      {
+        id: 11,
+        question: "Nastic movement is",
+        options: [
+          "response to light stimulus",
+          "non-directional",
+          "directional",
+          "response to internal stimulus",
+        ],
+        ans: "B",
+      },
+      {
+        id: 12,
+        question:
+          "An instrument that can be used to demonstrate phototropism and geotropism in plants is the",
+        options: ["auxanometer", "photometer", "klinostat", "photometer"],
+        ans: "C",
+      },
+      {
+        id: 13,
+        question:
+          "The growth of a coleoptile towards unilateral light source is due to",
+        options: [
+          "rapid rate of photosythesis",
+          "unequal distribution of auxins",
+          "the effects of photolysis",
+        ],
+        ans: "B",
+      },
+      {
+        id: 14,
+        question: "Sclerenchyma cells are lignified to",
+        options: [
+          "strengthen and support the plant",
+          "transport synthesized food",
+          "conduct water and salt",
+          "protect the plant from injury",
+        ],
+        ans: "A",
+      },
+      {
+        id: 15,
+        question: "Parenchyma cells serves as supporting tissues when ",
+        options: [
+          "they contain chloroplasts",
+          "have crystals",
+          "become flaccid",
+          "become turgid",
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question: "Taxism differs from tropism because", // I ve learnt taxism and tropism this morning asap
+        options: [
+          "The whole organism is affected",
+          "It is a directional movement",
+          "It is a response to multi-directional stimuli",
+          "Part of the organism is affected",
+        ],
+        ans: "A",
+      },
+      {
+        id: 17,
+        question:
+          "The movement of the whole organism to an external stimulus is termed",
+        options: [
+          "tropism",
+          "a taxis",
+          "a nastic movement",
+          "a phototrophic movement",
+        ],
+        ans: "B",
+      },
+      {
+        id: 18,
+        question:
+          "The response shown by the tips of the root and shoot of a plant to the stimulus of gravity is",
+        options: [
+          "Haptotropism",
+          "Photototropism",
+          "Hydrotropism",
+          "Geotropism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 19,
+        question: "The phloem parenchyma is sometimes used for",
+        options: [
+          "food storage",
+          "supporting the stem",
+          "production of the sieve tube",
+          "transporing water",
+        ],
+        ans: "A",
+      },
+      {
+        id: 20,
+        question:
+          "When a healthy shoot of a flowering plant is illuminated from one side, auxin accumulate on the",
+        options: [
+          "non-illuminated side of the shoot",
+          "illuminated side of the shoot",
+          "upper side of the shoot",
+          "lower side of the shoot",
+        ],
+        ans: "A",
+      },
+      {
+        id: 21,
+        question:
+          "A plant parenchyma cell also acts as a suppoeting tissue when it",
+        options: [
+          "Becomes flaccid",
+          "Contains crystals",
+          "Becomes turgid",
+          "Is pigmented",
+        ],
+        ans: "C",
+      },
+      {
+        id: 22,
+        question:
+          "The ability of a living organism to detect and respond to changes in the environment is referred to as",
+        options: ["Growth", "Taxis", "Locomotion", "Irritability"],
+        ans: "D",
+      },
+      {
+        id: 23,
+        question:
+          "The movement of part of a plant in response to external stimulus of no particular direction is",
+        options: [
+          "Taxism",
+          "Tropism",
+          "Haptotropic movement",
+          "Nastic movement",
+        ],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question: "Nastic movement is",
+        options: [
+          "Response to light stimulus",
+          "Non-directional",
+          "Directional",
+          "Response to internal stimulus",
+        ],
+        ans: "B",
+      },
+      {
+        id: 25,
+        question:
+          "The ability of a living organism to detect and respond to changes in the environment is referred to as",
+        options: ["Locomotion", "Taxis", "Irritability", "Growth"],
+        ans: "C",
+      },
+      {
+        id: 26,
+        question:
+          "The movement response of a cockroach away from a light source is",
+        options: [
+          "Negative phototaxism", // taxism is the movement of the whole organism away from a stimulus
+          "Positive phototaxism",
+          "Negative phototropism",
+          "Positive phototropism",
+        ],
+        ans: "A",
+      },
+      {
+        id: 27,
+        question: "The outer-most tissue of the herbaceous roots is the",
+        options: ["cuticle", "pericycle", "epidermis", "endodermis"],
+        ans: "C",
+      },
+      {
+        id: 28,
+        question:
+          "The respective tissues that transport water and manufactured food in plants are",
+        options: [
+          "xylem and phloem",
+          "phloem and tracheid",
+          "phloem and xylem",
+          "xylem and tracheid",
+        ],
+        ans: "A",
+      },
+      {
+        id: 29,
+        question:
+          "The movement of the whole organism to an external stimulus is termed",
+        options: ["tropism", "a taxis", "a nastic movement", "a phototropic"],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question:
+          "In the root vascular system, the stele is directly surrounded by the",
+        options: ["pericycle", "cortex", "endodermis", "parenchyma"],
+        ans: "A",
+      },
+      {
+        id: 31,
+        question: "A plant tissue that carries water and mineral salt is the",
+        options: ["xylem", "cortex", "phloem", "cambium"],
+        ans: "A",
+      },
+      {
+        id: 32,
+        question:
+          "Which of these instruments is used to demonstrate the response of roots and shoots to gravity?",
+        options: ["Klinostat", "Manometer", "Potometer", "photometer"],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question:
+          "Which of the following can be used in demonstrating Geotropism and Phototropism?",
+        options: ["Klinostat", "Potometer", "Seechi disc", "Anemometer"],
+        ans: "A",
+      },
+      {
+        id: 34,
+        question: "Growth response of a plant to light gradient is known as",
+        options: [
+          "nastic movement",
+          "geotropism",
+          "hydrotropism",
+          "phototropism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 35,
+        question: "Shoot of a plant is",
+        options: [
+          "Positive phototropism and negative geotropism",
+          "Negaive phototropism and positive geotropism",
+          "Negative phototropism and negative geotropism",
+          "Positive phototropism and positive geotropism",
+        ],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Supporting Tissues In Animals",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Which of these skeletons is most appropriate to the cockroach?",
+        options: [
+          "Hydrostatic skeleton",
+          "Exoskeleton", // cockroach exhibit exoskeleton
+          "Endoskeleton",
+          "Cartilaginous skeleton",
+          "Bony skeleton",
+        ],
+        ans: "B",
+        remark: `Cockroach exhibit exoskeleton.`,
+      },
+      {
+        id: 2,
+        question:
+          "Which of these is not associated with the movement of toad, reptile or birds?",
+        options: ["Hopping", "Bopping", "Flapping", "Gliding", "Pecking"],
+        ans: "E",
+        remark: "Pecking is a form of feeding in bird not a form of movement",
+      },
+      {
+        id: 3,
+        question:
+          "Which of the structures listed below is peculiar to the Axis vertebra?",
+        options: [
+          "Odontoid process",
+          "Anterior zygapopnysis",
+          "posterior zygapophysis",
+          "lateral spine",
+          "centrum",
+        ],
+        ans: "A",
+        remark: `The axis has a large centrum(a big mass of bone located beneath the neural canal. The large centrum(odontoid process) protudes forward and fit into the large neural canal of the atlas to allow for rotatory movement. The joint between the atlas and axis is pivot joint)`,
+      },
+      {
+        id: 4,
+        question: "The joint between the atlas and axis vertebrae allows for",
+        options: [
+          "rotary movements only", // normal
+          "up and down or nodding movements only",
+          "rotatory and nodding movements",
+          "no movement at all",
+          "slight movement",
+        ],
+        ans: "A",
+        remark: `The odontoid process of the axis provides a pivot for the atlas to provide the rotatory movement (shaking) of the head.<br/>
+        The atlas-axis joint is a pivot joint. The joint between the atlas and the base of the skull allows nodding movement of the head. The atlas through a pair of facets makes contact with the skull at the occipital condyles`,
+      },
+      {
+        id: 5,
+        question:
+          "In animals, cilia, flagella, pseudopodia, and chaetae, can be used for",
+        options: [
+          "Reprodution",
+          "Fightting enemies",
+          "Attachment to plant",
+          "Locomotion",
+          "Locating",
+        ],
+        ans: "D",
+        remark: "All these parts are used for movement obviously",
+      },
+      {
+        id: 6,
+        question: "The tissue which connects a muscle to a bone is a",
+        options: [
+          "Cartilage",
+          "Muscle fibre",
+          "Tendon",
+          "ligament",
+          "Connecting fibre",
+        ],
+        ans: "C",
+        remark: `Muscle to bone = <strong>Tendon</strong>. Bone to bone = <strong>Ligament</strong>`,
+      },
+      {
+        id: 7,
+        question: "The thoracic vertebrae of a mammal are characterized by the",
+        options: [
+          "vertebraterial canal",
+          "prominent neural arch",
+          "prominent transverse process",
+          "prominent neural spine",
+          "prominent centrum",
+        ],
+        ans: "D",
+        remark: `A thoracic vertebra has a large centrum, a large neural canal and a <strong>long neural spine</strong> which projects upwards and backwards.`,
+      },
+      {
+        id: 8,
+        question: "Which vertebra has a projection called odontoid process?",
+        options: ["Atlas", "Axis", "Thoracic", "Caudal"],
+        ans: "B",
+        remark: `The axis has a projection (centrum) called the odontoid process`,
+      },
+      {
+        id: 9,
+        question:
+          "Starting from the skull end, the vertebrae are arranged in the following order:",
+        options: [
+          "axis, atlas, cervical, thoracic and lumbar",
+          "atlas, cervical, axis, thoracic and lumbar",
+          "atlas, axis, cervical, thoracic, and lumbar", // makes sense? yupyup
+          "atlas, thoracic, cervical, axis and lumbar",
+        ],
+        ans: "C",
+        remark: `Please note that the atlas and axis are cervical vertebra.`,
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following types of vertebrae occur in equal numbers in the rabbit, rat and man?",
+        options: ["Caudal", "Thoracic", "Lumbar", "Cervcal", "Sacral"],
+        ans: "D",
+        remark: `The cervical vertebra occur in equal numbers in all animals`,
+      },
+      {
+        id: 11,
+        question:
+          "The axial skeleton of a mammal does not include the bones of the",
+        options: ["skull", "tail", "limbs", "back", "neck"],
+        ans: "C",
+        remark: `The axial vertebrae includes bones of the skull, ribs, vertebra and sternum. They provide the surface where the appendicular skeleton is attached.`,
+      },
+      {
+        id: 12,
+        question: "The appendicular skeleton is made up of the",
+        options: [
+          "limbs",
+          "skull and limbs",
+          "phalanges",
+          "ulna and radius",
+          "girdles and limbs",
+        ],
+        ans: "E",
+        remark: `The appendicular skeleton is made of the pelvic and pectoral girdles, and the limbs attached to them.`,
+      },
+      {
+        id: 13,
+        question:
+          "Two main distinguishing features of the cervical vertebra are the presence of",
+        options: [
+          "short neural spine and vertebraterial canal", // short neural spine with two openings called vertebrarterial canal
+          "prezygapophysis and cervical ribs",
+          "large centrum and cervical ribs",
+          "vertebrarterial canal and large centrum",
+        ],
+        ans: "A",
+        remark: `Short neural spine and vertebraterial canal`,
+      },
+      {
+        id: 14,
+        question:
+          "The lumbar vertebra when compared with a thoracic vertebra has a",
+        options: [
+          "longer neural spine",
+          "wider neural canal",
+          "thicker centrum",
+          "shorter transverse process",
+        ],
+        ans: "C", // makes sense. Thicker centrum is correct
+        remark: `The centrum of a lumbar vertebrae is thicker than that of thoracic vertebrae`,
+      },
+      {
+        id: 15,
+        question: "Muscles are indirectly attached to bones by means of",
+        options: ["Ligaments", "membranes", "tendons", "sutures"],
+        ans: "C",
+      },
+      {
+        id: 16,
+        question: "Which of the following vertebrate lays a centrum?",
+        options: ["Atlas", "Axis", "Thoracic", "Lumbar"],
+        ans: "A",
+        remark: `Honestly, my research shows A is correct but I don't know why actually.`,
+      },
+      {
+        id: 17,
+        question:
+          "The bones of the neck on which the skull rests is known as the",
+        options: ["odontoid process", "axis", "atlas", "occipital condyle"],
+        ans: "C",
+        remark: `The atlas is the first vertebra just below the skull`,
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following is the correct order of the vertebrae along the spinal column?",
+        options: [
+          "Axis -> atlas -> thoracic -> lumbar -> cervical -> sacral",
+          "Atlas -> cervica -> axis -> thoracic -> lumbar -> sacra",
+          "Atlas -> axis -> cervical -> thoracic -> lumbar -> sacral",
+          "Axis -> atlas -> cervical -> thoracic -> sacral -> lumbar",
+        ],
+        ans: "C",
+        remark: `The correct sequence is atlas, axis, cervical, thoracic, lumbar, sacral and caudal`,
+      },
+      {
+        id: 19,
+        question: "During the bending of the arm, the biceps muscle",
+        options: [
+          "Contracts and the triceps muscle relaxes", // A is correct. 100%
+          "relaxes and the triceps muscle contracts",
+          "and the triceps muscle contract",
+          "and the triceps muscle relax",
+        ],
+        ans: "A",
+      },
+      {
+        id: 20,
+        question:
+          "A band of connective tissue linking two bones in a joint is known as",
+        options: ["tendon", "cartilage", "synovial membrane", "ligament"],
+        ans: "D",
+      },
+      {
+        id: 21,
+        question:
+          "The appendicular skeleton is composed of the pectoral girdle",
+        options: [
+          "pelvic girdle, fore and hind limbs",
+          "pelvic girdle and fore limbs",
+          "lumbar vertebrae and pelvic girdle",
+          "lumbar vertebrae, fore and hind limbs",
+        ],
+        ans: "A",
+        remark: `The appendicular skeleton is made of the pectoral girdle(scapula and clavicle), pelvic girdle(the pubis) and the fore limb(upper extremeties) and hind limbs(lower extremeties)`,
+        // makes sense. Upper and lower extremeties
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following is not a function of the mammalian skeleton?",
+        options: ["protection", "Respiration", "Transportation", "support"],
+        ans: "C",
+        remark: `Transportation is not movement.`,
+      },
+      {
+        id: 23,
+        question: "The organism that has a hydrostatic skeleton is",
+        options: ["Tilapia", "Hydra", "Mosquito larva", "Earthworm"],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question:
+          "The chitin in the exoskeleton of many arthropod is strengthened by",
+        options: [
+          "calcium compounds",
+          "organic salts",
+          "lipids",
+          " hardened proteins",
+        ],
+        ans: "D",
+        remark: `Check modern biology pg 265 for confirmation of this.`,
+      },
+      {
+        id: 25,
+        question: "The scapula and the ischium are part of the",
+        options: [
+          "pectoral girdle",
+          "pelvic girrdle",
+          "appendicular skeleton",
+          "hind limb",
+        ],
+        ans: "C",
+      },
+      {
+        id: 26,
+        question:
+          "The transition from amphibians to mammals involves the limbs becomining more applied to support the weight more effectively requiring modifications in the",
+        options: [
+          "collar bones and coccyx",
+          "pectoral and pelvic girdles",
+          "scapulae and claicles",
+          "vertebrae and sternum",
+        ],
+        ans: "B",
+      },
+      {
+        id: 27,
+        question:
+          "Hydrostatic skeleton is the type of supporting system found in",
+        options: ["mammals", "reptiles", "oligochaete", "arthopods"],
+        ans: "C",
+        remark: `Oligochaetae is another fancy name for earthworms.`,
+      },
+      {
+        id: 28,
+        question:
+          "A unique characteristic of the cervical vetebrae is the process of",
+        options: [
+          "large centrum",
+          "long transverse processes",
+          "zygapophysis",
+          "vertebrarterial canal",
+        ],
+        ans: "D",
+        remark: `The vertebrarteral canal of the cervical vertebra allows for the passage of blood vessels`,
+      },
+      {
+        id: 29,
+        question: "The axial skeleton is the", // axial is now easy to relate with. of course.....
+        options: [
+          "skull, ribs, vertebral column and breast bone",
+          "skull, humerus, vertebral column and ribs",
+          "breast bone, cavicle, ribs and vertebral column",
+          "femur, sternum, ulna and skull",
+        ],
+        ans: "A",
+      },
+      {
+        id: 30,
+        question:
+          "The two halves of the pelvic girdle are joined together at the",
+        options: ["ileum", "pubis", "obturator foramen", "pubis symphysis"],
+        ans: "D",
+      },
+      {
+        id: 31,
+        question:
+          "The main structures in vertebrates that supports and protects the body is the",
+        options: ["ligament", "muscle", "joint", "skeleton"],
+        ans: "D",
+      },
+      {
+        id: 32,
+        question:
+          "The chitin in the exoskeleton of many anthropods is strengthened by",
+        options: ["proteins", "calcium compounds", "organic salts", "lipids"],
+        ans: "A",
+        remark: `If you have any proof that it is calcium compound please let me know`,
+      },
+      {
+        id: 34,
+        question: "The organism that has a hydrostatic skeleton is",
+        options: ["Tilapia", "Hydra", "Mosquito larva", "Earthworm"],
+        ans: "D",
+      },
+      {
+        id: 35,
+        question: "Suture joint is found in the",
+        options: ["hip", "ankle", "skull", "elbow"],
+        ans: "C",
+        remark:
+          "The suture joint is found in the skull and it's an immovable joint.",
+      },
+      {
+        id: 36,
+        question: "The vertebrae that allows the skull to nod and rotate are",
+        options: [
+          "axis and cervical",
+          "atlas and thoracic",
+          "axis and atlas", // obviously,
+          "atlas and cervical",
+        ],
+        ans: "C",
+      },
+      {
+        id: 37,
+        question: "Which of the following vertebrae is entirely centrum?",
+        options: ["cervical", "caudal", "thoracic", "lumbar"],
+        ans: "B",
+        remark: `The statement means which of the option is entirely a mass of bone and caudal is the only correct one.`,
+      },
+      {
+        id: 38,
+        question:
+          "The structure that protects articulating surfaces of bones at a joint to prevent it from being worn out is?",
+        options: [
+          "articular cartilage",
+          "synovial membrane",
+          "Synovial fluid",
+          "Tendon",
+        ],
+        ans: "A", // hmmm
+        remark: `The articular prevents bones from wearing at the articulating surfaces. It then consist of other parts like synovial membrane and fluid.`,
+      },
+      {
+        id: 40,
+        question:
+          "The following are characteristics of a typical vertebrae except",
+        options: [
+          "neural spine", // projects upward
+          "neural canal", // allows for passage of the spinal cord
+          "tranverse processes", // side projections
+          "odontoid process", // odontoid process is only present in the axis vertebra
+        ],
+        ans: "D",
+      },
+      {
+        id: 41,
+        question: "The total number of vertebrae in man is",
+        options: ["31", "32", "33", "34"],
+        ans: "C",
+      },
+      {
+        id: 42,
+        question: "The vertebrae with the highest number in human is",
+        options: ["Thoracic", "Cervical", "Caudak", "Lumbar"],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question:
+          "In humans, number of ribs in humans and the number of floating ribs are",
+        options: [
+          "10 and 6 respectively",
+          "12 and 4 respectively",
+          "12 and 2 respectively",
+          "13 and 3 respectively",
+        ],
+        ans: "C",
+      },
+      {
+        id: 44,
+        question: "The longest bone in humans is",
+        options: ["humerus", "femur", "radius", "ulna"],
+        ans: "B",
+      },
+      {
+        id: 45,
+        question: "The bones of the fingers are known as",
+        options: ["ulna", "radius", "phalanges", "tarsals"],
+        ans: "C",
+      },
+      // one quintillion questions more can be added but let's stop here for now...
+    ],
+  },
+
+  {
+    topic:
+      "Reproduction In Flowering Plants, Germination, Fruit And Seed Dispersal",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Which of these is not a characteristic of wind pollinated flowers?",
+        options: [
+          "Smaller quantities of sticky pollen produced", // if reasoned properly you will get the answer to this question
+          "Feathery styles of stigmas pendulously hang outside the flower",
+          "Small, inconspicuous scentless flowers",
+          "Large anthers which are loosely attached to filaments",
+          "Light pollen grains produced in large quantities from anthers",
+        ],
+        ans: "A",
+      },
+      {
+        id: 2,
+        question: "A germinating seed requires oxygen which is essential for",
+        options: [
+          "Converting carbohydrate into glucose",
+          "Transporting energy from one part of the plant to another",
+          "The production of energy by oxidizing essential carbohydrate", // oxygen is required for the production of energy. obviously
+          "Hydrolysis of protein",
+          "The formation of water molecules within the germinating seed",
+        ],
+        ans: "C",
+      },
+      {
+        id: 3,
+        question: "The region of cell division in a root is", // meristem or camnium
+        options: [
+          "Root cap",
+          "Endodermis",
+          "Xylem",
+          "Piliferous layer",
+          "Meristem",
+        ],
+        ans: "E", // meristem is just the region of cell division in any part of a plant
+      },
+      {
+        id: 4,
+        question:
+          "Which of the statements below is <strong>not</strong> characteristic of wind pollinated flowers?",
+        options: [
+          "Stigmas are usually large and feathery",
+          "Nectary is usually absent",
+          "The pollen grains have rough spiny surfaces",
+          "The flowers are not scented",
+          "The pollen is light and smooth",
+        ],
+        ans: "C",
+      },
+      {
+        id: 5,
+        question: "The plumule is best described as",
+        options: [
+          "Part of the cotyledon",
+          "Part of the endosperm",
+          "A miniature shoot",
+          "Structure near the micropyle",
+          "Structure opposite the hilum", // lolz... structure near the hilium ko
+        ],
+        ans: "C",
+        // lol, I don't know why it is a miiniature shoot funnily enough...
+      },
+      {
+        id: 6,
+        question:
+          "A dry indehiscent, winged fruit formed from one carpel is known as a",
+        options: ["Schizocarp", "Caryopsis", "Samara", "Nut", "Follicle"],
+        ans: "C",
+        // this is very clear now why it is samara...
+        // follicle is not even a dry indehiscent, it is a dry dehiscent
+      },
+      {
+        id: 7,
+        question:
+          "In which of the following tissues do the cells have the ability to divide?",
+        options: ["Meristem", "Sclerenchyma", "Pholem", "Collenchyma", "Pith"],
+        ans: "A",
+      },
+      {
+        id: 8,
+        question:
+          "The maize grain is regarded as a fruit and not a seed because",
+        options: [
+          "It is covered by a sheath of leaves",
+          "The testa and fruit wall fuse after fertilization", // I don't know why
+          "It has both endosperm and cotyledon",
+          "It has coleorhiza and coleoptile",
+          "The pericarp and seed coat are separate",
+        ],
+        ans: "B",
+      },
+      {
+        id: 9,
+        question:
+          "The one-seeded fruit in which the pericarp and seed coat have become fused together is known as", // pericarp and seed coat are fused in caryopsis
+        options: ["Achene", "Samara", "Caryopsis", "Legume", "Drupe"],
+        ans: "C",
+      },
+      {
+        id: 10,
+        question: "A true fruit is formed form", // a true fruit develops from the fertilized ovary. that;s all
+        options: [
+          "A fertilized ovary and other flora parts",
+          "A fertilized ovary",
+          "A fertilized ovary and calyx",
+          "A fertilized ovary and fleshy receptable",
+          "An unfertilized ovary and other floral parts",
+        ],
+        ans: "B",
+        // fruit develops from the ovary, while the seed develops from the ovule
+      },
+      {
+        id: 11,
+        question:
+          "Water is required for seed germination to take place because it",
+        options: [
+          "Activates the enzymes", // water helps to activate enzymes...
+          "Softens the testa",
+          "Liberates energy for growth",
+          "Permits radicle",
+          "Allows oxygen to diffuse into seed",
+        ],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question:
+          "For pollination and fruit formation, the essential part(s) of the flower should be the",
+        options: [
+          "Corolla",
+          "Ovary", // hmm, the ovary doesn't stand alone chey you get....
+          "Pistil(gynoecium)", // this one is complete..
+          "Ovules",
+          "Receptacle",
+        ],
+        ans: "C",
+        // the Pistil is the best answer here...
+      },
+      {
+        id: 13,
+        question:
+          "How many nuclei are found in a pollen tube during fertilization?",
+        options: ["2", "3", "5", "6", "7"],
+        ans: "B",
+        // two male nuclei plus a tube nucleus
+      },
+      {
+        id: 14,
+        question:
+          "Which of the following is NOT true of wind-pollinated flowers?",
+        options: [
+          "Large amount of pollen produced",
+          "Light smooth pollen grains",
+          "Small inconspicuous flowers",
+          "Scented petals", // scented ko
+          "Large pendulous anthers",
+        ],
+        ans: "D",
+      },
+      {
+        id: 15,
+        question: "Where is the food stored in a yam plant?",
+        options: ["Stem", "Bud", "Adventitious root", "Leaves", "Tap root"],
+        ans: "A",
+        // I don't know this one...
+      },
+      {
+        id: 16,
+        question:
+          "A fruit formed from a single flower having several free carpels is",
+        options: [
+          "A multiple fruit",
+          "A dry dehiscent fruit",
+          "A dry indehiscent fruit",
+          "A simple fruit",
+          "An aggregate fruit",
+        ],
+        ans: "E",
+        // this one is aggregate.. simple
+      },
+      {
+        id: 17,
+        question:
+          "If the anthers of flower mature before the stigma, the condition is termed",
+        options: ["Epigny", "Hypogyny", "Protogyny", "Protandry", "Perigyny"],
+        ans: "D",
+        // protandry... otherwise, protogyny
+      },
+      {
+        id: 18,
+        question: "A plant which has a horizontal underground stem is", // rhizome
+        options: ["Rhizome", "Corm", "Creeper", "Tuber", "Bulb"],
+        ans: "A",
+        // stolon is above ground stem
+      },
+      {
+        id: 19,
+        question: "An onion bulb stores its food in the",
+        options: ["Stem", "Leaves", "Roots", "Cotyledon", "Branches"],
+        ans: "B",
+        // an onion bulb stores its food in the leaves... makes sense?
+      },
+      {
+        id: 20,
+        question:
+          "Any dry fruit which can break into several parts each containing one seed is a", // schizocarp
+        options: [
+          "Capsule",
+          "Aggregate fruit",
+          "Legume",
+          "Schizocarp",
+          "Follicle",
+        ],
+        ans: "D",
+      },
+      {
+        id: 21,
+        question:
+          "The maize grain is regarded as a fruit and not a seed because",
+        options: [
+          "It has a coleorhiza",
+          "It has a coleoptile",
+          "Of therelatively large endosperm",
+          "There is the remains of a style", // maize grain???????
+          "Of the relatively small scutellum",
+        ],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question: "In an epigeal germination, it is the",
+        options: [
+          "Epicotyl that elongates fast",
+          "Hypocotyl that elongates fast", // the hypocotyl elongates fast raising the cotyledons above the
+          "Hypogeal that elongates fast",
+          "Plumule that elongates fast",
+          "Roots that elongates fast",
+        ],
+        ans: "B",
+        remark: `The hypocotyl elongates rapidly raising the cotyledons above the ground`,
+      },
+      {
+        id: 23,
+        question: "In the onion bulb, food is stored in the", // leaves. it's obvious sef
+        options: [
+          "Stem",
+          "Lateral buds",
+          "Cotyledons",
+          "Outer scales leaves",
+          "Leaf base",
+        ],
+        ans: "E",
+      },
+      // instead of writing stuffs inside boots, one can have a repository for study materials. Markdown is a very powerful document formatter...
+      {
+        id: 24,
+        question:
+          // a nut is a dry indehiscent
+          "Groundnut is not really a 'nut' in the biological sense because",
+        options: [
+          "It is harvested from inside the ground",
+          "Its pericarp is not hard and tough", // true...
+          "The fruit is succulent",
+          "It is an achene",
+        ],
+        ans: "B",
+      },
+      {
+        id: 25,
+        question:
+          "What type of fruit is formed from a single flower having several free carpels?",
+        options: [
+          "Multiple fruit",
+          "Simple fruit",
+          "Aggregate fruit",
+          "Dehiscent fruit",
+          "Indehiscent fruit",
+        ],
+        ans: "C",
+      },
+      {
+        id: 26,
+        question:
+          "Banana, plantain and pineapple can be group together because they",
+        options: [
+          "Produce small seeds",
+          "Are multiple fruits",
+          "Produce suckers",
+          "Have runners",
+          "Have bulbils",
+        ],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question: "The tuber of cassava is NOT a stem tuber because it",
+        options: [
+          "Is distended with food reserve",
+          "Has an aerial shoot portion",
+          "Has other structures that could be called roots",
+          "Lacks axillary buds",
+          "Has a bank over its stored food",
+        ],
+        ans: "D",
+      },
+      {
+        id: 28,
+        question:
+          "Underground stems which grow horizontally through the soil are",
+        options: ["Bulbs", "Rhizomes", "Runners", "Corms", "Stolon"],
+        ans: "B",
+      },
+      {
+        id: 29,
+        question: "A flowering plant is monoecious if",
+        options: [
+          "The androecium is found on one plant",
+          "The gynoecium is monocarpous",
+          "It produces essential organs",
+          "The gynoecium and androecium are on the same plant",
+          "The flowers are unisexual",
+        ],
+        ans: "D",
+      },
+      {
+        id: 30,
+        question: "The maize grain is a fruit and not a seed because it",
+        options: [
+          "Has a monocotyledon",
+          "Is formed form an ovary",
+          "Is a monocotyledon",
+          "Has no plumule and radicle",
+          "Has a hypogeal germination",
+        ],
+        ans: "B",
+      },
+      {
+        id: 31,
+        question: "If a flower is protandrous then it", //
+        options: [
+          "Must be unisexual",
+          "Has an undeveloped androecium",
+          "Has no androecium",
+          "Must be insect pollinated",
+          "Can prevent self pollination", // sure...
+        ],
+        ans: "E",
+      },
+      {
+        id: 32,
+        question:
+          "For pollen to be released in crotalaria the insect must depress the",
+        options: [
+          "Wing",
+          "Keel",
+          "Standard",
+          "Antepetalous stamen",
+          "Antespalous stamen",
+        ],
+        ans: "B",
+      },
+      {
+        id: 33,
+        question: "Irish potato is a",
+        options: ["Bulb", "Taproot", "Rhlzome", "Root tuber", "Stem tuber"],
+        ans: "D",
+      },
+      {
+        id: 34,
+        question:
+          "Germination which result in the cotyledons being brought above ground is called",
+        options: ["Hypocotyl", "Epicotyl", "Epigeal", "Hypogeal", "Plumule"],
+        ans: "C",
+      },
+      {
+        id: 35,
+        question: "The pineapple fruit is best described as",
+        options: [
+          "Aggregate, succulent and indehiscent",
+          "Aggregae, succulent and indehiscent",
+          "Multiple, succulent and indehiscent", // multiple or composite...
+          "Multiple, succulent and dehiscent",
+        ],
+        ans: "C",
+      },
+      {
+        id: 37,
+        question: "A flower showing radial symmetry is said to be",
+        options: ["Pentamerous", "Protandrous", "Protogynous", "Actinomorphic"],
+        ans: "D",
+        // actinomorphic for radial symmetry
+        // zygomorphic for bilateral symmetry...
+      },
+      {
+        id: 38,
+        question: "A samara differs from a cypsela by having",
+        options: [
+          "An extended pericarp", // sure, samara has an extended pericarp with wings..
+          "A hard pericarp",
+          "A pericarp fused with the seed coat",
+          "Some hairy outgrowths on the pericarp",
+        ],
+        ans: "A",
+      },
+      {
+        id: 39,
+        question: "The plantain reproduces asexually by",
+        options: ["Suckers", "Buds", "Fragments", "Spores"],
+        ans: "A", // bananas have suckers
+      },
+      {
+        id: 40,
+        question:
+          "A dry dehiscent fruit which breaks up into one seeded parts is a",
+        options: ["Schizocarp", "Capsule", "Follicle", "Legume"],
+        ans: "A",
+      },
+      {
+        id: 41,
+        question: "Airspaces are characteristic of seeds of fruits dispersed",
+        options: ["Birds", "Water", "Wind", "Explosive mechanism"],
+        ans: "B",
+      },
+      {
+        id: 42,
+        question:
+          "In vegetative propagation, which of the following requires part of another plant to develop?",
+        options: ["Scion", "Bulb", "Rhizome", "Sucker"],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question:
+          "Which of these plants groups are normally propagated by asexual means?",
+        options: [
+          "Banana, yam, pineapple and cassava",
+          "Yam, cassava, rubber and banana",
+          "Yam, cassava, orange and banana",
+          "Banana, cassava, coffee and pineapple",
+        ],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question:
+          "The radicle of a bean seedling grows most rapidly in the region",
+        options: [
+          "Of the root tip",
+          "Just above the root tip",
+          "Just around the root tip",
+          "Just below the root tip",
+        ],
+        ans: "B",
+      },
+      {
+        id: 45,
+        question: "Wind-pollinated flowers usually have",
+        options: [
+          "Rough pollen grains",
+          "Sticky stigmas",
+          "Small and short stigmas",
+          "Long styles",
+        ],
+        ans: "D",
+      },
+      {
+        id: 46,
+        question:
+          // I think castor oil is dicotyledonous
+          "The components of castor oil seed and the maize grain are similar EXCEPT for the",
+        options: [
+          "Number of cotyledons",
+          "Location of the embryo",
+          "Number of radicles",
+          "Number of plumules",
+        ],
+        ans: "A",
+      },
+      {
+        id: 47,
+        question: "A corm differs from a bulb in that",
+        options: [
+          "Its stem is the main food storage organ",
+          "It has a flattened disc-shaped stem",
+          "Buds are absent in the axils of the leaves",
+          "Adeventitious roots are present",
+        ],
+        ans: "A",
+      },
+      {
+        id: 48,
+        question: "Fruits which develop without fertilization are described as",
+        options: ["Simple", "Parthenocarpic", "Aggregate", "Compound"],
+        ans: "B",
+      },
+      {
+        // all these vegetative propagation is just still there. Blank space in my memory...
+        id: 49,
+        question: "The elephant grass is propagated vegetatively by means of",
+        options: ["Corms", "Bulbs", "Suckers", "Solon"],
+        ans: "D",
+      },
+      {
+        id: 50,
+        question:
+          "A collection of achenes formed from several carpels of a flower is",
+        options: [
+          "A multiple fruit",
+          "An aggregate fruit",
+          "A schizocarp",
+          "A simple fruit",
+        ],
+        ans: "B",
+      },
+      {
+        id: 51,
+        question:
+          "Vegetative propagation is described as asexual reproduction because",
+        options: [
+          "Reproductive organs are not involved", // I believe A is the answer joh
+          "New individuals are not formed",
+          "Mnay new plants are produced",
+          "There is no exchange of genetic materials",
+        ],
+        ans: "D",
+      },
+      {
+        id: 52,
+        question: "Epigeal germination can be found in",
+        options: ["Sorghum", "Maize", "Millet", "Groundnut"],
+        // groundnut is an epigeal plant
+        ans: "D",
+      },
+      {
+        id: 53,
+        question: "A onion is a bulb because it",
+        options: [
+          "Has a tuberous stem",
+          "Has a reduced stem and thick fleshy leaves", // reduced stem and fleshy leaves is absolutely correct...
+          "Has adventitious roots",
+          "Bears many buds at the nodes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 54,
+        question:
+          "Double fertilization in higher plant is significant because it ensures the",
+        options: [
+          "Formation of a fertile embryo",
+          "Formation of a fertile embryo and the endosperm",
+          "Development of the seed",
+          "Development of the fruit",
+        ],
+        ans: "B",
+        // yupyup, this is absolutely correct... double fertilization
+      },
+      {
+        id: 55,
+        question: "Hypogeal germination is characterized by the",
+        options: [
+          "Emergence of the plumule out of the ground",
+          "Provision of nourishment by the endosperm",
+          "Elongation of the hypocotyl",
+          "Elongation of the epicotyl", // correct
+        ],
+        ans: "D",
+      },
+      {
+        id: 56,
+        question:
+          "Fruits which develop without fertilization of the ovule are ",
+        options: ["False", "Multiple", "Aggregate", "Parthenocarpic"],
+        ans: "D",
+      },
+      {
+        id: 57,
+        question: "The main function of petal of a flower is to",
+        options: [
+          "Attract pollination agents",
+          "Protcet the flower while still in bud",
+          "Serve as landing stage for insects",
+          "Protect the inner parts from desiccation",
+        ],
+        ans: "A",
+      },
+      {
+        id: 58,
+        question:
+          "The fleshy base of a flower to which the different floral parts are attached is know as",
+        options: ["Calyx", "Sepals", "Thalamus", "Hypothalamus"],
+        ans: "C",
+      },
+      // {
+      //   id: 59,
+      //   question: "An example of a plant having the placetation shown is",
+      //   options: ["Allamander", "Hibiscus", "Water lily", "Pride of Barbados"],
+      //   ans: "B",
+      // },
+      {
+        id: 82,
+        question: "The term caryopsis is used to describe a fruit in which the",
+        options: [
+          "Testa and pericarp are separate",
+          "Seed and endocarp are fused",
+          "Testa and pericarp are fused",
+          "Seed coat and fruit wall are impermeable",
+        ],
+        ans: "C",
+      },
+      {
+        id: 60,
+        question: "Coconut and oil palms fruits can be grouped as",
+        options: ["Berry", "Legume", "Caspule", "Drupe"],
+        ans: "D",
+        // coconut is drupe, I don't know of other ones...
+      },
+      {
+        id: 61,
+        question: "Which of the following is the youngest plants tissue?",
+        options: ["Meristem", "Phloem", "Epidermis", "Xylem"],
+        ans: "A",
+      },
+      {
+        id: 62,
+        question:
+          "A dry fruit formed from two or more carpels containing several seeds is a",
+        options: ["Follicle", "Legume", "Capsule", "Schizocarp"],
+        ans: "C",
+      },
+      {
+        id: 63,
+        question: "Insects visit flowers in order to",
+        options: [
+          "Feed on the nectar",
+          "Deposit pollen on the stigma",
+          "Pollinate the flowers",
+          "Transfer pollen from anthers",
+        ],
+        ans: "A",
+      },
+      {
+        id: 64,
+        question: "In epigeal germination, the cotyledons are",
+        options: [
+          "Carried above the ground by the elongating hypocotyls",
+          "Pulled underground by the elongating hypocotyls",
+          "Pulled underground by the elongating epicotyl",
+          "Carried above the ground by the elongating epicotyl",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 66,
+        question:
+          "Which of the following is likely to encourage inbreeding in plants",
+        options: ["Dioecious", "Protandrous", "Monoecious", "Protogyny"],
+        ans: "D",
+      },
+      {
+        id: 67,
+        question: "In corms food is usually stored in the",
+        options: ["Leaves", "Stems", "Roots", "Buds"],
+        ans: "B",
+      },
+      {
+        id: 68,
+        question: "Plants tend to prevent overcrowding by means of efficient",
+        options: [
+          "Water uptake",
+          "Seed germination",
+          "Pollination",
+          "Seed dispersal",
+        ],
+        ans: "D",
+      },
+      {
+        id: 69,
+        question:
+          "In which of the following groups of fruits is the pericarp inseparable from the seed coat?",
+        options: ["Nut", "Follicle", "Cypsela", "Cryopsis"],
+        ans: "D",
+      },
+      {
+        id: 70,
+        question: "The best method of propagating sugarcane is by",
+        options: ["Grafting", "Seed sowing", "Layering", "Stem cuttings"],
+        ans: "D",
+      },
+      {
+        id: 71,
+        question: "An example of a caryopsis is",
+        options: ["Coconut", "Maize grain", "Guava", "Tomato"],
+        ans: "B", // maize grain is an example of cryopsis
+      },
+      {
+        id: 72,
+        question: "Epigeal germination of a seed is characterized by",
+        options: [
+          "More rapid elongation of the hypocotyl than the epicotyl",
+          "More rapid elongation of the epicotyl than the hypocotyl",
+          "Equal growth rate of both the hypocotyl and epicotyl",
+          "Lack of growth of the hypocotyl",
+        ],
+        ans: "A",
+      },
+      {
+        id: 73,
+        question: "Water is necessary for a germinating seed because it",
+        options: [
+          "Promotes aerobic respiration",
+          "Activates the enzymes",
+          "Wets the soil for proper germination",
+          "Protects the seed from desiccation",
+        ],
+        ans: "B",
+      },
+      {
+        id: 74,
+        question:
+          "In plants, the structure that performs a similar function with the testes is in mammals is the",
+        options: ["Stigma", "Filament", "Anther", "Receptacle"],
+        ans: "C",
+      },
+      {
+        id: 75,
+        question:
+          "In a bean seed, absorption of water at the beginning of germination is throught the",
+        options: ["Hilum", "Micropyle", "Testa", "Plumule"],
+        ans: "B",
+      },
+      {
+        id: 76,
+        question: "An example of a fruit that develops from a single carpel is",
+        options: ["Okro", "Tomato", "Bean", "Orange"],
+        ans: "C",
+      },
+      {
+        id: 77,
+        question: "An example of an endospermous seed is",
+        options: ["Cotton seed", "Bean seed", "Maize grain", "Cashew nut"],
+        ans: "C",
+      },
+      {
+        id: 78,
+        question:
+          "The transfer of pollen grains from the anther to a receptive stigma is",
+        options: [
+          "Placentation",
+          "Pollination",
+          "Fertilization",
+          "Propagation",
+        ],
+        ans: "B",
+      },
+      {
+        id: 79,
+        question: "The male reproductive organ of a flower is the",
+        options: ["Stamen", "Petal", "Sepal", "Carpel"],
+        ans: "A",
+      },
+      {
+        id: 80,
+        question: "An example of an organ of perennation in plants is",
+        options: ["Rhizome", "Seed", "Petal of a flower", "Calyx of flower"],
+        ans: "A",
+      },
+      {
+        id: 81,
+        question: `I. Growth is mainly apical<br />
+          II. Growth is specific with definite shape<br />
+          III. Growth is throughtout life.<br />
+          Which of the above correctly describes the growth pattern in plants?`,
+        options: [
+          "I, II and III only",
+          "II and III",
+          "I, and II only",
+          "I and III only",
+        ],
+        ans: "D",
+      },
+      {
+        id: 82,
+        question: "Which of the following protects the unopened flower?",
+        options: ["Petal", "Stamen", "Anther", "Sepal"],
+        ans: "D",
+      },
+      {
+        id: 83,
+        question: "Anther is a part of __",
+        options: ["Stigma", "Stamen", "Ovary", "Petal"],
+        ans: "B",
+      },
+      {
+        id: 84,
+        question: "Pollen grains are collected by __",
+        options: ["Anther", "Petal", "Stigma", "Sepal"],
+        ans: "C",
+      },
+      {
+        id: 85,
+        question: "Which part of the flower becomes the seed?",
+        options: ["Ovule", "Ovary", "Anther", "Stigma"],
+        ans: "A",
+      },
+      {
+        id: 86,
+        question: "Style is a part of __",
+        options: ["Stamen", "Pistil", "Filament", "Petal"],
+        ans: "B",
+      },
+      {
+        id: 87,
+        question: "The stalk holding the flower is known as the __",
+        options: ["Filament", "Stigma", "Carbuncle", "Peduncle"],
+        ans: "D",
+      },
+      {
+        id: 88,
+        question:
+          "Which of the following make up the corolla as a single unit?",
+        options: ["Petals", "Stamens", "Sepals", "Pollens"],
+        ans: "A",
+      },
+      {
+        id: 89,
+        question: "What is the name given to flowering plants",
+        options: ["Gymnosperms", "Bryophytes", "Pteridophytes", "Angiosperms"],
+        ans: "D",
+      },
+      {
+        id: 90,
+        question:
+          "Monocot flowers generally tend to have a number of petals that is divisible by __",
+        options: ["Three", "Five", "Seven", "Two"],
+        ans: "A",
+      },
+      {
+        id: 91,
+        question: "Floral scent of a flower is produced in __",
+        options: ["Stigma", "Ovary", "Petals", "Stamen"],
+        ans: "C",
+      },
+      {
+        id: 92,
+        question: "Androecium is the collective name given to the group of __",
+        options: ["Pistils", "Stamens", "Sepals", "Petals"],
+        ans: "B",
+      },
+      {
+        id: 93,
+        question: "The sepals are collectively known as the __",
+        options: ["Calyx", "Corolla", "Peduncle", "Pedicel"],
+        ans: "A",
+      },
+      {
+        id: 94,
+        question: "What is the male reproductive part of a flower?",
+        options: ["Stamen", "Pistil", "Stigma", "Style"],
+        ans: "A",
+      },
+      {
+        id: 95,
+        question: "Gynoecium is the collective name given to the group of __",
+        options: ["Sepals", "Petals", "Stamens", "Pistils"],
+        ans: "D",
+      },
+      {
+        id: 96,
+        question: "The outermost part of the flower is known as the __",
+        options: ["Corolla", "Androecium", "Calyx", "Gynoecium"],
+        ans: "C",
+      },
+      {
+        id: 97,
+        question:
+          "Which of the following is the single largest flower in the world?",
+        options: [
+          "Amorphophallus titanium",
+          "Rafflesia Orlandi",
+          "Corypha Umbraculifera",
+          "Posedonia Oceania",
+        ],
+        ans: "B",
+      },
+      {
+        id: 98,
+        question: "The floral part that produces pollen grains is __",
+        options: ["Sepal", "Petal", "Anther", "Ovary"],
+        ans: "C",
+      },
+      {
+        id: 99,
+        question: "What is the female reproductive part of a flower?",
+        options: ["Stamen", "Pistil", "Anther", "Filament"],
+        ans: "B",
+      },
+      {
+        id: 100,
+        question:
+          "Which of the following flowers is associated with heliotropism?",
+        options: ["Sunflower", "Marigold", "Dahlia", "Chrysanthemum"],
+        ans: "A",
+      },
+      {
+        id: 101,
+        question: "Flowers with both androecium and gynoecium are called?",
+        options: ["Bisexual flowers", "Anther", "Stamens", "Unisexual flowers"],
+        ans: "A",
+      },
+      {
+        id: 102,
+        question: "The transfer of pollen from the anther to stigma is called?",
+        options: ["Pollination", "Fertilization", "Adoption", "Diffusion"],
+        ans: "A",
+      },
+      {
+        id: 103,
+        question:
+          "The fusion of female reproductive nucleus with the male reproductive nucleus is known as?",
+        options: ["Adoption", "Excretion", "Fertilization", "Regeneration"],
+        ans: "C",
+      },
+      {
+        id: 104,
+        question: "Generative nucleus divides forming?",
+        options: [
+          "2 male nuclei",
+          "3 male nuclei",
+          "2 female nuclei",
+          "3 female nuclei",
+        ],
+        ans: "A",
+      },
+      {
+        id: 105,
+        question: "Embryonic sac is located inside the",
+        options: ["Stigma", "Ovule", "Micropyle", "Style"],
+        ans: "B",
+      },
+      {
+        id: 106,
+        question: "A dioecious flowering plant prevents",
+        options: [
+          "Geitonogamy and xenogamy",
+          "Autogamy and xenogamy",
+          "Autogamy and geitonogamy",
+          "Cleistogamy and xenogamy",
+        ],
+        ans: "C",
+      },
+      {
+        id: 107,
+        question: "Rewards and attractants are required for",
+        options: ["Entomophily", "Cleistogamy", "Anemophily", "Hydrophily"],
+        ans: "A",
+      },
+      {
+        id: 108,
+        question:
+          "Which of the following is similar to autogamy, but requires pollinators?",
+        options: ["Geitonogamy", "Cleistogamy", "Apogamy", "Xenogamy"],
+        ans: "A",
+      },
+      {
+        id: 109,
+        question: "The other name for gynoecium is",
+        options: ["Pistil", "Stigma", "Androecium", "Style"],
+        ans: "A",
+      },
+      {
+        id: 110,
+        question: "Which among the following is not correct about flower?",
+        options: [
+          "A flower has 4 whorls arranged successively i.e. calyx, corolla, androecium and gynoecium",
+          "Members of calyx and corolla are called as sepals and petals respectively",
+          "In polysepalous, the sepals are arranged in a free manner whereas in gamosepalous, the sepals are united",
+          "Tulip is an example of polypetalous",
+        ],
+        ans: "D",
+      },
+      {
+        id: 111,
+        question: "A petal-like sepal is known as",
+        options: ["Sepaloid", "Petaloid", "Polysepalous", "Gamosepalous"],
+        ans: "B",
+      },
+      {
+        id: 112,
+        question: "A sepal-like petal is known as",
+        options: ["Sepaloid", "Petaloid", "Polysepalous", "Gamosepalous"],
+        ans: "A",
+      },
+      {
+        id: 113,
+        question: "Another name for the receptacle of a flower is?",
+        options: ["Thalamus", "Pappus", "Samara", "Pedicel"],
+        ans: "A",
+      },
+      {
+        id: 114,
+        question: "The essential floral part of a flower includes",
+        options: [
+          "Stamen and Calyx",
+          "Pedical and Carpel",
+          "Androecium and Pistil",
+          "Carpel and Corolla",
+        ],
+        ans: "C",
+      },
+      {
+        id: 115,
+        question: `Which of the following is true <br />
+          I. Separate sepals are known as Gamosepalous<br />
+          II. Fused sepals are known as Polysepalous<br />
+          III. Separate petals are known as Polypetalous<br />
+          IV. Fused petals are known as Gamopetalous`,
+        options: ["I and II", "III and IV", "I, II, III", "I,, II, III, IV"],
+        ans: "B",
+      },
+      {
+        id: 116,
+        question: `A complete flower has`,
+        options: [
+          "Sepal, Petal, Stamen, and Stigma",
+          "Receptacle, Thalamus, Petal, and Stigma",
+          "Anther and Styles",
+          "Filaments, ovary and Ovaries",
+        ],
+        ans: "A",
+      },
+      {
+        id: 117,
+        question: `The modified leaves responsible for sexual reproduction in plants is known as`,
+        options: ["Plumule", "Coleorhiza", "Flower", "Coleoptile"],
+        ans: "C",
+      },
+      {
+        id: 118,
+        question: `The flower is borne on a stalk which is also known as`,
+        options: ["Pedicel", "Thalamus", "Calyx", "Corolla"],
+        ans: "A",
+      },
+      {
+        id: 119,
+        question: `A flower with one or more separate carpels is known as`,
+        options: ["Monocarpous", "Apocarpous", "Syncarpous", "Unicarpous"],
+        ans: "B",
+      },
+      {
+        id: 120,
+        question: `A flower with one or more fused carpels is known as`,
+        options: ["Monocarpous", "Apocarpous", "Syncarpous", "Unicarpous"],
+        ans: "C",
+      },
+      {
+        id: 121,
+        question: `A flower with one carpel is known as`,
+        options: ["Monocarpous", "Apocarpous", "Syncarpous", "Unicarpous"],
+        ans: "A",
+      },
+      {
+        id: 122,
+        question: `A case in which the filaments of stamen are attached to the petals is known as`,
+        options: [
+          "Epipetalous",
+          "Filamentous",
+          "Petal-filament complex",
+          "Hypopetalous",
+        ],
+        ans: "A",
+      },
+      {
+        id: 123,
+        question: `A flower in which the ovary is located inside the receptacle is known as`,
+        options: ["Hypogynous", "Perigynous", "Epigynous", "Hepagynous"],
+        ans: "C",
+      },
+      {
+        id: 124,
+        question: `The compartment in which the ovule lie is known as`,
+        options: ["Locus", "Loculus", "Septa", "Nucellus"],
+        ans: "B",
+      },
+      {
+        id: 125,
+        question: `A flower with a bilateral symmetry is known as`,
+        options: ["Zygomorphic", "Actinomorphic", "Micropylous", "Loculic"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Reproduction In Animals. Development And Growth",
+    questions: [
+      {
+        id: 1,
+        question: "At fertilization",
+        options: [
+          "One chromosome from the male joins another from the female",
+          "One gene from the male combines with another from the female",
+          "The male nucleus fuses with the female",
+          "The male nucleus fuses with the female nucleus",
+          "One set chromosomes combines with another set from the female",
+        ],
+        ans: "C",
+      },
+      {
+        id: 2,
+        question:
+          "Identical twins are produced under one of the following conditions:",
+        options: [
+          "Two ova fertilized at the same time by two sperms",
+          "One ovum fertilized, divides to give two embryos",
+          "One ovum fertilized, twins formed shortly before birth",
+          "Two ova fertilized by one sperm",
+          "One ovum fertilized by two sperms",
+        ],
+        ans: "B",
+      },
+      {
+        id: 3,
+        question:
+          "The organ through which food and oxygen are supplied to human embryo and which also prevents harmful materials from reaching the embryo is the",
+        options: [
+          "Amnion",
+          "Uterus",
+          "Plactenta",
+          "Umbilical cord",
+          "Fallopian tube",
+        ],
+        ans: "C",
+      },
+      {
+        id: 4,
+        question:
+          "Which of the following statements is NOT true of menstruation?",
+        options: [
+          "It occurs monthly",
+          "The discharge contains amniotic fluid",
+          "It signifies no conception",
+          "It involves the lining of uterus",
+          "It may cause pains",
+        ],
+        ans: "B",
+      },
+      {
+        id: 5,
+        question:
+          "In human reprodution, the zygote formed as a result of fertilization gets attached to the wall of the uterus. The process is called",
+        options: [
+          "Sexual reproduction",
+          "Cohesion",
+          "Pregnancy",
+          "Implantation",
+          "Vivuparity",
+        ],
+        ans: "D",
+      },
+      {
+        id: 6,
+        question: "In man identical twins occur when",
+        options: [
+          "An ovum is fertilized by a sperm and then divided into two each forming a separate embryo",
+          "An ovum is fertilized forming an embryo",
+          "Two ova are fertilized at the same at the same time each forming an embryo",
+          "Two ova are fertilized by a single sperm each forming embryo after fertilization",
+          "One ovum first divided into two and each half is fertilized by a sperm before developing an embryo",
+        ],
+        ans: "A",
+      },
+      {
+        id: 7,
+        question:
+          "In what order do the following structures develop during the metamorphosis of the toad? 1. External gills 2. Internal gills 3. Forelimbs 4. Hindlimbs 5. Mouth",
+        options: ["12345", "15243", "1345", "53412", "54321"],
+        ans: "B",
+      },
+      {
+        id: 8,
+        question:
+          "The mammalian organ through which nourishment and oxygen diffuse into a developing embryo is called",
+        options: ["Amnion", "Chorion", "Umbilical cord", "Oviduct", "Placenta"],
+        ans: "E",
+      },
+      {
+        id: 9,
+        question: "Gestation in mammals is the period",
+        options: [
+          "Required for growth after birth",
+          "Between the formation of the foetus and birth",
+          "Of development from zygote to birth",
+          "Before the formation of the zygote",
+        ],
+        ans: "C",
+      },
+      {
+        id: 10,
+        question:
+          "Growth can best be determined in a population of Spirogyra by measuring the",
+        options: [
+          "Total lenghts of filaments",
+          "Total widths of the filaments",
+          "Rate of photosynthesis in the population",
+          "Dry weight of the organism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 11,
+        question:
+          "Exponential increase in the population of an organism is a characteristic feature of",
+        options: [
+          "LBlnary fission",
+          "Seual reproduction",
+          "Budding",
+          "Vegetative propagation",
+        ],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question:
+          "The irreversible life process by which new protoplasm is added to increase the size and weight of an organism can be termed",
+        options: ["Anabolism", "Catabolism", "Growth", "Development"],
+        ans: "C",
+      },
+      {
+        id: 13,
+        question:
+          "During cell division, the two strands of chromosomes are joined at a point called",
+        options: ["Spindle", "Chromatid", "Centromere", "Aster"],
+        ans: "C",
+      },
+      {
+        id: 14,
+        question:
+          "During mammalian embryo development, large amount of oestrogen and progesterone are produced in the",
+        options: ["Umbilical cord", "Amnion", "Placenta", "Amniotic fluid"],
+        ans: "C",
+      },
+      {
+        id: 15,
+        question: "The function of the epididymis in mammals is the",
+        options: [
+          "Expulsion of urine",
+          "Storage of sperms",
+          "Circulation of blood",
+          "Activation of sperms",
+        ],
+        ans: "B",
+      },
+      {
+        id: 16,
+        question: "In mammalian development, the function of the yolk is to",
+        options: [
+          "Supply nutrients to the embryo",
+          "Acts as the shock absorber to foetus",
+          "Supply air to the embryo",
+          "Facilitate the process of excretion in the foetus",
+        ],
+        ans: "A",
+      },
+      {
+        id: 17,
+        question: "In animals, meiosis comes",
+        options: [
+          "After fertilization",
+          "After every mitotic division",
+          "Before fertilization",
+          "Before every mitotic division",
+        ],
+        ans: "C",
+      },
+      {
+        id: 18,
+        question: "The sex of a foetus is determined during",
+        options: ["Meiosis", "Copulation", "Fertilization", "Placentation"],
+        ans: "C",
+      },
+      {
+        id: 19,
+        question: "Biological growth refers strictly to an increase in the",
+        options: [
+          "Protoplasm of an organism",
+          "Number of organisms",
+          "Size of an organism",
+          "Development of form",
+        ],
+        ans: "A",
+      },
+      {
+        id: 20,
+        question:
+          "During binary fission in lower organisms, the nucleus is known to undergo",
+        options: ["Mitosis", "Meiosis", "Fragmentation", "Mutation"],
+        ans: "A",
+      },
+      {
+        id: 21,
+        question:
+          "The most reliable estimate of growth is by measuring changes in",
+        options: ["Length", "Volume", "Surface area", "Dry weight"],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question: "The outermost embryonic membrane in the mammal is the",
+        options: ["Amnion", "Chorion", "Allantois", "Yolk sac"],
+        ans: "C",
+      },
+      {
+        id: 23,
+        question: "Fertilization in humans usually takes places in the",
+        options: [
+          "Lower part of the uterus",
+          "Upper part of the uterus",
+          "Lower part of the oviduct",
+          "Upper part of the oviduct",
+        ],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question: "Bacterial multiply rapidly by means of",
+        options: [
+          "Budding",
+          "Fragmentation",
+          "Binary fission",
+          "Spore formation",
+        ],
+        ans: "C",
+      },
+      {
+        id: 25,
+        question: "For growth to occur in organisms, the rate of",
+        options: [
+          "Food dtorage must be low",
+          "Catabolism must exceed that of anabolism",
+          "Anabolism must exceed that of catabolism",
+          "Food storage must be high",
+        ],
+        ans: "C",
+      },
+      {
+        id: 26,
+        question:
+          "In mammalian males, the excretory and reproductive systems share the",
+        options: ["Ureter", "Vas deferens", "Urethra", "Testes"],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question:
+          "The type of reproduction that leads to variation in animal and plant population is",
+        options: ["Budding", "Sexual", "Vegetative", "Asexual"],
+        ans: "B",
+      },
+      {
+        id: 28,
+        question:
+          "The type of reproduction that is common to both Hydra and yeast is",
+        options: ["Conjugation", "Binary fission", "Grafting", "Budding"],
+        ans: "D",
+      },
+      {
+        id: 29,
+        question: "During ovulation, an egg is released from the",
+        options: [
+          "Corpus luteum",
+          "Ovarian funnel",
+          "Graafian follicle",
+          "Fallopian tube",
+        ],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question: "The reproductive system of a male mammals is made up of",
+        options: [
+          "Claspers, prostrate gland, sperm duct and vas deferens",
+          "Testis, protrate gland, soerm duct and vas deferens",
+          "Oviduct, urethra, testis and sperm duct",
+          "Testis, uterus, protrate gland and sperm duct",
+        ],
+        ans: "B",
+      },
+      {
+        id: 31,
+        question:
+          "In the male reproductive system of a mammal, sperm is stored in the",
+        options: [
+          "Urethra",
+          "Epididymis",
+          "Seminiferous tubules",
+          "Vas deferens",
+        ],
+        ans: "B",
+      },
+      {
+        id: 32,
+        question: "The barrier between maternal and foetal blood is the",
+        options: ["Liver", "Umblilcal cord", "Uterine wall", "Placenta"],
+        ans: "D",
+      },
+      {
+        id: 33,
+        question:
+          "The type of asexual reproduction that is common to both paramecium and protists is",
+        options: ["Fragmentation", "Fission", "Buddding", "Sporulation"],
+        ans: "B",
+      },
+      {
+        id: 34,
+        question:
+          "In the mammalian male reproductive system, the part that serves as a passage for both urine and semen is the",
+        options: ["Urethra", "Ureter", "Bladder", "Seminal vesicle"],
+        ans: "A",
+      },
+      {
+        id: 35,
+        question:
+          "When the adults have reached a certain degree of weakness, the process of binary fission is replaced by conjugation in",
+        options: ["Paramecium", "Euglena", "Amoeba", "Plasmodium"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Homoeostasis. Endocrine System. Plant Hormone",
+    questions: [
+      {
+        id: 1,
+        question:
+          "The hormone which tones up the muscles of a person in time of danger is from the",
+        options: [
+          "Thyroid gland",
+          "Pancreas",
+          "Adrenal gland",
+          "Liver",
+          "Spleen",
+        ],
+        ans: "C",
+      },
+      {
+        id: 2,
+        question:
+          "A gland in the human body secretes two hormone, one of which causes a disease called diabetes when there is a deficiency, which of these organs produces the hormone",
+        options: ["Spleen", "Parathyroid", "Adrenal body", "Pancreas"],
+        ans: "D",
+      },
+      {
+        id: 3,
+        question: "The conversion of excess amino acids into urea occurs in",
+        options: ["Kidney", "Pancreas", "Villi", "Liver"],
+        ans: "D",
+      },
+      {
+        id: 4,
+        question:
+          "In which part of the human body does the secretion of the growth hormone occur?",
+        options: ["Head region", "Waist region", "Neck region", "Gonads"],
+        ans: "A",
+      },
+      {
+        id: 5,
+        question:
+          "Which of the following growth activities in plants is brought about by gibberellins?",
+        options: [
+          "Rapid cell division",
+          "Tropic response",
+          "Cell elongation",
+          "Main stem longation",
+        ],
+        ans: "C",
+      },
+      {
+        id: 6,
+        question: "Urea formation occurs in the",
+        options: ["Heart", "Liver", "Lung", "Kidney"],
+        ans: "B",
+      },
+      {
+        id: 7,
+        question: "Metabolic production of urea is carried out in the",
+        options: [
+          "Urinary bladder and kidney",
+          "Liver",
+          "Pancreas",
+          "Kidney and Malphigian tubule",
+        ],
+        ans: "B",
+      },
+      {
+        id: 8,
+        question:
+          "The most important hormone that induces the ripening of fruit is",
+        options: ["Ethylene", "Indole acid", "Gibberallin", "Cytokinin"],
+        ans: "A",
+      },
+      {
+        id: 9,
+        question:
+          "If a nursing mother is not producing enough milk, her hormonal system is probably deficient in",
+        options: ["Prolactin", "Testosterone", "Thyroxin", "Insulin"],
+        ans: "A",
+      },
+      {
+        id: 10,
+        question: "Which of the following is a homeostatic response in humans?",
+        options: [
+          "Withdrawing the hand from a hot object",
+          "The mouth getting watery when food is sighted",
+          "Yawning owing to tiredness",
+          "Shivering in cold enviroment",
+        ],
+        ans: "D",
+      },
+      {
+        id: 11,
+        question:
+          "The part of the mammalian skin involved in temperature regulation is the",
+        options: [
+          "Sweat gland",
+          "Hair papilla",
+          "Hair follicle",
+          "Sebaceous gland",
+        ],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question: "In mammals, the organ directly on top of the kidney is the",
+        options: [
+          "Thyroid gland",
+          "Adrenal gland",
+          "Pancreas",
+          "Prostate gland",
+        ],
+        ans: "B",
+      },
+      {
+        id: 13,
+        question:
+          "Thyroxine and adrenalin are examples of hormones which control",
+        options: [
+          "Tongue rolling",
+          "Behavioral patterns",
+          "Colour variation",
+          "Blood grouping",
+        ],
+        ans: "B",
+      },
+      {
+        id: 14,
+        question:
+          "Which of the following organs regulates the levels of water, salts, hydrogen ions and urea in the mammalian blood.",
+        options: ["Bladder", "Colon", "Liver", "Kidney"],
+        ans: "D",
+      },
+      {
+        id: 15,
+        question:
+          "Plant growth can be artificially stimulated by the addition of",
+        options: ["Gibberelin", "Kinin", "Abscislc acid", "Ethylene"],
+        ans: "A",
+      },
+      {
+        id: 16,
+        question: "The most important plant hormone is",
+        options: ["Abscisics acid", "Auxin", "Gibberellin", "Cytokinin"],
+        ans: "B",
+      },
+      {
+        id: 17,
+        question: "The absence of anti-diuretic hormone in humans results in",
+        options: [
+          "Drastic dehydration",
+          "Eliminating dehydration",
+          "Increasing dehydration",
+          "Decreasing dehydration",
+        ],
+        ans: "A",
+      },
+      {
+        id: 18,
+        question: "Oestrogen is a hormone that is synthesized in the",
+        options: ["Testis", "Anterior pituitary", "Adrenal cortex", "Ovaries"],
+        ans: "D",
+      },
+    ],
+  },
+
+  {
+    topic: "The Nervous System",
+    questions: [
+      {
+        id: 1,
+        question: "People suffering from myopla",
+        options: [
+          "Can see near objects clearly",
+          "Can see far away objects clearly",
+          "Cannot see any objects clearly",
+          "Are colour blind",
+          "Are able to see better in the dark",
+        ],
+        ans: "A",
+      },
+      {
+        id: 2,
+        question:
+          "In a phototrophic experiment, young seedlings in a box were subject to light from one direction. The seedlings continued to grow erect. Which of the following statements is correct?",
+        options: [
+          "Only the tips of the seedlings received light",
+          "The light was not strong enough",
+          "The seedlings were rather too young",
+          "The tips of the seedlings may have been covered",
+          "The box containing the seedlings should have been placed on a laboratory bench",
+        ],
+        ans: "D",
+      },
+      {
+        id: 3,
+        question: "When the cillary muscle of the eye contracts, the eye lens",
+        options: ["Bulges", "Contracts", "Rotates", "Flattens", "Is rounded"],
+        ans: "E",
+      },
+      {
+        id: 4,
+        question:
+          "The part of the mammalian brain responsible for maintaining balance is",
+        options: [
+          "Medulla oblongata",
+          "Cerebellum",
+          "Optic lobe",
+          "Cerebrum",
+          "Olfactory lobe",
+        ],
+        ans: "B",
+      },
+      {
+        id: 5,
+        question:
+          "Which part of the human brain is concerned with reflexes controlling the rate of heartbeat and breathing?",
+        options: [
+          "Medulla oblangata",
+          "Cerebrum",
+          "Pineal body",
+          "Olfactory lobe",
+        ],
+        ans: "A",
+      },
+      {
+        id: 6,
+        question:
+          "The following are connected with the movement of a reflex action <br />(1) Central nervous system <br />(2) Muscle <br />(3) Skin <br />(4) Sensory nerve <br />(5) Motor nerve. <br />Which of the following sequences indicates a correct path?",
+        options: [
+          "1-2-3-4-5",
+          "2-1-4-5-3",
+          "3-4-1-2-5",
+          "4-1-5-2-3",
+          "3-4-1-5-2",
+        ],
+        ans: "E",
+      },
+      {
+        id: 7,
+        question:
+          "Biconcave lenses are used in the correction of an eye defect called",
+        options: [
+          "Myopia",
+          "Colour blindness",
+          "Old age",
+          "Hypermetropla",
+          "Weakening of ciliary muscles",
+        ],
+        ans: "A",
+      },
+      {
+        id: 8,
+        question:
+          "The centre which controls respiratory activities in the mammalian brain is the",
+        options: [
+          "Cerebellum",
+          "Olfactory lobes",
+          "Pituitary organ",
+          "Cerebellum",
+          "Medulla", // the medulla oblangata...
+        ],
+        ans: "E",
+      },
+      {
+        id: 9,
+        question:
+          "The tips of some rice seedlings were cut off while some were left intact. Both were covered with a container which had only one small hole to allow light through. After twenty-four hours it was observed that",
+        options: [
+          "The cut tips bent away from light",
+          "The cut tips bent towards source to light",
+          "The intact tips bent away from the light",
+          "The intact tips bent towards light",
+          "Both tips bent away from light",
+        ],
+        ans: "D",
+      },
+      {
+        id: 10,
+        question:
+          "Which of these instruments is used to demonstrate the response if roots and shoots to gravity?",
+        options: ["Klinostat", "Manometer", "Potometer", "Photometer"],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question: "Accommodation of the human eye is best described as the",
+        options: [
+          "Ability to see distant oblects",
+          "Movement of upper and lower eyelids",
+          "Focusing of near and distant objects", // this is correct
+          "Changing of lens shape due to varying light intensities",
+          "Constant adjustment of the iris",
+        ],
+        ans: "C",
+      },
+      {
+        id: 12,
+        question:
+          "Growing yam tendrils climb for support. This growth response is",
+        options: [
+          "Haptotropism",
+          "Geotropism",
+          "Phototropism",
+          "Hydrotropism",
+          "Chemotropism",
+        ],
+        ans: "A",
+      },
+      {
+        id: 13,
+        question:
+          "The part of the mammalian eye that strongly bend light rays are the",
+        options: [
+          "Cornea and lens",
+          "Cornea and aqueous humor",
+          "Cornea and vitreous humour",
+          "Lens and aqueous humour",
+          "Lens and vitreous humor",
+        ],
+        ans: "E",
+      },
+      {
+        id: 14,
+        question: "Roots of plants are normally",
+        options: [
+          "Positively phototrophic",
+          "Negative geotropic",
+          "Negatively hydrotropic",
+          "Negatively chemotropic",
+        ],
+        ans: "A",
+      },
+      {
+        id: 15,
+        question: "External ears of mammals consists of",
+        options: [
+          "Pinna and tympanum",
+          "Pinna only",
+          "Auditory meatus only",
+          "Auditory meatus and pinna",
+          "Auditory meatus and tympanum",
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question:
+          "Which of these parts of the mammalian ear is dircetly concerned with the sense of balance?",
+        options: [
+          "Cochlea",
+          "Eustachlan tube",
+          "Ear-drum",
+          "Pinna",
+          "Semicircular canals",
+        ],
+        ans: "E",
+      },
+      {
+        id: 17,
+        question:
+          "The movement of part of a plant in response to external stimulus of no particular direction is",
+        options: [
+          "Taxism",
+          "Tropism",
+          "Haptotropic movement",
+          "Nastic movement",
+          "Phototropism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 18,
+        question:
+          "The part of the mammalian brain responsible for maintaining balance is the",
+        options: [
+          "Medulla oblongata",
+          "Olfactory lobe",
+          "Cerebellum",
+          "Cerebrum",
+          "Frontal lobe",
+        ],
+        ans: "C",
+      },
+      {
+        id: 19,
+        question:
+          "In a positive phototropic response of a coleoptile, the region of greatest curvature is brought about by the",
+        options: [
+          "Movement of auxins away from the region of curvature",
+          "Even distribution of auxins in all parts of the coleoptile",
+          "Inhibition of growth by auxins in the region of curvature",
+          "Absence of auxins in the coleoptile",
+        ],
+        ans: "D",
+      },
+      {
+        id: 20,
+        question:
+          "The function of the osslcles(malleus, incus and stapes) in the mammalian ear is the",
+        options: [
+          "Transmission of vibrations",
+          "Regulation of pressures",
+          "Support of the inner ear",
+          "Maintenance of balance during motion",
+          "Secretion of oil",
+        ],
+        ans: "A",
+      }, // 070
+      {
+        id: 21,
+        question:
+          "If an animal is very active and has good muscular control, it is likely to have well-developed",
+        options: [
+          "Olfactory lobes",
+          "Cerebral hemisperes",
+          "Optic lobes",
+          "Cerebellum",
+          "Spinal cord",
+        ],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question:
+          "Movements and positions of the head in man are detected by the",
+        options: [
+          "Cochlea",
+          "Malleus",
+          "Utriculus",
+          "Semicircular canals",
+          "Outer ear",
+        ],
+        ans: "D",
+      },
+      {
+        id: 23,
+        question:
+          "An old man is likely to be long-sighted because age effects the",
+        options: [
+          "Optic nerves",
+          "Retina",
+          "Ciliary muscles",
+          "Cornea",
+          "Aqueous humour",
+        ],
+        ans: "C",
+      },
+      {
+        id: 24,
+        question:
+          "In a mammal, stimulus is transferred from the receptor muscle to the central nervous system through the",
+        options: [
+          "Motor neurons",
+          "Effector muscles",
+          "Dendrites",
+          "Sensory neurous", // correcto
+          "Synapses",
+        ],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question: "Nastic movement is",
+        options: [
+          "Response to light stimulus",
+          "Non-directional",
+          "Directional",
+          "Response to internal stimulus",
+        ],
+        ans: "B",
+      },
+      {
+        id: 26,
+        question:
+          "An instrument that can be used to demonstrate phototropism and geotropism in plants is the",
+        options: ["Auxanometer", "Potometer", "Klinostat", "Photometer"],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question:
+          "The growth of a coleoptile toward unilateral light source is due to",
+        options: [
+          "Rapid rate of photosythesis",
+          "Unequal distribution of auxins",
+          "The effect of geotropism",
+          "The effect of photolysis",
+        ],
+        ans: "B",
+      },
+      {
+        id: 28,
+        question: "The sequence of ear ossicles from the fenestra ovalls is",
+        options: [
+          "Malleus, incus and stapes",
+          "Malleus, stapes and incus",
+          "Stapes, incus and malleus", // fenestra ovalis is kind of like the oval window backwards...
+          "Stapes, melleus and incus",
+        ],
+        ans: "C",
+      },
+      {
+        id: 29,
+        question:
+          "The centre for controlling body temperature in the brain is the",
+        options: ["Cerebrum", "Cerebellum", "Medulla", "Hypothalamus"],
+        ans: "D",
+      },
+      {
+        id: 30,
+        question: "Taxism differs from tropism because",
+        options: [
+          "The whole organism is affected",
+          "It is a directional movement",
+          "It is a response to multi-directional stimuli",
+          "Part of the organism is affected",
+        ],
+        ans: "A",
+      },
+      {
+        id: 31,
+        question: "The main function of the choroid is",
+        options: [
+          "Protection of the eye ball",
+          "Transmission of light",
+          "Supply of nutrients to tissues of the eye",
+          "Converging light",
+        ],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question:
+          "What part of the central nervous system is concerned with answering an examination question?",
+        options: ["Cerebrum", "Cerebellum", "Medulla oblongata", "Spinal cord"],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question:
+          "The region that controls most of the unconscious process of a mammalian body is the",
+        options: ["Cerebellum", "Cerebrum", "Spinal cord", "Medulla oblongata"],
+        ans: "C",
+      },
+      {
+        id: 34,
+        question: "The part of the ear that is connected with balance is the",
+        options: [
+          "Semi-circular canals",
+          "Incus",
+          "Malleus",
+          "Eustachian tube",
+        ],
+        ans: "A",
+      },
+      {
+        id: 35,
+        question:
+          "The movement of the whole organism to an external stimulus is termed",
+        options: [
+          "Tropism",
+          "A taxis",
+          "A nastic movemet",
+          "A phototrophic movement",
+        ],
+        ans: "B",
+      },
+      {
+        id: 36,
+        question:
+          "Neurons that receive stimuli from the body or internal organs are called",
+        options: [
+          "Sensory neurons",
+          "Efferent neurous",
+          "Motor neurons",
+          "Relay neurons",
+        ],
+        ans: "A",
+      },
+      {
+        id: 37,
+        question:
+          "The response shown by the tips of the root and shoot of a plant to the stimulus of gravity is",
+        options: ["Haptotropism", "Phototropism", "Hydrotropism", "Geotropism"],
+        ans: "D",
+      },
+      {
+        id: 38,
+        question: "In the mammal, the autonomic nervous system consists of",
+        options: [
+          "Sympathetic and parasympathetic systems",
+          "Brain and spinal nerves",
+          "Brain and cranial nerves",
+          "Spinal cord and spinal nerves",
+        ],
+        ans: "A",
+      },
+      {
+        id: 39,
+        question: "Which path does sound entering the human ear follow?",
+        options: [
+          "Oval window, ossicles, ear drum",
+          "Ear drum, oval window, ossicles",
+          "Ear drum, ossicles, oval window",
+          "Ossicles, ear drum, oval window",
+        ],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question:
+          "When a short-sighted person views a distant object without spectacles, the image is formed",
+        options: [
+          "On the retina",
+          "In front of the retina",
+          "Behind the retina",
+          "On the blind spot",
+        ],
+        ans: "B",
+      },
+      {
+        id: 41,
+        question:
+          "The part of the brain that controls heartbeat and breathing is the",
+        options: [
+          "Olfactory lobe",
+          "Cerebellum",
+          "Cerebral hemisphere",
+          "Medulla oblongata",
+        ],
+        ans: "D",
+      },
+      {
+        id: 65,
+        question:
+          "When a healthy shoot of a flowering plant is illuminated from one side, auxin accumulate on the",
+        options: [
+          "Non-illuminated side of the shoot",
+          "Illuminated side of the shoot",
+          "Upper side of the shoot",
+          "Lower side of the shoot",
+        ],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question:
+          "The process of walking is under the control of the part of the brain called",
+        options: [
+          "Optic lobe",
+          "Olfactory lobe",
+          "Cerebellum",
+          "Medulla oblongata",
+        ],
+        ans: "C",
+      },
+      {
+        id: 44,
+        question:
+          "The part of the brain that regulates most biological cycles in humans is",
+        options: [
+          "Olfactory lobe",
+          "Optic lobe",
+          "Medulla oblongata",
+          "Pineal body", // yeah it's correct...
+        ],
+        ans: "D",
+      },
+      {
+        id: 45,
+        question:
+          "The ability of the eye to focus on both near and distant objects is termed",
+        options: [
+          "Image formation",
+          "Refraction",
+          "Hypermetropia",
+          "Accommodation",
+        ],
+        ans: "D",
+      },
+      {
+        id: 46,
+        question:
+          "The small masses of nervous tissues in which many neurons have their nuclei are called",
+        options: ["Dorsal roots", "Ventral roots", "Ganglia", "Synapses"],
+        ans: "C",
+      },
+      {
+        id: 47,
+        question:
+          "The correct sequences for the operation of smell in mammals is",
+        options: [
+          "Chemicals, olfactory nerve ending, brain",
+          "Dissolved chemicals, nasal sensory cell, brain",
+          "Chemiacals, mucus membrane, sensory cells, brain",
+          "Dissolved chemicals, sensory cells, olfactory nerves, brain",
+        ],
+        ans: "D",
+      },
+      {
+        id: 48,
+        question:
+          "The part of the brain that controls body posture in mammals is the",
+        options: ["Thalamus", "Cerebellum", "Spinal cord", "Cerebrum"],
+        ans: "B",
+      },
+      {
+        id: 49,
+        question: "Short-sightedness can be corrected by lenses which are",
+        options: ["Convex", "Biconvex", "Planoconvex", "Concave"],
+        ans: "D",
+      },
+      {
+        id: 50,
+        question: "The inner ear contains two main organs, namely, the",
+        options: [
+          "Eardrum and Eustachian tube",
+          "Cochlea and Semi-circular canals", //
+          "Oval window and ossicles",
+          "Pinna and Cochlea",
+        ],
+        ans: "B",
+      },
+      {
+        id: 51,
+        question:
+          "The centre for learning and memory in the human brain is the",
+        options: [
+          "Medulla oblongata",
+          "Cerebellum",
+          "Cerebrum",
+          "Olfactory lobe",
+        ],
+        ans: "C",
+      },
+      {
+        id: 52,
+        question:
+          "The response of plants to external stimulus in a non-directional manner is known as",
+        options: [
+          "Tactic movement",
+          "Phototropism",
+          "Geotropism",
+          "Nastic movement",
+        ],
+        ans: "D",
+      },
+      {
+        id: 53,
+        question:
+          "Nervous control differs from hormonal control in that the former",
+        options: [
+          "Involves only chemical transmission",
+          "Is a slower process",
+          "Produces short-term changes",
+          "Has no specific pathway",
+        ],
+        ans: "C",
+      },
+      {
+        id: 54,
+        question:
+          "One basic similarity between nervous and endocrine system is that they both",
+        options: [
+          "Produce widespread effects",
+          "Transmit very fast impuses",
+          "Involve the use of chemical substances", // the chm substances of nervous system are called neurotransmitter
+          "Produce precise and short lived effects",
+        ],
+        ans: "C",
+      },
+      {
+        id: 55,
+        question:
+          "The transmission of impulses along a nerve fibre is characterised by",
+        options: [
+          "Hormonal and temperature changes",
+          "Electrical and ionic changes",
+          "Hormonal changes",
+          "Electrostatic changes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 56,
+        question: "The function of the correcting lens is to",
+        options: [
+          "Diverge incoming rays",
+          "Converge incoming rays",
+          "Reflect incoming rays",
+          "Screen incoming rays",
+        ],
+        ans: "B",
+      },
+      {
+        id: 57,
+        question:
+          "Which of the following stimuli is likely to elicit a nastic response in an organism?",
+        options: ["Light intensity", "Chemical subtances", "Gravity", "Touch"],
+        ans: "D",
+      },
+      {
+        id: 68,
+        question:
+          "The ability of a living organism to detect and respond to changes in the enviroment is referred to as",
+        options: ["Growth", "Taxis", "Locomotion", "Irritability"],
+        ans: "D",
+      },
+      {
+        id: 58,
+        question:
+          "The part of the mammalian ear responsible for the maintenance of balance is the",
+        options: ["Perylymph", "Ossicles", "Cochlea", "Pinna"],
+        ans: "A",
+      },
+      {
+        id: 59,
+        question:
+          "The movement response of a cockroach away from a light source can be described as",
+        options: [
+          "Negative phototropism",
+          "Positive phototropism",
+          "Positive phototaxism",
+          "Negative phototaxism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 60,
+        question:
+          "The autonomic nervous system consists of neurons that controls the",
+        options: ["Voluntary muscles", "Heartbeat", "Tongue", "Hands"],
+        ans: "B",
+      },
+      {
+        id: 66,
+        question:
+          "The sensory cell that responds to dim light is referred as to as the",
+        options: ["Lens", "Rod", "Iris", "Cone"],
+        ans: "B",
+      },
+      {
+        id: 61,
+        question:
+          "The eye defect caused by the development of cloudy areas in the lenses is",
+        options: ["Glaucoma", "Cataract", "Astigmatism", "Presbyopia"],
+        ans: "B", // wow. Cataract is the development of cloudy areas...
+      },
+      {
+        id: 62,
+        question:
+          "Coordination and regulation of body activities in mammals are achieved by the",
+        options: [
+          "Nerves and muscles",
+          "Nerves and hormones",
+          "Nerves only",
+          "Hormones only",
+        ],
+        ans: "B",
+      },
+      {
+        id: 63,
+        question: "The cerebellum of the brain controls",
+        options: [
+          "Reflex actions",
+          "Muscular activity",
+          "Emotional expressions",
+          "The endocrine system",
+        ],
+        ans: "B",
+      },
+      {
+        id: 64,
+        question:
+          "The part of the brain responsible response for peristalsis is the",
+        options: [
+          "Olfactory lobe",
+          "Medulla oblongata",
+          "Hypothalamus",
+          "Thalamus",
+        ],
+        ans: "B",
+      },
+    ],
+  },
+
+  {
+    topic: "Agriculture. Soil Science",
+    questions: [
+      {
+        id: 2,
+        question: "Which of these is not a type of soil?",
+        options: ["Sand", "Granite", "Loam", "Clay", "Sandy loam"],
+        ans: "B",
+        userAnswer: null,
+      },
+      {
+        id: 3,
+        question: "The farmer cannot check soil erosion effectively by",
+        options: [
+          "Constructing his ridges for planting across the slope",
+          "Cultivating cover crops",
+          "Practicing strip cropping",
+          "Clearing the land of vegetation",
+          "Constructing terraces",
+        ],
+        ans: "D",
+      },
+      {
+        id: 4,
+        question:
+          "If three 30cm lengths of glass tubing are tightly packed with clay, sandy and loamy soils respectively and then stood in a beaker of water for one week, the level of water will be",
+        options: [
+          "Lowest in the tube with clay",
+          "The same in all the tubes",
+          "Lowest in the tube with loamy soil",
+          "Highest in the tube with sandy soil",
+          "Lowest in the tube with sandy soil",
+        ],
+        ans: "E",
+      },
+      {
+        id: 5,
+        question:
+          "Leguminuous plants, e.g Mucuna, are usually planted in cultivated farmlands because they",
+        options: [
+          "Enrich the soil with phosphates",
+          "Provide animals with food",
+          "Enrich the soil with organic nitrogen",
+          "Protcet the soil from being over-heated",
+          "Protect the microrganisms in the soil",
+        ],
+        ans: "C",
+        remark: `Legumes have mutualistic (symbiotic) bacteria resident in their root nodules(swellings) and the bacteria are fixers of atmospheric nitrogen thereby converting it to soil nitrates useful to their hosts which in turn provide protection for the bacteria`,
+      },
+      {
+        id: 6,
+        question:
+          "A few grams of dried soil were first heated until red hot and then futher heated until no more smoke was released. This experiment was to determined the",
+        options: [
+          "Amount of water in soil",
+          "Percentage of water in soil",
+          "Presence of humus in soil",
+          "Resistance of laterites to heat",
+          "Release of smoke from the soil",
+        ],
+        ans: "C",
+        remark: `Remains of organic matter(humus) contain carbon and produce smoke when burnt vigorously enough after water has been driven out`,
+      },
+      {
+        id: 7,
+        question:
+          "In which of the following plants is swollen shoot disease common?",
+        options: ["Groundnut", "Cocoa", "Corn", "Cotton", "Rubber"],
+        ans: "B",
+        remark: `Swollen shoot disease of cocoa is caused by a virus`,
+      },
+      {
+        id: 8,
+        question: "Soil is said to be fertile if",
+        options: [
+          "It is black",
+          "It can supply usable nutrients to plant",
+          "The oxygen content is very high",
+          "Artificial manure is added to it",
+          "It is not waterlogged",
+        ],
+        ans: "B",
+        remark: `Clay soil, for example, is considered infertile because its water and mineral salts are tightly held by the soil hence they are not readily available to the plants.`,
+      },
+      {
+        id: 9,
+        question: "Treatment of a poor soil with lime supplies",
+        options: ["Sulphur", "Calcium", "Phosphorus", "Sodium"],
+        ans: "B",
+        remark: `The process is called <strong>liming</strong>. Liming adds calcium to soil, neutralizes soil acidity in acidic soil, makes soil lighter (clay soil is heavy soil), and it aggregates fine soil particles into larger ones, a process called flocculation. Examples of liming materials include Limestone, Lime or quicklime, slaked lime, wood ashes(mainly potash)`,
+      },
+      {
+        id: 10,
+        question:
+          "If a farmer left his land uncultivated for five years before returning to it. This is called?",
+        options: [
+          "Modern agriculture",
+          "Strip cropping",
+          "Contour ridging",
+          "Crop rotation",
+          "The bush fallow system",
+        ],
+        ans: "E",
+      },
+      {
+        id: 11,
+        question:
+          "A 28g soil sample was heated to a constant weight of 24g. When further heated to red hot and cooled, it weighed 18g. What is the percentage of humus in the soil?",
+        options: ["21.43%", "55.6%", "75.0%", "25.9%", "35.7%"],
+        ans: "A",
+      },
+      {
+        id: 12,
+        question: "Erosion can be reduced along a slope by",
+        options: [
+          "Ridging across slope", // ridging across slope is correct
+          "Ridging up slope",
+          "Ridging down slope",
+          "Bush fallowing system",
+        ],
+        ans: "D",
+        // honestly it's saddening that some questions still have incorrect answers like this one for instance...
+      },
+      {
+        id: 13,
+        question:
+          "If a handful of soil is shaken with water and left to settle, the soil particles will settle from light to heavy particles as follows:",
+        options: [
+          "Humus, clay, silt, sand, stone",
+          "Humus, silt, clay, sand, stones",
+          "Humus, clay, silt, stones, sand",
+          "Human, sand, silt, clay, stones",
+          "Clay, humus, silt, sand, stones",
+        ],
+        ans: "A",
+        remark: `humus -> clay -> silt -> sand -> stone`,
+      },
+      {
+        id: 14,
+        question: "Leaching is",
+        options: [
+          "Washing away of humus from the soil surface",
+          "Reduction of soil aeration by pressure",
+          "Soil erosion by means other than rainfall",
+          "Loss of organic matter due to exposure to direct sunlight",
+          "Washing out of chalk and limestone from upper layers of soil by heavy rains", // correctamundo
+        ],
+        ans: "E",
+      },
+      {
+        id: 15,
+        question: "The process of soil erosion is usually from",
+        options: [
+          "Rill sheet gully",
+          "Gully rill sheet",
+          "Sheet gully rill",
+          "Sheet rill gully",
+          "Rill gully sheet",
+        ],
+        ans: "D",
+        remark: `Sheet erosion -> Even removal of topsoil<br />Rill erosion -> Run-off is concentrated in small channels<br />Gully erosion -> Rills now widen and deepen to give rise to gullies`,
+      },
+      {
+        id: 16,
+        question: "Soil erosion CANNOT be controlled by",
+        options: [
+          "Planting cover crops",
+          "Contouring of sloping ground",
+          "Terracing of slopes",
+          "Laying of much",
+          "Burning of bush",
+        ],
+        ans: "E",
+      },
+      {
+        id: 17,
+        question: "Water retention is highest in soils which are rich in",
+        options: [
+          "Sand, poor in humus and devoid of clay",
+          "Clay and sand, but poor in humus",
+          "Clay and humus, but poor in sand",
+          "Clay, poor in humus and devoid of sand", // alright now...
+          "Sand and humus, but poor in clay",
+        ],
+        ans: "D",
+      },
+      {
+        id: 18,
+        question: "The origin of mineral particles in the soil is",
+        options: [
+          "Humus",
+          "Water",
+          "Micro-organisms",
+          "Weathered rock",
+          "Organic matter",
+        ],
+        ans: "D",
+      },
+      {
+        id: 19,
+        question:
+          "The initial volume of water poured into a bag of dry soil was 50ml and the amount that drained through was 35ml. The percentage water content of fully soaked soil is therefore",
+        options: ["46.7", "25.0", "20.0", "30.0", "58.3"],
+        ans: "D", // makes sense
+      },
+      {
+        id: 20,
+        question: "The swollen shoot disease of cocoa tree is caused by a",
+        options: ["Virus", "Fungus", "Bacterium", "Protozoan"],
+        ans: "A",
+        // swollen shoot disease of cocoa is caused by a virus
+      },
+      {
+        id: 21,
+        question:
+          "A large percentage of tropical soils tend to be acidic because they",
+        options: [
+          "Contains large quantities of potash",
+          "Contain large quantities of lime",
+          "Lose a high proportion of their organic matter to running water",
+          "Lose lime and potash from the top soil through rain action",
+        ],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question: "The following are methods of soil conservation EXCEPT",
+        options: [
+          "Contour terracing",
+          "Strip cropping",
+          "Contour ploughing",
+          "Mixed grazing",
+        ],
+        ans: "D",
+        remark: `Any form of grazing is not a method for conserving soil`,
+      },
+      {
+        id: 23,
+        question:
+          "Samples of different soil types are packed in glass tubes whose lower ends are plugged with cotton wool. If these tubes are suspended in a trough of water, water will rise highest after a few hours in",
+        options: ["Sand", "Loam", "Clay", "Humus"],
+        ans: "C", // clay has the highest water retaining ability
+      },
+      {
+        id: 24,
+        question:
+          "The process by which lime is added to clay soils is known as",
+        options: ["Sedimentation", "Flocculation", "Leaching", "Manuring"],
+        ans: "B",
+        // hmmm, remeber this flocculation...
+      },
+      {
+        id: 25,
+        question: "The mineral nutrients that is most bound to the soil is",
+        options: ["Phosphorus", "Calcium", "Iron", "Potasslum"],
+        ans: "C",
+        remark: `Usually as ferric oxide hence not readily available to plant`,
+      },
+      {
+        id: 26,
+        question:
+          "The mineral nutrient that easily gets leached out of the soil is",
+        options: ["Phosphorus", "Calcium", "Magnesium", "Nitrate"],
+        ans: "D",
+      },
+      {
+        id: 27,
+        question: "Most commercial fertilizers are rich in salts of",
+        options: [
+          "Sodium, iron and calcium",
+          "Nitrogen, phosphorus and and potassium", // rmember NPK?
+          "Iron, copper and nitrogen",
+          "Calcium, sodium and phosphorus",
+        ],
+        ans: "B",
+      },
+      {
+        id: 28,
+        question:
+          "5g of oven dried soil was heated in a furnace for 24hours, after coooling, it weighed 4.8g what is the amount of humus in the soil?",
+        options: [
+          "40.0g per 100g dry soil",
+          "4.4g per 100g dry soil",
+          "4.0g per 100g dry soil",
+          "0.4g per 100g dry soil",
+        ],
+        ans: "C",
+      },
+      {
+        id: 29,
+        question:
+          "Most irrigated lands often become unproductive in later years because of",
+        options: [
+          "Loss of fertility",
+          "Increase in salinity",
+          "Soil erosion",
+          "Loss of water",
+        ],
+        ans: "A",
+        remark: `Loss of fertility from repeated cultivation(continuous cropping)`,
+      },
+      {
+        id: 30,
+        question: "Farmers pratices crop rotation because it",
+        options: [
+          "Helps to prevent soil erosion",
+          "Alllows two crops to be planted at the same time",
+          "Helps to conserve soil fertility",
+          "Is an alternative to shifting cultivation",
+        ],
+        ans: "C", // this should be reasonable to the average individual...
+      },
+      {
+        id: 31,
+        question: "An acidic soil can be improved upon by",
+        options: ["Sedimentation", "Leaching", "Flocculation", "Watering"],
+        ans: "C",
+        remark: `Liming. If liming is not present, flocculation is correct`,
+      },
+      {
+        id: 32,
+        question: "Fetilizers are lost from the soil through",
+        options: [
+          "Sheet erosion and evaporation",
+          "Leaching, underground seepages and run-off",
+          "Sheet erosion, gully erosion and wind erosion",
+          "Wind erosion and heavy rainfall",
+        ],
+        ans: "B",
+        //
+      },
+      {
+        id: 33,
+        question: "Soil with the finest particles is called",
+        options: ["Silt", "Clay", "Sand", "Gravel"],
+        ans: "B",
+        remark: `humus is even finer, but in case there is no humus, then clay is the answer`,
+        // humus is even finer, but in case there is no humus, then clay is the answer
+      },
+      {
+        id: 34,
+        question: "Soil fertility can be conserved and renewed by",
+        options: [
+          "Yearly mono cropping",
+          "Crop rotation and cover crops",
+          "Bush burning to remove unwanted debris",
+          "Avoiding artificial manures",
+        ],
+        ans: "B",
+      },
+      {
+        id: 35,
+        question: "The water-retention capacity of a soil indicates its",
+        options: ["Fertility", "Capillarity", "Aeration level", "PH level"],
+        ans: "B",
+      },
+      {
+        id: 36,
+        question:
+          "In a soil sample, the relative amounts of the different soil particles can be best be determined by the process of",
+        options: [
+          "Filtration",
+          "Centrifugation",
+          "Precipitation",
+          "Sedimentation",
+        ],
+        ans: "D",
+      },
+      {
+        id: 37,
+        question:
+          "Soil micro-organisms are beneficial because of their involvement in",
+        options: [
+          "Photosynthesis",
+          "Translocation",
+          "Cycling of nutrients",
+          "Respiration using soil air",
+        ],
+        ans: "C",
+      },
+      {
+        id: 38,
+        question:
+          "A soil consisting of alumina and iron (II) oxide is known as",
+        options: ["Loamy soil", "Clayey soil", "Laterite", "Podzol"],
+        ans: "C",
+      },
+      {
+        id: 41,
+        question: "The addition of lime to clay soil serve to",
+        options: [
+          "Aid water retention",
+          "Close up the texture",
+          "Prevent water-logging",
+          "Improve capillary action",
+        ],
+        ans: "C",
+      },
+      {
+        id: 42,
+        question:
+          "The excessive use of agro-chemical could lead to the pollution of",
+        options: ["The lithosphere", "The atmosphere", "Fresh water", "Space"],
+        ans: "C",
+      },
+      {
+        id: 43,
+        question:
+          "The stunted growth of a leguminous plant suffering from nitrogen deficiency may be corrected by inoculating the soil with",
+        options: [
+          "Denitrifying bacteria",
+          "Saprophytic bacteria",
+          "Rhizobium", // rhizobium is correct
+          "Nitrosomonas",
+        ],
+        ans: "C",
+      },
+      {
+        id: 44,
+        question:
+          "Soil fertility can be best be conserved and renewed by the activities of",
+        options: ["Earthworms", "Man", "Rodents", "Microbes"],
+        ans: "D",
+      },
+      {
+        id: 45,
+        question:
+          "The soil type that will be most difficult to plough in a wet season is one that is",
+        options: ["Loamy", "Clayey", "Snady", "Silty"],
+        ans: "B",
+      },
+      {
+        id: 46,
+        question: "A farm pratice that result in the loss of soil fertility is",
+        options: [
+          "Mixed farming",
+          "Bush fallowing",
+          "Shifting cultivation",
+          "Continuous cropping",
+        ],
+        ans: "D",
+      },
+      {
+        id: 48,
+        question:
+          "The importance of practicing crop roatation in agriculture is to",
+        options: [
+          "Maintain soil fertility",
+          "Improve the nutritional value of crops",
+          "Control soil erosion",
+          "Ensure the growth of crops",
+        ],
+        ans: "A",
+      },
+      {
+        id: 49,
+        question:
+          "The soil type that contains nutrients which are not readily available for plants is",
+        options: ["Alluvial", "Clayey", "Snady", "Loamy"],
+        ans: "B",
+      },
+      {
+        id: 50,
+        question:
+          "The increasing order of the particle size in the following soil types is",
+        options: [
+          "Clay - sand - silt - gravel",
+          "Silt - sand - clay gravel",
+          "Clay - silt - sand - gravel",
+          "Silt - clay - sand - gravel",
+        ],
+        ans: "C",
+      },
+      {
+        id: 51,
+        question:
+          "A crucible of 5 g weighed 10 g after filling with fresh soil. It is then heated in an oven at 100&deg;c for 1 hour. After colling in a desiccator, the weight was 8 g. The percentage of water in the soil is",
+        options: ["80%", "60%", "20%", "40%"],
+        ans: "D",
+      },
+      {
+        id: 54,
+        question: "The loss of soil through erosion can be reduced by",
+        options: ["Crop rotation", "Manuring", "Irrigation", "Watering"],
+        ans: "A",
+      },
+      {
+        id: 56,
+        question:
+          "An indigenous method of renewing and maintaining soil fertility is by",
+        options: [
+          "Clearing farms by burning",
+          "Planting one crop type",
+          "Adding inorganic fertilizers yearly",
+          "Crop rotation and shifting cultivation",
+        ],
+        ans: "D",
+      },
+      {
+        id: 57,
+        question: "The soil with the highest water-rentaining capacity is",
+        options: ["Clayey soil", "Stoney soil", "Sandy soil", "Loamy soil"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Common Disease. Insect Vectors",
+    questions: [
+      {
+        id: 1,
+        question:
+          "In the life of Schistosoma (Bilharzia), one of the following is the intermediate host",
+        options: ["Man", "Snail", "Mosquito larva", "Crayfish", "Fish"],
+        ans: "B",
+      },
+      {
+        // please research this answer....
+        id: 2,
+        question:
+          "A farmer X working in a swamp did not eat any food nor drink any water. Which of these diseases can he not contract?", // not sure of this answer...
+        options: [
+          "Cholera",
+          "Bilharzia",
+          "River blindness",
+          "Malaria",
+          "Sleeping sickness",
+        ],
+        ans: "A",
+        remark:
+          "Cholera is a water borne disease which can only be contracted if one eats or drinks. In spite of his not eating or drinking he can still contract others.",
+      },
+      {
+        id: 3,
+        question:
+          "Which of these diseases cannot be controlled by killing the vectors?",
+        options: [
+          "River blindness",
+          "Malaria",
+          "Polio",
+          "Cholera",
+          "Bilharzia(Schistosomiasis)", // snail disease
+        ],
+        ans: "C",
+        remark:
+          "Polio (poliomyelitis) is contracted through food and water contaminated with faeces droplet but never through a vector.",
+      },
+      {
+        id: 4,
+        question: "One of the following statements is not true of viruses",
+        options: [
+          "They are micro-organisms",
+          "They are smaller than bacteria",
+          "They can be seen with an ordinary light microscope",
+          "They cause polio and smallpox",
+        ],
+        ans: "C",
+        remark: `A virus can only be seen by using electron microscope. <br />
+        <strong>The biggest virus is smaller than the smallest bacteria</strong>`,
+      },
+      {
+        id: 6,
+        question:
+          "Below are some groups of diseases. Which group of diseases is caused by bacteria?",
+        options: [
+          "Tuberculosis, smallpox",
+          "Gonorrhea, measles",
+          "Tuberculosis, polio",
+          "Sleeping sickness, measles",
+          "Syphilis, gonorrhea", // these two are caused by bacteria...
+        ],
+        ans: "E",
+        remark: `List of bacterial diseases in animals<br />
+        <ul>
+          <li>Cholera -> Vibrio cholerae</li>
+          <li>Typhoid -> Salmonella typhi</li>
+          <li>Diphtheria -> Corynebacterium diphteria</li>
+          <li>Tuberculosis -> Mycobacterium tuberculosis</li>
+          <li>Gonorrhea -> Neissaria gonorrheae</li>
+          <li>Whhoping cough -> Bordetella pertusis</li>
+          <li>Tetanus - Clostridium tetani</li>
+          <li>Bacterial dysentery - Shigella dysenteriae</li>
+          <li>Food poisoning - Salmonella sp</li>
+          <li>Leprosy</li>
+        </ui>
+        <p>List of bacteria disease in plants</p>
+        <ul>
+          <li>Leaf spots and soft rot<li>
+          <li>Blight and galls<li>
+          <li>Cassava wilt<li>
+        </ul>`,
+      },
+      {
+        id: 7,
+        question:
+          "Refrigeration, as a method of food preservation, has one of the following characteristics",
+        options: [
+          "Kills all the bacteria",
+          "Kills most of the bacteria",
+          "Makes the bacteria inactive",
+          "Dried food",
+          "Hydrolyzes food",
+        ],
+        ans: "C", // majority of these answers will be wrong honestly...
+      },
+      {
+        id: 8,
+        question: "The blackfly is a vector of",
+        options: [
+          "Malaria",
+          "Trypanosomiasis",
+          "Onchocerciasis", // correct.. not perhaps
+          "Yellow fever",
+        ],
+        ans: "C",
+      },
+      {
+        id: 9,
+        question: "Which of the following diseases in NOT caused by a virus?",
+        options: [
+          "Rinderpest", // virus
+          "Maize rust", // fungi
+          "Newcastle disease", // virus
+          "Swine fever", // virus
+          "Cassava mosaic disease", // virus
+        ],
+        ans: "B", // I don't know actually
+        remark: "Maize rust is caused by fungi",
+      },
+      {
+        id: 10,
+        question: "One disease NOT caused directly by bacteria is",
+        options: ["Malaria", "Tuberculosis", "Pneumonia", "Tetanus", "Cholera"],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question:
+          "Which of the following disease could be exclusively associated with a river basin?",
+        options: [
+          "Malaria",
+          "Syphilis",
+          "Onchocerciasis",
+          "Cholera",
+          "Poliomyelitis",
+        ],
+        ans: "C",
+      },
+      {
+        id: 12,
+        question:
+          "Which of the following lists of diseases, their causes and transmission is CORRECT?",
+        options: [
+          "Cholera, virus, severe diarrhoea, infected water",
+          "Malaria, protozoan, high fever, contact with infected person",
+          "Syphilis, virus, venereal disease, sexual intercourse",
+          "Smallpox, virus, skin with blister, close contact with infected person",
+        ],
+        ans: "D",
+      },
+      {
+        id: 13,
+        question:
+          "The primary and secondary hosts respectively of bilharzia are",
+        options: [
+          "Fish and man",
+          "Man and dog",
+          "Snail and man",
+          "Man and snail",
+          "Fish and snail",
+        ],
+        ans: "D",
+      },
+      {
+        id: 14,
+        question: "Which of the following is NOT caused by bacteria?",
+        options: [
+          "Cholera",
+          "Gonorrhea",
+          "Tuberculosis",
+          "Onchocerciasis",
+          "Tyhoid",
+        ],
+        ans: "D",
+      },
+      {
+        id: 15,
+        question:
+          "Tsetse fly is harmful to man because it is associated with the spread of",
+        options: [
+          "River blindness",
+          "Malaria",
+          "Sleeping sickness", // trypanosomiasis
+          "Leprosy",
+          "Dysentery",
+        ],
+        ans: "C",
+      },
+      {
+        id: 16,
+        question:
+          "If a person is bitten by a snake on the leg, it is advisable for the person",
+        options: [
+          "Keep moving so that the venom will ooze out with bleeding",
+          "Wash the wound with water containing antiseptic",
+          "Bandage the wound so that germs do not get in through it",
+          "Keep still and apply a tourniquest above the wound.",
+        ],
+        ans: "D",
+      },
+      {
+        id: 17,
+        question: "Which of these disease CANNOT be prevented by immunization?",
+        options: ["Poliomyelitis", "Tuberculosis", "Cholera", "Onchocerciasis"],
+        ans: "D",
+      },
+      {
+        id: 18,
+        question: "Poliomyelitis is an infectious disease caused by",
+        options: ["virus", "protozoan", "bacterium", "fungus"],
+        ans: "A",
+      },
+      {
+        id: 19,
+        question: "One of the function of UNICEF is to",
+        options: [
+          "Prevent and control major diseases",
+          "Prevent disease outbreak by administering vaccines",
+          "Improve the health and nutrition of children and nursing mothers",
+          "Monitor environment pollution",
+        ],
+        ans: "C",
+      },
+      {
+        id: 20,
+        question:
+          "Which of the following disease can be contracted in areas with fast flowing rivers?",
+        options: [
+          "Schistosomiasis", // slow moving rivers
+          "Elephantiasis",
+          "Syphilis",
+          "Onchocerciasis", // fast flowing rivers
+        ],
+        ans: "D",
+      },
+      {
+        id: 21,
+        question:
+          "Which of the ways of controlling bilharzia can result in pollution?",
+        options: [
+          "Cleaning water weeds on which the snails feed",
+          "Treating infected people with drugs",
+          "Preventing contamination of water by infected urine and faeces",
+          "Applying chemical to kill the snails",
+        ],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following diseases can be caused by a bacterium?",
+        options: ["Ringworm", "Poliomyelitis", "Malaria", "Syphilis"],
+        ans: "D",
+      },
+      {
+        id: 23,
+        question:
+          "Which of the following diseases is rarely spread by a housefly?",
+        options: [
+          "Yellow fever",
+          "Dysentery",
+          "Typhoid fever",
+          "Poliomyelitis",
+        ],
+        ans: "A",
+      },
+      {
+        id: 24,
+        question: "Which set of diseases is spread mainly by insect vectors?",
+        options: [
+          "Cholera, taenia and gonorrhea",
+          "Pollomyelitis, tuberculosis and syphilis",
+          "Cholera, malaria and tuberculosis",
+          "Malaria, cholera and river blindness",
+        ],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question:
+          "Which of the following diseases can be prevented by inoculation?",
+        options: [
+          "Syphilis",
+          "Malaria fever",
+          "Tuberculosis",
+          "Acquired immune Deficiency Syndrome",
+        ],
+        ans: "C",
+      },
+      {
+        id: 26,
+        question: "Malaria symptoms are caused by",
+        options: [
+          "Toxins released into the blood as a result of the destruction of red blood cells",
+          "The multiplication of the malarial sporozoites in the liver",
+          "The invasion of the red blood cells by the trophozoites",
+          "The development of merozoites into gametocytes",
+        ],
+        ans: "A",
+      },
+      {
+        id: 27,
+        question:
+          "What ecological condition favours the breeding of blackflies?",
+        options: [
+          "Fresh water habitat",
+          "Water in ponds and swamps",
+          "Water in small containers",
+          "Fast-flowing stream",
+        ],
+        ans: "D",
+      },
+      {
+        id: 28,
+        question:
+          "Which of the following is transmitted through mosquito bite?",
+        options: ["Filariasis", "Typhus", "Plague", "Schistosomiasis"],
+        ans: "A",
+      },
+      {
+        id: 29,
+        question:
+          "Which of the following is a measure for the control of bilharzias?",
+        options: [
+          "Cutting low bushes around homes",
+          "Application of molluscicides in water bodies",
+          "Screening windows and doors with mosquito nets",
+          "Application of herbicides in water bodies",
+        ],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question: "Some of the diseases caused by bacteria are",
+        options: [
+          "Tuberculosis, gonorrhea and syphillis",
+          "Tuberculosis, gonorrhea and AIDS",
+          "Poliomyelitis, syphilis and gonorrhea",
+          "AIDS, cholera and tuberculosis",
+        ],
+        ans: "A",
+      },
+      {
+        id: 31,
+        question:
+          "One of the most effective ways of controlling guinea worm is by",
+        options: [
+          "treating the disease",
+          "Public enlighten men campaigns",
+          "Accelerating rural development",
+          "Provision of portable drinking water",
+        ],
+        ans: "D",
+      },
+      {
+        id: 32,
+        question:
+          "Which of the following groups of diseases are associated with water? I Onchocerciasis II Schistosomiasis III Drancuncullasis IV Elephantiasis Taeniasis",
+        options: [
+          "I, II and III",
+          "II, IV and V",
+          "II, III and IV",
+          "I, II and V",
+        ],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question:
+          "The construction of dams may lead to an increase in the prevalence of",
+        options: [
+          "Typhoid fever, measles and yellow fever",
+          "Tuberculosis, leprosy and trypanosomiasis",
+          "Guinea worm, malaria and tuberculosis",
+          "Malaria, bilharziasis and Onchocerciasis",
+        ],
+        ans: "D",
+      },
+      {
+        id: 34,
+        question: "Vaccination is carried out in order to",
+        options: [
+          "Check the production of poison",
+          "Increase the activity of white blood cells",
+          "Increase the number of red blood cell",
+          "Stimulate the production of antibodies",
+        ],
+        ans: "D",
+      },
+      {
+        id: 35,
+        question: "Examples of water-borne and sex-linked disease are",
+        options: [
+          "Taeniasis and malaria",
+          "Cholera and gonorrehea",
+          "Typhold and syphilis",
+          "Dracuncullasis and haemophilia", // correctamundo
+        ],
+        ans: "D",
+      },
+      {
+        id: 36,
+        question:
+          "The most common means of transmitting Acquired Immune Deficiency Sydrome(AIDS) is",
+        options: [
+          "From mother to child",
+          "Through blood transfusion",
+          "Through sexual intercourse",
+          "Through the sharing of needles",
+        ],
+        ans: "C",
+      },
+      {
+        id: 37,
+        question: "The blackfly is a vector of",
+        options: [
+          "Malaria",
+          "Trypanosomiasis",
+          "Onchocerciasis",
+          "Yellow fever",
+        ],
+        ans: "C",
+      },
+      {
+        id: 38,
+        question: "The causative agent of typhoid fever is",
+        options: ["Salmonella", "Entamoeba", "Escherichia", "Shigella"],
+        ans: "A",
+      },
+      {
+        id: 39,
+        question: "The causative agent of bird flu is a",
+        options: ["Prtozoan", "Virus", "Bacterium", "Fungus"],
+        ans: "B",
+      },
+      {
+        id: 40,
+        question: "The bacteria type that are arranged in chains are the",
+        options: ["Staphylococci", "Clostridia", "Streptococci", "Bacili"],
+        ans: "C",
+      },
+      {
+        id: 41,
+        question:
+          "A boy who is fond of swimming in a pond finds himself passing urine with traces of blood. He is likely to have contracted",
+        options: [
+          "Schistosomiasis",
+          "Onchocerciasis",
+          "Poliomyelitis",
+          "Salmonellosis",
+        ],
+        ans: "A",
+      },
+      {
+        id: 42,
+        question:
+          "I Onchocerciasis II Schistosomiasis III Salmonellosis IV Meningitis. Which of the disease listed above are associtaed with water?",
+        options: [
+          "I and II only",
+          "II, III and IV",
+          "I, II and III",
+          "II and IV",
+        ],
+        ans: "C",
+      },
+      {
+        id: 43,
+        question: "The vector for yellow fever is",
+        options: [
+          "Anopheles mosquito",
+          "Tsetse fly",
+          "Blackfly",
+          "Aedes mosquito",
+        ],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question: "The protozoan Plasmodium falciparum is transmitted by",
+        options: [
+          "Female Aedes mosquitoes",
+          "Female Culex mosquitos",
+          "Female blackfly",
+          "Female Anopheles mosquito",
+        ],
+        ans: "D",
+      },
+      {
+        id: 45,
+        question: "The vector of the malaria parasite is a",
+        options: [
+          "Male Culex mosquito",
+          "Female Culex mosquito",
+          "Female Aedes mosquito",
+          "Female anopheles mosquito",
+        ],
+        ans: "D",
+      },
+      {
+        id: 46,
+        question:
+          "Exo-erythrocyctic phase of the life cycle of malaria parasite occurs in the",
+        options: [
+          "Malpighian tubules of mosquito",
+          "Brain of humans",
+          "Liver of humans",
+          "Reticuloendothelial cells of humans",
+        ],
+        ans: "C",
+      },
+      {
+        id: 47,
+        question: "Drancunculiasis can be contacted through",
+        options: [
+          "Bathing in contaminated water",
+          "Bites of blackfly",
+          "Eating contaminated food",
+          "Drinking contaminated water",
+        ],
+        ans: "D",
+      },
+      {
+        id: 48,
+        question: "The diseases caused by waterborne pathogens include",
+        options: [
+          "Gonorrhea and poliomyelitis",
+          "Typhoid and syphillis",
+          "Tuberculosis and cholera",
+          "Typhoid and cholera",
+        ],
+        ans: "D",
+      },
+      {
+        id: 49,
+        question: "An example of a parasitic protozoan is",
+        options: ["Plasmodium", "Euglena", "Chlamydomonas", "Paramecium"],
+        ans: "A",
+      },
+      {
+        id: 50,
+        question: "A tropical disease caused by Trypanosoma is",
+        options: [
+          "River blindness",
+          "Yellow fever",
+          "Malaria",
+          "Sleeping sickness",
+        ],
+        ans: "D",
+      },
+      {
+        id: 51,
+        question: "Which of the following is caused by Treponema palladium?",
+        options: ["Leprosy", "Tuberculosis", "Syphilis", "Gonorrhea"],
+        ans: "C",
+      },
+      {
+        id: 52,
+        question: "The causative agent of poliomyelitis is",
+        options: ["Virus", "Fungus", "Protozoan", "Bacterium"],
+        ans: "A",
+      },
+      {
+        id: 53,
+        question: "Which of the following is true of smallpox?",
+        options: [
+          "It is transmitted by bacteria",
+          "It can effectively be controlled with antibiotics",
+          "It can effectively be controlled by vaccination",
+          "It is a waterborne infection",
+        ],
+        ans: "C",
+      },
+      {
+        id: 54,
+        question: "A biological agent with antiviral property is",
+        options: ["Interferon", "Enzyme", "Antibiotic", "Disinfectant"],
+        ans: "A",
+      },
+    ],
+  },
+
+  {
+    topic: "Ecology: Basic Concepts. Ecological Management",
+    questions: [
+      {
+        id: 1,
+        question: "Nitrifying bacteria keep the soil fertile by",
+        options: [
+          "Converting nitrate to nitrogen",
+          "Converting ammonium salts to nitrates", // correct
+          "Converting atmospheric nitrogen to plant protein",
+          "Converting nitrate to nitrous oxide",
+          "Coverting atmospheric nitrogen to nitrate",
+        ],
+        ans: "B",
+        // this is totally correct actually...
+      },
+      {
+        id: 2,
+        question:
+          "The study of the organism and the environment of an abandoned farmland is the ecology of",
+        options: [
+          "A community",
+          "A population",
+          "A species",
+          "Cellular respiration",
+          "Cutaneous respiration",
+          "Buccal respiration",
+          "Pulmonary respiration",
+          "A habitat",
+          "An ecosystem",
+        ],
+        ans: "E",
+      },
+      {
+        id: 3,
+        question: "A secchi disc is used in the determination of",
+        options: [
+          "Rainfall",
+          "Tides",
+          "Waves",
+          "Turbidity",
+          "Current velocity",
+        ],
+        ans: "D",
+      },
+      {
+        id: 4,
+        question:
+          "Bacteria inhabiting legume root nodule and which add atmospheric nitrogen to the soil are referred to as",
+        options: [
+          "Denitrifying bacteria",
+          "Nitrifying bacteria",
+          "Nitrogen fixing bacteria",
+          "Nitrogen putrefying bacteria",
+        ],
+        ans: "C",
+        remark: `Nitrogen fixation is the process of converting atmospheric nitrogen to nitrites. The bacteria involved are <strong>Azobacter</strong> and <strong>Rhizobium</strong>`,
+      },
+      {
+        id: 5,
+        question:
+          "Grasses -> Grasshoppers -> Lizard -> Snakes -> Hawks.<br /> In the above food chain the organisms which are least in number are",
+        options: ["Grasses", "Grasshoppers", "Lizards", "Snakes", "Hawks"],
+        ans: "E",
+      },
+      {
+        id: 6,
+        question:
+          "Which of these is <strong>not</strong> true? Grasses in the above food chain",
+        options: [
+          "Trap all the sun energy",
+          "Trap a small percent of the sun energy",
+          "Are primary producers",
+          "Are eaten by primary consumers",
+          "Contains chlorophyll",
+        ],
+        ans: "A",
+        remark: `This question is meant to have an image, but plants(grasses included) are very inefficient in trapping solar energy. They can only trap 1% of the solar energy which is really small.`,
+      },
+      {
+        id: 7,
+        question:
+          "Leguminuos plants, e.g. Mucuna, are usually planted in cultivated farmlands because they",
+        options: [
+          "Enrich the soil with phosphates",
+          "Provide animals with food",
+          "Enrich the soil with organic nitrogen",
+          "Protect the soil from being over-heated",
+          "Protect the micro organisms in the soil",
+        ],
+        ans: "C",
+      },
+      {
+        id: 8,
+        // helps convert nitrogen to nitrite
+        question:
+          "During thunderstorms the energy of lightening discharge causes",
+        options: [
+          "Oxygen and nitrogen to combine",
+          "More carbon dioxide to be formed",
+          "Nitrites to be converted to nitrates",
+          "Nitrates to be converted to nitrogen",
+          "Death",
+        ],
+        ans: "A",
+        remark: `lightening causes oxygen and nitrogen to combine to form nitrites.`,
+      },
+      {
+        id: 9,
+        question:
+          "Choose the sequence which represents the correct order of organisms in a food chain",
+        options: [
+          "Grass -> Snake -> Toad-> Grasshopper -> Hawk",
+          "Grass -> Grasshopper -> Toad-> Snake -> Hawk",
+          "Grass -> Grasshopper -> Snake -> Toad-> Hawk",
+          "Grass -> Snake -> Grasshopper -> Toad-> Hawk",
+          "Grass -> Toad-> Snake -> Grasshopper -> Hawk",
+        ],
+        ans: "B",
+      },
+      {
+        id: 10,
+        question: "Nitrification means", // conversion of ammonia to nitrite then to nitrate
+        options: [
+          "Conversion of nitrates to nitrogen",
+          "Fixing nitrogen into plants",
+          "Converion of nitrates to nitrites",
+          "Changing of ammonia to nitrites, then nitrates",
+          "Nitrogen cycle",
+        ],
+        ans: "D",
+        remark: `Nitrification is two process in one. It involves the conversion of ammonia into nitrites which is in turn converted into nitrates`,
+      },
+      {
+        id: 11,
+        question: "An instrument used in measuring the speed of wind is",
+        options: [
+          "A barometer",
+          "A wind gauge",
+          "A wind vane",
+          "An anemometer",
+          "A hydrometer",
+        ],
+        ans: "D",
+        remark: `Wind speed => Anemometer. Wind direction => Wind vane`,
+      },
+      {
+        id: 12,
+        question: "A population is defined as the collection of",
+        options: [
+          "Similar organisms that are found in the same habitat",
+          "Similar organisms that breed in the same habitat",
+          "Similar oragnisms that interbreed freely in the same habitat",
+          "Similar organisms in the same habitat",
+          "Different organisms in the same habitat",
+        ],
+        ans: "C",
+        remark: `A population is the total number of a species (which can interbreed freely) in a given habitat.`,
+      },
+      {
+        id: 13,
+        question: "Which of the food chains is NOT possible in a forest?",
+        options: [
+          "Diatom -> Fly -> Toad -> Snake",
+          "Fly -> Toad -> Snake -> Hawk",
+          "Leaves -> Antelope -> Man -> Lion",
+          "Leaves -> Caterpillar -> Bird -> lion",
+          "Leaves -> Goat -> Man -> Lion",
+        ],
+        ans: "A",
+        remark: `Diatoms live in aquatic habitats.`,
+      },
+      {
+        id: 14,
+        question: "A pyramid of numbers can be defined as",
+        options: [
+          "The number of plants and animals in an ecosystem",
+          "An arrangement of organisms according to their habitats",
+          "The numerical relationships of a food chain",
+          "The number of plants and animals in a population",
+          "The total number of species and general in a community",
+        ],
+        ans: "C",
+      },
+      {
+        id: 15,
+        question:
+          "Which of the following instruments is used for determining turbidity of water?",
+        options: [
+          "Thermometer",
+          "Secchi Disc",
+          "Rain gauge",
+          "Hygrometer",
+          "Wind vane",
+        ],
+        ans: "B",
+        remark: `The secchi disc is used in measuring the turbity of water.`,
+      },
+      {
+        id: 16,
+        question:
+          "Which sequence represents the correct order of organism in a food chain? <br />1. Toad  <br />2. Mucuna <br />3. Grasshopper <br />4 Snake <br />5. Hawk",
+        options: [
+          "5-4-1-3-2",
+          "1-2-3-4-5",
+          "2-1-3-4-5",
+          "2-3-1-5-4",
+          "2-3-1-4-5",
+        ],
+        ans: "E",
+      },
+      {
+        id: 17,
+        question: "The transect method can be used in ecology to show the",
+        options: [
+          "Number of plants and animals in a habitant",
+          "Population of a plant species", // the transect method is used to show the number of organism in a species
+          "Distribution of organisms along a line",
+          "Heights of trees in a section of a forest",
+          "Number of young plants across a forest",
+        ],
+        ans: "B",
+      },
+      {
+        id: 18,
+        question:
+          "Green plants are important in the ecosystem because they are",
+        options: [
+          "Primary consumers",
+          "Producers",
+          "Decomposers",
+          "Secondary consumers",
+          "Scavangers",
+        ],
+        ans: "B",
+      },
+      {
+        id: 19,
+        question: "An anemometer is an instrument for measuring",
+        options: ["Relative humidity", "Altitude", "Wind speed", "Turbidity"],
+        ans: "C",
+        remark: `Anemometer is used in measuring wind speed`,
+      },
+      {
+        id: 20,
+        question:
+          "Which of the following groups of factors is completely abiotic?",
+        options: [
+          "Salinity, tide, plankton, turbidity",
+          "Temperature, PH, soil insect",
+          "Wind, altitude, humidity, light",
+          "Conifers, winds, PH, rainfall",
+          "Soil, water, bacteria, salinity",
+        ],
+        ans: "C",
+        remark: `Abiotic factors include all factors that are not living organisms`,
+      },
+      {
+        id: 21,
+        question:
+          "Denitrifying bacteria in nature liberate gaseous nitrogen directly from",
+        options: [
+          "Ammonium salts",
+          "Soil nitrates",
+          "Thunderstorms",
+          "Soil nitrites",
+          "Plant and animal proteins",
+        ],
+        ans: "B",
+        remark: `Denitrifying bacteria free up nitrogen gas into the atmosphere from nitrates`,
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following food chains is in the correct sequence?",
+        options: [
+          "Weeds -> Tadpoles -> Beetles -> Fish -> Man",
+          "Weeds -> Tadpoles -> Fish -> Beetle -> Man", // some beetles eat small fishes
+          "Tadpoles -> Beetles -> Weeds -> Man -> Fish",
+          "Man -> Fish -> Beetles -> Tadpoles -> Weeds",
+          "Fish -> Beetles -> Tadpoles -> Weeds -> Tadpoles",
+        ],
+        ans: "B",
+      },
+      {
+        id: 23,
+        question:
+          "Atmospheric nitrogen is directly replenished in nature through",
+        options: [
+          "The activities of denitrifying bacteria",
+          "The breakdown of ammonium salts in the soil",
+          "The activities of nitrogen-fixing bacteria in root nodules",
+          "Egestion, death and decay",
+        ],
+        ans: "A",
+      },
+      {
+        id: 24,
+        question:
+          "In an ecosystem, animals which feed directly on plants are called",
+        options: [
+          "Secondary consumers",
+          "Primary consumers",
+          "Producers",
+          "Predators",
+        ],
+        ans: "B",
+      },
+      {
+        id: 25,
+        question:
+          "In an agriculture ecosystem, the biotic component consists of",
+        options: [
+          "Crops, pest, and beneficial insects",
+          "Crops, temperature, and humidity",
+          "Pest, beneficial insects, and water",
+          "Crops, water, and soil",
+        ],
+        ans: "A",
+      },
+      {
+        id: 26,
+        question:
+          "Which of the following ecological factors are common to both terrestrial and aquatic habitats?",
+        options: [
+          "Rainfall, temperature, pH, light and wind",
+          "Salinity, rainfall temperature and light",
+          "Tides, wind, rainfall and altitude",
+          "pH, salinity, rainfall and humidity",
+        ],
+        ans: "A",
+      },
+      {
+        id: 27,
+        question: "In a community, bacteria and fungi are referred to as",
+        options: ["Producers", "Decomposers", "Scavengers", "Consumers"],
+        ans: "B",
+      },
+
+      {
+        id: 28,
+        question: "Which of the following relates to edapic factors?", // edaphic factors is soil
+        options: [
+          "The structure of the earth's surface",
+          "The influence of living organisms on each other",
+          "Temperature, rainfall and humidity",
+          "The influence of soils on plants and animals.",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 29,
+        question: "Nitrifying bacteria are important because they",
+        options: [
+          "Releases nitrogen to the atmosphere",
+          "Convert atmosphere nitrogen to ammonia",
+          "Combine ammonia with nitrogen",
+          "Oxidize ammonium salts to nitrates",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 30,
+        question: "The turbidity of a pond can be measured using the",
+        options: ["Anemometer", "Secchi disc", "Theodolite", "Hydrometer"],
+        ans: "B",
+      },
+
+      {
+        id: 31,
+        question:
+          "Which of the following has the greatest influence on the distribution of animals in marine and fresh water habitats?",
+        options: ["pH", "Salinity", "Water current", "Turbidity"], // makes sense...
+        ans: "A",
+      },
+
+      {
+        id: 32,
+        question:
+          "Which of these groups of animals is likely to be found in fresh water?",
+        options: [
+          "Blood worm, pond skater and scorpion",
+          "Blood worm, pond skater and dragonfly larva", // perhaps one will just memorize the stuff here..
+          "Pond skates scorpion and dragonfly larva",
+          "Pond skater, bloodworm and ant-lion",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 33,
+        question: "One of the characteristics of plants in the savanna is the",
+        options: [
+          "Possession of thin, smooth barks",
+          "Possession of large tap roots",
+          "Production of seedlings on mother plant",
+          "Possession of thick, flaky barks",
+        ],
+        ans: "D",
+        remark: `The thick barks prevent evaporation and resist forest fires.`,
+      },
+
+      {
+        id: 34,
+        question:
+          "Dead plants and animals are decomposed by bacteria and fungi into",
+        options: ["Nitrates", "Nitrites", "Amino acids", "Ammonia"],
+        ans: "D",
+        remark: `It is either ammonia or ammonium salts`,
+      },
+
+      {
+        id: 35,
+        question:
+          "In an ecosystem, the LEAST efficient energy transfer link is from",
+        options: [
+          "Producers to primary consumers",
+          "Sun to producers",
+          "Primary consumers to secondary consumers",
+          "Secondary consumers to decomposers",
+        ],
+        ans: "B",
+        remark: `Producers are only able to trap 1% of the energy of the sun which is seriously inefficient`,
+      },
+
+      {
+        id: 36,
+        question: "In a savanna ecosystem, the abiotic factors include",
+        options: [
+          "Legumes, temperature and sandy soil",
+          "Water, temperature and soil",
+          "Minerals, oxygen and reptile",
+          "Water, soil and grasses",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 37,
+        question: "The salinity of a brackish environment",
+        options: [
+          "Increases immediately after rain",
+          "Increase at the end of the rainy season",
+          "Decrease with increase in micro-organisms",
+          "Increases during the dry season",
+        ],
+        ans: "D",
+        remark: `Assumably, the water level decreases which increase the concentration of dissolved salt`,
+      },
+
+      {
+        id: 38,
+        question: "Free nitrogen is released to the atmosphere by",
+        options: [
+          "Nitrogen fixing bacteria",
+          "Nitrifying bacteria",
+          "Denitrifying bacteria",
+          "Saprophytic bacteria",
+        ],
+        ans: "C", // Imagine, this is terribly wrong
+      },
+
+      {
+        id: 39,
+        question: "A food web is more stable than a food chain because",
+        options: [
+          "It contains more organisms",
+          "It has greater energy source",
+          "It is not easy to destory",
+          "Every organism has an alternative food source",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 40,
+        question:
+          "The flowering period of plants in a habitat is determined by the",
+        options: [
+          "Duration of sunlight",
+          "Intensity and duration of rainfall",
+          "Relative humidity of the atmosphere",
+          "Temperature of the habitat",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 41,
+        question:
+          "A population is defined as a collection of similar organisms that",
+        options: [
+          "Behave in the same way",
+          "Interbreed freely",
+          "Are found in the same habitat",
+          "Eat the same food",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 42,
+        question:
+          "In typical predator food chain involving secondary and tertiary consumers, the organism's become progressively",
+        options: [
+          "Smaller and more numerous along the food chain",
+          "Equal in number and size along the food chain",
+          "Larger and fewer along the food chain",
+          "Parasitized along the food chain as consumers get bigger",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 43,
+        question: "Mangrove swamp can be found",
+        options: [
+          // makes sense anyways. nice and cool...
+          "On a sea shore with flat terrain",
+          "Where a river meets the sea",
+          "On a mud flat near the sea",
+          "Where two rivers meet",
+        ],
+        ans: "B",
+        // oya na, mangrove swamp can be found where a river meets the sea...
+      },
+
+      {
+        id: 44,
+        question:
+          "Which of the following factors is LEAST likely to affect the animals living in a fresh water habitat?",
+        options: ["Turbidity", "Temperature", "pH", "Salinity"],
+        ans: "D",
+        remark: `Since it is a fresh water habitat, salinity is not a factor to be worried about`,
+      },
+
+      {
+        id: 45,
+        question:
+          "What is the term used to describe the sum total of biotic and abiotic factors in the environment of the organism?",
+        options: ["Habitat", "Biome", "Ecosystem", "Ecological niche"],
+        ans: "C",
+      },
+
+      {
+        id: 46,
+        question:
+          "Important abiotic factors which affect all plants and animals in the habitat are",
+        options: [
+          "Temperature and turbidity",
+          "Rainfall and relative humidity",
+          "Salinity and wind direction",
+          "Temperature and rainfall",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 47,
+        question:
+          "The most important physical factor which affects an organism living in the intertidal zone of the seashore is",
+        options: ["PH", "Salinity", "Wave action", "Temperature"],
+        ans: "C",
+      },
+
+      {
+        id: 48,
+        question:
+          "At which trophic level would the highest accumulation of a non-biodegradable substance occur?",
+        options: [
+          "Primary producers",
+          "Tertiary consumers",
+          "Primary consumers",
+          "Secondary consumers",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 49,
+        question:
+          "Which of the following instruments is NOT used in measuring abiotic factors in any habitat?",
+        options: ["Microscope", "Thermometer", "Hygrometer", "Windvane"],
+        ans: "A",
+      },
+
+      {
+        id: 50,
+        question: "The nitrifying bacteria, Nitrosomonas, convert ammonia to",
+        options: ["Nitrites", "Nitric acid", "Nitrates", "Nitrous oxide"],
+        ans: "A",
+        remark: `Nitrosomonas helps in the first stage of nitrification by converting ammonia to nitrites.`,
+      },
+
+      {
+        id: 51,
+        question: "Which of the following sets is made up of decomposers?",
+        options: [
+          "Rhizopus, earthworm and protozoa",
+          "Mushroom, rhizopus and bacteria",
+          "Bacteria, earthworm and nematodes",
+          "Earthworm, sedges and platyhelminthes",
+        ],
+        ans: "B",
+        remark: `fungi and bacteria are decomposers`,
+      },
+
+      {
+        id: 52,
+        question: `The correct order in a food chain involving the following organisms is<br />
+          1. Grasses <br />2. Hawks <br />3. Snakes <br />4. Grasshopper <br />5. Lizards`,
+        options: ["1-2-3-4-5", "5-4-3-2-1", "1-4-5-3-2", "3-2-4-5-1"],
+        ans: "C",
+      },
+
+      {
+        id: 53,
+        question:
+          "The organisms with the least number of individuals in a pyramid of numbers are the",
+        options: [
+          "Secondary consumers",
+          "Tertiary consumers", // obvioussly...
+          "Primary producers",
+          "Primary consumers",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 54,
+        question:
+          "The depth of illumination in a water body can be measured with a",
+        options: ["Photometer", "Secchi disc", "Hydrometer", "Anemometer"],
+        ans: "A",
+        remark: `A photometer is used to measure the depth of illumination of light in a water body`,
+      },
+
+      {
+        id: 55,
+        question:
+          "A food chain involving a primary producer, a primary consumer as well as a secondary consumer, the sharing of trophic energy is in form that the",
+        options: [
+          "Primary consumer has more energy than the primary producer",
+          "Secondary consumer takes up all the energy contents of the primary consumer",
+          "Energy is shared equally bewteen the three groups of organism",
+          "Secondary consumer gets only a small portion of the energy contained in the primary producer",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 56,
+        question:
+          "In spite of the removal of carbondioxide from the atmosphere, its amount remains more or less constant because",
+        options: [
+          "It is produced by green plants during photosynthesis",
+          "It is produced during respiration by animals",
+          "It is absorbed in ocean water",
+          "Green plants release it during the day",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 57,
+        question:
+          "In a tropical rain forest, non-epiphytic ferns and allies occur as",
+        options: [
+          "Middle storey species",
+          "Upper storey species",
+          "Shade-loving species", // shade loving species...
+          "Emergent species",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 58,
+        question: "The speed of wind can be measured with an instrument called",
+        options: ["Hydrometer", "Secchi disc", "Anemometer", "Wind vane"],
+        ans: "C",
+      },
+
+      {
+        id: 59,
+        question:
+          "The southern Guinea Savanna differs from the Northern Guinea Savanna in that it has",
+        options: [
+          "Lower rainfall and shorter grasses",
+          "Less grasses and scattered trees",
+          "More rainfall and taller grasses",
+          "Less arboreal and burrowing animals",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 60,
+        question:
+          "A group of organisms of different species living in a particular area is described as a",
+        options: ["Colony", "Community", "Population", "Niche"],
+        ans: "B",
+      },
+
+      {
+        id: 61,
+        question:
+          "Which of the following is the direct consequence of transferring energy from one tropical level to another?",
+        options: [
+          "An increase in biomass",
+          "A decrease in the efficieny of energy conversion",
+          "An increase in the numbers of resulting individuals",
+          "Decrease in the resulting biomass",
+        ],
+        ans: "D",
+      },
+
+      {
+        id: 62,
+        question: "The condition that encourages denitrification is",
+        options: [
+          "Low soil oxygen",
+          "High soil nitrogen",
+          "Absence of soil bacterial",
+          "Lightning and thunderstrom",
+        ],
+        ans: "B",
+        // still reasonable that this is the answer
+      },
+
+      {
+        id: 63,
+        question:
+          "The sequence of the biomes in Nigeria from Port Harcourt to Damaturu is",
+        options: [
+          "Estuarine -> Rain forest -> Guinea savannah -> Sahel savanna",
+          "Rain forest -> Guinea savannah- Estuarine -> Desert",
+          "Estuarine -> Guinea savannah -> Rain forest -> Sahel savannah",
+          "Rain forest -> Estuarine -> Guinea savannah -> Desert",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 64,
+        question: "Floating microscopic heterotrophs are mostly grouped as",
+        options: ["Phytoplankton", "Zooplankton", "Microbes", "Nekton"],
+        ans: "B",
+      },
+
+      {
+        id: 65,
+        question: "Which of the following characterized the white mangrove?",
+        options: [
+          "Prop roots",
+          "Buttress roots",
+          "Breathing roots",
+          "STilt roots",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 66,
+        question:
+          "The most important environmental factor which epiphytes in the rain forest compete for is",
+        options: ["Water", "Nutrient", "Light", "Space"],
+        ans: "C",
+        remark: `Epiphytes compete for light`,
+      },
+
+      {
+        id: 67,
+        question:
+          "Atmospheric nitrogen is converted to soil nitrogen for plant use by",
+        options: [
+          "Nitrification and combustion",
+          "Putrefaction and lighting",
+          "Lighting and nitrification",
+          "Combustion and putrefaction",
+        ],
+        ans: "C",
+      },
+
+      {
+        id: 68,
+        question:
+          "I High birth rate and high immigration rate <br />II Low birth rate and high immigration rate <br />III Low mortality rate and low emigration rate <br />IV High mortality rate and high emigration rate. <br />Which combination of the above can cause rapid overcrowding in climax biotic communities and human settlements?",
+        options: ["II and III", "I and III", "I and IV", "I and II"],
+        ans: "B",
+      },
+
+      {
+        id: 69,
+        question:
+          "In a food chain, each succeeding level in a forward direction represents?",
+        options: [
+          "An increase in the number of individuals",
+          "A decrease in the number of individuals",
+          "An increase in the biomass of individuals",
+          "A gain in the total energy being transferred",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 70,
+        question:
+          "The study of how and why population size change over time is",
+        options: [
+          "Population estimation",
+          "Population dynamics",
+          "Population ecology",
+          "Population cycles",
+        ],
+        ans: "B",
+        remark: `Population dynamics is the study of the fluctuations of a population's size over time, as observed through rates of birth, death, immigration, and emigration.`,
+      },
+    ],
+  },
+
+  {
+    topic: "Ecology II: Succession. Adaptation. Nutrient Recycling",
+    questions: [
+      {
+        id: 1,
+        question:
+          "A plant which grows on another plant without apparent harm to the host plant is called",
+        options: [
+          "A parasite",
+          "An epiphyte",
+          "A saprophyte",
+          "A predator",
+          "A hermaphrodite",
+        ],
+        ans: "B",
+        remark: `Epiphytes are plants that grow on another plant without harming the host plant`,
+      },
+      {
+        id: 2,
+        question:
+          "In which of these associations is much harm done to one of the partners?",
+        options: [
+          "Symbiosis",
+          "Epiphytism",
+          "Commensalism",
+          "Parasitism",
+          "Mutualism",
+        ],
+        ans: "D",
+      },
+      {
+        id: 3,
+        question:
+          "A student trying to find out the order in which organisms appear on a cleared plot is studying one of the following",
+        options: [
+          "Ecosystem",
+          "Food chain",
+          "Food web",
+          "Succession",
+          "Community",
+        ],
+        ans: "D",
+      },
+      {
+        id: 4,
+        question:
+          "An organism X lives entirely on the waste products in another organism Y . In this association X is a",
+        options: [
+          "Symbiont",
+          "Commensal",
+          "Saprophyte", // hmm, this get as e be...
+          "Parasite",
+          "Epiphyte",
+        ],
+        ans: "C",
+      },
+      {
+        id: 5,
+        question: "Which of the following statements is NOT true of symbiosis?",
+        options: [
+          "Symbionts must be living",
+          "It is an association of give and take",
+          "The association may involve two plants",
+          "Association between two similar species",
+          "Symbionts derive mutual benefit",
+        ],
+        ans: "D",
+      },
+      {
+        id: 6,
+        question:
+          "In which part of a leguminous plant can you found bacteria like Azotobacter?",
+        options: [
+          "Spongy mesophyII of leaf",
+          "At the nodes",
+          "At the internodes",
+          "In nodules",
+          "Palisade mesophyII of leaf",
+        ],
+        ans: "D",
+      },
+      {
+        id: 7,
+        question: "The absence of stomata shows that a leaf may be",
+        options: [
+          "From floating plant",
+          "From a submerged plant",
+          "Variegated",
+          "From a terrestrial plant",
+          "From parasitic green plant",
+        ],
+        ans: "B",
+      },
+      {
+        id: 8,
+        question:
+          "Plants which can survive in places where the water supply is limited are",
+        options: [
+          "Bryophytes",
+          "Mesophytes",
+          "Xerophytes",
+          "Hydrophytes",
+          "Pteridophytes",
+        ],
+        ans: "C",
+      },
+      {
+        id: 9,
+        question:
+          "Which of the following is NOT regarded as a pollutant on land or in the air?",
+        options: [
+          "Noise",
+          "Smoke",
+          "Sulphur dioxide",
+          "Carbon monoxide",
+          "Nitrogen",
+        ],
+        ans: "E",
+      },
+      {
+        id: 10,
+        question:
+          "A relationship between living organisms which is of mutual benefit is",
+        options: [
+          "Parasitsm",
+          "Saprophytism",
+          "Ecosystem",
+          "Mutualism",
+          "Commensalisms",
+        ],
+        ans: "D",
+      },
+      {
+        id: 11,
+        question:
+          "An organism found on a bare rock surface has features of algae and fungi. The organism is",
+        options: ["An epiphyte", "A lichen", "A bryophyte", "A fern"],
+        ans: "B",
+      },
+      {
+        id: 14,
+        question:
+          "Epiphytes growing on the branches of trees provide an example of the relationship known as",
+        options: ["Parasitism", "Commensalisms", "Saprophytism", "Holophytism"],
+        ans: "B",
+      },
+      {
+        id: 15,
+        question:
+          "If an organism obtain its food by means of haustoria, it is said to be",
+        options: ["Holophytic", "Heterophytic", "Saprophytic", "Parasitic"],
+        ans: "D",
+      },
+      {
+        id: 17,
+        question: "Which of the following causes pollution?",
+        options: [
+          "Consumption of canned drink",
+          "The addition of fertilizer to farmland",
+          "Respiration of living organisms",
+          "Burning of refuse",
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question: "Lichen is an example of",
+        options: [
+          "A saprophytic organism",
+          "A symbiotic association",
+          "An epiphytic plant",
+          "A carnivorous plants",
+        ],
+        ans: "B",
+      },
+      {
+        id: 17,
+        question:
+          "A physiological adaption of plants to the problem of excessive water loss is",
+        options: [
+          "Reduction in the number of stomata",
+          "Reversal of normal stomatal rhythm",
+          "Possession of shallow roots",
+          "Possession of waxy cuticle",
+        ],
+        ans: "B",
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following is a dangerous product of coal burning?",
+        options: ["Sulphur dioxide", "Carbon-dioxide", "Carbon", "Nitrogen"],
+        ans: "A",
+      },
+      {
+        id: 19,
+        question:
+          "Physiological adaption to very dry condition in animals is called",
+        options: ["Hibernation", "Aestivation", "Rejuvenation", "Xeromorphism"],
+        ans: "B",
+      },
+      {
+        id: 20,
+        question: "Which of the following constitutes pollution?",
+        options: [
+          "Droppings from birds",
+          "Loud disco music",
+          "Pack of cigrattes",
+          "Refuse in an incinerator",
+        ],
+        ans: "B",
+      },
+      {
+        id: 21,
+        question:
+          "What do bacteria in root nodules derive from the host plant?",
+        options: [
+          "Protection and minerals",
+          "Water and minerals",
+          "Carbohydrates and water",
+          "Protection and carbohydrates",
+        ],
+        ans: "D",
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following is likely to occur in a deciduous forest during the dry season?",
+        options: [
+          "New leaves are formed",
+          "The trees die off",
+          "The undergrowth increase",
+          "The ground becomes bare",
+        ],
+        ans: "D",
+      },
+      {
+        id: 23,
+        question:
+          "Which of these is NOT an adaptive features for arboreal life?",
+        options: [
+          "Possession of a long tail",
+          "Possession of claws",
+          "Possession of teeth",
+          "Counter shading in coat colour",
+        ],
+        ans: "C",
+      },
+      {
+        id: 24,
+        question: "Sources of air pollutants are",
+        options: [
+          "Industrial chimneys, burning fossil oils and river dams",
+          "Sulphur dioxide, acid rain and pesticides",
+          "Sulphur mines, vehicle exhausts and aerosols",
+          "Sewage, smoke and old vehicles",
+        ],
+        ans: "C",
+      },
+      {
+        id: 25,
+        question:
+          "Nitrogen-fixing micro-organisms in leguminous plants live symbiotically in the",
+        options: ["Root nodules", "Tap roots", "Branch roots", "Root hairs"],
+        ans: "A",
+      },
+      {
+        id: 26,
+        question: "Which of the following is true of a climax community?",
+        options: [
+          "It persists until the environment or climate changes",
+          "It changes drastically from one year to the next",
+          "It is the first stage in succession",
+          "It is made up of the tallest trees and the smallest animals",
+        ],
+        ans: "A",
+      },
+      {
+        id: 27,
+        question:
+          "An example of plant adaption to a xerophytic environment is represented be the development of",
+        options: [
+          "Fleshy tissues and reduced leaves",
+          "Broad canopy and extensive surface root system",
+          "Thick barks and broad leaves",
+          "Rough leaves and shallow root system",
+        ],
+        ans: "A",
+      },
+      {
+        id: 28,
+        question:
+          "Two organisms of different species, living in close association but not dependent on each other are referred to as",
+        options: ["Parasites", "Commensals", "Symbiots", "Autorophs"],
+        ans: "B",
+      },
+      {
+        id: 29,
+        question: "Plants adapted for life in salty marsh are called",
+        options: ["Hydrophytes", "Xerophytes", "Halophytes", "Epiphytes"],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question:
+          "Which group plants would be first colonizers in an ecological succession changing rocks to soil?",
+        options: ["Mosses", "Ferns", "Lichens", "Grasses"],
+        ans: "C",
+      },
+      {
+        id: 31,
+        question: "Carbon monoxide poison tissues by",
+        options: [
+          "Constructing the blood vessels",
+          "Killing the cells",
+          "Combinning with haemoglobin",
+          "Rupturing the blood vessels",
+        ],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question:
+          "The bright colours of the comb and features in the peacock are for",
+        options: ["Sex differentiation", "Beauty", "Courtship", "Defence"],
+        ans: "C",
+      },
+      {
+        id: 33,
+        question: "Ecological succession ends with the formation of a stable",
+        options: [
+          "Niche",
+          "Population",
+          "Pioneer community",
+          "Climax community",
+        ],
+        ans: "D",
+      },
+      {
+        id: 34,
+        question:
+          "People who suck petrol with their mouth run the risk of increasing in their blood concentration of",
+        options: ["Iron", "Lead", "Calcium", "Magnesium"],
+        ans: "B",
+      },
+      {
+        id: 35,
+        question: "Breathing root is an adaption for survial in the",
+        options: ["Mangrove swamp", "Desert", "Arboreal habitat", "Savanna"],
+        ans: "A",
+      },
+      {
+        id: 36,
+        question: "Read coloration on the head of a male lizard helps it to",
+        options: [
+          "Mark its territory",
+          "Camouflag in the environment",
+          "Secure its mate",
+          "Defend itself",
+        ],
+        ans: "C",
+      },
+      {
+        id: 37,
+        question:
+          "A phenomenon by which an animal goes into a state of dormancy during the dry season is called",
+        options: ["Hibernation", "Aestivation", "Incubation", "Deactivation"],
+        ans: "B",
+      },
+      {
+        id: 38,
+        question: "Colonization of a bare rock surface is termed",
+        options: [
+          "Evolution",
+          "Speciation",
+          "Primary succession",
+          "Secondary succession",
+        ],
+        ans: "C",
+      },
+      {
+        id: 39,
+        question:
+          "Environmental pollutants which can work through the media of water, soil and air include",
+        options: ["Carbon monoxide", "Nolse", "Sulphur(IV) odxide", "Smoke"],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question:
+          "The slender, long and slightly curved beak of the sunbird is an adaption for feeding on",
+        options: ["Nectar", "Small seeds", "Big seeds", "Insects"],
+        ans: "A",
+      },
+      {
+        id: 41,
+        question: "Scales on reptiles are a feature for",
+        options: [
+          "Conserving water",
+          "Conserving food",
+          "Protecting the skin",
+          "Locomotion",
+        ],
+        ans: "A",
+      },
+      {
+        id: 42,
+        question:
+          "The colour of the ventral surface of a fish is lighter than that of the dorsal. This is mainly",
+        options: [
+          "An adaption for moment",
+          "An adaption for camouflag",
+          "For attracting mates",
+          "For regulating body temperature",
+        ],
+        ans: "B",
+      },
+      {
+        id: 43,
+        question:
+          "Toads and lizards in an ecosystem depend on a limited quantity of food. This is an example of",
+        options: [
+          "Parasitism",
+          "Intraspecific completition",
+          "Predation,",
+          "Intersecific competition",
+        ],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question: "Adaptive features of plants to desert conditions include",
+        options: [
+          "Thick barks, succulent stems and sunken stomata",
+          "Thin barks, succulent stems and sunken stomata",
+          "Thin backs, air floats on stems and sunken stomata",
+          "Air spaces in tissues, adventitious roots and thick barks",
+        ],
+        ans: "A",
+      },
+      {
+        id: 46,
+        question: "Water loss is regulated in plants and animals by both the",
+        options: [
+          "Scales and the skin",
+          "Scales and hair",
+          "Thick leaves and the feathers",
+          "Leathery cuticle and the feathers",
+        ],
+        ans: "D",
+      },
+      {
+        id: 47,
+        question:
+          "What combination of characters should a prey develop to survive in the environment of its predator?",
+        options: [
+          "Camouflag, well developed limbs and effective vision",
+          "Showy colour, big body and well developed limbs",
+          "Camouflag, big body and effective vision",
+          "Show colour, well developed muscles and an acute sense of smell",
+        ],
+        ans: "A",
+      },
+      {
+        id: 48,
+        question:
+          "A fresh water plant such as water lilly can solve the problem of buoyancy by the possession of",
+        options: [
+          "Aerenchymarous tissues",
+          "Dissected leaves",
+          "Thin cell walls of the epidermis",
+          "Water-repelling epidermis",
+        ],
+        ans: "A",
+      },
+      {
+        id: 49,
+        question:
+          "The  biological association that contributes directly to succession in a community is",
+        options: ["Competition", "Predation", "Parasitism", "Commensalism"],
+        ans: "A",
+      },
+      {
+        id: 54 | 50,
+        question:
+          "In the whistling pine leaves are reduced to brown scale and young stems are green. This is an adaption for",
+        options: [
+          "Obtaining food",
+          "Conserving nutrients",
+          "Storing water",
+          "Reducing transpiration",
+        ],
+        ans: "D",
+      },
+      {
+        id: 51,
+        question:
+          "The sign + is used to indicate an association where an organism grains, while 0 is used where an organism is unaffected. An association indicated as +0 is know as",
+        options: ["Predation", "Commensalism", "Parasitism", "Competion"],
+        ans: "B",
+      },
+      {
+        id: 52,
+        question: "The very bright colours in some types of mushroom",
+        options: [
+          "Are a warning that they may be poisonous",
+          "Indicate that they are very tasty",
+          "Attract potential transporters of their spores",
+          "Perform the same function as bright colours in flowers",
+        ],
+        ans: "A",
+      },
+      {
+        id: 53,
+        question: "The least adaptive features for arboreal life is that",
+        options: [
+          "possession of four limbs",
+          "Possession of claws",
+          "Development of a long tail",
+          "Counter shading of coat colour",
+        ],
+        ans: "B",
+      },
+      {
+        id: 54,
+        question:
+          "The loud cry made by a brooding hen when a predator is around is meant to",
+        options: [
+          "Alert the poultry attendants",
+          "Attract cocks to come and fight the predator",
+          "Advertise the boundaries of its territory to intruders",
+          "Warn its chicks and other chickens of impending danger",
+        ],
+        ans: "D",
+      },
+      {
+        id: 55,
+        question: "An ecological succession often leads to",
+        options: [
+          "An increase in species diveristy",
+          "A decrease in species diversity",
+          "An unstable community",
+          "The dispensal species",
+        ],
+        ans: "A",
+      },
+      {
+        id: 56,
+        question:
+          "Which of the following are adaptations of animals to aquatic habitats?",
+        options: [
+          "Gills, streamlined bodies, and lateral line",
+          "Lateral line, streamlined bodies and lungs",
+          "Gills, scaly skin and lungs",
+          "Gills, streamlined bodies and spiracles",
+        ],
+        ans: "A",
+      },
+      {
+        id: 57,
+        question: "Which of the following is an adaptation of forest species?",
+        options: [
+          "Few stomata",
+          "Thick bark",
+          "Buttress roots",
+          "Reduced leaves",
+        ],
+        ans: "C",
+      },
+      {
+        id: 58,
+        question:
+          "In a group of male Agama lizards, the one with brightest head colour is the",
+        options: ["Dominant", "Youngest", "Oldest", "Largest"],
+        ans: "A",
+      },
+      {
+        id: 59,
+        question:
+          "A certain savanna grasshopper changes colour from green during the rainy season to brown during the dry season bush fires. The reason for these colour changes is that the",
+        options: [
+          "Grasshopper is getting older",
+          "Environment temperature is changing",
+          "Grasshopper is advoiding predation",
+          "Grasshopper is frequently moulting",
+        ],
+        ans: "C",
+      },
+      {
+        id: 60,
+        question:
+          "Complex social behaviour and organization are found mostly in",
+        options: ["Insects", "Birds", "Reptiles", "Mammals"],
+        ans: "D",
+      },
+      {
+        id: 61,
+        question:
+          "Which of the following structural features are adapted for uses other than water conservation?",
+        options: [
+          "Succulent stems",
+          "Scales in a annals",
+          "Spines in plants",
+          "Feathers in birds",
+        ],
+        ans: "D",
+      },
+      {
+        id: 62,
+        question:
+          "An association between the root nodule of a leguminuos plants and rhizobium is known as",
+        options: ["Commensalism", "Mycorhiza", "Parasitism", "Symbiosis"],
+        ans: "D",
+      },
+      {
+        id: 63,
+        question:
+          "Carbon(IV) oxide content of the atmosphere is least affected by",
+        options: [
+          "Cutting down and clearing of forest",
+          "Forest fires",
+          "Burning of fossil fuels",
+          "Plant and animal respiration",
+        ],
+        ans: "A",
+      },
+      {
+        id: 64,
+        question: "The stem of a typical aquatic plant usually has many",
+        options: [
+          "Air cavities",
+          "Intercellular spaces",
+          "Water cavities",
+          "Water conducting cells",
+        ],
+        ans: "A",
+      },
+      {
+        id: 65,
+        question:
+          "The ability of an organism to live successfully in an environment is known as",
+        options: ["Resistance", "Competition", "Succession", "Adaptation"],
+        ans: "D",
+      },
+      {
+        id: 66,
+        question:
+          "The most important adaptation of xerophytes is the ability of the protoplasm to",
+        options: [
+          "Resist being damaged by loss of water",
+          "Store sugar and minerals in the vacuoles",
+          "Absorb water and swell",
+          "Shrink from the cell wall",
+        ],
+        ans: "A",
+      },
+      {
+        id: 67,
+        question:
+          "A green snake in green grass is able to escape notice from predators because of its",
+        options: [
+          "Disruptive colouration",
+          "Countership",
+          "Warning colouration",
+          "Cryptic colouration",
+        ],
+        ans: "D",
+      },
+      {
+        id: 68,
+        question:
+          "For heterotrophic organisms, competition is least caused by the inadequacy of",
+        options: ["Mates", "Space", "Light", "Nutrients"],
+        ans: "C",
+      },
+      {
+        id: 69,
+        question:
+          "One of the adaptations to life on trees by a monkey is its possession of digits which are",
+        options: ["Extensible", "Big", "Opposable", "Long"],
+        ans: "C",
+      },
+      {
+        id: 70,
+        question:
+          "The community of plants in which the same species occur from year to year is the",
+        options: [
+          "Annual species",
+          "Pioneer vegetation",
+          "Perennial species",
+          "Climax vegetation",
+        ],
+        ans: "D",
+      },
+      {
+        id: 71,
+        question: "The supporting tissue of xylem is most poorly developed in",
+        options: [
+          "Mangrove swap plants",
+          "Grassland plants",
+          "Submerged water plants",
+          "Desert plants",
+        ],
+        ans: "C",
+      },
+      {
+        id: 72,
+        question:
+          "Animals are restive when the environment in which they live becomes",
+        options: [
+          "Hot and dry",
+          "Cold and wet",
+          "Warm and humid",
+          "Windy  and snowy",
+        ],
+        ans: "A",
+      },
+      {
+        id: 73,
+        question:
+          "Birds which are large with long straight pointed beaks, long necks and long legs are likely to be",
+        options: [
+          "Insect eaters",
+          "Fish catchers",
+          "Nectar feeders",
+          "Fruit eaters",
+        ],
+        ans: "B",
+      },
+      {
+        id: 74,
+        question: "One example of fossil fuels is",
+        options: ["Coral", "Limestone", "Coal", "Firewood"],
+        ans: "C",
+      },
+      {
+        id: 75,
+        question:
+          "The most effective method of dealing with non-biodegradable pollution is by",
+        options: ["Burying", "Recycling", "Incineration", "Dumping"],
+        ans: "B",
+      },
+      {
+        id: 76,
+        question: "Mycorrhiza is an association between fungi and",
+        options: [
+          "Filamentous algae",
+          "Roots of higher plants",
+          "Bacteria",
+          "Protozoans",
+        ],
+        ans: "B",
+      },
+      {
+        id: 77,
+        question:
+          "The pioneer organisms in ecological succession are usually the",
+        options: ["Algae", "Lichens", "Ferns", "Mosses"],
+        ans: "B",
+      },
+      {
+        id: 78,
+        question:
+          "The presence of sunken stomata and the folding of leaves are adaptations to",
+        options: [
+          "Prevent entry of pathogens",
+          "Reduce water loss",
+          "Remove excess water",
+          "Prevent guttation",
+        ],
+        ans: "B",
+      },
+      {
+        id: 79,
+        question: "Spines and shells on animals are adaptions for",
+        options: [
+          "Chemical defence",
+          "Camouflage",
+          "Physical defence",
+          "Mimicry",
+        ],
+        ans: "C",
+      },
+      {
+        id: 80,
+        question: "An example of cryptic colouration is the",
+        options: [
+          "Motted colours on moths that rest on lichens",
+          "Bright colour of an insect pollinated flower",
+          "Bright marks on a poisonous tropical frog on variegated leaves",
+          "Green colour of a plant",
+        ],
+        ans: "A",
+      },
+      {
+        id: 81,
+        question:
+          "The inactive state exhibited by an animal during hot dry seasons is termed",
+        options: ["Aestivation", "Dormancy", "Resting", "Hibernation"],
+        ans: "A",
+      },
+      {
+        id: 82,
+        question:
+          "The association between termites and the cellulose digesting protozoans in their guts is an example of",
+        options: ["Saprophytism", "Mutualism", "Parasitism", "Commensalism"],
+        ans: "B",
+      },
+      {
+        id: 83,
+        question: "One adaption of reptiles to water loss is the presence of",
+        options: [
+          "Keratinous scales",
+          "Claws on limbs",
+          "Long tails",
+          "LOng sticky tongues",
+        ],
+        ans: "A",
+      },
+      {
+        id: 84,
+        question:
+          "The scarcity of food causes a sudden decrease in population size by",
+        options: [
+          "Decreasing the reproductive rate",
+          "Bringing about immigration",
+          "Raising the mortality rate",
+          "Minimizing the rate of competition",
+        ],
+        ans: "C",
+      },
+      {
+        id: 85,
+        question:
+          "Which of the following is an example of intraspecific competition?",
+        options: [
+          "A lizard and an ant-eater chasing an insect",
+          "A worker termite and a soldier in a limited space",
+          "A hawk and an eagle targeting the same chicken",
+          "Yam and potato shoots growing out through the same window",
+        ],
+        ans: "B",
+      },
+      {
+        id: 86,
+        question: "Plants survive hot dry conditions by",
+        options: [
+          "Storing water in large parenchyma cells",
+          "Producing numerous leaves",
+          "Having numerous stomata",
+          "Having evergreen leaves",
+        ],
+        ans: "A",
+      },
+      {
+        id: 87,
+        question:
+          "The spots and stripes of the leopard and tiger are examples of",
+        options: [
+          "Cryptic colouration",
+          "Warning colouration",
+          "Disruptive colouration",
+          "Countershading",
+        ],
+        ans: "C",
+      },
+      {
+        id: 88,
+        question: "The main reservoir of water in the cycle is the is the",
+        options: ["Cloud", "Groundwater", "Plant", "Ocean"],
+        ans: "D",
+      },
+      {
+        id: 89,
+        question:
+          "Secondary succession is much faster than primary succession because",
+        options: [
+          "Pioneer colonizers are more in number",
+          "Soil is already present",
+          "Secondary series require less nutrients",
+          "Species competition is increased",
+        ],
+        ans: "B",
+      },
+      {
+        id: 90,
+        question:
+          "The recycling method of solid waste disposal is unsuitable for",
+        options: ["Organic matter", "Glass", "Plastics", "Mental scraps"],
+        ans: "A",
+      },
+      {
+        id: 91,
+        question: "A non-renewable alternative source of energy is",
+        options: [
+          "Wind generators",
+          "Solar panels",
+          "Nuclear energy",
+          "Hydroelectric power",
+        ],
+        ans: "C",
+      },
+      {
+        id: 92,
+        question:
+          "The association in which one member benefits and the other is relatively unaffected by the interaction is termed",
+        options: ["Symbiosis", "Parasitism", "Commensalism", "Mutualism"],
+        ans: "C",
+      },
+      {
+        id: 93,
+        question: "When a peacock displays its colourful feathers, it is",
+        options: [
+          "Ready for a fight",
+          "Protecting itself from predators",
+          "Protecting its male from predators",
+          "Courting a female",
+        ],
+        ans: "D",
+      },
+      {
+        id: 94,
+        question:
+          "When an animal has dark-coloured dorsal surface and a light-coloured ventral surface, this is an adaptation called",
+        options: [
+          "Concealment coloration",
+          "Countershading",
+          "Colour blending",
+          "Disruptive coloration",
+        ],
+        ans: "B",
+      },
+      {
+        id: 95,
+        question:
+          "The intensity of competition among animals in a given area will increase with",
+        options: [
+          "An increase in the frequency of disease outbreaks",
+          "An increase in population size",
+          "A decrease in the immigration rate",
+          "An increase in the emigration rate",
+        ],
+        ans: "B",
+      },
+      {
+        id: 96,
+        question: "Which of the following is an example of parasitism?",
+        options: [
+          "Fungi growing on a dead tree branch",
+          "A squirrel living in an abandoned nest of a bird",
+          "Mistletoe growing on an orange tree",
+          "Cattle egrets taking ticks from the body of cattle",
+        ],
+        ans: "C",
+      },
+      {
+        id: 97,
+        question:
+          "One adaptation shown by hydrophytes in freshwater habitats is the",
+        options: [
+          "Leaves reduced to spines",
+          "Poor development of roots and xylem tisues",
+          "Waxy cuticle on shoot surface",
+          "Well-developed roots and supporting system",
+        ],
+        ans: "B",
+      },
+      {
+        id: 98,
+        question:
+          "Which of the following factors can bring about competition in a population?",
+        options: ["Dispersion", "Emigration", "Drought", "Mortality"],
+        ans: "C",
+      },
+      {
+        id: 99,
+        question: "The beak of a duck is structurally adapted for",
+        options: [
+          "Scooping and sieving food",
+          "Catching and grasping food",
+          "Picking and cracking food",
+          "Boring and sucking food",
+        ],
+        ans: "A",
+      },
+      {
+        id: 115,
+        question:
+          "Stomata of some plants are sunken and protected by hairs. These are features of",
+        options: ["Mesophytes", "Epiphytes", "Hydrophytes", "Xerophytes"],
+        ans: "D",
+      },
+      {
+        id: 101,
+        question:
+          "The easiest way to establish the level of pollution in a local stream is to measure the level of",
+        options: ["Oxygen", "Carbon (IV) oxide", "Ammonia", "Alkalinity"],
+        ans: "A",
+      },
+      {
+        id: 102,
+        question: "A major adaptive feature of endoparasites is the",
+        options: [
+          "Loss of the organ of movement",
+          "Presence of claws",
+          "Loss of the central nervous system",
+          "Presence of piercing mouthparts",
+        ],
+        ans: "A",
+      },
+      {
+        id: 103,
+        question:
+          "The ability of a chameleon to change its colour is an adaptive feature for",
+        options: ["Attraction", "Defence", "Display", "Attack"],
+        ans: "B",
+      },
+      {
+        id: 104,
+        question:
+          "The association between bacteria residing in the caecum and the ruminant is",
+        options: ["Parasitism", "Predation", "Saprophytism", "Mutualism"],
+        ans: "D",
+      },
+      {
+        id: 105,
+        question: "The major cause of global warming is the",
+        options: [
+          "Burning of fossil fuel",
+          "Construction of dams",
+          "Use of electricty",
+          "Exploration of space",
+        ],
+        ans: "A",
+      },
+      {
+        id: 106,
+        question:
+          "Plants that grow in an area that is neither too wet nor too dry are",
+        options: ["Xerophytes", "Mesophytes", "Epiphytes", "Hydrophytes"],
+        ans: "B",
+      },
+      {
+        id: 107,
+        question:
+          "The specialized pigment cells that are involved in colouration and colour change in animals are the",
+        options: ["Xanthophl", "Chromatophores", "Chlorophyll", "Melanin"],
+        ans: "B",
+      },
+      {
+        id: 108,
+        question:
+          "During the dry season in the tropics, the body metabolism of some animals slows to a minimal level in a process referred to as",
+        options: ["Hibernation", "Aestivation", "Dormancy", "Senescence"],
+        ans: "B",
+      },
+      {
+        id: 109,
+        question: "Mycorrhizae promote plant growth by",
+        options: [
+          "Protecting it from infection",
+          "Helping it to utilized atmospheric nitrogen",
+          "Serving as a growth regulator",
+          "Absorbing inorganic ions from the soil",
+        ],
+        ans: "D",
+      },
+      {
+        id: 110,
+        question:
+          "I Adoption of appropriate nocturnal habits <br />II Burrowing <br />III Adjusting their internal body temperature <br />IV Possession of many sweat pores. <br />Which of the above are ways in which desert animals adapt to extreme heat of the environment?",
+        options: [
+          "II and III only",
+          "I and II only",
+          "I, II and III only",
+          "I and IV only",
+        ],
+        ans: "B",
+      },
+
+      {
+        id: 111,
+        question:
+          "In nature, plants and animals are perpectually engaged in mutualism because",
+        options: [
+          "They utilize respiratory wastes of each other",
+          "They are neighbours",
+          "They are rivals",
+          "All animals rely on food produced by plants",
+        ],
+        ans: "A",
+      },
+
+      {
+        id: 112,
+        question: "Lack of space in a population could lead to an increase in",
+        options: ["Disease rate", "Drought", "Water scarcity", "Birth rate"],
+        ans: "A",
+      },
+
+      {
+        id: 113,
+        question:
+          "The brightly coloured eye spots on the hind wings of a moth are an example of",
+        options: [
+          "Crypsis",
+          "Mimicry",
+          "Warning colouration",
+          "Disruptive colouration",
+        ],
+        ans: "C",
+      },
+      {
+        id: 114,
+        question:
+          "Countershading is an adaptive feature that enables animals to",
+        options: [
+          "Fight enemies",
+          "Remain undetected",
+          "Warm enemies",
+          "Attract mates",
+        ],
+        ans: "B",
+      },
+      {
+        id: 115,
+        question: "The water cycle is maintained mainly by",
+        options: [
+          "Evaporation of water in the environment",
+          "Evaporation and condensation of water in the environment",
+          "Condensation of water in the environment",
+          "Transpiration and respiration in plants",
+        ],
+        ans: "B",
+      },
+      {
+        id: 116,
+        question:
+          "Which of the following animals can exist solely on the water they get food and metabolic reactions?",
+        options: [
+          "Forest arboreal dwellers",
+          "Desert dwellers",
+          "Forest ground dwellers",
+          "Raindforest dwellers",
+        ],
+        ans: "B",
+      },
+      {
+        id: 117,
+        question: "The most likely first colonizers of a bare rock are",
+        options: ["Mosses", "Ferns", "Lichen", "Fungi"],
+        ans: "C",
+      },
+      {
+        id: 118,
+        question:
+          "The carrrying capacity of a habitat is reached when the population growth begins to",
+        options: [
+          "Increase slowly",
+          "Increase exponentially",
+          "Slow down",
+          "Remain steady",
+        ],
+        ans: "D",
+      },
+      {
+        id: 120,
+        question: "The short thick beak in birds is an adaptation for",
+        options: [
+          "Crushing seeds",
+          "Sucking nectar",
+          "Tearing flesh",
+          "Straining mud",
+        ],
+        ans: "A",
+      },
+      {
+        id: 121,
+        question:
+          "The plants that grow in deserts or very dry areas are referred to as",
+        options: ["Hydrophytes", "Epiphytes", "Xerophytes", "Mesophytes"],
+        ans: "C",
+      },
+      {
+        id: 122,
+        question:
+          "The structural adaptation of desert plants for water conservation is",
+        options: [
+          "Spongy mesophyll",
+          "Spiny leaves",
+          "Prominent stomata in leaves",
+          "Broad leaves with numerous stomata",
+        ],
+        ans: "B",
+      },
+      {
+        id: 123,
+        question:
+          "The long and sharp clawed feet of birds is an adaptation for",
+        options: [
+          "Scooping mud",
+          "Tearing flesh",
+          "Grasping prey",
+          "Crushing seeds",
+        ],
+        ans: "C",
+      },
+      {
+        id: 124,
+        question: "A pollutant that is biodegradable is",
+        options: ["Heavy metals", "Cellophane", "Sewage", "Crude oil"],
+        ans: "C",
+      },
+      {
+        id: 125,
+        question:
+          "Physiological adaptation to very dry conditions in animals demonstrates",
+        options: ["Xeromorphism", "Hibernation", "Aestivation", "Rejuvenation"],
+        ans: "C",
+      },
+      {
+        id: 126,
+        question:
+          "One adapation of Cactus opuntia to conserve water is the reduction of",
+        options: [
+          "Stem to leaves",
+          "Leaves to spine",
+          "Flower size",
+          "Internodes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 127,
+        question:
+          "Which of the following structures is adapted for feeding in a bird of prey?",
+        options: [
+          "Smooth beak and strong claws",
+          "Big beaks and strong feet",
+          "Pointed beak and strong claws",
+          "Hooked beak and sharp claws",
+        ],
+        ans: "D",
+      },
+      {
+        id: 128,
+        question: "The special pigment for colour change in chameleon is",
+        options: ["Caratenoid", "Chromatin", "Chromatophore", "Melanin"],
+        ans: "C",
+      },
+      {
+        id: 129,
+        question:
+          "The behavioural adaptation in social insects could best be described as",
+        options: [
+          "Saprophrophytism",
+          "Parasitism",
+          "Commensatlism",
+          "Symbiosis",
+        ],
+        ans: "D",
+      },
+      {
+        id: 130,
+        question:
+          "One of the ways of controlling noise pollution in urban areas is",
+        options: [
+          "By siting industries away from residential area",
+          "That fuel should completely combusted by engines",
+          "By planting trees on both sides of the road",
+          "Wearing ear devices",
+        ],
+        ans: "A",
+      },
+      {
+        id: 131,
+        question: "A pollutant that is mostly associated with acid rain is",
+        options: [
+          "Nitrogen(IV) Oxide",
+          "Ozone",
+          "Fluorine",
+          "Carbon (IV) oxide",
+        ],
+        ans: "A",
+      },
+      {
+        id: 132,
+        question: "The streamline shape of fishes is an adaptation for",
+        options: [
+          "Securing mates",
+          "Easy movement",
+          "Obataining food",
+          "Defense and attack",
+        ],
+        ans: "B",
+      },
+    ],
+  },
+
+  {
+    topic: "Heredity. Variation. Evolution",
+    questions: [
+      {
+        id: 1,
+        question:
+          "In a breeding programme a cross was made between two true-breeding cowpea types: one with round seeds and the other with wrinked seeds. If roundness is dominant while wrinkleness is recessive, in the first filial generation all the seeds produced will be",
+        options: [
+          "25 percent wrinkled, 75 percent round",
+          "100 percent wrinkled",
+          "50 percent wrinkled, 50 percent round",
+          "75 percent wrinkled, 25 percent round",
+          "100 percent round",
+        ],
+        ans: "E",
+      },
+      {
+        id: 2,
+        question:
+          "The carrier of the hereditary characters in plants and animals is the",
+        options: ["cell", "nucleus", "chromosome", "chloroplast", "gene"],
+        ans: "E",
+      },
+      {
+        id: 3,
+        question:
+          "If you cross-breed a tall variety (Tt) of maize with a short variety (tt), the ratio of tall to short plants in the offspring will be",
+        options: ["2:1", "1:2", "1:1", "1:3", "3:1"],
+        ans: "C",
+      },
+      {
+        id: 4,
+        question:
+          "If a baby is a female, her mother's ovum must have been fertilized by a sperm carrying the chromosome",
+        options: ["X", "XY", "XX", "YY", "Y"],
+        ans: "A",
+      },
+      {
+        id: 5,
+        question:
+          "What is the genetic ratio of a cross between a homozygous tall plant and a homozygous dwarf plant?",
+        options: [
+          "0 tall: 4 short",
+          "3 tall: 1 short",
+          "2 tall: 2 tall",
+          "1 tall: 1 short",
+          "4 tall: 0 short",
+        ],
+        ans: "E",
+      },
+      {
+        id: 6,
+        question:
+          "Normally any character shown by an organism is due to the effects of",
+        options: [
+          "hormones and chromosomes",
+          "chromosomes",
+          "mutations",
+          "hormones and genes",
+          "genes and environment",
+        ],
+        ans: "E",
+      },
+      {
+        id: 7,
+        question:
+          "A person whose blood can be donated to all other people, must have the blood group",
+        options: ["O", "AB", "B", "A"],
+        ans: "A",
+      },
+      {
+        id: 8,
+        question: "A surprising fact about sickle cell is that",
+        options: [
+          "affects only black people",
+          "kills the patient",
+          "it is hereditary",
+          "affects blood cells",
+          "weakens the patient",
+        ],
+        ans: "C",
+      },
+      {
+        id: 9,
+        question:
+          "If a tall man (TT) marries a dwarf woman (tt) and they have four male children, the offspring will be",
+        options: [
+          "all short",
+          "three short and one tall",
+          "two short and two tall",
+          "one short and three tall",
+          "all tall",
+        ],
+        ans: "E",
+      },
+      {
+        id: 10,
+        question:
+          "A married couple have 10 children and they are all girls. Which of the following is the CORRECT explanation?",
+        options: [
+          "The woman is incapable of producing male children",
+          "The man's sperms are very weak",
+          "The man is not athletic enough",
+          "The Y component of the man's sex chromosomes was always involved",
+          "The X component of the man's sex chromosomes was always involved",
+        ],
+        ans: "E",
+      },
+      {
+        id: 11,
+        question:
+          "If a 26 years old blind man married a young one-eyed woman and they had four children, how many of them would be blind like their father?",
+        options: ["All", "Three", "Two", "One", "None"],
+        ans: "E",
+      },
+      {
+        id: 12,
+        question: "One of the major causes of of hemophilia is lack of",
+        options: [
+          "Fibrinogen",
+          "Amylase",
+          "White blood corpuscles",
+          "Red blood",
+        ],
+        ans: "A",
+        remark: `Fibronogen is a clotting factor and its synthesis is hampered by a faulty gene in haemophilia(bleeder's disease) whereby the sufferer (haemophilliac) has prolonged bleeding even from minor injuries. It might be fatal even in infancy`,
+      },
+      {
+        id: 13,
+        question:
+          "When a person with blood belonging to group O has lost much blood due to an accident, he can be given blood belonging to",
+        options: [
+          "group O only",
+          "group A only",
+          "group AB only",
+          "group A and O",
+          "group AB and O",
+        ],
+        ans: "A",
+      },
+      {
+        id: 14,
+        question: "An organism having one pair of identical genes is",
+        options: [
+          "heterozygote",
+          "a hybrid",
+          "an allelemorph",
+          "a homozygote",
+          "a diploid",
+        ],
+        ans: "D",
+      },
+      {
+        id: 15,
+        question:
+          "What is the genetic ratio of the F2 generation if members of F1 generation are allowed to self-pollinate?",
+        options: [
+          "1 tall: 3 short",
+          "3 tall: 1 short",
+          "1 tall: 1 short",
+          "4 shorts: 0 tall",
+          "4 tall: 0 short",
+        ],
+        ans: "B",
+      },
+      {
+        id: 16,
+        question: "The character-producing factors in living organisms are",
+        options: [
+          "chromosomes",
+          "alleles",
+          "chromatids",
+          "chromosomes",
+          "genes",
+        ],
+        ans: "E",
+      },
+      {
+        id: 17,
+        question:
+          "A man with a normal haemoglobin (AA) marries a woman who has sickle cell haemoglobin (SS). They have a child who has sickle-cell trait. Which of the following genotypes could be associated with the child's haemoglobin?",
+        options: ["AA", "OO", "AO", "AS", "SS"],
+        ans: "D",
+      },
+      {
+        id: 18,
+        question:
+          "If a child can receive blood from all donors, he belongs to the blood group",
+        options: ["O", "A", "B", "AB", "AS"],
+        ans: "D",
+      },
+      {
+        id: 19,
+        question:
+          "The characters by which an organism is recognized are termed its",
+        options: [
+          "phenotype",
+          "genotype",
+          "morphology",
+          "anatomy",
+          "physiology",
+        ],
+        ans: "A",
+      },
+      {
+        id: 20,
+        question: "The hereditary material in a cell is known as",
+        options: ["ADP", "CNS", "RNA", "ATP", "DNA"],
+        ans: "E",
+      },
+      {
+        id: 21,
+        question:
+          "If a woman who is a carrier of sickle cell trait (AS) married a man who is a sickler (SS) and they had four children how many of them would be normal?",
+        options: ["Three", "Two", "One", "None"],
+        ans: "B",
+      },
+      {
+        id: 22,
+        question:
+          "Which of the following is an example of discontinous variation?",
+        options: [
+          "Skin coloration",
+          "Left-handedness",
+          "Body weight",
+          "Height",
+        ],
+        ans: "B",
+      },
+      {
+        id: 23,
+        question:
+          "A gene which expresses itself only in the homozygous condition is",
+        options: ["a mutant", "dominant", "recessive", "lethal"],
+        ans: "C",
+      },
+      {
+        id: 24,
+        question: "An example of monohybrid inheritance in man is",
+        options: ["lastigmatism", "cretinism", "hyperthyroidism", "albinism"],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question:
+          "If a plant, homozygous for round and yellow (RR:YY), is crossed with a wrinkled green type (rr:yy) all of the resulting seed will be",
+        options: [
+          "blue and wrinkled",
+          "round and yellow",
+          "wrinkled and yellow",
+          "round and greenish-yellow",
+        ],
+        ans: "B",
+      },
+      {
+        id: 26,
+        question:
+          "The ratio of carriers to sicklers in the F1 generation derived from a parental cross of two carriers of haemoglobin S gene is",
+        options: ["3:1", "1:3", "2:1", "1:2"],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question:
+          "In which of the following crosses will all the female offspring be color blind?",
+        options: [
+          "color blind mother X color blind father",
+          "color blind mother X normal father",
+          "carrier mother X color blind father",
+          "carrier mother X normal father",
+        ],
+        ans: "A",
+      },
+      {
+        id: 28,
+        question:
+          "If a dark-skinned woman (Bb) marries an albino man (bb) and they have four children, how many of the children will be dark-skinned?",
+        options: ["3", "2", "1", "0"],
+        ans: "B",
+      },
+      {
+        id: 29,
+        question:
+          "A red-colored flower when crossed with a white colored one produced pink flowers. This is an example of",
+        options: [
+          "complete dominance",
+          "blending inheritance",
+          "interaction of genes",
+          "back crossing",
+        ],
+        ans: "B",
+      },
+      {
+        id: 30,
+        question: "There will be agglutination when the",
+        options: [
+          "Group A serum mixes with Group A erythrocytes",
+          "Group A serum mixes with Group B erythrocytes",
+          "Group AB serum mixes with Group O erythrocytes",
+          "Group B serum mixes with Group B erythrocytes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 31,
+        question:
+          "When the two alleles present in an organism are of the same type, the genotype is described as",
+        options: ["Heterozygous", "Heterogamous", "Homozygous", "Homologous"],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question:
+          "If parents with blood groups AB and OO produces six children",
+        options: [
+          "three of them will have group B",
+          "two of them will have group A",
+          "all the offspring will have group O",
+          "none of them will have group A",
+        ],
+        ans: "A",
+      },
+      {
+        id: 33,
+        question: "Which of the following is a sex-linked character?",
+        options: [
+          "Sickle-cell anaemia",
+          "Tongue rolling",
+          "Skin color",
+          "Color blindness",
+        ],
+        ans: "D",
+      },
+      {
+        id: 34,
+        question:
+          "In an organism where the 2n number of chromosomes is 16, the number of chromosomes in each gamete will be",
+        options: ["32", "16", "8", "4"],
+        ans: "C",
+      },
+      {
+        id: 35,
+        question:
+          "What would be the result of the first filial generation (F1) and the second filial generation (F2) of a monohybrid cross between pure line normal-winged Drosophila flies and pure line short-winged flies of the gene if the normal wing is dominant?",
+        options: [
+          "F1 flies all short-winged and F2 flies all normal-winged",
+          "F1 flies all normal-winged and F2 flies all short-winged",
+          "F1 flies all short-winged and three-quarters of F2 flies are short-winged",
+          "F1 flies all normal-winged and three-quarters of F2 flies are normal-winged",
+        ],
+        ans: "D",
+      },
+      {
+        id: 37,
+        question:
+          "An individual in the AB blood group is a universal recipent for blood donation because",
+        options: [
+          "All the red blood cells do not carry antigen",
+          "All the red blood cells carry antigen",
+          "All the red blood cell carry antibodies",
+          "There are no anti-A and anti-B antibodies in the serum",
+        ],
+        ans: "D",
+      },
+      {
+        id: 38,
+        question: "Haemophilia results from the mutation of the genes",
+        options: [
+          "In the sex-chromosomes",
+          "Which control skin color",
+          "Which control the mechanism for blood-clotting",
+          "Which control the formation of haemoglobin",
+        ],
+        ans: "C",
+      },
+      {
+        id: 39,
+        question: "The greatest contribution to genetic studied was made by",
+        options: [
+          "Thomas Morgan",
+          "Gregor Mendel",
+          "Charles Darwin",
+          "Robert Hooke",
+        ],
+        ans: "B",
+      },
+      {
+        id: 40,
+        question:
+          "The exchange of genes between homologous chromosomes is called?",
+        options: ["Test cross", "Back cross", "Crossing over", "Mutation"],
+        ans: "C",
+      },
+      {
+        id: 41,
+        question:
+          "When two heterozygous mate, the dominant trait will appear in",
+        options: [
+          "the F1 generation only",
+          "the F2 generation only",
+          "both the F1 and F2 generations",
+          "neither the F1 nor F2 generation",
+        ],
+        ans: "C",
+      },
+      {
+        id: 42,
+        question: "Which of the following characters is NOT sex linked?",
+        options: [
+          "River blindless",
+          "Baldness",
+          "Haemophilia",
+          "Color blindness",
+        ],
+        ans: "A",
+      },
+      {
+        id: 43,
+        question:
+          "Which of the following is true of the children of a haemophilic man who marries a woman that is not heamophilic and does not carry the trait?",
+        options: [
+          "All their sons will be haemophilic",
+          "All their daughter will be haemophilic",
+          "All their daughters will be carriers",
+          "All their sons will be carriers",
+        ],
+        ans: "C",
+      },
+      {
+        id: 44,
+        question:
+          "A child with blood group genotype different from those of both parents and with a mother of genotype OO, can only have a father of genotype",
+        options: ["A", "B", "AB", "OO"],
+        ans: "C",
+      },
+      {
+        id: 45,
+        question:
+          "If R and r denotes the genes for a character, the offspring of the cross between RR and Rr are",
+        options: ["RR, 2 Rr, rr", "2 RR, 2 rr", "2 RR, 2 Rr", "4 Rr"],
+        ans: "C",
+      },
+      {
+        id: 46,
+        question:
+          "A mammal with red fur and long ears was crossed with another having white fur and short ears. If the offspring had red fur and short ears, then the",
+        options: [
+          "characters are linked",
+          "characters are not linked",
+          "parents are related",
+          "parents are not related",
+        ],
+        ans: "B",
+      },
+      {
+        id: 47,
+        question:
+          "Pawpaw seeds collected from a tree with many desirable agronomic quantities did not give rise to plants of desirable characters as the parent because",
+        options: [
+          "seeds are not reliable for propagating plants",
+          "uncontrolled out-crossing can introduce unwanted variability",
+          "vegetative propagation is the best form of reproduction for all crops",
+          "seeds were not physiologically mature at harvest",
+        ],
+        ans: "B",
+      },
+      {
+        id: 48,
+        question: "Women do not suffer from color blindness",
+        options: [
+          "because the trait is sex-linked",
+          "only men are color blind",
+          "the genes are recessive and sex-linked",
+          "the genes occur on both the X and Y chrosomes",
+        ],
+        ans: "C",
+      },
+      {
+        id: 49,
+        question: "The hereditary material of the cell is",
+        options: ["the RNA", "protein", "the DNA", "carbohydrate"],
+        ans: "C",
+      },
+      {
+        id: 50,
+        question: "The theory of natural selection was developed by",
+        options: [
+          "Lamark and Darwin",
+          "Darwin and Wallace",
+          "Wallace and Mendel",
+          "Mendel and Lamarck",
+        ],
+        ans: "B",
+      },
+      {
+        id: 50,
+        question: "The theory of natural selection was developed by",
+        options: [
+          "Lamark and Darwin",
+          "Darwin and Wallace",
+          "Wallace and Mendel",
+          "Mendel and Lamarck",
+        ],
+        ans: "A",
+      },
+      {
+        id: 51,
+        question:
+          "Fossil records found in sedimentary rocks offer some explanation for the the theory of evolution because",
+        options: [
+          "the deposits have remains of organisms characteristics of when they are formed",
+          "different strata have remains of organisms of the same kind",
+          "only organisms with strong parts are fossilized",
+          "most animals and plant fossils bear little resemblance to present day living specimens",
+        ],
+        ans: "A",
+      },
+      {
+        id: 52,
+        question: "On what structures are the units of inheritance situated?",
+        options: [
+          "Golgi bodies",
+          "Ribosomes",
+          "Chromosomes",
+          "Endoplasmic reticulum",
+        ],
+        ans: "C",
+      },
+      {
+        id: 53,
+        question:
+          "Which of the following is an example of discontinuos variation observed in man?",
+        options: ["Skin colors", "Tongue rolling", "Body weight", "Height"],
+        ans: "B",
+      },
+      {
+        id: 54,
+        question: "During blood transfusion, agglutination may occur when",
+        options: [
+          "Contrasting antigens react with contrasting antibodies",
+          "Similar antigens react with similar antibody",
+          "Two different antigens react with each other",
+          "Two different antibodies react with each other",
+        ],
+        ans: "B", // correct
+      },
+      {
+        id: 56,
+        question:
+          "The differences and similarities among living things account for",
+        options: ["diversity", "stability", "competition", "evolution"],
+        ans: "A",
+      },
+      {
+        id: 57,
+        question: "People with sickle-cell anaemia have haemoglobin",
+        options: [
+          "S and are homozygous recessive",
+          "A and are heterozygous recessive",
+          "S and are heterozygous recessive",
+          "A and are homozygous recessive",
+        ],
+        ans: "A",
+      },
+      {
+        id: 58,
+        question:
+          "In the gene locus for eye color in humans, the allele for brown eyes is dominant over the allele for blue eyes. If a homozygous brown-eyed girl has a brother with blue eyes, what are the likely phenotypes of their parents' eye color? (Eye color is not a sex-linked trait)",
+        options: [
+          "Both parents have blue eyes",
+          "Their father has blue eyes and mother has brown eyes",
+          "Both parents have brown eyes",
+          "Their mother has blue eyes and their father has brown eyes",
+        ],
+        ans: "C",
+      },
+      {
+        id: 59,
+        question:
+          "If a woman's genotype is Tt Qq Rr, what would be the gene content of her eggs?",
+        options: ["TQr, tqr", "TQR, tqr", "TqR, tQr", "tQr, TQR"],
+        ans: "B",
+      },
+      {
+        id: 60,
+        question:
+          "The sex-linked defect in which very slight cut produces severe bleeding is known as",
+        options: ["anaemia", "anorexia", "haemophilia", "haemolysis"],
+        ans: "C",
+      },
+      // {
+      //   id: 61,
+      //   question:
+      //     "A man who has the trait for color blindness marries a normal woman. What percentage of their children would be sufferers, carriers, and normal respectively?",
+      //   options: [
+      //     "25% and 50%",
+      //     "25%, 50% and 25%",
+      //     "50%, 25%, and 25%",
+      //     "25%, 37.5% and 37.5%",
+      //   ],
+      //   ans: "",
+      //   // PLEASE REMEMBER TO COMMENT THIS OUT... NO ANWSWER
+      // },
+      {
+        id: 62,
+        question:
+          "The anatomical evidence usually used in support of all evolutionary relationship among whales, humans, birds and dogs is the possession of",
+        options: [
+          "thick skin",
+          "pentadactyl limb",
+          "tail",
+          "epidermal structures",
+        ],
+        ans: "B",
+      },
+      {
+        id: 63,
+        question:
+          "Human height is an example of a feature which depends on both",
+        options: [
+          "genotype and phenotype",
+          "genetic and environmental factors",
+          "mother's genotype and environmental factors",
+          "phenotypic and environemntal factors",
+        ],
+        ans: "B",
+      },
+      {
+        id: 64,
+        question:
+          "A person with type O blood can donate to a patient with type A because the donor's blood",
+        options: [
+          "lacks antigens",
+          "lacks anti-A antibodies",
+          "lacks anti-B antibodies",
+          "has both anti-A and anti-B antibodies",
+        ],
+        ans: "A",
+      },
+      {
+        id: 65,
+        question: "The DNA molecules is a chain of repeating",
+        options: [
+          "nucleosides",
+          "nitrogenous bases",
+          "sugar phosphates",
+          "nucleotides",
+        ],
+        ans: "D",
+      },
+      {
+        id: 66,
+        question:
+          "The specific number of chromosomes in each somatic cell is represented by",
+        options: ["3N", "23", "2N", "N"],
+        ans: "C",
+      },
+      {
+        id: 67,
+        question:
+          "A man with blood group A is married to a woman with blood group A. Which of the following group combinations is possible if the family has three children?",
+        options: ["B, A, AB", "A, B", "B, AB, AB", "A, O, A"],
+        ans: "D",
+      },
+      {
+        id: 68,
+        question:
+          "The F1 of a cross between a tall and a dwarf plant was tall. The F1 was advanced to F2. How many of 120 F2 plant will be dwarf?",
+        options: ["30", "60", "90", "120"],
+        ans: "A", // work this out later...
+      },
+      {
+        id: 69,
+        question:
+          "The sons of a color-blind woman will be color blind regardless of the state of the father because",
+        options: [
+          "the egg determines the phenotype of the son",
+          "sons inherit the sex chromosomes of their mothers",
+          "the father's sex chromosomes is weaker in sons",
+          "sex-linked traits express dominance in females",
+        ],
+        ans: "B",
+      },
+      {
+        id: 70,
+        question:
+          "The least evidence in support of the theory of evolution is provided by the study of",
+        options: ["anatomy", "ecology", "geology", "embryology"],
+        ans: "B",
+      },
+      {
+        id: 71,
+        question:
+          "From which group of animals are the mammals generally believed to have most recently evolved?",
+        options: ["Reptiles", "Fishes", "Amphibians", "Birds"],
+        ans: "A",
+      },
+      {
+        id: 72,
+        question: "One reason for the success of Mendel's work is that he",
+        options: [
+          "was first to carry out research work on modern genetics",
+          "introduced quantitative and qualitative elements into his works",
+          "selected two characteristics only at a time for study",
+          "drew up his law of inheritance based on his knowledge of chromosomes",
+        ],
+        ans: "C",
+      },
+      {
+        id: 73,
+        question:
+          "The homozygous condition HbS Hbs results in sickle cell anaemia whereas HbA HbA has the sickling trait. What is the probability that a couple with the sickling trait will give birth to one normal child?",
+        options: ["1/2", "1/4", "1/8", "0"],
+        ans: "B",
+      },
+      {
+        id: 74,
+        question: "Which of the following characters is NOT sex-linked?",
+        options: ["Albinism", "Baldness", "Haemophilia", "Colour blindness"],
+        ans: "A",
+      },
+      {
+        id: 76,
+        question: "Long neck in giraffes is used to illustrae theory of",
+        options: [
+          "use and disuse",
+          "origin of species",
+          "origin of life",
+          "natural selection",
+        ],
+        ans: "A",
+      },
+      {
+        id: 77,
+        question: "The natural tendency of organism as they evolve is to",
+        options: [
+          "decrease in size",
+          "increase in number",
+          "develop specialized structures",
+          "feed indiscriminately",
+        ],
+        ans: "C",
+      },
+      {
+        id: 78,
+        question:
+          "One of the ways in which body cells differ from gamete cells is in the",
+        options: [
+          "type of centromeres they contain",
+          "number of chromsome pairs they contain",
+          "type of chromatids they contain",
+          "number of chromsomes they contain",
+        ],
+        ans: "D",
+      },
+      {
+        id: 79,
+        question: "In blood transfusion, agglutination occurs when",
+        options: [
+          "white blood cells from two individuals meet",
+          "two different antibodies meet",
+          "two different antigens meet",
+          "contrasting antigens and antibodies meet",
+        ],
+        ans: "D",
+      },
+      {
+        id: 80,
+        question:
+          "After one week of life, the weights of five chocks of the same sex hatched simultaneously from the eggs the same hen and fed on the same diet were 45g, 40g, 35g, 33g, and 30g. This is an example of",
+        options: ["growth rate", "natural selection", "variation", "mutation"],
+        ans: "C",
+      },
+      {
+        id: 81,
+        question: "The phenotype of an individual can be summed up as the",
+        options: [
+          "totality of the expressed traits",
+          "individual's physical appearance",
+          "individual's entire genetic make-up",
+          "physiological traits of the individual",
+        ],
+        ans: "A",
+      },
+      {
+        id: 82,
+        question:
+          "The correct increasing order of size for the cell components responsible for heredity is",
+        options: [
+          "Chromosome -> DNA -> Nucleus -> Gene",
+          "DNA -> Gene -> Chromosome -> Nucleus",
+          "Chromosome -> Nucleus -> DNA -> Gene",
+          "DNA -> Gene -> Nucleus -> Chromosome",
+        ],
+        ans: "B",
+      },
+      {
+        id: 83,
+        question: "A sex-linked character cannot be passed on directly from",
+        options: [
+          "Father to son",
+          "Mother to daughter",
+          "Mother to son",
+          "Father to daughter",
+        ],
+        ans: "A",
+      },
+      {
+        id: 84,
+        question:
+          "The best explanation for the theories of natural selection is that",
+        options: [
+          "all organisms have equal capacity for survival in their habitats",
+          "organisms have varying capacities for survival in thier habitats",
+          "organisms compete or resources and better competitors survive and thrive",
+          "habibtats allow only organisms that will not have to complete for survival",
+        ],
+        ans: "C",
+      },
+      {
+        id: 85,
+        question:
+          "The basic point of impact by changes which produce mutation is the",
+        options: ["gametes", "chromosomes", "phenotype", "zygote"],
+        ans: "B",
+      },
+      {
+        id: 86,
+        question:
+          "If the offspring of a cross between brown mouse(bb) and a black mouse(BB) are allowed to interbreed, how many different genotypes would result?",
+        options: ["2", "3", "4", "5"],
+        ans: "B",
+      },
+      {
+        id: 87,
+        question:
+          "The biological factor that is unique to each individual is the",
+        options: ["DNA", "eye color", "blood group", "RNA"],
+        ans: "A",
+      },
+      {
+        id: 88,
+        question:
+          "From an evolutionary standpoint, the older a fossil bearing rock is the more likely it is to contain",
+        options: [
+          "Aves as opposed to amphibians",
+          "Invertebrates as oppossed to vertebrates",
+          "Angiosperms as opposed to algae",
+          "Vertebrates opposed to invertebrates",
+        ],
+        ans: "B",
+      },
+      {
+        id: 89,
+        question: "Which of the following is one of Lamarck's theories?",
+        options: [
+          "Some variations are more favorable to existence in a given environment than others",
+          "All living organisms are constantly involved in a struggle for existence",
+          "The size of a given population remains fairly constants",
+          "New species originate through the inheritance of acquired traits",
+        ],
+        ans: "D",
+      },
+      {
+        id: 90,
+        question:
+          "A cross between an albino female and a genetically normal male will result in offspring that are",
+        options: [
+          "all albino",
+          "all phenotypically normal",
+          "all genetically normal",
+          "half albino and half normal",
+        ],
+        ans: "B",
+      },
+      {
+        id: 91,
+        question:
+          "The surest way to combine the best qualities of both parents and the offspring is by",
+        options: [
+          "inbreeding",
+          "selective breeding", // correct... Many people chose this answer so I go with them. Lol...
+          "pure breeding",
+          "cross breeding",
+        ],
+        ans: "B",
+      },
+      {
+        id: 92,
+        question:
+          "Blood grouping in human beings is derived from combination of",
+        options: [
+          "two different alleles",
+          "four different alleles",
+          "three different alleles",
+          "two different genes",
+        ],
+        ans: "C",
+      },
+      {
+        id: 93,
+        question:
+          "The older fossil-bearing rocks, in contrast to the more recent ones, are more likely to contain",
+        options: [
+          "animals rather than plant remains",
+          "invertebrates rather than birds",
+          "flowering plants rather than mosses",
+          "reptiles rather than fishes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 94,
+        question: "The mutation theory of organic evolution was propounded by",
+        options: [
+          "Gregor Mendel",
+          "Hugo de Vries",
+          "Jean Lamark",
+          "Charles Darwin",
+        ],
+        ans: "B",
+      },
+      {
+        id: 95,
+        question: "Both recessive and dominant characters are found",
+        options: [
+          "on different chrosomes in the cell",
+          "at the same locus of a homologous chromosome",
+          "mother's sex cell",
+          "mother's X chromosome",
+        ],
+        ans: "B",
+      },
+      {
+        id: 96,
+        question:
+          "The probability of a baby being a boy or a girl depends on the condition of the",
+        options: [
+          "father's sex cell",
+          "father's somatic chromosome",
+          "mother's sex cell",
+          "mother's X chromosome",
+        ],
+        ans: "A",
+      },
+      {
+        id: 97,
+        question:
+          "Which of the following statements is true of blood groups and blood transfusion?",
+        options: [
+          "Group O is the universal recipent",
+          "Group A can donate to group A only",
+          "Group AB is the universal recipent",
+          "Group B can donate to group B only",
+        ],
+        ans: "C",
+      },
+      {
+        id: 98,
+        question:
+          "A tall plant crossed with a dwarf on produces offspring of which half are tall and half are dwarf, what are the genotypes of the parents?",
+        options: ["TT, TT", "Tt, Tt", "TT, tt", "Tt, TT"],
+        ans: "B",
+      },
+      {
+        id: 99,
+        question:
+          "In man, the ability to roll the tongue is a variation classified as",
+        options: ["anatomical", "physiological", "structural", "morphological"],
+        ans: "B",
+      },
+      {
+        id: 100,
+        question:
+          "Darwin is considered the first scientist who correctly explained the theory of",
+        options: [
+          "Special creation",
+          "Spontaneous generation",
+          "Use and disuse",
+          "Organic evolution",
+        ],
+        ans: "D",
+      },
+      {
+        id: 101,
+        question: "In his theory of evolution, Darwin implied that",
+        options: [
+          "the struggle for existence among living organisms is sporadic",
+          "the most successful organisms are those that best adapt to their environment",
+          "organs of the body which are not regularly used by an organism will disappear",
+          "traits acquired by an organism during its lifetime can be passed on to its offspring",
+        ],
+        ans: "B",
+      },
+      {
+        id: 102,
+        question:
+          "The structure that is common in the embryos of mammals, amphibians, birds, fishes, and reptiles and which is an evidence of their common ancestry is the",
+        options: ["eye", "chorion", "allantois", "gill slits"],
+        ans: "D",
+      },
+      {
+        id: 103,
+        question:
+          "To select and retain the desirable trait of large body size which farmer has observed in his herd, the farmer needs to",
+        options: [
+          "feed the animals in the herd with more food",
+          "cross-breed his animals with a different herd",
+          "inbreed the animals with a different herd",
+          "prevent diseases in his herd",
+        ],
+        ans: "C",
+      },
+      {
+        id: 104,
+        question:
+          "In a population of living things, the parameters of size, height, weight and colour are example of",
+        options: [
+          "discontinous variations",
+          "continuous variations",
+          "physiological variations",
+          "non-inheritable variations",
+        ],
+        ans: "B",
+      },
+      {
+        id: 105,
+        question:
+          "If X is the dominant allele for normal vision and x the recessive allele for color-blindness, a boy with the genotype Yx will",
+        options: [
+          "have normal vision",
+          "be color-blind",
+          "be totally blind",
+          "be a carrier of color-blindness",
+        ],
+        ans: "B",
+      },
+      {
+        id: 106,
+        question:
+          "The first four children of a couple were all girls. The probability that the fifth will also be a girl is",
+        options: ["1/5", "1/4", "1/3", "1/2"],
+        ans: "D",
+      },
+      {
+        id: 107,
+        question:
+          "Genetic counseling is important when a marriage is planned between a",
+        options: [
+          "Rh- woman and Rh+ man",
+          "Rh- woman and Rh- man",
+          "Rh+ woman and Rh+ man",
+          "Rh+ woman and Rh- man",
+        ],
+        ans: "A",
+      },
+      {
+        id: 108,
+        question:
+          "What proportion of the offspring of a cross between two heterozygous parents will exhibit the recessive condition phenotypically",
+        options: ["1/4", "1/2", "3/4", "4/4"],
+        ans: "A",
+      },
+      {
+        id: 109,
+        question: "Homologous pairs of chromosomes separate during",
+        options: ["cleavage", "cytolysis", "mitosis", "meiosis"],
+        ans: "D",
+      },
+      {
+        id: 110,
+        question:
+          "If a DNA strand has a base sequence TCA, its complementary strand must be",
+        options: ["ATG", "GAT", "TAG", "AGT"],
+        ans: "D",
+      },
+      {
+        id: 111,
+        question:
+          "A man and his wife are both heterozygous for the sickle cell trait. The likely percentage of their offspring that will be either carriers or sicklers is",
+        options: ["75%", "25%", "50%", "100%"],
+        ans: "A",
+      },
+      {
+        id: 112,
+        question:
+          "If the pair of alleles for baldness is given as Bb, a female carrier will be denoted by",
+        options: ["XBY", "XBXB", "XbY", "XBXb"],
+        ans: "D",
+      },
+      {
+        id: 113,
+        question:
+          "An organism that has been extensively used to test the chromosome theory of heredity is",
+        options: [
+          "Drosophila Melanogaster",
+          "Homo sapiens",
+          "Zea Mays",
+          "Musea domestica",
+        ],
+        ans: "A",
+      },
+      {
+        id: 114,
+        question: "A feature associated with the Y-chromosome in humans is",
+        options: [
+          "long eyelashes",
+          "prominent fingernails",
+          "facial hairs",
+          "enlarged breast",
+        ],
+        ans: "C",
+      },
+      {
+        id: 115,
+        question: "An argument against Lamarck's theory of evolution is that",
+        options: [
+          "disused part is dropped off in the offspring",
+          "disuse of body part cannot weaken the part",
+          "acquired traits cannot be passed to offsprings",
+          "traits cannot be acquired through constant use of body parts",
+        ],
+        ans: "C",
+      },
+      {
+        id: 116,
+        question:
+          "Which of the following requires the use of carbon dating to prove that evolution has occured?",
+        options: [
+          "biochemical similarities",
+          "molecular records",
+          "comparative anatomy",
+          "fossil records",
+        ],
+        ans: "D",
+      },
+      {
+        id: 117,
+        question:
+          "Paternity disputes can most accurately be resolved through the use of",
+        options: [
+          "fingerprinting",
+          "blood group typing",
+          "DNA testing",
+          "tongue-rolling",
+        ],
+        ans: "C",
+      },
+      {
+        id: 118,
+        question:
+          "In a Mendelian cross of red and white varieties of the four o'cloci plant, the F1 generation expressed incomplete dominance by having flowers which are",
+        options: ["white", "red", "pink", "multi coloured"],
+        ans: "C",
+      },
+      {
+        id: 119,
+        question: "Identical twins inherit their genes from",
+        options: [
+          "different eggs and sperms",
+          "the same egg and sperm",
+          "two eggs and a sperm",
+          "one egg and two sperms",
+        ],
+        ans: "B",
+      },
+      {
+        id: 120,
+        question: "Sex-linked genes are located on",
+        options: [
+          "Y chromosomes",
+          "X chromosomes and Y chromosomes",
+          "homologous chromosomes",
+          "X chromosomes",
+        ],
+        ans: "D",
+      },
+      {
+        id: 121,
+        question:
+          "An evidence of the relationship between living organisms and their extinct relatives can best be obtained from",
+        options: [
+          "embryology",
+          "comparative anatomy",
+          "comparative physiology",
+          "paleontology",
+        ],
+        ans: "D",
+      },
+      {
+        id: 122,
+        question:
+          "Which of the following is the best explanation for a child who is phenotypically short and born of two tall parents?",
+        options: [
+          "The father possesses a gene for shortness",
+          "The mother possesses a gene for shortness",
+          "Nature makes the child short",
+          "Both parents have genes for shortness",
+        ],
+        ans: "D",
+      },
+      {
+        id: 123,
+        question:
+          "A yellow maize is crossed with a white maize and the first filial generation produce yellow maize only. The white trait is said to exhibit",
+        options: [
+          "dominance",
+          "recessiveness",
+          "codominance",
+          "incomplete dominance",
+        ],
+        ans: "B",
+      },
+      {
+        id: 124,
+        question:
+          "An evidence of a common ancestry for fishes, amphibians, reptiles, birds and mammals is the",
+        options: [
+          "possession of wings by birds and bats",
+          "cold bloodedness of fishes, amphibians and reptiles",
+          "presence of gill clefts in vertebrate embryos",
+          "possession of scales by fishes and reptiles",
+        ],
+        ans: "C",
+      },
+      {
+        id: 126,
+        question: "The two normal types of sex chromosomes are",
+        options: ["XXY and XYY", "XX and XXY", "XY and XXY", "XX and XY"],
+        ans: "D",
+      },
+      {
+        id: 129,
+        question:
+          "One advantages of variation in a species population is that individuals",
+        options: [
+          "with favored traits become dominant",
+          "easily reach their reproductive age",
+          "are easily recognized by mates",
+          "are better adapted to changes",
+        ],
+        ans: "D",
+      },
+      {
+        id: 130,
+        question: "Mendel's second law of inheritance states that",
+        options: [
+          "alleles combine randomly",
+          "alleles segregate independently",
+          "alleles separate predictably",
+          "chromosomes segregate independtly",
+        ],
+        ans: "B",
+      },
+      {
+        id: 133,
+        question:
+          "The evidence that supports the advancement of ferns over mosses is derived from",
+        options: [
+          "comparative anatomy",
+          "molecular records",
+          "biochemical similarities",
+          "physiological records",
+        ],
+        ans: "A",
+      },
+      {
+        id: 134,
+        question:
+          "Which of the following vertebrates has the most simple structured heart?",
+        options: ["Reptile", "Fish", "Mammal", "Amphibian"],
+        ans: "B",
+      },
+      {
+        id: 135,
+        question:
+          "The theory which supports the view that the large muscles developed by an athlete will be passed on to the offspring was proposed by",
+        options: ["Lamarck", "Darwin", "Mendel", "Pasteur"],
+        ans: "A",
+      },
+      {
+        id: 136,
+        question:
+          "An accurate identification of a rapist can be carried out by conducting a",
+        options: [
+          "a RNA analysis",
+          "DNA analysis",
+          "blood group test",
+          "behavioural test",
+        ],
+        ans: "B",
+      },
+      {
+        id: 139,
+        question: "Which of the following is true of a cloning?",
+        options: [
+          "It is welcomed as an ethically and morally sound science",
+          "Only one cell of the original organism is needed to initiate the process",
+          "The clone is similar to but not exactly like the original organism",
+          "It invovles the asexual multiplication of the tissues of the original organisms",
+        ],
+        ans: "D",
+      },
+      {
+        id: 140,
+        question: "An example of a sex-linked trait is the",
+        options: [
+          "ability to grow long hair in females",
+          "color of the skins in humans",
+          "ability to roll the tongue",
+          "possession of facial hair in adult humans",
+        ],
+        ans: "A",
+      },
+      {
+        id: 141,
+        question:
+          "Which of the following is the major cause of variation among organism",
+        options: [
+          "Inbreeding",
+          "Backcrossing",
+          "Sexual reproduction",
+          "Gene dominance",
+        ],
+        ans: "C",
+      },
+      {
+        id: 142,
+        question:
+          "The Rhesus factor of blood was first identified in a category of",
+        options: ["monkeys", "human females", "human males", "chimpanzees"],
+        ans: "A",
+      },
+      {
+        id: 145,
+        question:
+          "Genetically modified food products have not become universally accepted because",
+        options: [
+          "they are not tasty as other produced by conventional means",
+          "they are usually costlier than others produced by conventional means",
+          "their effects on human consumers is not yet fully understood",
+          "the technology can be applied only in developed country",
+        ],
+        ans: "C",
+      },
+      {
+        id: 146,
+        question:
+          "Which of the following is the most advanced evolutionary development in plants?",
+        options: [
+          "Possession of unicelluar structures",
+          "Development of flowers",
+          "Dispersal of spores",
+          "Development of secondary thickening",
+        ],
+        ans: "B",
+      },
+      {
+        id: 147,
+        question:
+          "The natural process that produces adaptive evolutionary changes is",
+        options: [
+          "Mutation",
+          "Gene flow",
+          "Genetic drift",
+          "Natural selection",
+        ],
+        ans: "D",
+      },
+      {
+        id: 148,
+        question:
+          "The uniqueness of an individual organism in a population is accounted for by",
+        options: ["Evolution", "Variation", "Adaptation", "Mutation"],
+        ans: "B",
+      },
+      {
+        id: 149,
+        question:
+          "A phenotypic character with intermediate forms that can be graded from one extreme to the other is referred to as",
+        options: [
+          "discontinous variation",
+          "continuous variation",
+          "a mutant",
+          "a genome",
+        ],
+        ans: "B",
+      },
+      {
+        id: 150,
+        question:
+          "A farmer's assumption that the seed from a good harvest will produce a good yield is explained by the thoery of",
+        options: ["Evolution", "Adaptation", "Variation", "Hereditary"],
+        ans: "D",
+      },
+      {
+        id: 151,
+        question:
+          "In Mendelian inheritance, discontinuous characters are controlled by the",
+        options: ["centromeres", "alleles", "chromosomes", "chromatids"],
+        ans: "B",
+      },
+      {
+        id: 152,
+        question:
+          "A woman with the ability to roll her tongue (Tt) marries a man who cannot roll his tongue (tt). What is the probability of each of their children being a tongue roller?",
+        options: ["100%", "75%", "50%", "25%"],
+        ans: "C",
+      },
+      {
+        id: 153,
+        question:
+          "A health condition that is known to have resulted from gene mutation is",
+        options: [
+          "Haemophilia",
+          "Color blindness",
+          "Sickle-cell anaemia",
+          "Anaemia",
+        ],
+        ans: "C",
+      },
+      {
+        id: 154,
+        question:
+          "According to Darwin,the driving force behind evolutionary change is",
+        options: [
+          "natural selection",
+          "genetic drift",
+          "mutation",
+          "gene flow",
+        ],
+        ans: "A",
+      },
+      {
+        id: 155,
+        question:
+          "A dilute solution of phenylthicarbamide tasted bitter to some people and is tasteless to others. This is an example of",
+        options: [
+          "discontinuous variation",
+          "morphological variation",
+          "continuous variation",
+          "taste bud variation",
+        ],
+        ans: "A",
+      },
+      {
+        id: 156,
+        question: "A pair of genes that control a trait is referred to as",
+        options: ["recessive", "dominant", "a hybrid", "an allele"],
+        ans: "D",
+      },
+      {
+        id: 157,
+        question:
+          "The chromosomes number of a cell before and after the process of meiosis is conventionally represented as",
+        options: ["n-n", "n-2n", "2n-n", "2n-2n"],
+        ans: "C",
+      },
+      {
+        id: 158,
+        question:
+          "If both parents are heterozygous for a trait, the probability that an offspring will be recessive for that trait is",
+        options: ["1/2", "1/4", "1", "3/3"],
+        ans: "B",
+      },
+      {
+        id: 159,
+        question:
+          "At what stage in the life history of a mammal is the sex of an individual set?",
+        options: ["At puberty", "At birth", "At conception", "At adolescence"],
+        ans: "C",
+      },
+      {
+        id: 160,
+        question:
+          "The flippers of a whale and the fins of a fish are examples of",
+        options: [
+          "coevolution",
+          "continuous variation",
+          "convergent evolution",
+          "divergent evolution",
+        ],
+        ans: "C",
+      },
+      {
+        id: 161,
+        question:
+          "The inheritable characters that are determined by a gene located only on the X-chromosome is",
+        options: ["homozygous", "dominant", "recessive", "sex-linked"],
+        ans: "D",
+      },
+      {
+        id: 162,
+        question:
+          "If the cross of a red-flowered plant with a white-flowered plant produces a pink-flowered plant, it is an example of",
+        options: ["mutation", "linkage", "codominance", "incomplete dominance"],
+        ans: "D",
+      },
+      {
+        id: 163,
+        question:
+          "Which of the following theories was NOT considered by Darwin in his evolutionary theory?",
+        options: [
+          "Use and disuse",
+          "Competition",
+          "Variation",
+          "Survival of the fittest",
+        ],
+        ans: "A",
+      },
+      {
+        id: 164,
+        question:
+          "The crossing of individuals of the same species with different genetic characters is",
+        options: [
+          "non-disjunction",
+          "inbreeding",
+          "cross breeding",
+          "polygenic inheritance",
+        ],
+        ans: "C",
+      },
+      {
+        id: 165,
+        question: "The number of alleles controlling blood groups in humans is",
+        options: ["5", "2", "3", "4"],
+        ans: "C",
+      },
+      {
+        id: 166,
+        question:
+          "During blood transfussion, agglutination may occur as a result of the reaction between",
+        options: [
+          "two different antibodies",
+          "similar antigens and antibodies",
+          "contrasting antigens and antibodies",
+          "two different antigens",
+        ],
+        ans: "B",
+      },
+      {
+        id: 167,
+        question:
+          "The fallacy in Lamarck's evolutionary theory was the assumption that",
+        options: [
+          "acquired traits are seldom formed",
+          "traits are acquired through the use of body parts",
+          "traits are acquired through disuse of body parts",
+          "acquired traits are heritable",
+        ],
+        ans: "D",
+      },
+      {
+        id: 170,
+        question: "The wings of a bat and those of a bird are examples of",
+        options: [
+          "continuous variation",
+          "divergent evolution",
+          "convergent evolution",
+          "coevolution",
+        ],
+        ans: "C", // convergent evolution
+      },
+      {
+        id: 171,
+        question: "Which of the following is true in blood transfusion?",
+        options: [
+          "a person of blood group AB can donate blood only to another person of blood group AB",
+          "Persons of blood group A and B can donate or receive blood from each other",
+          "A person of blood group AB can receive blood from persons of blood group A or B",
+          "A person of blood group O can donate only to a person of blood group O",
+        ],
+        ans: "A",
+      },
+      {
+        id: 172,
+        question:
+          "A yellow maize is planted and all the fruits obtained are yellow seeds. When they are cross-bred, yellow seeds and white seeds are obtained in a ratio 3:1. The yellow seed is said to be?",
+        options: [
+          "non-inheritable",
+          "sex-linked",
+          "a recessive trait",
+          "a dominant trait",
+        ],
+        ans: "D",
+      },
+      {
+        id: 173,
+        question:
+          "When a color-blind man marries a carrier woman, what is the probability of their offspring being color blind?",
+        options: ["25%", "50%", "75%", "100%"],
+        ans: "B",
+      },
+      {
+        id: 174,
+        question: "The correct pairing for DNA is?",
+        options: [
+          "Adenine - Thymine and Guanine - Cytosine",
+          "Adenine - Guanine and Thymine - Cytosine",
+          "Adenine - Cytosine and Guanine - Thymine",
+          "Adenine - Adenine and Cytosine - Cytosine",
+        ],
+        ans: "A",
+      },
+      {
+        id: 175,
+        question:
+          "The use and disuse of body parts and the inheritance of acquired traits were used to explain",
+        options: [
+          "Darwin's theory",
+          "Lamarck's theory",
+          "Genetic drift",
+          "Gene flow",
+        ],
+        ans: "B",
+      },
+      {
+        id: 176,
+        question:
+          "From the study of Galapagos finches, Darwin derived his theory of evolution from",
+        options: [
+          "comparative anatomny",
+          "comparative physiology",
+          "fossil remains",
+          "comparative embryology",
+        ],
+        ans: "A",
+      },
+      {
+        id: 177,
+        question: "To which blood group do universal recipents belong?",
+        options: ["A", "O", "AB", "B"],
+        ans: "C",
+      },
+      {
+        id: 178,
+        question: "The clumping together of red blood cells is",
+        options: ["fussion", "transfusion", "compatibility", "agglutination"],
+        ans: "D",
+      },
+      {
+        id: 179,
+        question: "The genetic make-up of an organism is described as",
+        options: ["allele", "chromosome", "phenotype", "genotype"],
+        ans: "D",
+      },
+      {
+        id: 180,
+        question:
+          "Whorls, arches, loops and compounds are types of variation on",
+        options: ["eye color", "fingerprints", "hair color", "blood group"],
+        ans: "B",
+      },
+      {
+        id: 182,
+        question: "One of the advantages of outbreeding is",
+        options: [
+          "pest tolerance",
+          "disease tolerance",
+          "fast growth",
+          "tall height",
+        ],
+        ans: "B",
+      },
+      {
+        id: 183,
+        question:
+          "An individual with blood group AB can receive blood from those in blood groups(s)",
+        options: [
+          "A, B, AB, and O",
+          "A, AB, and O only",
+          "AB only",
+          "A and B only",
+        ],
+        ans: "A",
+      },
+      {
+        id: 184,
+        question:
+          "All living organisms are constantly involved in a struggle for existence. This was proposed by",
+        options: ["Morgan", "Darwin", "Lamarck", "Wallace"],
+        ans: "B",
+      },
+    ],
+  },
+
+  {
+    topic: "Transport: Circulatory System",
+    questions: [
+      {
+        id: 1,
+        question:
+          "A carbohydrate molecule in the right ventricle of the heart is pumped into the cell of the toe of man. Which of these structures is it unlikely to pass through en-route?",
+        options: ["Pulmonary artery", "Lungs", "Heart", "Liver", "Aorta"],
+        ans: "D",
+      },
+      {
+        id: 2,
+        question: "The hepatic portal vein is characterized by ",
+        options: [
+          "Beginning and ending with cappilaries",
+          "Connecting the liver and kidney",
+          "Carrying deoxygenated blood",
+          "Ending with large capillaries",
+          "Having no capillaries",
+        ],
+        ans: "A",
+      },
+      {
+        id: 3,
+        question:
+          "The blood vessel which carries digested food from the intestine to the liver is the",
+        options: [
+          "renal vein",
+          "renal artery",
+          "hepatic artery",
+          "hepatic portal vein",
+          "coeliac artery",
+        ],
+        ans: "D",
+      },
+      {
+        id: 6,
+        question:
+          "If the bark and phloem tissues of a woody shoot are peeled off by ringing, the whole plant will eventually die becuase",
+        options: [
+          "water does not reach the leaves",
+          "water and salts remain below the ringed portion",
+          "there is a withdrawal of water from the roots by soil",
+          "manufactured food does not reach the roots",
+          "the roots store too much water",
+        ],
+        ans: "D",
+      },
+      {
+        id: 7,
+        question: "The hepatic portal vein is unique because it",
+        options: [
+          "carries deoxygenated blood",
+          "begins and ends with capillaries",
+          "is the largest vein in mammals",
+          "carries digested food",
+          "is the shortest even in mammals",
+        ],
+        ans: "B",
+      },
+      {
+        id: 9,
+        question:
+          "Which of the following is NOT a function of the mammalian blood?",
+        options: [
+          "engulfing bacteria",
+          "production of hormones",
+          "transporting urea",
+          "didtrubtion of heat",
+          "transporting glucose",
+        ],
+        ans: "B",
+      },
+      {
+        id: 10,
+        question:
+          "The three blood vessels that supply the mammalian alimentary canals are",
+        options: [
+          "segmented artery, hepatic artery and coeliac artery",
+          "coeliac artery, anterior mesenteric artery, and posterior mesenteric artery",
+          "coelic artery, segmented artery and hepatic artery",
+          // "hepatic artery, anterior mesentaric", // D
+          "transporting glucose",
+        ],
+        ans: "B",
+      },
+      {
+        id: 11,
+        question:
+          "Which of the following statement is NOT true of mammalian erythrocytes?",
+        options: [
+          "They have haemoglobin",
+          "They appear yellow when looked at singly",
+          "They are disc-shaped",
+          "The cells are more numerous than leucocytes", // D
+          "They have nuclei at maturity",
+        ],
+        ans: "E",
+      },
+      {
+        id: 12,
+        question:
+          "In woody plants, gases and water vapor are transported across the stems by the",
+        options: [
+          "xylem fibres",
+          "medullary fibres",
+          "medullary rays",
+          "phloem fibres", // D
+          "phloem parenchyma",
+        ],
+        ans: "A",
+      },
+      {
+        id: 13,
+        question:
+          "Which of the following statements on the mammalian circulatory system is NOT true?",
+        options: [
+          "Blood in the pulmonary artery is richer in oxygen content than blood in the pulmonary",
+          "The blood in the hepatic portal vein is the richest in the food substances",
+          "Blood flow is controlled by valves in the veins",
+          "Arteries are generally thicker and larger than veins", // D
+          "Fibrin helps in the formation of blood clot",
+        ],
+        ans: "A",
+      },
+      {
+        id: 14,
+        question: "The path taken by glucose from the ileum to the heart is",
+        options: [
+          "Ileum -> hepatic portal vein -> hepatic artery -> vena cava -> heart",
+          "Ileum -> hepatic portal artery -> hepatic artery -> vena cava -> heart",
+          "Ileum -> hepatic portal vein -> vena cava -> heart",
+          "Ileum -> hepatic vein -> vena cava -> heart", // D
+          "Ileum -> hepatic portal vein -> hepatic vein",
+        ],
+        ans: "E",
+      },
+      {
+        id: 15,
+        question: "Blood clotting is initiated by",
+        options: [
+          "Leucocytes",
+          "Platelets",
+          "Haemolymph",
+          "Haemoglobin",
+          "Erythrocytes",
+        ],
+        ans: "B",
+      },
+      {
+        id: 16,
+        question: "Normally the flow of blood is NEVER from",
+        options: [
+          "Artery to arterioles",
+          "Arterioles to capillaries",
+          "Capillaries to venules",
+          "Arterioles to the artery",
+          "Venules to the vein",
+        ],
+        ans: "D",
+      },
+      {
+        id: 17,
+        question: `Which of the following sequences represent the process of blood clotting?<br />
+        1. Fibrin forms a network of threads<br />
+        2. Red blood cells are caught and a clot is formed<br />
+        3. Fibrinogen in plasma changes into soluble fibrin<br />
+        4. Blood is exposed to air`,
+        options: [
+          "4, 3, 2, 1",
+          "4, 3, 1, 2",
+          "3, 1, 4, 2",
+          "1, 2, 3, 4",
+          "3, 1, 2, 4",
+        ],
+        ans: "B",
+      },
+      {
+        id: 18,
+        question: `The function of lymph nodes is to`,
+        options: [
+          "supply oxygen",
+          "filter out bacteria",
+          "form red blood cells",
+          "supply amino acids",
+          "supply simple sugars",
+        ],
+        ans: "B",
+      },
+      {
+        id: 19,
+        question: `The vein which returns blood from the head and arms to the heart is called`,
+        options: [
+          "aorta",
+          "inferior vena cava",
+          "superior vena cava",
+          "pulmonary vein",
+          "pulmonary artery",
+        ],
+        ans: "C",
+      },
+      {
+        id: 20,
+        question: `Blood platelets are important because they`,
+        options: [
+          "amoeboid and nucleated",
+          "produce antitoxins",
+          "produce antibodies",
+          "digest harmful bacteria",
+          "release thrombin for blood",
+        ],
+        ans: "E",
+      },
+      {
+        id: 21,
+        question: `Blood circulation in a mammal is said to be double because?`,
+        options: [
+          "it passes twice through the heart in the complete circuit",
+          "it moves in both arteries and veins",
+          "it circulates in both the heart and other organs",
+          "the heart contains auricles and ventricles",
+        ],
+        ans: "A",
+      },
+      {
+        id: 22,
+        question: `Which is the correct order of water loss from the leaf?<br />
+        1. Mesophyll 2. Veins 3. Substomatal cavity 4. Stomata`,
+        options: ["3 2 1 4", "2 3 1 4", "2 1 3 4", "1 2 3 4"],
+        ans: "C",
+      },
+      {
+        id: 23,
+        question: `The aperture between the left auricle and left ventricle is guarded by the?`,
+        options: [
+          "auricular valve",
+          "triscupid valve",
+          "ventricular valve",
+          "biscupid valve",
+        ],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question: `One cubic centimer of lymph is richer than an equal volume of blood in?`,
+        options: ["erythrocytes", "leucocytes", "amino acid", "glucose"],
+        ans: "B",
+      },
+      {
+        id: 25,
+        question: `Aged erythrocytes are destroyed in the`,
+        options: ["pancreas", "liver", "lymph nodes", "kidney"],
+        ans: "B",
+      },
+      {
+        id: 26,
+        question: `Which of the following is the function of lymph?`,
+        options: [
+          "Carries hormones round the body",
+          "Transport nutrients and oxygen from blood capillaries to the cells",
+          "Distributes heat uniformly round the body",
+          "Conveys amino acids and glucose from the small intestine to the liver",
+        ],
+        ans: "B",
+      },
+      {
+        id: 27,
+        question: `If a ring of bark and phloem is removed from a stem, the`,
+        options: [
+          "plant dies immediately",
+          "plant dies after two days",
+          "movement of food is not affected",
+          "movement of mineral salts is hardly affected",
+        ],
+        ans: "B",
+      },
+      {
+        id: 28,
+        question: `Fibrinogen and prothrombin play important roles in the`,
+        options: [
+          "deamination of proteins",
+          "clotting of blood",
+          "detoxification of substances",
+          "storage of vitamins",
+        ],
+        ans: "B",
+      },
+      {
+        id: 29,
+        question: `Deoxygenated blood flows into the right and left lungs through the`,
+        options: [
+          "pulmonary vein",
+          "vena cava",
+          "pulmonary artery",
+          "subclavian vein",
+        ],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question: `The blood vessel which carries blood from the alimentary canal to the liver is the`,
+        options: [
+          "hepatic artery",
+          "hepatic vein",
+          "hepatic portal vein",
+          "mesenteric artery",
+        ],
+        ans: "C",
+      },
+      {
+        id: 31,
+        question: `Manufactured food in the plants is transported through the`,
+        options: ["Xylem", "Phloem", "Cambium", "Cortex"],
+        ans: "B",
+      },
+      {
+        id: 34,
+        question: `The main function of blood in mammals is to transport`,
+        options: [
+          "Excretory materials from tissues",
+          "Carbondioxide from lungs to tissues",
+          "Digested food from all the body tissues",
+          "Oxygen to the lungs",
+        ],
+        ans: "A",
+      },
+      {
+        id: 35,
+        question: `A circulatory system that does not allow mixing of oxygenated and de-oxygenated blood in mammalian heart is referred to as`,
+        options: ["Open", "Haemocoelic", "Single", "Closed"],
+        ans: "D",
+      },
+      {
+        id: 36,
+        question: `Which of the following is NOT involved in the transport of substances in the body`,
+        options: ["Lymph", "Plasma", "Leucocytes", "Erythrocytes"],
+        ans: "C",
+      },
+      {
+        id: 37,
+        question: `In mammals, the exchange of nutrients and metabolic products occurs in the`,
+        options: ["Lymph", "Lungs", "Heart", "Liver"],
+        ans: "A",
+      },
+      {
+        id: 38,
+        question: `The companion cells are part of the`,
+        options: ["Pericycle", "Phloem", "Pith", "Xylem"],
+        ans: "B",
+      },
+      {
+        id: 39,
+        question: `Unicellular organisms transport essential nutrients directly to all parts of their bodies by the process of diffusion because they have`,
+        options: [
+          "A large volume to surface area ratio",
+          "A large surface area to volume ratio",
+          "Their bodies immersed in the nutrients",
+          "Their outer membrane made of cellulose",
+        ],
+        ans: "B",
+      },
+      {
+        id: 40,
+        question: `The heart of the adult frog consists of`,
+        options: [
+          "Two auricles and two ventricles",
+          "One auricle and one ventricle",
+          "One auricle and two ventricles",
+          "Two auricles and one ventricle",
+        ],
+        ans: "D",
+      },
+      {
+        id: 41,
+        question: `In adult mammalian blood, the cells which lack nuclei are the`,
+        options: ["Erythrocytes", "Lymphocytes", "Leucocytes", "Phagocytes"],
+        ans: "A",
+      },
+      {
+        id: 42,
+        question: `Substances manufactured by the leaves are transported to other parts of the plant through the`,
+        options: ["Xylem", "Companion cells", "Sieve tubes", "Cambium"],
+        ans: "C",
+      },
+      {
+        id: 43,
+        question: `After a meal of yam has been digested, the highest concentration of glucose is to be found in the`,
+        options: [
+          "Hepatic artery",
+          "Pulmonary vein",
+          "Hepatic portal vein",
+          "Posterior vena cava",
+        ],
+        ans: "C",
+      },
+      {
+        id: 44,
+        question: `The force that holds water together in the form of a stream within the xylem tube is the`,
+        options: [
+          "Cohesion of water molecules to one another by hydrogen bonds",
+          "Force of gravity attracting the water molecules through the hydrogen bonds",
+          "Attraction between the water and xylem by osmotic force",
+          "Normal flow of water from the ground with the help of gravitational force",
+        ],
+        ans: "A",
+      },
+      {
+        id: 45,
+        question: `The lymphatic system of mammals rejoins the blood circulatory system at the`,
+        options: [
+          "Hepatic vein",
+          "Subclavian vein",
+          "Renal vein",
+          "Common iliac vein",
+        ],
+        ans: "B",
+      },
+      {
+        id: 46,
+        question: `The chamber of the mammalian heart with the thickest wall is the`,
+        options: [
+          "Right ventricle",
+          "Left auricle",
+          "Right auricle",
+          "Left ventricle",
+        ],
+        ans: "D",
+      },
+      {
+        id: 47,
+        question: `Serum differs from blood plasma because it`,
+        options: [
+          "Contains blood cell and fibrinogen",
+          "Contains soluble food and mineral salts",
+          "Lacks the blood protein fibrinogen",
+          "Lacks blood cells and albumin",
+        ],
+        ans: "C",
+      },
+      {
+        id: 48,
+        question: `The transportation of oxygen and carbon(IV) oxide in mammals is carried out by`,
+        options: ["Leucocytes", "Thrombocytes", "Phagocytes", "Erythrocytes"],
+        ans: "D",
+      },
+      {
+        id: 49,
+        question: `The veins of the leaf are formed by the`,
+        options: [
+          "Vascular bundles",
+          "Cambium cells",
+          "Palisade tissue",
+          "Spongy mesophyll",
+        ],
+        ans: "A",
+      },
+      {
+        id: 50,
+        question: `The mammalian erythrocytes differ from leucocytes because they are`,
+        options: [
+          "Discoid and nucleated",
+          "Discoid and anucleated",
+          "Amoeboid and nucleated",
+          "Amoeboid and anucleated",
+        ],
+        ans: "B",
+      },
+      {
+        id: 51,
+        question: `If water that has been colored red is poured at the base of a wilting plant, it will appear as a red stain in the cells of the`,
+        options: ["Xylem", "Epidermis", "Phloem", "Parenchyma"],
+        ans: "A",
+      },
+      {
+        id: 52,
+        question: `Organisms I, II, III, and IV have surface area to volume ratios of 1:2, 1:3, 1:4, 1:5 respectively. The organisms that is likely to have the most complex transport system is`,
+        options: ["IV", "III", "I", "II"],
+        ans: "A",
+      },
+      {
+        id: 53, // THIS QUESTION HAS PROBLEM SO CROSS CHECK!
+        question: `In the root vascular system the stele is directly surrounded by the?`,
+        options: ["Pericycle", "Cortex", "Endodermis", "Parenchyma"],
+        ans: "C",
+      },
+      {
+        id: 54,
+        question: `The only wein that carries pure oxygenated blood is the`,
+        options: [
+          "Renal vein",
+          "Pulmonary vein",
+          "Hepatic vein",
+          "Sciatic vein",
+        ],
+        ans: "B",
+      },
+      {
+        id: 55,
+        question: `The function of the fluid-filled pericardium is to`,
+        options: [
+          "Reduce the friction caused by the pumping movements of the heart",
+          "Supply the heart with oxygen and nutrients",
+          "Prevent disease-causing organisms from attacking the heart",
+          "Reduce the intensity of the pumping action of the heart",
+        ],
+        ans: "A",
+      },
+      {
+        id: 56,
+        question: `The organ situated in the pericardial cavity of a mammal is the`,
+        options: ["Heart", "Liver", "Stomach", "Spleen"],
+        ans: "A",
+      },
+      {
+        id: 57,
+        question: `In rabbits, the chamber of the heart that receives oxygenated blood from the lungs is the`,
+        options: [
+          "Left ventricle",
+          "Left auricle",
+          "Right ventricle",
+          "Right auricle",
+        ],
+        ans: "B",
+      },
+      {
+        id: 58,
+        question: `The mammalian vein which starts with and ends in a capillary network is the`,
+        options: [
+          "Pulmonary vein",
+          "Mesenteric vein",
+          "Renal vein",
+          "Hepatic portal vein",
+        ],
+        ans: "D",
+      },
+      {
+        id: 63,
+        question: `In plants, the structure that plays role similar to the arteries and veins of animals are the`,
+        options: [
+          "Xylem and phloem",
+          "Root and stem",
+          "Lenticel and phloem",
+          "Roots and stem",
+        ],
+        ans: "A",
+      },
+      {
+        id: 64,
+        question: `Which of the following describes the sequence of blood flow from the heart to a tissue?`,
+        options: [
+          "Heart -> artery -> arteriole -> tissue",
+          "Heart -> vein -> venule -> tissue",
+          "Heart -> venule -> vein -> tissue",
+          "Heart -> arteriole -> artery -> tissue",
+        ],
+        ans: "A",
+      },
+      {
+        id: 67,
+        question: `The primary structure responsible for pumping blood for circulation through the mammalian circulatory systems is the`,
+        options: ["Right auricle", "Arteries", "Left ventricle", "Veins"],
+        ans: "C",
+      },
+      {
+        id: 68,
+        question: `Circulation of blood to all parts of the body except the lungs is through`,
+        options: [
+          "Systemic circulation",
+          "The lymphatic system",
+          "Pulmonary circulation",
+          "The pulmonary artery",
+        ],
+        ans: "A",
+      },
+      {
+        id: 69,
+        question: `The blood component that has the greatest affinity for oxygen is the`,
+        options: ["Leucocytes", "Erythroxytes", "Thrombocytes", "Lymphocytes"],
+        ans: "B",
+      },
+      {
+        id: 71,
+        question: `In mammals, the exchange of nutrients and metabolic products occurs in the`,
+        options: ["Trachea", "Lymph", "Lungs", "Oesophagus"],
+        ans: "B",
+      },
+      {
+        id: 70,
+        question: `Which of the following is true of leucocytes?`,
+        options: [
+          "They are large and nucleated",
+          "They are involved in blood clotting",
+          "They are respiratory pigments",
+          "They are most numerous and ramify all cells",
+        ],
+        ans: "A",
+      },
+      {
+        id: 72,
+        question: `The vascular tissues in higher plants are responsible for`,
+        options: [
+          "Transpiration pull",
+          "The transport of gases and water",
+          "The movement of food and water",
+          "Suction pressure",
+        ],
+        ans: "C",
+      },
+      {
+        id: 75,
+        question: `Movement of minerals and chemical compounds within a plant occurs during`,
+        options: ["Translocation", "Transpiration", "Diffusion", "Osmosis"],
+        ans: "A",
+      },
+      {
+        id: 76,
+        question: `Which blood cells are involved in the immune response of vertebrates?`,
+        options: ["Lymphocytes", "Erythrocytes", "Monocytes", "Phagocytes"],
+        ans: "A",
+      },
+      {
+        id: 77,
+        question: `The blood circulatory system of vertebrates consists of`,
+        options: [
+          "Heart, aorta, capillaries, and vein",
+          "Heart, aorta, arteries, and vein",
+          "Heart, vena cava, arteries, and veins",
+          "Heart, arteries, capillaries, and veins",
+        ],
+        ans: "D",
+      },
+      {
+        id: 78,
+        question: `A plant tissue that carries water and mineral salts is the`,
+        options: ["Xylem", "Cortex", "Phloem", "Cambium"],
+        ans: "A",
+      },
+      {
+        id: 79,
+        question: `Which of the following helps in the clotting of blood?`,
+        options: [
+          "White blood cells",
+          "Plasma",
+          "Platelets",
+          "Red blood cells",
+        ],
+        ans: "C",
+      },
+      {
+        id: 80,
+        question: `Which of the following forms about 55% of the volume of the blood in a man`,
+        options: ["Platelets", "Plasma", "Erythrocytes", "Leucocytes"],
+        ans: "B",
+      },
+      {
+        id: 81,
+        question: `A circulatory system is very essential in mammals but not in smaller organisms like Amoeba because`,
+        options: [
+          "Amoeba lives in freshwater",
+          "Diffusion is sufficient to transport materials in Amoeba",
+          "Amoeba lacks blood containing haemoglobin",
+          "Amoeba exhibits anaerobic respiration",
+        ],
+        ans: "B",
+      },
+      {
+        id: 82,
+        question: `In vascular plants, the sieve tubes and companion cells are present in the`,
+        options: ["Cambium", "Cortex", "Xylem", "Phloem"],
+        ans: "D",
+      },
+    ],
+  },
+
+  {
+    topic: "Excretion. Excretory Products",
+    questions: [
+      {
+        id: 1,
+        question: `The function of lenticels is`,
+        options: [
+          "to remove excess water in the plant",
+          "to absorb water from the atmosphere",
+          "for gaseous exchange",
+          "to absorb light",
+          "to store light",
+        ],
+        ans: "A",
+      },
+      {
+        id: 2,
+        question: `Which one of the following statements about the mammalian kidney is false?`,
+        options: [
+          "The glomerulus is formed by a branch of the renal artery",
+          "The glomerulus is a part of urinniferous tubules",
+          "The Bowman's capsule is in the cortex of the kidney",
+          "The uriniferous tubules are richly supplied with blood vessels",
+          "The glomerulus is lodged in the Bowman's capsule",
+        ],
+        ans: "B",
+      },
+      {
+        id: 3,
+        question: `A potometer with a leafy shoot weighed 18.9g initially and 17.9g after 1 hour. From this it follows that`,
+        options: [
+          "the shoot absorbed 1g of water per hour",
+          "1g of water per hour evaporates from the potometer",
+          "the shoot lost 1g of water per hour",
+          "the potometer water receded at the rate of 1g per hour",
+          "the shoot was respiring and lost weight at the rate of 1g per hour",
+        ],
+        ans: "C",
+      },
+      {
+        id: 4,
+        question: `Which of these is not a function of the mammalian skin?`,
+        options: [
+          "Protection against bacterial infection",
+          "Excretion of wastes and water",
+          "Production of vitamin D when exposed to light",
+          "Production of pigments to reduce temperature",
+          "Regulation of body temperature",
+        ],
+        ans: "D",
+      },
+      // {
+      //   id: 5,
+      //   question: `A potometer was used to compare the rate of loss of the same volume of water from a plant under different environmental conditions as under a fan, at the sea shore under the sun, in the airy laboratory and in cupboard. Which of the `,
+      //   options: [
+      //     "Protection against bacterial infection",
+      //     "Excretion of wastes and water",
+      //     "Production of vitamin D when exposed to light",
+      //     "Production of pigments to reduce temperature",
+      //     "Regulation of body temperature",
+      //   ],
+      //   ans: "D",
+      // },
+      {
+        id: 6,
+        question: `Which of these products obtained from analyzing sweat from the skin is not an excretory product?`,
+        options: ["Water", "Salts", "Dust", "Urea", "Urates"],
+        ans: "C",
+      },
+      {
+        id: 7,
+        question: `Which of the following is not an excretory organ?`,
+        options: ["Lungs", "Kidney", "Leaf", "Large intestine", "Skin"],
+        ans: "D",
+      },
+      {
+        id: 8,
+        question: `Which one of the following is not an excretory product?`,
+        options: ["Urine", "Sweat", "Faeces", "Salts", "Carbon dioxide"],
+        ans: "C",
+      },
+      {
+        id: 9,
+        question: `The major function of contractile vacoule in Amoeba is`,
+        options: [
+          "To secrete enzymes to digest food particles",
+          "To store excess food materials",
+          "To excrete nitrogenous wastes",
+          "To absorb water from the surroundings",
+          "To collect and expel excess water in the cytoplasm",
+        ],
+        ans: "E",
+      },
+      {
+        id: 10,
+        question: `Which one of the following parts of the mammalian body is most closely associated with the production of urine`,
+        options: [
+          "Maphigian capsule",
+          "Urinary bladder",
+          "Ureter",
+          "Vas deferens",
+          "Urethra",
+        ],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question: `A potometer is used to determine the rate at which a shoot`,
+        options: [
+          "respires",
+          "sucks air bubbles",
+          "loses weight",
+          "absorbs water",
+          "transpires",
+        ],
+        ans: "E",
+      },
+      {
+        id: 12,
+        question: `During excretion of urea there is also a corresponding re-absorption of water into the blood. This re-absorption takes place in the`,
+        options: [
+          "Uriniferous tubules",
+          "Bowman's capsule",
+          "Glomerulus",
+          "Malphigian capsule",
+          "Renal artery",
+        ],
+        ans: "A",
+      },
+      {
+        id: 13,
+        question: `The amount of water loss from a leaf can be detected using`,
+        options: [
+          "lime-water",
+          "red litmus paper",
+          "blue litmus paper",
+          "blue cobalt chloride paper",
+          "pink cobalt chloride paper",
+        ],
+        ans: "D",
+      },
+      {
+        id: 14,
+        question: `The rate of transpiration of a leafy shoot would be highest under`,
+        options: [
+          "damp, cold, still air.",
+          "damp, warm, moving air.",
+          "dry, warm, moving air.",
+          "dry, cold, moving air.",
+          "dry, warm, still air.",
+        ],
+        ans: "C",
+      },
+      {
+        id: 15,
+        question: `The functional unit of a mammalian kidney is the`,
+        options: [
+          "Urethra",
+          "Malphigian capsule",
+          "Glomerulus",
+          "Nephron",
+          "Ureter",
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question: `Which of the following is not associated with excretion in mammals?`,
+        options: [
+          "Glomerulus",
+          "Urea",
+          "Faeces",
+          "Carbon dioxide",
+          "Bowman's capsule",
+        ],
+        ans: "C",
+      },
+      {
+        id: 17,
+        question: `Which of the following substances is NOT found in urine?`,
+        options: [
+          "Water",
+          "Sodium chloride",
+          "Nitrogenous compounds",
+          "Calcium chloride",
+          "Nitrogenous salts",
+        ],
+        ans: "D",
+      },
+      {
+        id: 18,
+        question: `The kidneys of all vertebrate act as osmoregulators. This means that they`,
+        options: [
+          "Keep the composition of the plasma constant",
+          "Regulate osmotic processes",
+          "Control the volume of blood entering the kidneys",
+          "Decrease the osmotic pressure of blood",
+          "Increase the osmotic pressure of blood",
+        ],
+        ans: "A",
+      },
+      {
+        id: 19,
+        question: `Which of the following statements about the rate of transpiration is INCORRECT? It is`,
+        options: [
+          "dependent on temperature",
+          "affected by changes in light intensity",
+          "unaffected by humidity",
+          "dependent on air movement",
+          "affected by availability of water",
+        ],
+        ans: "C",
+      },
+      {
+        id: 20,
+        question: `Urea is produced in the`,
+        options: ["Liver", "Bladder", "Spleen", "Kidneys", "Gall bladder"],
+        ans: "A",
+      },
+      {
+        id: 21,
+        question: `Which of the following is NOT a waste product of plants?`,
+        options: ["Tannins", "Oxygen", "Carbon dioxide", "Sap", "Alkaloids"],
+        ans: "D",
+      },
+      {
+        id: 24,
+        question: `A major limitation in the use of the potometer for measuring the rate of transpiration is that`,
+        options: [
+          "It is made of breakable glass material",
+          "It measures the rate of water intake",
+          "It measures the rate of water loss through the stem only",
+          "The movement of the air bubble in the potometer cannot be timed accurately",
+        ],
+        ans: "D",
+      },
+      {
+        id: 25,
+        question: `In the mammalian skin, melanin and keratin are contained in the`,
+        options: [
+          "sebacious gland",
+          "sweat gland",
+          "subcutaneous layer",
+          "malphigian layer",
+        ],
+        ans: "D",
+      },
+      {
+        id: 26,
+        question: `The function of the loop of Henles is to`,
+        options: [
+          "increase the flow of urine",
+          "concentrate amino acids in the kidney tissue",
+          "concentrate sodium chloride in the medulla of the kidney",
+          "increase the volume of urine",
+        ],
+        ans: "C",
+      },
+      {
+        id: 27,
+        question: `The main waste products formed in plant are`,
+        options: [
+          "alkaloids, tannins and resins",
+          "water, alkaloids, and carbon dioxide",
+          "water, carbon dioxide and oxygen",
+        ],
+        ans: "D",
+      },
+      {
+        id: 28,
+        question: `In the kidney the malphigian corpuscle is located in the`,
+        options: ["medulla", "helium", "cortex", "pelvis"],
+        ans: "C",
+      },
+      {
+        id: 29,
+        question: `The skin, through the sweat glands, function as`,
+        options: [
+          "an excretory organ",
+          "a respiratory organ",
+          "a sensory organ",
+          "a protective organ",
+        ],
+        ans: "A",
+      },
+      {
+        id: 30,
+        question: `The nephridia in the earthworm form part of the`,
+        options: [
+          "reproductive system",
+          "respiratory system",
+          "circulatory system",
+          "excretory system",
+        ],
+        ans: "D",
+      },
+      {
+        id: 31,
+        question: `Transpiration can be measured with a`,
+        options: ["Photometer", "Hygrometer", "Potometer", "Barometer"],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question: `Excretory products responsible for the red, purple and blue colours of flowers are called`,
+        options: ["Alkaloids", "Tannins", "Anthocyanins", "Resins"],
+        ans: "C",
+      },
+      {
+        id: 35,
+        question: `Which of the following is a plant excretory product?`,
+        options: ["Oil", "Cytokinin", "Resin", "Amino acid"],
+        ans: "C",
+      },
+      {
+        id: 36,
+        question: `The excretory organ in insect is the`,
+        options: ["Kidney", "Malphigian tubule", "Flame cell", "Nephridium"],
+        ans: "B",
+      },
+      {
+        id: 39,
+        question: `Flame cells are the`,
+        options: [
+          "excretory systems of worms",
+          "excretory and respiratory system of flatworms",
+          "excretory system of flatworms",
+          "excretory system of roundworms",
+        ],
+        ans: "D",
+      },
+      {
+        id: 40,
+        question: `Which of the following waste products in plant is excreted through the stomata and lenticels?`,
+        options: ["Carbon dioxide", "Alkaloids", "Tannins", "Anthocyanins"],
+        ans: "A",
+      },
+      {
+        id: 41,
+        question: `The excretory structure in the earthworm is the`,
+        options: ["Malphigian tubule", "Flame cell", "Nephridium", "Kidney"],
+        ans: "C",
+      },
+      {
+        id: 42,
+        question: `The nitrogenous substance that is excreted by birds in order to conserve water is`,
+        options: ["Ammonia", "Urea", "Uric acid", "Nitric acid"],
+        ans: "C",
+      },
+      {
+        id: 43,
+        question: `Oozing out of water from the leaves of plants in a humid environment is known as`,
+        options: ["transpiration", "osmosis", "pinocytosis", "guttation"],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question: `The process of deamination is essential for the`,
+        options: [
+          "digestion of protein",
+          "secretion of bile",
+          "formation of urea",
+          "formation of antibody",
+        ],
+        ans: "C",
+      },
+      {
+        id: 45,
+        question: `In which of the following groups of animals is the malphigian tubule found?`,
+        options: [
+          "Lizards, snakes, and frogs",
+          "Crickets, houseflies, and grasshoppers",
+          "Millipedes, centipedes, and scorpions",
+          "Earthworms, roundworms, and flatworms",
+        ],
+        ans: "B",
+      },
+      {
+        id: 50,
+        question: `The opening of the stoma is controlled by the`,
+        options: [
+          "Presence of a pore",
+          "Increase in solute concentration in the guard cells",
+          "Presence of guard cells",
+          "Decrease in solute concentration in the guard cells",
+        ],
+        ans: "B",
+      },
+      {
+        id: 53,
+        question: `The urinary tubules of the kidney function through`,
+        options: [
+          "Osmosis and diffusion",
+          "Active transport and osmosis",
+          "Ultra filtration and selective reabsorption",
+          "Active transport and cytoplasmic streaming",
+        ],
+        ans: "B",
+      },
+      {
+        id: 54,
+        question: `Excess water in plants is excreted as water vapour and droplets respectively through`,
+        options: [
+          "respiration and guttation",
+          "transpiration and guttation",
+          "photosynthesis and guttation",
+          "guttation and condensation",
+        ],
+        ans: "B",
+      },
+      {
+        id: 55,
+        question: `The product of excretion common to the mammalian kidney, lung and skin is`,
+        options: ["mineral salt", "carbon(IV) oxide", "Water", "Urea"],
+        ans: "C",
+      },
+      {
+        id: 56,
+        question: `Mammals are capable of producing hypertonic urine mainly because of reabsorotion in the`,
+        options: ["Bowman's capsule", "Urethra", "Ureter", "Loop of Henle"],
+        ans: "D",
+      },
+      {
+        id: 57,
+        question: `The correct sequence of the movement of urea during urine formation is`,
+        options: [
+          "Glomerulus -> Bowman's capsule -> Convoluted tubule -> Henle's loop -> Collecting tubule",
+          "Glomerulus -> Bowman's capsule -> Convoluted tubule -> Henle's loop -> Convoluted tubule -> Collecting tubule",
+          "Convoluted tubule -> Glomerulus -> Henle's loop -> Bowman's capsule -> Collecting tubule",
+          "Convoluted tubule -> Bowman's capsule -> Henle's loop -> Glomerulus -> Collecting tubule",
+        ],
+        ans: "B",
+      },
+      {
+        id: 58,
+        question: `The waste product of plants used in the conversion of hide to leather is`,
+        options: ["Gum", "Alkaloid", "Tannin", "Resin"],
+        ans: "C",
+      },
+      {
+        id: 59,
+        question: `In the mammalian kidney, the Bowman's capsule is located in the`,
+        options: ["Ureter", "Pelvis", "Cortex", "Medulla"],
+        ans: "C",
+      },
+      {
+        id: 60,
+        question: `In insects, the structure that performs the same function as the kidney in man is the`,
+        options: ["Nephridium", "Flame cell", "Malphigian tubule", "Trachea"],
+        ans: "C",
+      },
+      {
+        id: 61,
+        question: `The oily substance that lubricate the mammalian hair to keep it flexible and water repellant is secreted by the`,
+        options: [
+          "Sebacios glands",
+          "Fatty cells",
+          "Granular layer",
+          "Sweat glands",
+        ],
+        ans: "A",
+      },
+      {
+        id: 62,
+        question: `The outer layer of the kidney where the Bowman's capsules are found is the`,
+        options: ["Pelvis", "Medulla", "Pyramid", "Cortex"],
+        ans: "D",
+      },
+      {
+        id: 63,
+        question: `I. Stomata -> Spirogyra<br />
+        II. Alveoli -> Earthworm<br />
+        III. Malphigian tubule -> Mammal<br />
+        IV. Contractile vacoule -> Protozoa<br />
+        Which of the above structures is correctly matched with the organisms in which it is found?`,
+        options: ["II", "I", "IV", "III"],
+        ans: "C",
+      },
+      {
+        id: 64,
+        question: `In the kidney of mammals, the site of ultrafiltration is the`,
+        options: [
+          "Uriniferous tubule",
+          "Bowman's capsule",
+          "Loop of Henle",
+          "Renal tubule",
+        ],
+        ans: "B",
+      },
+      {
+        id: 65,
+        question: `The part of the mammalian skin involved in excretion is the`,
+        options: [
+          "Malphigian layer",
+          "Sebaceous gland",
+          "Horny layer",
+          "Sweat gland",
+        ],
+        ans: "D",
+      },
+      {
+        id: 66,
+        question: `Which of the following is a waste product of an insect?`,
+        options: ["Uric acid", "Sweat", "Mucillage", "Alkaloids"],
+        ans: "A",
+      },
+      {
+        id: 67,
+        question: `Water in plants is removed as water vapour through the process of`,
+        options: ["Diffusion", "Osmosis", "Evaporation", "Transpiration"],
+        ans: "D",
+      },
+    ],
+  },
+
+  {
+    topic: "Respiration",
+    questions: [
+      {
+        id: 1,
+        question: `In anaerobic respiration, glucose is converted to one of the following`,
+        options: [
+          "Carbon dioxide and water",
+          "Carbon dioxide only",
+          "Carbon dioxide and alcohol",
+          "Alcohol and water",
+          "Water and acetic acid",
+        ],
+        ans: "C",
+      },
+      {
+        id: 3,
+        question: `Oxygen from the atmosphere reaches the mammalian bloodstream through one of the paths indicated below.<br />
+        A. Mouth, B. Trachea, C. Bronchiole, D. Nostril, E. Bronchus, F. Alveoli.<br />
+        Indicate the correct path`,
+        options: [
+          "A -> B -> E -> F -> D",
+          "B -> D -> F -> E -> C",
+          "D -> B -> E -> C -> F",
+          "B -> A -> F -> E -> C",
+          "F -> E -> C -> D -> C",
+        ],
+        ans: "C",
+      },
+      {
+        id: 4,
+        question: `What is the name of the respiratory organ of the crab?`,
+        options: ["Tubules", "Trachea", "Spiracles", "Lungs", "Gills"],
+        ans: "E",
+      },
+      {
+        id: 5,
+        question: `In a bakery, yeast is added to flour to make bread rise. This is possible because yeast produces`,
+        options: ["Alcohol", "Oxygen", "Carbon dioxide", "Energy", "Ethanol"],
+        ans: "C",
+      },
+      {
+        id: 6,
+        question: `The glottis is the opening which leads to the`,
+        options: ["Oesophagus", "Larynx", "Nostrils", "Pharynx", "Mouth"],
+        ans: "B",
+      },
+      {
+        id: 7,
+        question: `A grasshopper respires by means of its?`,
+        options: ["Lung books", "Gills", "Lungs", "Antennae", "Tracheal tubes"],
+        ans: "E",
+      },
+      {
+        id: 8,
+        question: `When freshly tapped palm wine was kept overnight it was found to be more alcoholic. This effect must have been due to?`,
+        options: [
+          "The addition of saccharin",
+          "The addition of sugar",
+          "The addition of whisky or local gin",
+          "Some complex hydrolytic reactions",
+          "Anaerobic respiration of an organism",
+        ],
+        ans: "E",
+      },
+      {
+        id: 9,
+        question: `Which of the following statements is TRUE of inhalation of air by man?`,
+        options: [
+          "The ribs are not raised",
+          "Diaphragm is raised",
+          "Intercostal muscles relax",
+          "Pressure of the thoracic cavity increases",
+          "Size of thoracic cavity increases",
+        ],
+        ans: "E",
+      },
+      {
+        id: 10,
+        question: `Anaerobic respiration in yeast produces?`,
+        options: [
+          "Carbon dioxide and ethanol",
+          "Carbon dioxide and water",
+          "Carbon dioxide and oxygen",
+          "Carbon dioxide and glucose",
+          "Ethanol and water",
+        ],
+        ans: "A",
+      },
+      {
+        id: 11,
+        question: `Heat produced in tissue respiration in plants is?`,
+        options: [
+          "A chemical form of energy",
+          "The only form of energy",
+          "The main form of energy",
+          "A useful form of energy",
+          "A waste form of energy",
+        ],
+        ans: "E",
+      },
+      {
+        id: 12,
+        question: `Which of the following events does not occur during anaerobic respiration of glucose?`,
+        options: [
+          "Muscle cells produce lactic acid",
+          "Carbon dioxide is produced",
+          "Milk produce lactic acid",
+          "Energy is not produced",
+          "Germinating seeds produce alcohol",
+        ],
+        ans: "D",
+      },
+      {
+        id: 13,
+        question: `Identify which of the following are characteristics of the vertebrate respiratory surface. <br />
+        I. Moist, 2. Vascularized, 3. Semipermeable, 4. Freely permeable, 5. Dry`,
+        options: ["1, 2, 3", "1, 2, 5", "2, 3, 5", "2, 4, 5", "1, 3, 5"],
+        ans: "A",
+      },
+      {
+        id: 14,
+        question: `Which of the following statements is not correct with respect to inhalation in mammals?`,
+        options: [
+          "Intercostal muscles contract",
+          "Diaphragm is raised",
+          "Ribs are raised",
+          "Pressure of the thoracic cavity decreases",
+        ],
+        ans: "B",
+      },
+      {
+        id: 15,
+        question: `The equation that can be used to summarize the process of anaerobic breakdown of sugar is`,
+        options: [
+          `${formula("C", 6, "H", 12, "0", 6)} -> 2${formula(
+            "C",
+            5,
+            "H",
+            5,
+            "0H"
+          )} + 2${formula("CO", 2)}`,
+          `6${formula("CO", 2)} + 6${formula("H", 2, "O")} -> ${formula(
+            "C",
+            6,
+            "H",
+            12,
+            "O",
+            6
+          )} + 6${formula("O", 2)}`,
+          `${formula("C", 6, "H", 12, "0", 6)} + 6${formula(
+            "O",
+            2
+          )} -> 6${formula("CO", 2)} + 6${formula("H", 2, "O")} + energy`,
+          `${formula("C", 6, "H", 12, "O", 6)} -> 2${formula(
+            "C",
+            5,
+            "H",
+            5,
+            "0H"
+          )} + 2${formula("CO", 2)} + energy`,
+        ],
+        ans: "D",
+      },
+      {
+        id: 16,
+        question: `Fatigue of leg muscles may occur after riding many kilometers on a bicycle because of?`,
+        options: [
+          "Insufficient glucose",
+          "Excess carbon dioxide",
+          "Excess protein",
+          "Insufficient oxygen",
+        ],
+        ans: "D",
+      },
+      {
+        id: 17,
+        question: `Lung books are used for respiration in?`,
+        options: ["Spiders", "Insects", "Millipedes", "Snails"],
+        ans: "A",
+      },
+      {
+        id: 18,
+        question: `In the mammalian respiratory system, exchange of gases occurs in the?`,
+        options: ["Lungs", "Bronchi", "Bronchioles", "Alveoli"],
+        ans: "D",
+      },
+      {
+        id: 19,
+        question: `In living cells, insufficient oxygen may cause a breakdown of glucose into?`,
+        options: ["Fatty acids", "Lactic acids", "Glycogen", "Carbon dioxide"],
+        ans: "B",
+      },
+      {
+        id: 20,
+        question: `Which of the following can bring about the greatest increase in the rate of transpiration?`,
+        options: [
+          "Increased humidity",
+          "Reduced temperature",
+          "Reduced wind speed",
+          "Reduced humidity",
+        ],
+        ans: "B",
+      },
+      {
+        id: 21,
+        question: `Gaseous exchange in Aves occurs in the?`,
+        options: ["Tracheoles", "Bronchi", "Air sacs", "Trachea"],
+        ans: "C",
+      },
+      {
+        id: 22,
+        question: `In the absence of oxygen, the pyruvic acid produced during glycolysis is converted to ${formula(
+          "CO",
+          2
+        )} and?`,
+        options: ["Water", "Glycerol", "Ethanol", "Citric acid"],
+        ans: "C",
+      },
+      {
+        id: 25,
+        question: `The end product of glycolysis in plants and animals is?`,
+        options: ["Pyruvic acid", "Citric acid", "Aspartic acid", "Malic acid"],
+        ans: "A",
+      },
+      {
+        id: 26,
+        question: `During respiration, air circulates round plant tissues via the?`,
+        options: [
+          "Lenticels",
+          "Stomata",
+          "Guard cells",
+          "Intercellular spaces",
+        ],
+        ans: "D",
+      },
+      {
+        id: 27,
+        question: `Anaerobic respiration differs from aerobic respiration by the production of?`,
+        options: [
+          "Less amount of energy and water",
+          "Greater amount of energy and alcohol",
+          "Less amount of energy and alcohol",
+          "Greater amount of energy and water",
+        ],
+        ans: "C",
+      },
+      {
+        id: 28,
+        question: `Which of the following movement occur during exhalation?`,
+        options: [
+          "The diaphragm contracts and the intercostal muscles relax",
+          "The thoracic cavity increases in volume",
+          "The diaphragm and intercostal muscles contract",
+          "The diaphragm contracts and the intercostal muscles relax",
+        ],
+        ans: "A",
+      },
+      {
+        id: 29,
+        question: `In woody stems, gaseous exchange take place through the?`,
+        options: ["Micropyles", "Stomata", "Lenticel", "Vessels"],
+        ans: "C",
+      },
+      {
+        id: 30,
+        question: `The gas produced during tissue respiration can be identified by using?`,
+        options: [
+          "Calcium hydroxide",
+          "Copper sulfate",
+          "Calcium carbonate",
+          "Sodium hydroxide",
+        ],
+        ans: "A",
+      },
+      {
+        id: 31,
+        question: `When yeast respires anaerobically, it converts simple sugar to carbon(IV) oxide and?`,
+        options: ["Oxygen", "Acid", "Alcohol", "Water"],
+        ans: "C",
+      },
+      {
+        id: 32,
+        question: `Tissue respiration is important for the?`,
+        options: [
+          "Absorption of oxygen into the alveoli",
+          "Release of carbon(IV) oxide into the lungs",
+          "Release of energy for body use",
+          "Exhalation of carbon(IV) oxide from lungs",
+        ],
+        ans: "C",
+      },
+      {
+        id: 35,
+        question: `The surface of an alveolus in a mammal is well supplied with blood vessels known as?`,
+        options: ["Arterioles", "Venules", "Arteries", "Capillaries"],
+        ans: "D",
+      },
+      {
+        id: 36,
+        question: `The anaerobic fermentation of a glucose molecule yields?`,
+        options: [
+          "38 ATP molecules",
+          "2 ATP molecules and alcohol",
+          "Pyruvic acid and alcohol",
+          "Water and carbon(IV) oxide",
+        ],
+        ans: "B",
+      },
+      {
+        id: 37,
+        question: `The mammalian lung is made airtight by the?`,
+        options: [
+          "Pleural cavity",
+          "Mucous membrane",
+          "Pleural membrane",
+          "Diaphragm",
+        ],
+        ans: "C",
+      },
+      {
+        id: 38,
+        question: `A test tube containing yeast in glucose solution was suspended in a covered conical flask containing alkaline pyrogallol. The bubbles of carbon(IV) oxide produced indicate that the yeast cells are?`,
+        options: [
+          "Respiring in the absence of oxygen",
+          "Liberating oxygen on their own",
+          "Living and consuming oxygen",
+          "Being killed by the alcohol produced",
+        ],
+        ans: "A",
+      },
+      {
+        id: 39,
+        question: `An increase in air pressure in the lungs is due to the?`,
+        options: [
+          "Increase in the volume of the thoracic cavity",
+          "Upward movement of the ribs",
+          "Relaxation of the diaphragm",
+          "Contraction of water molecules",
+        ],
+        ans: "C",
+      },
+      {
+        id: 40,
+        question: `The formation of water in the tissue respiration results from the?`,
+        options: [
+          "Breakdown of water molecules",
+          "Reduction of oxygen by hydrogen",
+          "Reduction of carbon(IV) oxide",
+          "Combination of water molecules",
+        ],
+        ans: "B",
+      },
+      {
+        id: 41,
+        question: `Which of the following uses diffusion as the principal method of gaseous exchange?`,
+        options: ["Lizard", "Grasshoppers", "Rats", "Earthworm"],
+        ans: "D",
+      },
+      {
+        id: 42,
+        question: `Which of the following has the most primitive respiratory system?`,
+        options: ["Snail", "Fish", "Insect", "Mouse"],
+        ans: "C",
+      },
+      {
+        id: 43,
+        question: `Exhaled air differs from inhaled air in that it?`,
+        options: [
+          "Contains less amount of carbon(IV) oxide",
+          "Is usually lower in temperature",
+          "Often has more oxygen",
+          "Usually has more water vapour",
+        ],
+        ans: "D",
+      },
+      {
+        id: 44,
+        question: `The enzymes of the glycolytic pathway are located in the?`,
+        options: ["Mitochondria", "Gatric juice", "Plasma", "Cytoplasm"],
+        ans: "D",
+      },
+      {
+        id: 45,
+        question: `Yeast respires anaerobically to convert simple sugar to carbon(IV) oxide and?`,
+        options: ["Acid", "Oxygen", "Water", "Alcohol"],
+        ans: "D",
+      },
+      {
+        id: 46,
+        question: `The sheet of muscle that separates the thoracic and the abdominal cavities is the?`,
+        options: [
+          "Intercostal muscle",
+          "Pleural membrane",
+          "Pericardium",
+          "Diaphragm",
+        ],
+        ans: "D",
+      },
+      {
+        id: 49,
+        question: `The path followed by air as it passes through the lungs in mammals is?`,
+        options: [
+          "Trachea -> Bronchioles -> Bronchi -> Alveoli",
+          "Bronchioles -> Alveoli -> Bronchi -> Trachea",
+          "Trachea -> Bronchi -> Bronchioles -> Alveoli",
+          "Bronchi -> Trachea -> Alveoli -> Bronchioles",
+        ],
+        ans: "C",
+      },
+      {
+        id: 50,
+        question: `The sequence of the one-way gaseous exchange mechanism in a fish is?`,
+        options: [
+          "Mouth -> Operculum -> Gills",
+          "Mouth -> Gills -> Operculum",
+          "Operculum -> Gills -> Mouth",
+          "Gills -> Operculum -> Mouth",
+        ],
+        ans: "B",
+      },
+      {
+        id: 51,
+        question: `The process of transforming the chemical energy of cellular fuels into high energy bonds of ATP in plants is?`,
+        options: [
+          "Photosynthesis",
+          "Photolysis",
+          "Respiration",
+          "Autotrophism",
+        ],
+        ans: "C",
+      },
+      {
+        id: 52,
+        question: `The stomata of leaves are similar in function to the?`,
+        options: [
+          "Phaynx of humans",
+          "Scales of fish",
+          "Spiracle of insects",
+          "Trachea of toads",
+        ],
+        ans: "C",
+      },
+      {
+        id: 53,
+        question: `The use of moist skin for respiration in amphibians is known as?`,
+        options: [
+          "Cellular respiration",
+          "Cutaneous respiration",
+          "Buccal respiration",
+          "Pulmonary respiration",
+        ],
+        ans: "B",
+      },
+    ],
+  },
+];
+
+// console.log(biologyQuestions.reduce((a,b) => a + b.questions.length, 0))
+export { biologyQuestions };

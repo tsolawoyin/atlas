@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Bungee-font;
+    src: local("Bungee_Tint-Regular"),
+    url(../../assets/fonts/Bungee_Tint/BungeeTint-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: Caveat;
+    src: url(../../assets/fonts/Caveat/Caveat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 100%;
+    height: 100%;
+    padding: 1em;
+    gap: 1em;
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#panel {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 20% 80%;
+}
+
+#question-editor {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    gap: 1em;
+}
+
+#questions-tab {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.question-text {
+    font-family: Montserrat, Poppins, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+/* the rest is about editing like that. makes sense */
+#subjects {
+    display: grid;
+}
+
+#topics {
+    overflow-y: scroll;
+}
+
+#topics::-webkit-scrollbar {
+    width: 10px;
+}
+
+#topics button {
+    margin: 5px 1em;
+}
+
+.questions {
+    width: 90%;
+    margin: auto;
+}
+
+.options-editor {
+    display: flex;
+    gap: 1em;
+    font-family: Montserrat, Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.questions button {
+    width: 100%;
+}
+
+#editor-tab {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0 1em;
+}
+
+#editor-tab::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* bulma is not that opinionated in my opinion */

@@ -1,0 +1,7 @@
+#footer {
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 10px;
+    font-family: Montserrat, Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}

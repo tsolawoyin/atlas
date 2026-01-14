@@ -1,0 +1,92 @@
+#profiler {
+    /* background-color: blue; */
+    width: 100%;
+    max-width: 800px;
+    /* the width will change later */
+    padding: 1em;
+    font-size: 14px;
+    margin: auto;
+  }
+  
+  .profile-details {
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 1em;
+  }
+  
+  .app-dark .profile-details {
+    background-color: #001427;
+    /* background-color: var(--logocolor); */
+  }
+  
+  .curr-view {
+      overflow-y: auto;
+      height: 100%;
+  }
+  
+  .app-light .profile-details {
+      background-color: #eee;
+      /* background-color: var(--logocolor); */
+      /* color: white; */
+  }
+  
+  #profile-btns {
+      display: flex;
+      gap: 2em;
+      margin-top: 2em;
+      margin-bottom: 2em;
+  }
+  
+  .exam-card {
+    /* this one is better like this joh... */
+    padding: 1em;
+    display: grid;
+    gap: 1em;
+    margin: auto;
+  }
+  .exam-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+  .exam-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .exam-score {
+    text-align: end;
+  }
+
+.profile-details-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.username-para {
+    text-align: center;
+    font-weight: bold;
+}
+
+.user-icon-stats {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+
+.honours {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.profile-info-div {
+    display: grid;
+    gap: .5em;
+}
