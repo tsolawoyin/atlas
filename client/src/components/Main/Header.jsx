@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "../../css/Header.css";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -7,14 +7,14 @@ import PersonIcon from "@mui/icons-material/Person";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 import BoltIcon from "@mui/icons-material/Bolt";
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import CircleIcon from '@mui/icons-material/Circle';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import CircleIcon from "@mui/icons-material/Circle";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 // import BarChartIcon from '@mui/icons-material/BarChart';
 import Bar from "./BatteryIcon";
 // MDI icons
 import Icon from "@mdi/react";
-import { mdiSync } from "@mdi/js"
+import { mdiSync } from "@mdi/js";
 import { mdiSyncAlert } from "@mdi/js";
 
 import { Link } from "react-router-dom";
@@ -31,6 +31,8 @@ import "../../css/Header.css";
 
 import LogoutIcon from "@mui/icons-material/Logout";
 import CloseIcon from "@mui/icons-material/Close";
+
+import { AppContext } from "../AppProvider";
 
 function Header({ setDarkMode, nav, setNav, from }) {
   let navigate = useNavigate();
@@ -50,6 +52,8 @@ function Header({ setDarkMode, nav, setNav, from }) {
   } else {
     document.documentElement.className = "theme-dark";
   }
+
+  let { setFirstTimeDownload, setDownloadError } = useState(AppContext);
 
   async function handleLogout() {
     await signOut(getAuth()); //
@@ -90,23 +94,28 @@ function Header({ setDarkMode, nav, setNav, from }) {
   }
 
   useEffect(() => {
-    // the thing would have been downloading the questions sef right from this moment. 
+    // the thing would have been downloading the questions sef right from this moment.
     // wow. what a underG background activity that is...
     f("utme")
       .then((updates) => {
-        if (updates.length) setSpin(true);
+        if (updates.length) {
+          setSpin(true);
+          setDownloading(true);
+        }
         updateQuestions(updates, "UTME")
           .then((res) => {
             setSpin(false);
+            setDownloading(false);
           })
-          .catch(err => {
+          .catch((err) => {
             console.log(err);
             setSpin(false);
-          })
+            setDownloadError(err); // instead of assuming it'll be an object
+          });
       })
       .catch((err) => {
         setSpin(false);
-      })
+      });
 
     const validateStreak = async () => {
       // fetch fresh user details...
@@ -121,9 +130,8 @@ function Header({ setDarkMode, nav, setNav, from }) {
     };
 
     // that is we check streak only if user is logged in or available...
-    if (user)
-      validateStreak();
-  }, [])
+    if (user) validateStreak();
+  }, []);
   // Nice and Cool. Let's move on.
   return (
     <div
@@ -257,11 +265,11 @@ function Header({ setDarkMode, nav, setNav, from }) {
 
 function setColor(score) {
   if (score < 200) {
-    return "has-text-danger"
+    return "has-text-danger";
   } else if (score < 300) {
-    return "has-text-warning"
+    return "has-text-warning";
   } else {
-    return "has-text-success"
+    return "has-text-success";
   }
 }
 

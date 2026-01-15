@@ -14,6 +14,7 @@ import "../assets/fonts/Bungee_Tint/BungeeTint-Regular.ttf";
 import "../assets/fonts/Protest_Guerrilla/ProtestGuerrilla-Regular.ttf";
 import "../assets/fonts/Anton/Anton-Regular.ttf";
 
+import AppProvider from "./AppProvider.jsx";
 // // Unregister any old service workers
 // if ("serviceWorker" in navigator) {
 //   navigator.serviceWorker.getRegistrations().then((registrations) => {
@@ -32,6 +33,8 @@ import "../assets/fonts/Anton/Anton-Regular.ttf";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   </StrictMode>
 );

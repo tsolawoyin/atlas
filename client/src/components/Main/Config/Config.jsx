@@ -17,6 +17,8 @@ import { computeNewProgress } from "../Exam/utils/forgetModel";
 // and through that global state
 // should we try it out...
 // oya now
+import Icon from "@mdi/react";
+import { mdiSync } from "@mdi/js";
 
 // MAJOR Component
 import Header from "../Header";
@@ -30,6 +32,9 @@ import AssistantHelper from "./AssistantHelper";
 // Helpers
 import { reduce, fetchStatAndExams } from "./utils/helper";
 
+import { AppContext } from "../../AppProvider";
+import { useContext } from "react";
+
 // CSS
 import "../../../css/Config.css";
 
@@ -40,6 +45,7 @@ function Config({ type }) {
   let [openTab, setOpenTab] = useState(
     isToday(localStorage.getItem("lastPracticeRecommend"))
   );
+  let { downloading, setDownloading } = useContext(AppContext);
   // yes we should have a recovery mode for the stuff...
 
   // so this is how the app will become seriously unresponsive if the user stuff disappears. wow...
@@ -240,6 +246,68 @@ function Config({ type }) {
         }}
       >
         {nav ? <Sidebar login={user} lightMode={lightmode} /> : null}
+        <div
+          className=""
+          style={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            display: "grid",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "rgba(0,0,0,0.9)",
+            zIndex: "50",
+            color: "white",
+          }}
+        >
+          {downloading ? (
+            <div
+              style={{
+                display: "grid",
+                justifyItems: "center",
+                gap: "30px",
+              }}
+            >
+              <Icon path={mdiSync} size={3} spin={true} />
+              <p
+                className=""
+                style={{
+                  textAlign: "center",
+                  fontSize: "20px",
+                }}
+              >
+                Downloading questions on your device for offline access.
+              </p>
+              <p
+                style={{
+                  textAlign: "center",
+                  fontSize: "20px",
+                }}
+              >
+                Please wait...
+              </p>
+            </div>
+          ) : (
+            <div
+              style={{
+                display: "grid",
+                justifyItems: "center",
+                gap: "30px",
+              }}
+            >
+              <p
+                style={{
+                  textAlign: "center",
+                  fontSize: "20px",
+                }}
+              >
+                Download complete. Please refresh to start using Atlas.
+              </p>
+            </div>
+          )}
+        </div>
         <div id="config">
           {setup && (
             // nice and easy... let's modify it here....
