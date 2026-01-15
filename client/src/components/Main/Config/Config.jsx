@@ -45,7 +45,7 @@ function Config({ type }) {
   let [openTab, setOpenTab] = useState(
     isToday(localStorage.getItem("lastPracticeRecommend"))
   );
-  let { downloading, downloadError, checking } = useContext(AppContext);
+  let { downloading, downloadError, checkStatus } = useContext(AppContext);
   // yes we should have a recovery mode for the stuff...
 
   // so this is how the app will become seriously unresponsive if the user stuff disappears. wow...
@@ -246,7 +246,7 @@ function Config({ type }) {
         }}
       >
         {nav ? <Sidebar login={user} lightMode={lightmode} /> : null}
-        {checking && (
+        {checkStatus == "downloading" && (
           <div
             className=""
             style={{
@@ -302,6 +302,7 @@ function Config({ type }) {
                   style={{
                     textAlign: "center",
                     fontSize: "20px",
+                    padding: "2em",
                   }}
                   className="has-text-success"
                 >
@@ -312,30 +313,15 @@ function Config({ type }) {
           </div>
         )}
         <div id="config">
-          {setup && (
+          {setup && checkStatus != "downloading" && (
             // nice and easy... let's modify it here....
             <div className="custom-loader">
               <div className="custom-loader-child">
-                <p style={{ textAlign: "center" }}>Boots 6 | Paverr</p>
+                <p style={{ textAlign: "center", fontSize: "25px" }}>Atlas</p>
                 {/* we only show loader if we want to download things... shey you get??? */}
                 {/* we  */}
                 {/* nice and easy... */}
                 {/* nice and easy bruv... moving on... */}
-                <div className="helper-loader">
-                  {/* now let's move on... */}
-                  <p
-                    style={{
-                      display: `${statusMsg.length ? "block" : "none"}`,
-                      textAlign: "center",
-                    }}
-                  >
-                    {statusMsg.length && (
-                      <span style={{ textAlign: "center" }}>
-                        {statusMsg[statusMsg.length - 1].message}
-                      </span>
-                    )}
-                  </p>
-                </div>
               </div>
             </div>
           )}

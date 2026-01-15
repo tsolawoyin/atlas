@@ -47,13 +47,14 @@ function Header({ setDarkMode, nav, setNav, from }) {
   let [viewAcct, setViewAcct] = useState(false);
   let [spin, setSpin] = useState(false); // nice and easy...
 
+  let { downloading, setDownloading, setDownloadError, setCheckStatus } =
+    useContext(AppContext);
+
   if (lightMode) {
     document.documentElement.className = "theme-light";
   } else {
     document.documentElement.className = "theme-dark";
   }
-
-  let { setDownloading, setDownloadError, setChecking } = useState(AppContext);
 
   async function handleLogout() {
     await signOut(getAuth()); //
@@ -94,11 +95,10 @@ function Header({ setDarkMode, nav, setNav, from }) {
   }
 
   useEffect(() => {
-    // the thing would have been downloading the questions sef right from this moment.
-    // wow. what a underG background activity that is...
-    f("utme", setChecking)
+    f("utme")
       .then((updates) => {
         if (updates.length) {
+          setCheckStatus("downloading");
           setSpin(true);
           setDownloading(true);
         }
@@ -108,14 +108,16 @@ function Header({ setDarkMode, nav, setNav, from }) {
             setDownloading(false);
           })
           .catch((err) => {
-            console.log(err);
             setSpin(false);
-            setDownloadError(err); // instead of assuming it'll be an object
+            setDownloadError(err);
           });
       })
       .catch((err) => {
         setSpin(false);
-        setChecking(false)
+        // setChecking(false);
+        console.log("hi");
+        setCheckStatus("up-to-date");
+        // console.log(setCheckStatus, setDownloadError);
       });
 
     const validateStreak = async () => {

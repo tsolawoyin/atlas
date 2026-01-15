@@ -254,14 +254,15 @@ export async function f(type, setter) {
     // );
     // nice and easy...
     // perform check
-    setter(true);
     for (let i = 0; i < 3; i++) {
       let check = await performCheck(type);
       // console.log(check)
+      console.log("hello");
 
       if (check == "no-need") {
         // this one is different
-        setter(false);
+        console.log(check)
+        // setter(false);
         throw new Error("no-need");
       } else if (check) {
         return check;
