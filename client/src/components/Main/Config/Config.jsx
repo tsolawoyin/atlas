@@ -302,6 +302,7 @@ function Config({ type }) {
                   textAlign: "center",
                   fontSize: "20px",
                 }}
+                className="has-text-success"
               >
                 Download complete. Please refresh to start using Atlas.
               </p>
