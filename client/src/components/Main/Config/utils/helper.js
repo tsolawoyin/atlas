@@ -232,7 +232,7 @@ export function pushLog(log, setStatusMsg) {
 
 // your code must allow for serious extensibility sha...
 
-export async function f(type) {
+export async function f(type, setter) {
   // we check for update if last successful update is less than 24 hours
   if (
     // !localStorage.getItem("lastcheckedforupdate") ||
@@ -254,12 +254,14 @@ export async function f(type) {
     // );
     // nice and easy...
     // perform check
+    setter(true);
     for (let i = 0; i < 3; i++) {
       let check = await performCheck(type);
       // console.log(check)
 
       if (check == "no-need") {
         // this one is different
+        setter(false);
         throw new Error("no-need");
       } else if (check) {
         return check;

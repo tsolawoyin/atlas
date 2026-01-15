@@ -53,7 +53,7 @@ function Header({ setDarkMode, nav, setNav, from }) {
     document.documentElement.className = "theme-dark";
   }
 
-  let { setFirstTimeDownload, setDownloadError } = useState(AppContext);
+  let { setDownloading, setDownloadError, setChecking } = useState(AppContext);
 
   async function handleLogout() {
     await signOut(getAuth()); //
@@ -96,7 +96,7 @@ function Header({ setDarkMode, nav, setNav, from }) {
   useEffect(() => {
     // the thing would have been downloading the questions sef right from this moment.
     // wow. what a underG background activity that is...
-    f("utme")
+    f("utme", setChecking)
       .then((updates) => {
         if (updates.length) {
           setSpin(true);
@@ -115,6 +115,7 @@ function Header({ setDarkMode, nav, setNav, from }) {
       })
       .catch((err) => {
         setSpin(false);
+        setChecking(false)
       });
 
     const validateStreak = async () => {
